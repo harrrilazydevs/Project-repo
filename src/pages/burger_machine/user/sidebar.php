@@ -5,7 +5,12 @@
     <div class="offcanvas-body burger_machine_sidebar px-0">
 
         <ul class="list-group list-group-flush" >
-            <li class="list-group-item fs-5 align-center"><i class="fa-solid fa-lg fa-house pe-3"></i> Dashboard</a></li>
+            <li class="list-group-item fs-2 align-center"><i class="fa-solid fa-lg fa-house pe-3"></i> Home</a></li>
+
+            <li class="list-group-item fs-2 align-center"><i class="fa-solid fa-lg fa-house pe-3"></i> Contacts</a></li>
+
+            <li class="list-group-item fs-2 align-center"><i class="fa-solid fa-lg fa-house pe-3"></i> Carts</a></li>
+
           
         </ul>
     </div>

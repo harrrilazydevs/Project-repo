@@ -1,4 +1,4 @@
-<div class="offcanvas offcanvas-start burger_machine_sidebar" tabindex="-1" id="burger_machine_sidebar" aria-labelledby="burger_machine_sidebarLabel">
+ <div class="offcanvas offcanvas-start burger_machine_sidebar" tabindex="-1" id="burger_machine_sidebar" aria-labelledby="burger_machine_sidebarLabel">
     <div class="offcanvas-header">
         <img src="<?php echo $_SESSION['logo_path'] ?>" class="burger_machine_nav_logo"  style="width:150px; height:110px;"/>
     </div>

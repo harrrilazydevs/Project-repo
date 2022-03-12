@@ -45,4 +45,22 @@ body{
     width:150px;
 }
 
+.table_style_1 {
+    background: #FF6D59;
+    border: 1px solid #7B3030 !important;
+    width: 100%;
+    color:white
+    
+}
+
+.table_style_1 td{
+    background: white;
+    border: 1px solid #7B3030 !important;
+    color:black
+
+
+}
+.table_style_1 table, th, td {
+    border: 1px solid #7B3030 !important;
+  }
 

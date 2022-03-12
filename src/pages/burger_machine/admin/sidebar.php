@@ -4,6 +4,7 @@
     </div>
     <div class="offcanvas-body burger_machine_sidebar px-0">
 
+    test
         <ul class="list-group list-group-flush ps-3" >
             <li class="list-group-item fs-6 align-center border-0"><i class="fa-solid fa-fw fa-house pe-3"></i> <span >Dashboard</span></a></li>
             <li class="list-group-item fs-6 align-center border-0"><i class="fa-solid fa-fw fa-cart-flatbed pe-3"></i> <span>Inventory</span> </a></li>

@@ -1,9 +1,13 @@
 :root{
-    --main-nav-color:#5D1910 !important;
+    --main-color:#712525 !important;
+    --main-nav-color:#8B2518 !important;
     --main-sidebar-color: #4C0D0D !important;
     --main-sidebar-item-hover: #303030 !important;
 }
 
+body{
+    background:var(--main-color);
+}
 .burger_machine_nav{
     height:60px;
     background: var(--main-nav-color);
@@ -29,6 +33,16 @@
     background:  var(--main-sidebar-item-hover);
     color:white;
     cursor:pointer;
+}
+.burger_machine_sidebar_btn{
+    position: absolute;
+    bottom:0;
+    left:110px;
+    font-weight:bold;
+    margin-bottom:30px;
+    background:#FFD600;
+    border-radius:20px;
+    width:150px;
 }
 
 

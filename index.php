@@ -41,6 +41,7 @@ $_SESSION['access_level'] = 'admin';
 
     <!-- THEMES -->
     <link rel="stylesheet" href="src/resources/styles/burger_machine.css">
+    <link rel="stylesheet" href="src/resources/styles/burger_machine_kd.css">
     <link rel="stylesheet" href="src/resources/styles/dental_clinic.css">
 
 </head>

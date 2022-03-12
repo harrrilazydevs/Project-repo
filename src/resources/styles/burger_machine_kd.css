@@ -1,0 +1,34 @@
+:root{
+    --main-nav-color:#5D1910 !important;
+    --main-sidebar-color: #4C0D0D !important;
+    --main-sidebar-item-hover: #303030 !important;
+}
+
+.burger_machine_nav{
+    height:60px;
+    background: var(--main-nav-color);
+    color: white;
+}
+
+.burger_machine_sidebar{
+    background: #4C0D0D !important;
+    color: white;
+}
+
+.burger_machine_nav_logo{
+    height:150px;
+    margin:auto;
+    margin-top:1rem;
+}
+.burger_machine_sidebar>ul>li{
+    background:  var(--main-sidebar-color);
+    color:white
+}
+
+.burger_machine_sidebar>ul>li:hover{
+    background:  var(--main-sidebar-item-hover);
+    color:white;
+    cursor:pointer;
+}
+
+

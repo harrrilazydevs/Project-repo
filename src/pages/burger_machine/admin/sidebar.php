@@ -6,10 +6,10 @@
 
     
         <ul class="list-group list-group-flush ps-3" >
-            <li class="list-group-item fs-6 align-center border-0"><i class="fa-solid fa-fw fa-house pe-3"></i> <span >Dashboard</span></a></li>
-            <li class="list-group-item fs-6 align-center border-0"><i class="fa-solid fa-fw fa-cart-flatbed pe-3"></i> <span>Inventory</span> </a></li>
-            <li class="list-group-item fs-6 align-center border-0"><i class="fa-solid fa-fw ps-1 fa-file-invoice-dollar pe-3" ></i> <span>Orders</span> </a></li>
-            <li class="list-group-item fs-6 align-center border-0"><i class="fa-solid fa-fw fa-envelope pe-3"></i> <span>Feedbacks</span></a></li>
+            <li class="list-group-item fs-6 align-center border-0 " id="btn_sidebar_dashboard"><i class="fa-solid fa-fw fa-house pe-3"></i> <span >Dashboard</span></a></li>
+            <li class="list-group-item fs-6 align-center border-0 " id="btn_sidebar_inventory"><i class="fa-solid fa-fw fa-cart-flatbed pe-3"></i> <span>Inventory</span> </a></li>
+            <li class="list-group-item fs-6 align-center border-0 " id="btn_sidebar_order"><i class="fa-solid fa-fw ps-1 fa-file-invoice-dollar pe-3" ></i> <span>Orders</span> </a></li>
+            <li class="list-group-item fs-6 align-center border-0 " id="btn_sidebar_feedback"><i class="fa-solid fa-fw fa-envelope pe-3"></i> <span>Feedbacks</span></a></li>
           
         </ul>
 

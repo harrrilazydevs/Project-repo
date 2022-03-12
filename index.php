@@ -50,6 +50,9 @@ $_SESSION['access_level'] = 'admin';
 
 
 
+    <script src="src/resources/lib/bootstrap/bs.js"></script>
+    <script src="src/resources/lib/jquery/jquery.js"></script>
+
     <!-- CONTENTS -->
     <?php
 
@@ -61,11 +64,17 @@ $_SESSION['access_level'] = 'admin';
         include_once 'src/pages/burger_machine/user/navbar.php';
         include_once 'src/pages/burger_machine/user/dashboard.php';
         include_once 'src/pages/burger_machine/user/ordering.php';
+        echo '<script src="src/func/burger_machine/main.js"></script>';
     }
     else if ($_SESSION['theme'] == 'burger_machine' && $_SESSION['access_level'] == 'admin') {
         include_once 'src/pages/burger_machine/admin/navbar.php';
         include_once 'src/pages/burger_machine/admin/sidebar.php';
         include_once 'src/pages/burger_machine/admin/feedback.php';
+        include_once 'src/pages/burger_machine/admin/order.php';
+        include_once 'src/pages/burger_machine/admin/inventory.php';
+
+        echo '<script src="src/func/burger_machine/main.js"></script>';
+        echo '<script src="src/func/burger_machine/admin/sidebar.js"></script>';
 
     }
     
@@ -83,8 +92,7 @@ $_SESSION['access_level'] = 'admin';
 
 
 
-    <script src="src/resources/lib/bootstrap/bs.js"></script>
-    <script src="src/resources/lib/jquery/jquery.js"></script>
+ 
 
     <!-- THEMES -->
 

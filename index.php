@@ -2,6 +2,7 @@
 
 $_SESSION['theme'] = 'burger_machine';
 $_SESSION['logo_path'] = 'src/resources/img/logo.png';
+$_SESSION['access_level'] = 'admin';
 
 
 
@@ -55,12 +56,16 @@ $_SESSION['logo_path'] = 'src/resources/img/logo.png';
         include_once 'src/pages/dental_clinic/user/navbar.php';
     }
     
-    if ($_SESSION['theme'] == 'burger_machine') {
+    if ($_SESSION['theme'] == 'burger_machine' && $_SESSION['access_level'] == 'user') {
         include_once 'src/pages/burger_machine/user/navbar.php';
         include_once 'src/pages/burger_machine/user/dashboard.php';
         include_once 'src/pages/burger_machine/user/ordering.php';
         include_once 'src/pages/burger_machine/user/sidebar.php';
     }
+    else if ($_SESSION['theme'] == 'burger_machine' && $_SESSION['access_level'] == 'admin') {
+        include_once 'src/pages/burger_machine/admin/navbar.php';
+    }
+    
 
 
     ?>

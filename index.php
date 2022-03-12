@@ -65,6 +65,7 @@ $_SESSION['access_level'] = 'admin';
     else if ($_SESSION['theme'] == 'burger_machine' && $_SESSION['access_level'] == 'admin') {
         include_once 'src/pages/burger_machine/admin/navbar.php';
         include_once 'src/pages/burger_machine/admin/sidebar.php';
+        include_once 'src/pages/burger_machine/admin/feedback.php';
 
     }
     

@@ -2,6 +2,7 @@ let pages = {
     'feedback':'page_feedback',
     'order': 'page_order',
     'inventory': 'page_inventory',
+    'dashboard': 'page_dashboard',
 }
 
 

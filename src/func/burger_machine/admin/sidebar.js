@@ -10,3 +10,7 @@ $('#btn_sidebar_order').on('click', function(){
 $('#btn_sidebar_inventory').on('click', function(){
     change_page('inventory')
 })
+
+$('#btn_sidebar_dashboard').on('click', function(){
+    change_page('dashboard')
+})

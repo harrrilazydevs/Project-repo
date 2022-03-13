@@ -1,4 +1,4 @@
-<div id="page_feedback" class=" page p-3">
+<div id="page_feedback" class=" page p-3 d-none">
     <h3 class="text-white pt-3" style=" font-family: Verdana, sans-serif;">Feedbacks</h3>
 
     <table class="table_style_1 shadow " id="tbl_feedbacks">
@@ -9,12 +9,6 @@
             <th class="text-center p-1  rounded fw-normal">Feedback</th>
             <th class="text-center p-1  rounded fw-normal"></th>
         </thead>
-        <tbody>
-            <!-- <td class="text-center p-1">test</td>
-            <td class="text-center p-1">test</td>
-            <td class="text-center p-1">test</td>
-            <td class="text-center p-1">test</td>
-            <td class="text-center p-1"><i class="fa-solid fa-trash-can icon_btn text-danger"></i></td> -->
-        </tbody>
+        <tbody></tbody>
     </table>
 </div>

@@ -89,6 +89,7 @@ $_SESSION['access_level'] = 'admin';
         include_once 'src/pages/burger_machine/admin/feedback.php';
         include_once 'src/pages/burger_machine/admin/order.php';
         include_once 'src/pages/burger_machine/admin/inventory.php';
+        include_once 'src/pages/burger_machine/admin/dashboard.php';
 
         echo '<script src="src/func/burger_machine/main.js"></script>';
         echo '<script src="src/func/burger_machine/admin/feedback.js"></script>';

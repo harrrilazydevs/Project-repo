@@ -1,4 +1,4 @@
-<div class="page" id="page_viewMenu">
+<div class="d-none page" id="page_viewMenu">
 
     <section class="mt-5" style="background-color: white; height: 300px;">
         <div class="container mt-5">
@@ -13,27 +13,107 @@
 
 
     <section>
-        <div class="container mt-5 mb-5">
-            <h5 class="text-center aling-items-center text-white" style="letter-spacing: 3px;">Available Products:</h5>
-
+        <div class="container mt-4 mb-5">
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown button
+                <button class="btn btn-secondary dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; border: none !important;">
+                    Burgers
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+
+                <ul class="dropdown-menu text-center" style="background: #E4DEBE; width: 15px;">
+                    <li><a class="dropdown-item menuDropdown" href="#">All Products</a></li>
+                    <li><a class="dropdown-item menuDropdown" href="#">Drinks</a></li>
+                    <li><a class="dropdown-item menuDropdown" href="#">Burgers</a></li>
+                    <li><a class="dropdown-item menuDropdown" href="#">Side Dishes</a></li>
                 </ul>
             </div>
-            <!-- <div class="">
-                <button id="viewMenu" class="mt-5" style="font-weight:bold; background:#FFD600; border-radius:25px; width:190px; height: 40px; border: none;"><i class="fa-solid fa-eye"></i> View All Products</button>
-            </div> -->
 
-            <div class="row">
 
-                <div class="col-lg-12 col-sm-12 ">
-                    <div data-flickity='{ "autoPlay": true }'>
+            <div class="container mt-5 mb-5">
+                <div class="row mt-5">
+                    <div class="col-lg-4 col-sm-12 ">
+                        <div class="userOrder-card cell-card mt-3">
+                            <img src="src/resources/img/orderDecoy.png">
+                            <div class="description">
+                                <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
+                                <p>₱ 200.</p>
+                                <a href="#">
+                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-4 col-sm-12 ">
+                        <div class="userOrder-card cell-card mt-3">
+                            <img src="src/resources/img/orderDecoy.png">
+                            <div class="description">
+                                <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
+                                <p>₱ 200.</p>
+                                <a href="#">
+                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-4 col-sm-12 ">
+                        <div class="userOrder-card cell-card mt-3">
+                            <img src="src/resources/img/orderDecoy.png">
+                            <div class="description">
+                                <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
+                                <p>₱ 200.</p>
+                                <a href="#">
+                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+
+                <div class="row mt-5">
+                    <div class="col-lg-4 col-sm-12 ">
+                        <div class="userOrder-card cell-card mt-3">
+                            <img src="src/resources/img/orderDecoy.png">
+                            <div class="description">
+                                <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
+                                <p>₱ 200.</p>
+                                <a href="#">
+                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-4 col-sm-12 ">
+                        <div class="userOrder-card cell-card mt-3">
+                            <img src="src/resources/img/orderDecoy.png">
+                            <div class="description">
+                                <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
+                                <p>₱ 200.</p>
+                                <a href="#">
+                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-4 col-sm-12 ">
                         <div class="userOrder-card cell-card mt-3">
                             <img src="src/resources/img/orderDecoy.png">
                             <div class="description">
@@ -50,7 +130,5 @@
                     </div>
                 </div>
             </div>
-        </div>
     </section>
-
 </div>

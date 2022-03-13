@@ -101,18 +101,6 @@ $_SESSION['access_level'] = 'admin';
 
     ?>
 
-
-
-
-
-
-
-
-
-
-
- 
-
     <!-- THEMES -->
 
     <!-- BURGER MACHINE FUNCTIONS -->

@@ -4,9 +4,9 @@
     })
 
 
-    $('#btn_navbar_login').on('click', function(){
-        change_page('login')
-    })
+    // $('#btn_navbar_login').on('click', function(){
+    //     change_page('login')
+    // })
 
 
 // VIEW ALL PRODUCTS

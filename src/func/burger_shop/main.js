@@ -59,7 +59,7 @@ function change_page(pagename){
 function load_account_settings(id){
     $.ajax({
         type: "GET",
-        url: 'src/database/burger_machine/func/admin/read_account_settings.php?id='+id,
+        url: 'src/database/burger_shop/func/admin/read_account_settings.php?id='+id,
         success: function(data){
             write_account_settings(JSON.parse(data))
         }
@@ -76,7 +76,7 @@ function write_account_settings(data){
 function delete_account(id){
     $.ajax({
         type: "POST",
-        url: 'src/database/burger_machine/func/admin/delete_account.php?id='+id,
+        url: 'src/database/burger_shop/func/admin/delete_account.php?id='+id,
         success: function(data){
             alert('Account deleted successfully.')
         }
@@ -91,7 +91,7 @@ function update_account(id){
             password:$('#txt_password').val(),
             access_level:$('#sel_access_level').val(),
         },
-        url: 'src/database/burger_machine/func/admin/update_account.php?id='+id,
+        url: 'src/database/burger_shop/func/admin/update_account.php?id='+id,
         success: function(data){
             alert('Account updated successfully.')
         }

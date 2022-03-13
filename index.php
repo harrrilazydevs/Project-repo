@@ -1,8 +1,8 @@
 <?php
 
-$_SESSION['theme'] = 'burger_machine';
+$_SESSION['theme'] = 'burger_shop';
 $_SESSION['logo_path'] = 'src/resources/img/otakulogo.png';
-$_SESSION['access_level'] = 'user';
+$_SESSION['access_level'] = 'admin';
 $_SESSION['username'] = 'Admin';
 $_SESSION['user_id'] = '1';
 ?>
@@ -26,7 +26,7 @@ $_SESSION['user_id'] = '1';
             echo 'Dental Clinic';
         }
 
-        if ($_SESSION['theme'] == 'burger_machine') {
+        if ($_SESSION['theme'] == 'burger_shop') {
             echo 'Burger Machine';
         }
 
@@ -43,8 +43,8 @@ $_SESSION['user_id'] = '1';
 
 
     <!-- THEMES -->
-    <link rel="stylesheet" href="src/resources/styles/burger_machine.css">
-    <link rel="stylesheet" href="src/resources/styles/burger_machine_kd.css">
+    <link rel="stylesheet" href="src/resources/styles/burger_shop.css">
+    <link rel="stylesheet" href="src/resources/styles/burger_shop_kd.css">
     <link rel="stylesheet" href="src/resources/styles/dental_clinic.css">
     <script src="src/resources/lib/bootstrap/bs.js"></script>
     <script src="src/resources/lib/jquery/jquery.js"></script>
@@ -67,45 +67,46 @@ $_SESSION['user_id'] = '1';
         include_once 'src/pages/dental_clinic/user/navbar.php';
     }
     
-    if ($_SESSION['theme'] == 'burger_machine' && $_SESSION['access_level'] == 'user') {
+    if ($_SESSION['theme'] == 'burger_shop' && $_SESSION['access_level'] == 'user') {
         //DATABASE FUNCTIONS
-        include_once 'src/database/burger_machine/db.php';
+        include_once 'src/database/burger_shop/db.php';
 
         // PAGE FUNCTIONS
-        include_once 'src/pages/burger_machine/user/navbar.php';
-        include_once 'src/pages/burger_machine/user/dashboard.php';
-        include_once 'src/pages/burger_machine/user/sidebar.php';
-        include_once 'src/pages/burger_machine/user/home.php';
-        include_once 'src/pages/burger_machine/user/viewMenu.php';
-        include_once 'src/pages/burger_machine/user/login.php';
+        include_once 'src/pages/burger_shop/user/navbar.php';
+        include_once 'src/pages/burger_shop/user/dashboard.php';
+        include_once 'src/pages/burger_shop/user/sidebar.php';
+        include_once 'src/pages/burger_shop/user/home.php';
+        include_once 'src/pages/burger_shop/user/viewMenu.php';
+        include_once 'src/pages/burger_shop/user/login.php';
+        include_once 'src/pages/burger_shop/user/modals.php';
 
 
-        echo '<script src="src/func/burger_machine/main.js"></script>';
-        echo '<script src="src/func/burger_machine/user/home.js"></script>';
-        echo '<script src="src/func/burger_machine/user/userPages.js"></script>';
-        echo '<script src="src/func/burger_machine/user/viewMenu.js"></script>';
+        echo '<script src="src/func/burger_shop/main.js"></script>';
+        echo '<script src="src/func/burger_shop/user/home.js"></script>';
+        echo '<script src="src/func/burger_shop/user/userPages.js"></script>';
+        echo '<script src="src/func/burger_shop/user/viewMenu.js"></script>';
 
 
 
         
     }
-    else if ($_SESSION['theme'] == 'burger_machine' && $_SESSION['access_level'] == 'admin') {
+    else if ($_SESSION['theme'] == 'burger_shop' && $_SESSION['access_level'] == 'admin') {
 
       
 
 
         // PAGE FUNCTIONS
-        include_once 'src/pages/burger_machine/admin/navbar.php';
-        include_once 'src/pages/burger_machine/admin/sidebar.php';
-        include_once 'src/pages/burger_machine/admin/feedback.php';
-        include_once 'src/pages/burger_machine/admin/order.php';
-        include_once 'src/pages/burger_machine/admin/inventory.php';
-        include_once 'src/pages/burger_machine/admin/dashboard.php';
-        include_once 'src/pages/burger_machine/admin/modals.php';
+        include_once 'src/pages/burger_shop/admin/navbar.php';
+        include_once 'src/pages/burger_shop/admin/sidebar.php';
+        include_once 'src/pages/burger_shop/admin/feedback.php';
+        include_once 'src/pages/burger_shop/admin/order.php';
+        include_once 'src/pages/burger_shop/admin/inventory.php';
+        include_once 'src/pages/burger_shop/admin/dashboard.php';
+        include_once 'src/pages/burger_shop/admin/modals.php';
 
-        echo '<script src="src/func/burger_machine/main.js"></script>';
-        echo '<script src="src/func/burger_machine/admin/feedback.js"></script>';
-        echo '<script src="src/func/burger_machine/admin/sidebar.js"></script>';
+        echo '<script src="src/func/burger_shop/main.js"></script>';
+        echo '<script src="src/func/burger_shop/admin/feedback.js"></script>';
+        echo '<script src="src/func/burger_shop/admin/sidebar.js"></script>';
 
     }
     

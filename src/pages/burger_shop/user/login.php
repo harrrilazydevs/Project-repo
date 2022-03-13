@@ -1,10 +1,13 @@
-<div class="page" id="page_login">
+<!-- <div class="page" id="page_login">
     <div class="container mt-5" style="width: 30%; border-radius: 5%;">
         <div class="row align-items-center text-center">
             <div class="col-lg-12 mt-5">
                 <div class="wrapper-login">
                     <div class="card-header">
-                        <h5 class="text-center mt-3 mb-3" style="letter-spacing: 3px; font-weight: 900;">Login</h5>
+
+                        <span class="ms-5 h5 fw-bold"> My Account </span>
+                        <i class="fa-solid fa-circle-xmark icon_btn pe-3 fa-xl" style="float:right; padding-top:12px;"  data-bs-dismiss="modal"></i>
+    
                     </div>
                     <form action="#">
                         <div class="field mt-5">
@@ -35,4 +38,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

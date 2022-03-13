@@ -1,7 +1,7 @@
 function load_products(){
     $.ajax({
         type: "GET",
-        url: 'src/database/burger_machine/func/user/read_products.php',
+        url: 'src/database/burger_shop/func/user/read_products.php',
         success: function(data){
             write_products(JSON.parse(data))
         }

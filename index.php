@@ -75,9 +75,10 @@ $_SESSION['user_id'] = '1';
         include_once 'src/pages/burger_machine/user/navbar.php';
         include_once 'src/pages/burger_machine/user/dashboard.php';
         include_once 'src/pages/burger_machine/user/sidebar.php';
-        include_once 'src/pages/burger_machine/user/ordering.php';
         include_once 'src/pages/burger_machine/user/home.php';
         include_once 'src/pages/burger_machine/user/viewMenu.php';
+        include_once 'src/pages/burger_machine/user/login.php';
+
 
         echo '<script src="src/func/burger_machine/main.js"></script>';
         echo '<script src="src/func/burger_machine/user/home.js"></script>';

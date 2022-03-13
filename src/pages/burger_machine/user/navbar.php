@@ -14,7 +14,7 @@
           <li class="nav-item"> <a class="nav-link text-white" id="btn_navbar_home">Home</a></li>
           <li class="nav-item"> <a class="nav-link text-white" id="btn_navbar_contactUs">Contact Us</a></li>
           <li class="nav-item"> <a class="nav-link text-white" id="btn_navbar_carts"> <i class="fa-solid fa-cart-shopping"></i> Carts</a></li>
-          <li class="nav-item"><button style="font-weight:bold; background:#FFD600; border-radius:20px; width:100px; margin: 6px; border: none;">Login</button></a></li>
+          <li class="nav-item"><button  id="btn_navbar_login" style="font-weight:bold; background:#FFD600; border-radius:20px; width:100px; margin: 6px; border: none;">Login</button></li>
         </ul>
       </div>
     </div>  

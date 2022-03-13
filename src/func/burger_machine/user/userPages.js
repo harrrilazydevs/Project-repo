@@ -1,7 +1,6 @@
 let page = {
-    
     'viewMenu':'page_viewMenu',
-
+    'login':'page_login',
 }
 
 $(document).ready(function(){
@@ -38,7 +37,6 @@ function change_page(pagename){
     });
 
     $('.bestSeller-carousel ').flickity({
-        // options
         cellAlign: 'left',
         wrapAround: true,
         freeScroll: true,

@@ -16,7 +16,7 @@ function write_products(data){
         output += '<img src="'+val.picture+'">';
         output += '<div class="description">'
         output += '<h5 id="text" style="letter-spacing: 3px;">'+val.name+'</h5>';
-        output += '<p>'+val.price+'</p>';
+        output += '<p>&#8369;'+val.price+'</p>';
         output += '<a href="#"><button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button></a></div></div>';
     })
 

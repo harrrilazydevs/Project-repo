@@ -47,20 +47,26 @@ body{
 
 .table_style_1 {
     background: #FF6D59;
-    border: 1px solid #7B3030 !important;
     width: 100%;
-    color:white
-    
+    color:white;
+    border-radius: 3px;
+
 }
 
-.table_style_1 td{
+
+.table_style_1 td {
     background: white;
-    border: 1px solid #7B3030 !important;
-    color:black
-
+    color:black;
+    border: 1px solid #823838;
+    border-radius: 3px !important;
+    font-size: 9pt;
 
 }
-.table_style_1 table, th, td {
-    border: 1px solid #7B3030 !important;
-  }
+.table_style_1 th {
+    border: 1px solid #823838;
+
+    border-radius: 3px !important;
+    font-size:10pt;
+
+}
 

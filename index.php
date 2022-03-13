@@ -80,8 +80,7 @@ $_SESSION['access_level'] = 'admin';
     }
     else if ($_SESSION['theme'] == 'burger_machine' && $_SESSION['access_level'] == 'admin') {
 
-        //DATABASE FUNCTIONS
-        include_once 'src/database/burger_machine/db.php';
+      
 
 
         // PAGE FUNCTIONS
@@ -92,6 +91,7 @@ $_SESSION['access_level'] = 'admin';
         include_once 'src/pages/burger_machine/admin/inventory.php';
 
         echo '<script src="src/func/burger_machine/main.js"></script>';
+        echo '<script src="src/func/burger_machine/admin/feedback.js"></script>';
         echo '<script src="src/func/burger_machine/admin/sidebar.js"></script>';
 
     }

@@ -8,32 +8,43 @@ let pages = {
 
 $(document).ready(function(){
 
-    // ADMIN
-    load_feedbacks()
+    if($('#txt_user_access').val() == 'admin')
+    {
+        // ADMIN
+        load_feedbacks()
 
-    $('#btn_account_settings').on('click', function(){
-        load_account_settings($('#txt_user_id').val())
-    })
+        $('#btn_account_settings').on('click', function(){
+            load_account_settings($('#txt_user_id').val())
+        })
 
-    $('#btn_delete_account').on('click', function(){
-        delete_account($('#txt_user_id').val())
-    })
+        $('#btn_delete_account').on('click', function(){
+            delete_account($('#txt_user_id').val())
+        })
 
-    $('#btn_update_account').on('click', function(){
-        update_account($('#txt_user_id').val())
-    })
-
-
-
-
-
-
+        $('#btn_update_account').on('click', function(){
+            update_account($('#txt_user_id').val())
+        })
+    }
+    else{
 
 
+        // USER
+        load_products()
+
+    }
+   
 
 
 
-    // USER
+
+
+
+
+
+
+
+
+   
 
 
 

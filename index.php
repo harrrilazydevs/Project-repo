@@ -2,7 +2,8 @@
 
 $_SESSION['theme'] = 'burger_machine';
 $_SESSION['logo_path'] = 'src/resources/img/otakulogo.png';
-$_SESSION['access_level'] = 'admin';
+$_SESSION['access_level'] = 'user';
+$_SESSION['username'] = 'Admin';
 $_SESSION['user_id'] = '1';
 ?>
 
@@ -16,7 +17,10 @@ $_SESSION['user_id'] = '1';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
 
+    
+
         <?php
+
 
         if ($_SESSION['theme'] == 'dental_clinic') {
             echo 'Dental Clinic';
@@ -42,17 +46,19 @@ $_SESSION['user_id'] = '1';
     <link rel="stylesheet" href="src/resources/styles/burger_machine.css">
     <link rel="stylesheet" href="src/resources/styles/burger_machine_kd.css">
     <link rel="stylesheet" href="src/resources/styles/dental_clinic.css">
+    <script src="src/resources/lib/bootstrap/bs.js"></script>
+    <script src="src/resources/lib/jquery/jquery.js"></script>
+    <script src="src/resources/lib/carousel/carousel.js"></script>
 
 </head>
 
 <body>
 
 <input type="hidden" name="" id="txt_user_id" value="<?php echo $_SESSION['user_id'];?>">
+<input type="hidden" name="" id="txt_user_access" value="<?php echo $_SESSION['access_level'];?>">
 
 
-    <script src="src/resources/lib/bootstrap/bs.js"></script>
-    <script src="src/resources/lib/jquery/jquery.js"></script>
-    <script src="src/resources/lib/carousel/carousel.js"></script>
+
 
     <!-- CONTENTS -->
     <?php
@@ -75,8 +81,11 @@ $_SESSION['user_id'] = '1';
 
 
         echo '<script src="src/func/burger_machine/main.js"></script>';
+        echo '<script src="src/func/burger_machine/user/home.js"></script>';
         echo '<script src="src/func/burger_machine/user/userPages.js"></script>';
         echo '<script src="src/func/burger_machine/user/viewMenu.js"></script>';
+
+
 
         
     }

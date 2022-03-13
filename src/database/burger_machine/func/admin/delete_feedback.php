@@ -1,6 +1,6 @@
 <?php
 //DATABASE FUNCTIONS
-include '../db.php';
+include '../../db.php';
 
 $id = $_GET['id'];
 

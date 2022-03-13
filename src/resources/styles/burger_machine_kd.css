@@ -79,6 +79,15 @@ body{
 
     border-radius: 3px !important;
     font-size:10pt;
+    text-align: center;
 
 }
 
+
+.yellow_box{
+    height:200px;
+    background: #FFC061;
+    border: 1px solid #712525;
+    border-radius: 5px;
+    
+}

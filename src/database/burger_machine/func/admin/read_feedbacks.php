@@ -1,6 +1,7 @@
 <?php
 //DATABASE FUNCTIONS
-include '../db.php';
+include '../../db.php';
+
 
 $q = '
 

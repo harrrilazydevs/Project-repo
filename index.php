@@ -2,9 +2,7 @@
 
 $_SESSION['theme'] = 'burger_machine';
 $_SESSION['logo_path'] = 'src/resources/img/otakulogo.png';
-$_SESSION['access_level'] = 'user';
-
-
+$_SESSION['access_level'] = 'admin';
 
 ?>
 
@@ -63,6 +61,10 @@ $_SESSION['access_level'] = 'user';
     }
     
     if ($_SESSION['theme'] == 'burger_machine' && $_SESSION['access_level'] == 'user') {
+        //DATABASE FUNCTIONS
+        include_once 'src/database/burger_machine/db.php';
+
+        // PAGE FUNCTIONS
         include_once 'src/pages/burger_machine/user/navbar.php';
         include_once 'src/pages/burger_machine/user/dashboard.php';
         include_once 'src/pages/burger_machine/user/sidebar.php';
@@ -77,6 +79,12 @@ $_SESSION['access_level'] = 'user';
         
     }
     else if ($_SESSION['theme'] == 'burger_machine' && $_SESSION['access_level'] == 'admin') {
+
+        //DATABASE FUNCTIONS
+        include_once 'src/database/burger_machine/db.php';
+
+
+        // PAGE FUNCTIONS
         include_once 'src/pages/burger_machine/admin/navbar.php';
         include_once 'src/pages/burger_machine/admin/sidebar.php';
         include_once 'src/pages/burger_machine/admin/feedback.php';

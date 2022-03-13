@@ -1,4 +1,4 @@
-<div class="d-none page" id="page_login">
+<div class="page" id="page_login">
     <div class="container mt-5" style="width: 30%; border-radius: 5%;">
         <div class="row align-items-center text-center">
             <div class="col-lg-12 mt-5">
@@ -18,7 +18,7 @@
                         <div class="content">
 
                             <div class="pass-link mt-3">
-                                <a href="#">Forgot password?</a>
+                                <a href="#" style="text-decoration: none;">Forgot password?</a>
                             </div>
                         </div>
                         <div class="field">

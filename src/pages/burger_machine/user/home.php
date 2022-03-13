@@ -25,57 +25,117 @@
             <h5 class="text-center align-items-center text-white mb-5" style="letter-spacing: 3px;">Available Products:</h5>
             <div class="row">
 
-                <div class="col-lg-12 col-sm-12 ">
-                    <div class="card-carousel" data-flickity='{ "autoPlay": true }'>
-                        <div class="userOrder-card cell-card mt-3">
-                            <img src="src/resources/img/orderDecoy.png">
-                            <div class="description">
-                                <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
-                                <p>₱ 200.</p>
-                                <a href="#">
-                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
+                <div class="col-lg-12 col-sm-12 " id="div_products">
+                    <!-- <div class="card-carousel" data-flickity='{ "autoPlay": true }' id="div_products"> -->
 
-                                </a>
-
+                            <!-- <div class="userOrder-card cell-card mt-3"><img src="src/resources/img/watermelon.jpg">
+                                <div class="description">
+                                    <h5 id="text" style="letter-spacing: 3px;">Boa Hancock's Watermelon Juice</h5>
+                                    <p>150</p>
+                                    <a href="#">
+                                        <button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
+                            <div class="userOrder-card cell-card mt-3"><img src="src/resources/img/orderDecoy.png">
+                                <div class="description">
+                                    <h5 id="text" style="letter-spacing: 3px;">Nami's Buns Burger</h5>
+                                    <p>500</p><a href="#"><button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button></a>
+                                </div>
+                            </div>
+                            <div class="userOrder-card cell-card mt-3"><img src="src/resources/img/coleslaw.jpg">
+                                <div class="description">
+                                    <h5 id="text" style="letter-spacing: 3px;">Robin's Coleslaw</h5>
+                                    <p>300</p><a href="#"><button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button></a>
+                                </div>
+                            </div> -->
 
-                        <div class="userOrder-card cell-card mt-3">
-                            <img src="src/resources/img/orderDecoy.png">
+
+                        <!-- <div class="userOrder-card cell-card mt-3">
+                                <img src="src/resources/img/orderDecoy.png">
+                                <div class="description">
+                                    <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
+                                    <p>₱ 200.</p>
+                                    <a href="#">
+                                        <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
+
+                                    </a>
+
+                                </div>
+                            </div>
+
+                            <div class="userOrder-card cell-card mt-3">
+                                <img src="src/resources/img/orderDecoy.png">
+                                <div class="description">
+                                    <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
+                                    <p>₱ 200.</p>
+                                    <a href="#">
+                                        <button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
+                                    </a>
+
+                                </div>
+                            </div>
+
+                            <div class="userOrder-card cell-card mt-3">
+                                <img src="src/resources/img/orderDecoy.png">
+                                <div class="description">
+                                    <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
+                                    <p>₱ 200.</p>
+                                    <a href="#">
+                                        <button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
+
+                                    </a>
+
+                                </div>
+                            </div>
+
+                            <div class="userOrder-card cell-card mt-3">
+                                <img src="src/resources/img/orderDecoy.png">
+                                <div class="description">
+                                    <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
+                                    <p>₱ 200.</p>
+                                    <a href="#">
+                                        <button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="userOrder-card cell-card mt-3">
+                                <img src="src/resources/img/orderDecoy.png">
+                                <div class="description">
+                                    <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
+                                    <p>₱ 200.</p>
+                                    <a href="#">
+                                        <button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
+                                    </a>
+
+                                </div>
+                            </div>
+                  
+
+                        <div class="userOrder-card cell-card mt-3"> 
+                            <img src="src/resources/img/watermelon.jpg">
                             <div class="description">
-                                <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
-                                <p>₱ 200.</p>
+                                <h5 id="text" style="letter-spacing: 3px;">Boa Hancock's Watermelon Juice</h5>
+                                <p>150</p> 
                                 <a href="#">
                                     <button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
                                 </a>
-
                             </div>
                         </div>
-
-                        <div class="userOrder-card cell-card mt-3">
-                            <img src="src/resources/img/orderDecoy.png">
+                        <div class="userOrder-card cell-card mt-3"> <img src="src/resources/img/orderDecoy.png">
                             <div class="description">
-                                <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
-                                <p>₱ 200.</p>
-                                <a href="#">
-                                    <button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
-
-                                </a>
-
+                                <h5 id="text" style="letter-spacing: 3px;">Nami's Buns Burger</h5>
+                                <p>500</p> <a href="#"><button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button></a>
                             </div>
                         </div>
-
-                        <div class="userOrder-card cell-card mt-3">
-                            <img src="src/resources/img/orderDecoy.png">
+                        <div class="userOrder-card cell-card mt-3"> <img src="src/resources/img/coleslaw.jpg">
                             <div class="description">
-                                <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
-                                <p>₱ 200.</p>
-                                <a href="#">
-                                    <button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
-                                </a>
-
+                                <h5 id="text" style="letter-spacing: 3px;">Robin's Coleslaw</h5>
+                                <p>300</p> <a href="#"><button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button></a>
                             </div>
-                        </div>
+                        </div> -->
+
 
                     </div>
                 </div>

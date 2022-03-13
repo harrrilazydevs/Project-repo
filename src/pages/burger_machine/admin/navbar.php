@@ -4,7 +4,7 @@
 
     <div  class="p-3 row mx-2" style="float:right">
     <div class="col-7 text-end">
-    <div class="fw-bold mt-1">Welcome, User</div>
+    <div class="fw-bold mt-1">Welcome, <span> <?php echo $_SESSION['username'];?> </span></div>
 
     </div>
     <div class="col-5">

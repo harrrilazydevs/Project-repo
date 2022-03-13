@@ -1,4 +1,4 @@
-<div class="d-none page" id="page_home">
+<div class="page" id="page_home">
     <section style="background-color: white;">
         <div class="container">
             <div class="row min-vh-100 align-items-center">
@@ -22,11 +22,11 @@
 
     <section>
         <div class="container mt-5 mb-5">
-            <h5 class="text-center aling-items-center text-white mb-5" style="letter-spacing: 3px;">Available Products:</h5>
+            <h5 class="text-center align-items-center text-white mb-5" style="letter-spacing: 3px;">Available Products:</h5>
             <div class="row">
 
                 <div class="col-lg-12 col-sm-12 ">
-                    <div data-flickity='{ "autoPlay": true }'>
+                    <div class="card-carousel" data-flickity='{ "autoPlay": true }'>
                         <div class="userOrder-card cell-card mt-3">
                             <img src="src/resources/img/orderDecoy.png">
                             <div class="description">
@@ -79,21 +79,18 @@
 
                     </div>
                 </div>
-                <div class="text-center aling-items-center">
+                <div class="text-center align-items-center">
                     <button id="viewMenu" class="mt-5" style="font-weight:bold; background:#FFD600; border-radius:25px; width:190px; height: 40px; border: none;"><i class="fa-solid fa-eye"></i> View All Products</button>
                 </div>
 
-
             </div>
 
-
             <div class="row mt-5">
-                <h5 class="text-center aling-items-center text-white mb-5" style="letter-spacing: 4px;">Otakus's Best Sellers!</h5>
+                <h5 class="text-center align-items-center text-white mb-5" style="letter-spacing: 4px;">Otakus's Best Sellers!</h5>
 
                 <div class="col-lg-12 col-sm-12 ">
-
                     <div class="bestSeller-carousel" style="align-items: center !important;">
-                        <div class="cell bestSeller-img"> <img src="src/resources/img/carousel.png"></div>
+                        <div class="cell bestSeller-img"><img src="src/resources/img/carousel.png"></div>
                         <div class="cell bestSeller-img"><img src="src/resources/img/carousel.png"></div>
                         <div class="cell bestSeller-img"><img src="src/resources/img/carousel.png"></div>
                     </div>

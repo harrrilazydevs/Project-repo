@@ -12,10 +12,9 @@
         <div class="mx-auto"></div>
         <ul class="navbar-nav">
           <li class="nav-item"> <a class="nav-link text-white" id="btn_navbar_home">Home</a></li>
-          <li class="nav-item"> <a class="nav-link text-white" >Contact Us</a></li>
-          <li class="nav-item"> <a class="nav-link text-white" href="#"> <i class="fa-solid fa-cart-shopping"></i> Carts</a></li>
+          <li class="nav-item"> <a class="nav-link text-white" id="btn_navbar_contactUs">Contact Us</a></li>
+          <li class="nav-item"> <a class="nav-link text-white" id="btn_navbar_carts"> <i class="fa-solid fa-cart-shopping"></i> Carts</a></li>
           <li class="nav-item"><button style="font-weight:bold; background:#FFD600; border-radius:20px; width:100px; margin: 6px; border: none;">Login</button></a></li>
-       
         </ul>
       </div>
     </div>  

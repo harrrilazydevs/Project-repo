@@ -1,4 +1,5 @@
 let page = {
+    
     'viewMenu':'page_viewMenu',
 
 }
@@ -43,4 +44,6 @@ function change_page(pagename){
         freeScroll: true,
         autoPlay: true
     });
+
+
 // Carousel (Home page)

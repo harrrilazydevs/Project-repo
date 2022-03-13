@@ -1,4 +1,4 @@
-<div id="page_dashboard">
+<div class="d-none page" id="page_home">
     <section style="background-color: white;">
         <div class="container">
             <div class="row min-vh-100 align-items-center">
@@ -33,7 +33,7 @@
                                 <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
                                 <p>₱ 200.</p>
                                 <a href="#">
-                                    <button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
+                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
 
                                 </a>
 
@@ -47,7 +47,6 @@
                                 <p>₱ 200.</p>
                                 <a href="#">
                                     <button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
-
                                 </a>
 
                             </div>
@@ -81,8 +80,7 @@
                     </div>
                 </div>
                 <div class="text-center aling-items-center">
-                    <button class="mt-5" style="font-weight:bold; background:#FFD600; border-radius:25px; width:190px; height: 40px; border: none;"><i class="fa-solid fa-eye"></i> View All Products</button>
-
+                    <button id="viewMenu" class="mt-5" style="font-weight:bold; background:#FFD600; border-radius:25px; width:190px; height: 40px; border: none;"><i class="fa-solid fa-eye"></i> View All Products</button>
                 </div>
 
 
@@ -91,7 +89,6 @@
 
             <div class="row mt-5">
                 <h5 class="text-center aling-items-center text-white mb-5" style="letter-spacing: 4px;">Otakus's Best Sellers!</h5>
-
 
                 <div class="col-lg-12 col-sm-12 ">
 

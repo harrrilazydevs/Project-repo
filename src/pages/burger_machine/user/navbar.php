@@ -11,8 +11,8 @@
       <div class="collapse navbar-collapse">
         <div class="mx-auto"></div>
         <ul class="navbar-nav">
-          <li class="nav-item"> <a class="nav-link text-white" href="#">Home</a></li>
-          <li class="nav-item"> <a class="nav-link text-white" href="#">Contact Us</a></li>
+          <li class="nav-item"> <a class="nav-link text-white" id="btn_navbar_home">Home</a></li>
+          <li class="nav-item"> <a class="nav-link text-white" >Contact Us</a></li>
           <li class="nav-item"> <a class="nav-link text-white" href="#"> <i class="fa-solid fa-cart-shopping"></i> Carts</a></li>
           <li class="nav-item"><button style="font-weight:bold; background:#FFD600; border-radius:20px; width:100px; margin: 6px; border: none;">Login</button></a></li>
        

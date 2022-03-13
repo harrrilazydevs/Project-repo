@@ -1,3 +1,17 @@
+let page = {
+    'viewMenu':'page_viewMenu',
+
+}
+
+$(document).ready(function(){
+
+})
+function change_page(pagename){
+    $('.page').addClass('d-none')
+    $('#'+page[pagename]).removeClass('d-none')
+}
+
+
 // TEXT TYPING (Home page)
     var i = 0,
     text;

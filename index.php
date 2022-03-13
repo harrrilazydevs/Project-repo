@@ -70,8 +70,11 @@ $_SESSION['access_level'] = 'admin';
         include_once 'src/pages/burger_machine/user/sidebar.php';
         include_once 'src/pages/burger_machine/user/ordering.php';
         include_once 'src/pages/burger_machine/user/home.php';
+        include_once 'src/pages/burger_machine/user/viewMenu.php';
+
         echo '<script src="src/func/burger_machine/main.js"></script>';
         echo '<script src="src/func/burger_machine/user/userPages.js"></script>';
+        echo '<script src="src/func/burger_machine/user/viewMenu.js"></script>';
 
         
     }

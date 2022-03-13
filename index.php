@@ -3,7 +3,7 @@
 $_SESSION['theme'] = 'burger_machine';
 $_SESSION['logo_path'] = 'src/resources/img/otakulogo.png';
 $_SESSION['access_level'] = 'admin';
-
+$_SESSION['user_id'] = '1';
 ?>
 
 
@@ -47,6 +47,7 @@ $_SESSION['access_level'] = 'admin';
 
 <body>
 
+<input type="hidden" name="" id="txt_user_id" value="<?php echo $_SESSION['user_id'];?>">
 
 
     <script src="src/resources/lib/bootstrap/bs.js"></script>
@@ -90,6 +91,7 @@ $_SESSION['access_level'] = 'admin';
         include_once 'src/pages/burger_machine/admin/order.php';
         include_once 'src/pages/burger_machine/admin/inventory.php';
         include_once 'src/pages/burger_machine/admin/dashboard.php';
+        include_once 'src/pages/burger_machine/admin/modals.php';
 
         echo '<script src="src/func/burger_machine/main.js"></script>';
         echo '<script src="src/func/burger_machine/admin/feedback.js"></script>';

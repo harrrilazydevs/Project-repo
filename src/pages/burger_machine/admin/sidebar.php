@@ -14,7 +14,7 @@
          </ul>
 
 
-         <button class="btn burger_machine_sidebar_btn shadow"><i class="fa-solid fa-gears"></i> Settings</button>
+         <button class="btn burger_machine_sidebar_btn shadow" data-bs-target="#md_account_settings" data-bs-toggle="modal" id="btn_account_settings"><i class="fa-solid fa-gears"></i> Settings</button>
      </div>
 
 

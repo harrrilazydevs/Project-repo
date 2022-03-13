@@ -3,7 +3,6 @@ function load_feedbacks(){
         type: "GET",
         url: 'src/database/burger_machine/func/admin/read_feedbacks.php',
         success: function(data){
-            console.log(JSON.parse(data))
             write_tbl_feedback(JSON.parse(data))
         }
     });

@@ -1,41 +1,26 @@
-<div class="burger_machine_nav">
+<div class="burger_machine_nav fixed-top ">
 
-    <header class="header" id="header">
-      <nav class="nav bd-container">
-        <li href="#" class="nav__logo"> <img src="src/resources/img/logo.png" width="50">OTAKU</li>
-        <div class="nav__menu mt-lg-3" id="nav-menu">
-          <ul class="nav__list">
-            <li class="nav__item"><a  href="#" class="nav__link">Home</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">Carts</a></li>
-          
-          </ul>
-        </div>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand text-white" href="#"><img src="src/resources/img/otakuNav.png" width="50" height="40"> Otaku Burger House</a>
+  
+      <button class=" navbar-toggler collapsed auto" type="button">
+        <i class="fa-solid fa-bars icon_btn ps-3 pb-1 text-white" data-bs-toggle="offcanvas" href="#burger_machine_sidebar" role="button"></i></span>
+      </button>
 
-        <div class="nav__toggle">
-          <i class="fa-solid fa-bars icon_btn ps-3 pb-45" data-bs-toggle="offcanvas" href="#burger_machine_sidebar" role="button"></i>
-
-        </div>
-
-
-
-      </nav>
-    </header>
-
-</div>
-
-<div class="offcanvas offcanvas-start burger_machine_sidebar" tabindex="-1" id="burger_machine_sidebar" aria-labelledby="burger_machine_sidebarLabel">
-    <div class="offcanvas-header">
-        <img src="<?php echo $_SESSION['logo_path'] ?>" class="burger_machine_nav_logo" />
-    </div>
-    <div class="offcanvas-body burger_machine_sidebar px-0">
-
-        <ul class="list-group list-group-flush" >
-            <li class="list-group-item fs-6 align-center"><i class="fa-solid fa-fw fa-house pe-3"></i> Home</a></li>
-            <li class="list-group-item fs-6 align-center"><i class="fa-solid fa-fw fa-house pe-3"></i> Contacts</a></li>
-            <li class="list-group-item fs-6 align-center"><i class="fa-solid fa-fw fa-house pe-3"></i> Carts</a></li>
-
+      <div class="collapse navbar-collapse">
+        <div class="mx-auto"></div>
+        <ul class="navbar-nav">
+          <li class="nav-item"> <a class="nav-link text-white" href="#">Home</a></li>
+          <li class="nav-item"> <a class="nav-link text-white" href="#">Contact Us</a></li>
+          <li class="nav-item"> <a class="nav-link text-white" href="#"> <i class="fa-solid fa-cart-shopping"></i> Carts</a></li>
+          <li class="nav-item"><button style="font-weight:bold; background:#FFD600; border-radius:20px; width:100px; margin: 6px; border: none;">Login</button></a></li>
+       
         </ul>
-    </div>
+      </div>
+    </div>  
+  </nav>
+
 </div>
+
 

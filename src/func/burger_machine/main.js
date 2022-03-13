@@ -6,6 +6,12 @@ let pages = {
 
 
 $(document).ready(function(){
+    // ADMIN
+    load_feedbacks()
+
+    // USER
+
+
 
 })
 

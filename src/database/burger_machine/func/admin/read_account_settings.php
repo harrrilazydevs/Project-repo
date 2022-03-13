@@ -1,13 +1,16 @@
 <?php
 //DATABASE FUNCTIONS
-include '../db.php';
+include '../../db.php';
 
+$id= $_GET['id'];
 $q = '
 
         SELECT 
                 *
         FROM
-                tbl_feedbacks;
+                tbl_users
+        WHERE 
+                id ='.$id.';
 ';
 
 $db = new Database();

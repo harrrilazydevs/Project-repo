@@ -1,9 +1,8 @@
 function load_feedbacks(){
     $.ajax({
         type: "GET",
-        url: 'src/database/burger_machine/func/read_feedbacks.php',
+        url: 'src/database/burger_machine/func/admin/read_feedbacks.php',
         success: function(data){
-            console.log(JSON.parse(data))
             write_tbl_feedback(JSON.parse(data))
         }
     });
@@ -27,7 +26,7 @@ function write_tbl_feedback(data){
 function delete_feedback(id){
     $.ajax({
         type: "POST",
-        url: 'src/database/burger_machine/func/delete_feedback.php?id='+id,
+        url: 'src/database/burger_machine/func/admin/delete_feedback.php?id='+id,
         success: function(data){
             load_feedbacks()
         }

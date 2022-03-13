@@ -44,6 +44,18 @@ body{
     border-radius:20px;
     width:150px;
 }
+.navbar_btn_logout{
+  
+    font-weight:bold;
+    margin-bottom:30px;
+    background:#FFD600;
+    border: 1px solid black;
+    padding:3px;
+    border-radius:20px;
+    width:100px;
+}
+
+
 
 .table_style_1 {
     background: #FF6D59;
@@ -67,6 +79,34 @@ body{
 
     border-radius: 3px !important;
     font-size:10pt;
+    text-align: center;
 
 }
 
+
+.yellow_box{
+    height:200px;
+    background: #FFC061;
+    border: 1px solid #712525;
+    border-radius: 5px;
+    
+}
+.md_form>label{
+    font-size:10pt !important;
+}
+.md_form>div>a{
+    font-size:10pt !important;
+    font-weight:bold;
+    color: red;
+    text-decoration:none;
+    margin-top:40px;
+}
+.md_form>div>button{
+    border-radius:20px;
+    border: 1px solid #FFC061;
+    font-size:10pt;
+    background: #8BC97B;
+    padding-left :30px;
+    padding-right :30px;
+    font-weight:bold;
+}

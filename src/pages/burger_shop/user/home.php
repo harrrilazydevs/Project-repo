@@ -1,4 +1,5 @@
-<div class="d-none page align-items-center" id="page_home">
+<div class="page align-items-center" id="page_home">
+    
     <section style="background-color: white;">
         <div class="container h-25 mt-5 my-5">
             <div class="row min-vh-100 align-items-center">
@@ -20,6 +21,7 @@
         </div>
     </section>
 
+    <!-----------------------AVAILABLE PRODUCTSECTION 2ND CAROUSEL ------------------------>
     <section>
         <div class="container mt-5 mb-5">
             <h5 class="text-center text-white mb-5" style="letter-spacing: 3px;">Available Products:</h5>
@@ -86,7 +88,7 @@
         </div>
     </section>
 
-
+    <!-----------------------BESTSELLER SECTION ------------------------>
     <section style="margin-top: 7%; margin-bottom: 7%;">
         <div class="container text-white mt-5">
             <h5 class="text-center text-white mt-5" style="letter-spacing: 4px;">Otakus's Best Sellers!</h5>
@@ -157,6 +159,7 @@
         </div>
     </section>
 
+    <!-----------------------HOW TO ORDER SECTION------------------------>
     <section style="background-color: white;">
         <div class="container align-items-center">
             <div class="row d-flex justify-content-center">
@@ -185,4 +188,5 @@
             </div>
         </div>
     </section>
+
 </div>

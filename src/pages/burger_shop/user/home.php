@@ -1,4 +1,4 @@
-<div class="page align-items-center" id="page_home">
+<div class="d-none page align-items-center" id="page_home">
     <section style="background-color: white;">
         <div class="container h-25 mt-5 my-5">
             <div class="row min-vh-100 align-items-center">
@@ -29,7 +29,7 @@
                         <div class="userOrder-card cell-card mt-3">
                             <img src="src/resources/img/orderDecoy.png">
                             <div class="description">
-                                <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
+                                <h5 id="text" style="letter-spacing: 3px;">Product Name</h5>
                                 <p>₱ 200.</p>
                                 <a href="#">
                                     <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
@@ -42,7 +42,7 @@
                         <div class="userOrder-card cell-card mt-3">
                             <img src="src/resources/img/orderDecoy.png">
                             <div class="description">
-                                <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
+                                <h5 id="text" style="letter-spacing: 3px;">Product Name</h5>
                                 <p>₱ 200.</p>
                                 <a href="#">
                                     <button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
@@ -54,7 +54,7 @@
                         <div class="userOrder-card cell-card mt-3">
                             <img src="src/resources/img/orderDecoy.png">
                             <div class="description">
-                                <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
+                                <h5 id="text" style="letter-spacing: 3px;">Product Name</h5>
                                 <p>₱ 200.</p>
                                 <a href="#">
                                     <button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
@@ -67,7 +67,7 @@
                         <div class="userOrder-card cell-card mt-3">
                             <img src="src/resources/img/orderDecoy.png">
                             <div class="description">
-                                <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
+                                <h5 id="text" style="letter-spacing: 3px;">Product Name</h5>
                                 <p>₱ 200.</p>
                                 <a href="#">
                                     <button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
@@ -75,13 +75,12 @@
 
                             </div>
                         </div>
-
                     </div>
                 </div>
+
                 <div class="text-center aling-items-center">
                     <button id="viewMenu" class="mt-5" style="font-weight:bold; background:#FFD600; border-radius:25px; width:190px; height: 40px; border: none;"><i class="fa-solid fa-eye"></i> View All Products</button>
                 </div>
-
 
             </div>
         </div>
@@ -154,10 +153,7 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
-
         </div>
     </section>
 
@@ -186,9 +182,7 @@
                     <img src="src/resources/img/orderDecoy.png" width="100%" style="border-radius: 300px;">
                 </div>
                
-
             </div>
         </div>
     </section>
-
 </div>

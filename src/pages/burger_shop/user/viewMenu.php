@@ -1,4 +1,4 @@
-<div class="d-none page" id="page_viewMenu">
+<div class="page" id="page_viewMenu">
     <section class="mt-5" style="background-color: white; height: 300px;">
         <div class="container mt-5">
             <div class="row align-items-center text-center">
@@ -10,78 +10,7 @@
         </div>
     </section>
 
-    <!-- <section>
-        <div class="container mt-4 mb-5">
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; border: none !important;">
-                    All Products
-                </button>
-
-                <ul class="dropdown-menu text-center" style="background: #E4DEBE; width: 15px;">
-                    <li><a class="dropdown-item menuDropdown" href="#">All Products</a></li>
-                    <li><a class="dropdown-item menuDropdown" href="#">Drinks</a></li>
-                    <li><a class="dropdown-item menuDropdown" href="#">Burgers</a></li>
-                    <li><a class="dropdown-item menuDropdown" href="#">Side Dishes</a></li>
-                </ul>
-            </div>
-
-
-            <div class="container mt-5 mb-5">
-                <div class="row mt-5">
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="userOrder-card cell-card mt-3">
-                            <img src="src/resources/img/orderDecoy.png">
-                            <div class="description">
-                                <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
-                                <a href="#">
-                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
-
-                                </a>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="userOrder-card cell-card mt-3">
-                            <img src="src/resources/img/orderDecoy.png">
-                            <div class="description">
-                                <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
-                                <p>₱ 200.</p>
-                                <a href="#">
-                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
-
-                                </a>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="userOrder-card cell-card mt-3">
-                            <img src="src/resources/img/orderDecoy.png">
-                            <div class="description">
-                                <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
-                                <p>₱ 200.</p>
-                                <a href="#">
-                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
-
-                                </a>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                
-            </div>
-    </section> -->
-
-
     <section>
-
         <div class="container ms-5 mt-5 ">
             <div class="dropdown ">
                 <button class="btn btn-secondary dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; border: none !important;">
@@ -95,59 +24,88 @@
                     <li><a class="dropdown-item menuDropdown" href="#">Side Dishes</a></li>
                 </ul>
             </div>
-
-
         </div>
 
+        <div class="container mt-5 mb-5">
 
-        <div class="container mt-5 mb-5 align-items-center">
-            <div class="row text-white">
+            <div class="row text-white text-center">
 
-                <div class="col-lg-4 col-sm-6">
-                    <div class="product_item">
-                        <img src="src/resources/img/orderDecoy.png" width="100%">
-                        <div class="product_overlay">
-                            <div>
-                                <h6 style="letter-spacing: 2px;">The Ispisyal nakatuwad</h6>
-                                <p>₱ 200.</p>
+                <div class="col-lg-3">
+                    <div class="card p-3" style=" background: #2D1E1E; border-radius: 2%;">
+                        <div>
+                            <img src="src/resources/img/otakulogo.png" class="card-img-top" style="border-radius: 2%;"> 
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title" style="letter-spacing: 3px;">Product Name</h5>
+                                <p class="card-text"><small>Product description :</small></p>
+                                <p class="card-text"><small>₱ 250.</small></p>
                                 <a href="#">
-                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; width:100px; height: 40px; border: none;">Buy</button>
+                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none;">
+                                        <i class="fa-solid fa-cart-shopping text-white"></i> Add to Cart
+                                    </button>
                                 </a>
-                            </div>
                         </div>
                     </div>
+
                 </div>
 
-                <div class="col-lg-4 col-sm-6">
-                    <div class="product_item">
-                        <img src="src/resources/img/orderDecoy.png" width="100%">
-                        <div class="product_overlay">
-                            <div>
-                                <h6 style="letter-spacing: 2px;">The Ispisyal nakatuwad</h6>
-                                <p>₱ 200.</p>
+                <div class="col-lg-3">
+                    <div class="card p-3" style=" background: #2D1E1E; border-radius: 2%;">
+                        <div>
+                            <img src="src/resources/img/otakulogo.png" class="card-img-top" style="border-radius: 2%;"> 
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title" style="letter-spacing: 3px;">Product Name</h5>
+                                <p class="card-text"><small>Product description :</small></p>
+                                <p class="card-text"><small>₱ 250.</small></p>
                                 <a href="#">
-                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; width:100px; height: 40px; border: none;">Buy</button>
+                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none;">
+                                        <i class="fa-solid fa-cart-shopping text-white"></i> Add to Cart
+                                    </button>
                                 </a>
-                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-lg-4 col-sm-6">
-                    <div class="product_item">
-                        <img src="src/resources/img/orderDecoy.png" width="100%">
-                        <div class="product_overlay">
-                            <div>
-                                <h6 style="letter-spacing: 2px;">The Ispisyal nakatuwad</h6>
-                                <p>₱ 200.</p>
-                                <a href="#">
-                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; width:100px; height: 40px; border: none;">Buy</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 
+                <div class="col-lg-3">
+                    <div class="card p-3" style=" background: #2D1E1E; border-radius: 2%;">
+                        <div>
+                            <img src="src/resources/img/otakulogo.png" class="card-img-top" style="border-radius: 2%;"> 
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title" style="letter-spacing: 3px;">Product Name</h5>
+                                <p class="card-text"><small>Product description :</small></p>
+                                <p class="card-text"><small>₱ 250.</small></p>
+                                <a href="#">
+                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none;">
+                                        <i class="fa-solid fa-cart-shopping text-white"></i> Add to Cart
+                                    </button>
+                                </a>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="col-lg-3">
+                    <div class="card p-3" style=" background: #2D1E1E; border-radius: 2%;">
+                        <div>
+                            <img src="src/resources/img/otakulogo.png" class="card-img-top" style="border-radius: 2%;"> 
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title" style="letter-spacing: 3px;">Product Name</h5>
+                                <p class="card-text"><small>Product description :</small></p>
+                                <p class="card-text"><small>₱ 250.</small></p>
+                                <a href="#">
+                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none;">
+                                        <i class="fa-solid fa-cart-shopping text-white"></i> Add to Cart
+                                    </button>
+                                </a>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
         </div>
     </section>

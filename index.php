@@ -73,7 +73,6 @@ $_SESSION['user_id'] = '1';
 
         // PAGE FUNCTIONS
         include_once 'src/pages/burger_shop/user/navbar.php';
-        include_once 'src/pages/burger_shop/user/dashboard.php';
         include_once 'src/pages/burger_shop/user/sidebar.php';
         include_once 'src/pages/burger_shop/user/home.php';
         include_once 'src/pages/burger_shop/user/viewMenu.php';

@@ -46,7 +46,7 @@
 
 
 <!-- SIGN UP MODAL -->
-    <div class="modal fade" id="signUpModal" tabindex="-1" aria-hidden="true">
+    <div class="modal" id="signUpModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
 
@@ -89,7 +89,7 @@
 <!-- SIGN UP MODAL -->
 
 <!-- CART MODAL -->
-<div class="modal fade " id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="text-center py-3 text-center" style="border-bottom:3px solid black;">

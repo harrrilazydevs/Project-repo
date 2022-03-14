@@ -10,7 +10,7 @@
         </div>
     </section>
 
-    <section>
+    <!-- <section>
         <div class="container mt-4 mb-5">
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; border: none !important;">
@@ -28,7 +28,22 @@
 
             <div class="container mt-5 mb-5">
                 <div class="row mt-5">
-                    <div class="col-lg-4 col-sm-12 ">
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="userOrder-card cell-card mt-3">
+                            <img src="src/resources/img/orderDecoy.png">
+                            <div class="description">
+                                <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
+                                <a href="#">
+                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6">
                         <div class="userOrder-card cell-card mt-3">
                             <img src="src/resources/img/orderDecoy.png">
                             <div class="description">
@@ -44,23 +59,7 @@
 
                     </div>
 
-                    <div class="col-lg-4 col-sm-12 ">
-                        <div class="userOrder-card cell-card mt-3">
-                            <img src="src/resources/img/orderDecoy.png">
-                            <div class="description">
-                                <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
-                                <p>₱ 200.</p>
-                                <a href="#">
-                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
-
-                                </a>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-4 col-sm-12 ">
+                    <div class="col-lg-4 col-sm-6">
                         <div class="userOrder-card cell-card mt-3">
                             <img src="src/resources/img/orderDecoy.png">
                             <div class="description">
@@ -77,56 +76,79 @@
                     </div>
                 </div>
                 
+            </div>
+    </section> -->
 
-                <div class="row mt-5">
-                    <div class="col-lg-4 col-sm-12 ">
-                        <div class="userOrder-card cell-card mt-3">
-                            <img src="src/resources/img/orderDecoy.png">
-                            <div class="description">
-                                <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
+
+    <section>
+
+        <div class="container ms-5 mt-5 ">
+            <div class="dropdown ">
+                <button class="btn btn-secondary dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; border: none !important;">
+                    All Products
+                </button>
+
+                <ul class="dropdown-menu text-center" style="background: #E4DEBE; width: 15px;">
+                    <li><a class="dropdown-item menuDropdown" href="#">All Products</a></li>
+                    <li><a class="dropdown-item menuDropdown" href="#">Drinks</a></li>
+                    <li><a class="dropdown-item menuDropdown" href="#">Burgers</a></li>
+                    <li><a class="dropdown-item menuDropdown" href="#">Side Dishes</a></li>
+                </ul>
+            </div>
+
+
+        </div>
+
+
+        <div class="container mt-5 mb-5 align-items-center">
+            <div class="row text-white">
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="product_item">
+                        <img src="src/resources/img/orderDecoy.png" width="100%">
+                        <div class="product_overlay">
+                            <div>
+                                <h6 style="letter-spacing: 2px;">The Ispisyal nakatuwad</h6>
                                 <p>₱ 200.</p>
                                 <a href="#">
-                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
-
+                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; width:100px; height: 40px; border: none;">Buy</button>
                                 </a>
-
                             </div>
                         </div>
-
-                    </div>
-
-                    <div class="col-lg-4 col-sm-12 ">
-                        <div class="userOrder-card cell-card mt-3">
-                            <img src="src/resources/img/orderDecoy.png">
-                            <div class="description">
-                                <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
-                                <p>₱ 200.</p>
-                                <a href="#">
-                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
-
-                                </a>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-4 col-sm-12 ">
-                        <div class="userOrder-card cell-card mt-3">
-                            <img src="src/resources/img/orderDecoy.png">
-                            <div class="description">
-                                <h5 id="text" style="letter-spacing: 3px;">Cheese Burger Asadong Adobo</h5>
-                                <p>₱ 200.</p>
-                                <a href="#">
-                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button>
-
-                                </a>
-
-                            </div>
-                        </div>
-
                     </div>
                 </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="product_item">
+                        <img src="src/resources/img/orderDecoy.png" width="100%">
+                        <div class="product_overlay">
+                            <div>
+                                <h6 style="letter-spacing: 2px;">The Ispisyal nakatuwad</h6>
+                                <p>₱ 200.</p>
+                                <a href="#">
+                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; width:100px; height: 40px; border: none;">Buy</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="product_item">
+                        <img src="src/resources/img/orderDecoy.png" width="100%">
+                        <div class="product_overlay">
+                            <div>
+                                <h6 style="letter-spacing: 2px;">The Ispisyal nakatuwad</h6>
+                                <p>₱ 200.</p>
+                                <a href="#">
+                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; width:100px; height: 40px; border: none;">Buy</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
+        </div>
     </section>
 </div>

@@ -14,7 +14,13 @@ $(document).ready(function(){
     {
         // ADMIN
         load_feedbacks()
+
+        //orders.js
         load_orders()
+
+        //order_history.js
+        load_order_history()
+
 
         $('#btn_account_settings').on('click', function(){
             load_account_settings($('#txt_user_id').val())

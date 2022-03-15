@@ -1,4 +1,4 @@
-<div class="page" id="page_page7">
+<div class="d-none page" id="page_page7">
     <div style="margin-top: 4%;">
         <table class="table table-borderless mt-5" style="height: 30rem;">
             <thead class="text-white d-flex-inline text-center" style="background-color: #4F0A0A; height: 3rem;">

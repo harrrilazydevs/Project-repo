@@ -14,3 +14,7 @@ $('#btn_sidebar_inventory').on('click', function(){
 $('#btn_sidebar_dashboard').on('click', function(){
     change_page('dashboard')
 })
+
+$('#btn_sidebar_order_history').on('click', function(){
+    change_page('order_history')
+})

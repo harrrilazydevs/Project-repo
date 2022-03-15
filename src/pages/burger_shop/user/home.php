@@ -1,9 +1,21 @@
+<<<<<<< HEAD
 <div class="page align-items-center" id="page_home">
+=======
+<<<<<<< HEAD
+<div class="page" id="page_home" style="overflow:auto">
+
+        <div class="container-fluid" style="background-color: white;">
+            <div class="row min-vh-100 align-items-center px-5">
+                <div class="col-lg-5  col-sm-12 pl-md-5 content">
+=======
+<div class="d-none page align-items-center" id="page_home">
+>>>>>>> b0b3b937e1d3df044b6da397eb4f9f6b5c616b73
     
     <section style="background-color: white;">
         <div class="container h-25 mt-5 my-5">
             <div class="row min-vh-100 align-items-center">
                 <div class="col-lg-5 col-sm-12 pl-md-5">
+>>>>>>> 2945f8a49fd0449aba853074e004e75d53539733
                     <h5 id="text" style="letter-spacing: 3px;">Welcome to</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt u</p>
                     <button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">ORDER NOW!</button>
@@ -19,7 +31,7 @@
                 </div>
             </div>
         </div>
-    </section>
+   
 
     <!-----------------------AVAILABLE PRODUCTSECTION 2ND CAROUSEL ------------------------>
     <section>
@@ -83,9 +95,20 @@
                 <div class="text-center aling-items-center">
                     <button id="viewMenu" class="mt-5" style="font-weight:bold; background:#FFD600; border-radius:25px; width:190px; height: 40px; border: none;"><i class="fa-solid fa-eye"></i> View All Products</button>
                 </div>
-
             </div>
         </div>
+<<<<<<< HEAD
+
+        <div class="row  min-vh-50 mt-5 mb-5">
+            <div class="col-lg-12 col-sm-12 ">
+                <h5 class="text-center align-items-center text-white mb-5" style="letter-spacing: 3px;">Otakus's Best Sellers!</h5>
+                <div class="bestSeller-carousel" style="align-items: center !important;">
+                    <div class="cell bestSeller-img"><img src="src/resources/img/carousel.png"></div>
+                    <div class="cell bestSeller-img"><img src="src/resources/img/carousel.png"></div>
+                    <div class="cell bestSeller-img"><img src="src/resources/img/carousel.png"></div>
+                </div>
+            </div>
+=======
     </section>
 
     <!-----------------------BESTSELLER SECTION ------------------------>
@@ -186,7 +209,12 @@
                 </div>
                
             </div>
+>>>>>>> 2945f8a49fd0449aba853074e004e75d53539733
         </div>
-    </section>
+       
+
+    </div>
+
+
 
 </div>

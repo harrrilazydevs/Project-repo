@@ -9,7 +9,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <section>
 
@@ -110,6 +110,10 @@
                 </div>
 
             </div>
+<<<<<<< HEAD
+    </div>
+=======
         </div>
     </section>
+>>>>>>> 2945f8a49fd0449aba853074e004e75d53539733
 </div>

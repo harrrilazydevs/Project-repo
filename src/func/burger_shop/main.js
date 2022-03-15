@@ -1,8 +1,10 @@
 let pages = {
     'feedback':'page_feedback',
     'order': 'page_order',
+    'order_history': 'page_order_history',
     'inventory': 'page_inventory',
     'dashboard': 'page_dashboard',
+    'feedback': 'page_feedback',
 }
 
 
@@ -12,6 +14,7 @@ $(document).ready(function(){
     {
         // ADMIN
         load_feedbacks()
+        load_orders()
 
         $('#btn_account_settings').on('click', function(){
             load_account_settings($('#txt_user_id').val())

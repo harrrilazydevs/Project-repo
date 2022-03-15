@@ -1,5 +1,5 @@
 <div class="d-none page" id="page_viewMenu">
-    <section class="mt-5" style="background-color: white; height: 300px;">
+    <div class="mt-5" style="background-color: white; height: 300px;">
         <div class="container mt-5">
             <div class="row align-items-center text-center">
                 <div class="col-lg-12 mt-5">
@@ -8,9 +8,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section>
+    <div>
         <div class="container mt-4 mb-5">
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; border: none !important;">
@@ -128,5 +128,5 @@
                     </div>
                 </div>
             </div>
-    </section>
+    </div>
 </div>

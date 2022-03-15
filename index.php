@@ -2,7 +2,7 @@
 
 $_SESSION['theme'] = 'burger_shop';
 $_SESSION['logo_path'] = 'src/resources/img/otakulogo.png';
-$_SESSION['access_level'] = 'user';
+$_SESSION['access_level'] = 'admin';
 $_SESSION['username'] = 'Admin';
 $_SESSION['user_id'] = '1';
 ?>
@@ -16,6 +16,8 @@ $_SESSION['user_id'] = '1';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
+
+
 
     
 
@@ -49,6 +51,7 @@ $_SESSION['user_id'] = '1';
     <script src="src/resources/lib/bootstrap/bs.js"></script>
     <script src="src/resources/lib/jquery/jquery.js"></script>
     <script src="src/resources/lib/carousel/carousel.js"></script>
+    <script src="src/resources/lib/jsPdf/html2pdf.js"></script>
 
 </head>
 
@@ -100,6 +103,7 @@ $_SESSION['user_id'] = '1';
         include_once 'src/pages/burger_shop/admin/sidebar.php';
         include_once 'src/pages/burger_shop/admin/feedback.php';
         include_once 'src/pages/burger_shop/admin/order.php';
+        include_once 'src/pages/burger_shop/admin/order_history.php';
         include_once 'src/pages/burger_shop/admin/inventory.php';
         include_once 'src/pages/burger_shop/admin/dashboard.php';
         include_once 'src/pages/burger_shop/admin/modals.php';
@@ -107,6 +111,7 @@ $_SESSION['user_id'] = '1';
         echo '<script src="src/func/burger_shop/main.js"></script>';
         echo '<script src="src/func/burger_shop/admin/feedback.js"></script>';
         echo '<script src="src/func/burger_shop/admin/sidebar.js"></script>';
+        echo '<script src="src/func/burger_shop/admin/order.js"></script>';
 
     }
     

@@ -1,4 +1,4 @@
-<div class="page" id="page_home">
+<div class="d-none page" id="page_home">
   
     <section style="background-color: white;">
         <div class="container h-25 mt-5 my-5">

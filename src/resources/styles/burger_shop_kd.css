@@ -77,11 +77,24 @@ body {
 }
 
 .yellow_box {
-  height: 200px;
+  height: 130px;
   background: #ffc061;
   border: 1px solid #712525;
   border-radius: 5px;
 }
+.white_box {
+  height: 90px;
+  background: white;
+  border: 1px solid #712525;
+  border-radius: 5px;
+}
+.white_box_full {
+  height: 48vh;
+  background: white;
+  border: 1px solid #712525;
+  border-radius: 5px;
+}
+
 .md_form > label {
   font-size: 10pt !important;
 }

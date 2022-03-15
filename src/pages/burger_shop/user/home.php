@@ -1,4 +1,4 @@
-<div class="page align-items-center" id="page_home">
+<div class="d-none page align-items-center" id="page_home">
     
     <section style="background-color: white;">
         <div class="container h-25 mt-5 my-5">

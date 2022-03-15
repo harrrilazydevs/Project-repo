@@ -43,5 +43,4 @@ function change_page(pagename){
         autoPlay: true
     });
 
-
 // Carousel (Home page)

@@ -5,15 +5,15 @@
       <a class="navbar-brand text-white" href="#"><img src="src/resources/img/otakuNav.png" width="50" height="40"> Otaku Burger House</a>
   
       <button class=" navbar-toggler collapsed auto" type="button">
-        <i class="fa-solid fa-bars icon_btn ps-3 pb-1 text-white" data-bs-toggle="offcanvas" href="#burger_machine_sidebar" role="button"></i></span>
+        <i class="fa-solid fa-bars icon_btn ps-3 pb-1 text-white" data-bs-toggle="offcanvas" href="#burger_machine_sidebar" role="button"></i>
       </button>
 
       <div class="collapse navbar-collapse">
         <div class="mx-auto"></div>
         <ul class="navbar-nav">
-          <li class="nav-item"> <a class="nav-link text-white" id="btn_navbar_home">Home</a></li>
+          <li class="nav-item"> <a class="nav-link text-white" id="btn_navbar_home" href="index.php">Home</a></li>
           <li class="nav-item"> <a class="nav-link text-white" id="btn_navbar_contactUs">Contact Us</a></li>
-          <li class="nav-item"> <a class="nav-link text-white" id="btn_navbar_carts"> <i class="fa-solid fa-cart-shopping"></i> Carts</a></li>
+          <li class="nav-item"> <a class="nav-link text-white" data-bs-toggle="modal" data-bs-target="#cartModal"> <i class="fa-solid fa-cart-shopping"></i> Carts</a></li>
           <li class="nav-item"><button  id="btn_navbar_login" style="font-weight:bold; background:#FFD600; border-radius:20px; width:100px; margin: 6px; border: none;" data-bs-toggle="modal" data-bs-target="#md_login">Login</button></li>
         </ul>
       </div>

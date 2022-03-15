@@ -1,4 +1,4 @@
-// VIEW ALL PRODUCTS
+    // VIEW ALL PRODUCTS
     $('#viewMenu').on('click', function(){
         change_page('viewMenu')
     })

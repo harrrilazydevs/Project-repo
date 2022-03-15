@@ -1,5 +1,5 @@
 <div class="d-none page" id="page_viewMenu">
-    
+
     <section class="mt-5" style="background-color: white; height: 300px;">
         <div class="container mt-5">
             <div class="row align-items-center text-center">
@@ -9,11 +9,11 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <section>
+    </section>
 
-        <!-----------------------BUTTON VIEW MENU------------------------>
+    </section>
+        <!----------------DROPDOWN MENU BTN ------------>
         <div class="container ms-5 mt-5 ">
             <div class="dropdown ">
                 <button class="btn btn-secondary dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; border: none !important;">
@@ -28,25 +28,25 @@
                 </ul>
             </div>
         </div>
+        <!----------------DROPDOWN MENU BTN ------------>
 
-        <!-----------------------PRODUCTS------------------------>
         <div class="container mt-5 mb-5">
             <div class="row text-white text-center">
-
+                <!----------------COL-3 PER MENU ------------>
                 <div class="col-lg-3">
                     <div class="card p-3" style=" background: #2D1E1E; border-radius: 2%;">
                         <div>
-                            <img src="src/resources/img/otakulogo.png" class="card-img-top" style="border-radius: 2%;"> 
+                            <img src="src/resources/img/otakulogo.png" class="card-img-top" style="border-radius: 2%;">
                         </div>
                         <div class="card-body">
                             <h6 class="card-title" style="letter-spacing: 3px;">Product Name</h5>
-                                <p class="card-text"><small>Product description :</small></p>
-                                <p class="card-text"><small>₱ 250.</small></p>
-                                <a href="#">
-                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none;">
-                                        <i class="fa-solid fa-cart-shopping text-white"></i> Add to Cart
-                                    </button>
-                                </a>
+                            <p class="card-text"><small>Product description :</small></p>
+                            <p class="card-text"><small>₱ 250.</small></p>
+                            <a href="#">
+                                <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none;">
+                                    <i class="fa-solid fa-cart-shopping text-white"></i> Add to Cart
+                                </button>
+                            </a>
                         </div>
                     </div>
 
@@ -55,55 +55,55 @@
                 <div class="col-lg-3">
                     <div class="card p-3" style=" background: #2D1E1E; border-radius: 2%;">
                         <div>
-                            <img src="src/resources/img/otakulogo.png" class="card-img-top" style="border-radius: 2%;"> 
+                            <img src="src/resources/img/otakulogo.png" class="card-img-top" style="border-radius: 2%;">
                         </div>
                         <div class="card-body">
                             <h6 class="card-title" style="letter-spacing: 3px;">Product Name</h5>
-                                <p class="card-text"><small>Product description :</small></p>
-                                <p class="card-text"><small>₱ 250.</small></p>
-                                <a href="#">
-                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none;">
-                                        <i class="fa-solid fa-cart-shopping text-white"></i> Add to Cart
-                                    </button>
-                                </a>
+                            <p class="card-text"><small>Product description :</small></p>
+                            <p class="card-text"><small>₱ 250.</small></p>
+                            <a href="#">
+                                <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none;">
+                                    <i class="fa-solid fa-cart-shopping text-white"></i> Add to Cart
+                                </button>
+                            </a>
                         </div>
                     </div>
 
                 </div>
-                
+
                 <div class="col-lg-3">
                     <div class="card p-3" style=" background: #2D1E1E; border-radius: 2%;">
                         <div>
-                            <img src="src/resources/img/otakulogo.png" class="card-img-top" style="border-radius: 2%;"> 
+                            <img src="src/resources/img/otakulogo.png" class="card-img-top" style="border-radius: 2%;">
                         </div>
                         <div class="card-body">
                             <h6 class="card-title" style="letter-spacing: 3px;">Product Name</h5>
-                                <p class="card-text"><small>Product description :</small></p>
-                                <p class="card-text"><small>₱ 250.</small></p>
-                                <a href="#">
-                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none;">
-                                        <i class="fa-solid fa-cart-shopping text-white"></i> Add to Cart
-                                    </button>
-                                </a>
+                            <p class="card-text"><small>Product description :</small></p>
+                            <p class="card-text"><small>₱ 250.</small></p>
+                            <a href="#">
+                                <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none;">
+                                    <i class="fa-solid fa-cart-shopping text-white"></i> Add to Cart
+                                </button>
+                            </a>
                         </div>
                     </div>
 
                 </div>
-                
+
                 <div class="col-lg-3">
                     <div class="card p-3" style=" background: #2D1E1E; border-radius: 2%;">
                         <div>
-                            <img src="src/resources/img/otakulogo.png" class="card-img-top" style="border-radius: 2%;"> 
+                            <img src="src/resources/img/otakulogo.png" class="card-img-top" style="border-radius: 2%;">
                         </div>
                         <div class="card-body">
                             <h6 class="card-title" style="letter-spacing: 3px;">Product Name</h5>
-                                <p class="card-text"><small>Product description :</small></p>
-                                <p class="card-text"><small>₱ 250.</small></p>
-                                <a href="#">
-                                    <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none;">
-                                        <i class="fa-solid fa-cart-shopping text-white"></i> Add to Cart
-                                    </button>
-                                </a>
+                            <p class="card-text"><small>Product description :</small></p>
+                            <p class="card-text"><small>₱ 250.</small></p>
+                            <a href="#">
+                                <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none;">
+                                    <i class="fa-solid fa-cart-shopping text-white"></i> Add to Cart
+                                </button>
+                            </a>
                         </div>
                     </div>
 

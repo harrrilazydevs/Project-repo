@@ -1,7 +1,5 @@
-
-<div class="page align-items-center" id="page_home">
-<div class="d-none page align-items-center" id="page_home">
-
+<div class="page" id="page_home">
+  
     <section style="background-color: white;">
         <div class="container h-25 mt-5 my-5">
             <div class="row min-vh-100 align-items-center">
@@ -16,14 +14,13 @@
                         <div class="cell cell-img"> <img src="src/resources/img/otakuNav.png"></div>
                         <div class="cell cell-img"><img src="src/resources/img/carousel.png"></div>
                         <div class="cell cell-img"><img src="src/resources/img/carousel.png"></div>
-
                     </div>
                 </div>
             </div>
         </div>
-   
 
-    <!-----------------------AVAILABLE PRODUCTSECTION 2ND CAROUSEL ------------------------>
+    </section>
+    <!-----------------------AVAILABLE PRODUCTSECTION 2ND CAROUSEL ------------------------->
     <section>
         <div class="container mt-5 mb-5">
             <h5 class="text-center text-white mb-5" style="letter-spacing: 3px;">Available Products:</h5>
@@ -87,12 +84,22 @@
                 </div>
             </div>
         </div>
+
+        <div class="row mt-5 mb-5">
+            <div class="col-lg-12 col-sm-12 ">
+                <h5 class="text-center align-items-center text-white mb-5" style="letter-spacing: 3px;">Otakus's Best Sellers!</h5>
+                <div class="bestSeller-carousel" style="align-items: center !important;">
+                    <div class="cell bestSeller-img"><img src="src/resources/img/carousel.png"></div>
+                    <div class="cell bestSeller-img"><img src="src/resources/img/carousel.png"></div>
+                    <div class="cell bestSeller-img"><img src="src/resources/img/carousel.png"></div>
+                </div>
+            </div>
     </section>
 
     <!-----------------------BESTSELLER SECTION ------------------------>
-    <section style="margin-top: 7%; margin-bottom: 7%;">
+    <section style="margin-bottom: 7%;">
         <div class="container text-white mt-5">
-            <h5 class="text-center text-white mt-5" style="letter-spacing: 4px;">Otakus's Best Sellers!</h5>
+            <h5 class="text-center text-white" style="letter-spacing: 4px;">Otakus's Best Sellers!</h5>
 
             <div class="row mt-5">
                 <div class="col-lg-3 col-sm-6">
@@ -185,13 +192,8 @@
                 <div class="col-lg-2 col-sm-12 mb-5">
                     <img src="src/resources/img/orderDecoy.png" width="100%" style="border-radius: 300px;">
                 </div>
-               
+            
             </div>
         </div>
-       
-
-    </div>
-
-
-
+    </section>
 </div>

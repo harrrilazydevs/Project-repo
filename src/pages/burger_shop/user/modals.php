@@ -8,10 +8,6 @@
             </div>
 
             <div class="wrapper-login">
-<<<<<<< HEAD
-=======
-
->>>>>>> 2945f8a49fd0449aba853074e004e75d53539733
                 <form action="#">
                     <div class="field mt-5">
                         <input type="text" required>

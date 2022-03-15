@@ -113,6 +113,7 @@ $_SESSION['user_id'] = '1';
         echo '<script src="src/func/burger_shop/admin/sidebar.js"></script>';
         echo '<script src="src/func/burger_shop/admin/order.js"></script>';
         echo '<script src="src/func/burger_shop/admin/order_history.js"></script>';
+        echo '<script src="src/func/burger_shop/admin/dashboard.js"></script>';
 
     }
     

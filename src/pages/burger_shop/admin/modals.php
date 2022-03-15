@@ -70,9 +70,41 @@
                 </div>
             </div>
             <div class="modal-footer">
-            <button class="btn border" onClick="print_order()" style="font-size:10pt;"><i class="fa-solid fa-print icon_btn text-primary pe-1" ></i>Print</button>
+                <button class="btn border" onClick="update_order()" style="font-size:10pt;"><i class="fa-solid fa-receipt  text-primary pe-1"></i> Update</button>
+                <button class="btn border" onClick="print_order()" style="font-size:10pt;"><i class="fa-solid fa-print icon_btn text-primary pe-1"></i>Print</button>
+            </div>
         </div>
+
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" id="md_view_order">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="text-center py-3 text-center" style="border-bottom:3px solid black;">
+                <span class="ms-5 h5 fw-bold"> Order Details </span>
+                <i class="fa-solid fa-circle-xmark icon_btn pe-3 fa-xl" style="float:right; padding-top:12px;" data-bs-dismiss="modal"></i>
+            </div>
+
+
+            <div class="p-3" id="div_order_details">
+                <table class="table_style_1" id="tbl_view_order">
+                    <thead>
+                        <th class="text-center">Name</th>
+                        <th class="text-center" width="10%">Qty</th>
+                        <th class="text-center" width="15%">Price</th>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="border pe-3" style="float:right">
+                    <span class="fw-bold">Total :</span><span class="fw-bold" id="txt_total"> &#8369;900</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn border" onClick="update_order()" style="font-size:10pt;"><i class="fa-solid fa-receipt  text-primary pe-1"></i> Update</button>
+                <button class="btn border" onClick="print_order()" style="font-size:10pt;"><i class="fa-solid fa-print icon_btn text-primary pe-1"></i>Print</button>
+            </div>
         </div>
-      
+
     </div>
 </div>

@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row mb-3">
             <div class="col" style="">
-            <select name="" id="" class="form-select" style="width:15%;float:right">
+            <select name="" id="sel_date_filter" class="form-select" style="width:15%;float:right">
                 <option value="">Today</option>
             </select>    
         </div>
@@ -20,9 +20,9 @@
             </div>
             <div class="col">
                 <div class="yellow_box shadow p-3 pt-2">
-                    <span class="fw-bold" style="font-size:19pt;">Total Products</span>
+                    <span class="fw-bold" style="font-size:19pt;">Total Completed Orders</span>
                     <div class="text-center">
-                        <span style="font-size:40pt; color:white; -webkit-text-stroke-width: 1px;-webkit-text-stroke-color: #6A0F03;" id="txt_total_products">0</span>
+                        <span style="font-size:40pt; color:white; -webkit-text-stroke-width: 1px;-webkit-text-stroke-color: #6A0F03;" id="txt_total_completed">0</span>
 
                     </div>
                 </div>
@@ -41,13 +41,13 @@
                 <div class="white_box shadow p-3 pt-1 ">
                     <span class="fw-bold" style="font-size:19pt;">Yearly Sales</span>
                     <div class="text-center">
-                        <span style="margin-top:-10px;float:right;font-size:30pt; color:white; -webkit-text-stroke-width: 1px;-webkit-text-stroke-color: #6A0F03;" id="txt_total_registered_users">&#8369; 999,999.00</span>
+                        <span style="margin-top:-10px;float:right;font-size:30pt; color:white; -webkit-text-stroke-width: 1px;-webkit-text-stroke-color: #6A0F03;" id="txt_total_annual_sales">&#8369; 999,999.00</span>
                     </div>
                 </div>
                 <div class="white_box shadow p-3 pt-1 mt-3">
                     <span class="fw-bold" style="font-size:19pt;">Monthly Sales</span>
                     <div class="text-center">
-                        <span style="margin-top:-10px;float:right;font-size:30pt; color:white; -webkit-text-stroke-width: 1px;-webkit-text-stroke-color: #6A0F03;" id="txt_total_registered_users">&#8369; 999,999.00</span>
+                        <span style="margin-top:-10px;float:right;font-size:30pt; color:white; -webkit-text-stroke-width: 1px;-webkit-text-stroke-color: #6A0F03;" id="txt_total_monthly_sales">&#8369; 999,999.00</span>
                     </div>
                 </div>
             </div>

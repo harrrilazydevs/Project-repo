@@ -2,8 +2,7 @@ let page = {
     'viewMenu':'page_viewMenu',
     'btn_navbar_home':'page_home',
     'btn_navbar_contactUs':'page_contactUs',
-    'btn_navbar_test':'page_myPurchase'
-   
+    
 }
 
 $(document).ready(function(){

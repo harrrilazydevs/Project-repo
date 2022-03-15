@@ -1,4 +1,4 @@
-<div class="page" id="page_myPurchase">
+<div class="d-none page" id="page_myPurchase">
 
     <div style="margin-top: 4%;">
         <table class="table table-borderless mt-5" style="height: 30rem;">

@@ -17,9 +17,9 @@
     })
 
 
-    $('#btn_navbar_test').on('click', function(){  // TEST FUNC PANGLIPAT 
-        change_page('btn_navbar_test')
-    })
+    // $('#btn_navbar_test').on('click', function(){  // TEST FUNC PANGLIPAT 
+    //     change_page('btn_navbar_test')
+    // })
 // <-------------NAVBAR -------------->
 
 

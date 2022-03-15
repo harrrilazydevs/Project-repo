@@ -1,4 +1,4 @@
-<div class="page" id="page_viewMenu">
+<div class="d-none page" id="page_viewMenu">
 
     <section class="mt-5" style="background-color: white; height: 300px;">
         <div class="container mt-5">

@@ -20,7 +20,7 @@
         </div>
 
     </section>
-    <!-----------------------AVAILABLE PRODUCTSECTION 2ND CAROUSEL ------------------------>
+    <!-----------------------AVAILABLE PRODUCTSECTION 2ND CAROUSEL ------------------------->
     <section>
         <div class="container mt-5 mb-5">
             <h5 class="text-center text-white mb-5" style="letter-spacing: 3px;">Available Products:</h5>

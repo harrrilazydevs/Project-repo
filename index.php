@@ -79,9 +79,7 @@ $_SESSION['user_id'] = '1';
         include_once 'src/pages/burger_shop/user/sidebar.php';
         include_once 'src/pages/burger_shop/user/home.php';
         include_once 'src/pages/burger_shop/user/viewMenu.php';
-        include_once 'src/pages/burger_shop/user/login.php';
         include_once 'src/pages/burger_shop/user/modals.php';
-        include_once 'src/pages/burger_shop/user/purchaseOrder.php';
 
         echo '<script src="src/func/burger_shop/main.js"></script>';
         echo '<script src="src/func/burger_shop/user/home.js"></script>';

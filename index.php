@@ -2,7 +2,7 @@
 
 $_SESSION['theme'] = 'burger_shop';
 $_SESSION['logo_path'] = 'src/resources/img/otakulogo.png';
-$_SESSION['access_level'] = 'user';
+$_SESSION['access_level'] = 'admin';
 $_SESSION['username'] = 'Admin';
 $_SESSION['user_id'] = '1';
 ?>
@@ -110,6 +110,7 @@ $_SESSION['user_id'] = '1';
         echo '<script src="src/func/burger_shop/admin/sidebar.js"></script>';
         echo '<script src="src/func/burger_shop/admin/order.js"></script>';
         echo '<script src="src/func/burger_shop/admin/order_history.js"></script>';
+        echo '<script src="src/func/burger_shop/admin/dashboard.js"></script>';
 
     }
     

@@ -20,6 +20,9 @@ $(document).ready(function(){
 
         //order_history.js
         load_order_history()
+        
+        //dashboard.js
+        load_filter_dates()
 
 
         $('#btn_account_settings').on('click', function(){

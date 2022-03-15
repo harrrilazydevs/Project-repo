@@ -33,7 +33,7 @@
         <div class="container mt-5 mb-5">
             <div class="row text-white text-center">
 
-                <div class="col-lg-3">-ew
+                <div class="col-lg-3">
                     <div class="card p-3" style=" background: #2D1E1E; border-radius: 2%;">
                         <div>
                             <img src="src/resources/img/otakulogo.png" class="card-img-top" style="border-radius: 2%;"> 

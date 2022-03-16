@@ -1,6 +1,6 @@
 <div class="modal" tabindex="-1" id="md_account_settings">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content"  >
             <div class="text-center py-3 text-center" style="border-bottom:3px solid black;">
                 <span class="ms-5 h5 fw-bold"> My Account </span>
                 <i class="fa-solid fa-circle-xmark icon_btn pe-3 fa-xl" style="float:right; padding-top:12px;" data-bs-dismiss="modal"></i>
@@ -87,6 +87,8 @@
             </div>
 
             <div class="p-3">
+
+                <label >Set Status</label>
                 <select name="" id="sel_update_order_status" class="form-select">
                     <option value="Completed">Completed</option>
                     <option value="Cancelled">Cancelled</option>
@@ -94,8 +96,8 @@
             </div>
 
             <div class="modal-footer">
-                <button class="btn border" onClick="update_order()" style="font-size:10pt;"><i class="fa-solid fa-receipt  text-primary pe-1"></i> Update</button>
-                <button class="btn border" onClick="print_order()" style="font-size:10pt;"><i class="fa-solid fa-print icon_btn text-primary pe-1"></i>Print</button>
+                <button class="btn border" data-bs-target="#md_view_order" data-bs-toggle="modal" style="font-size:10pt;">Cancel</button>
+                <button class="btn border btn-primary"  id="btn_save_update_order" style="font-size:10pt;">Save</button>
             </div>
         </div>
 

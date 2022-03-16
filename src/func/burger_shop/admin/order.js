@@ -58,6 +58,21 @@ function view_order(id) {
       $("#tbl_view_order_print tbody").empty();
       $("#tbl_view_order_print tbody").append(output);
       $("#md_view_order").modal("show");
+      $('#btn_save_update_order').attr('attr-id', id)
     },
   });
 }
+
+$('#btn_save_update_order').on('click', function(){
+  $.ajax({
+    type: "POST",
+    url: 'src/database/burger_shop/func/admin/update_order.php',
+    data:{
+      id:$(this).attr('id'),
+      status:$('#sel_update_order_status').val()
+    },
+    success: function(data){
+        load_feedbacks()
+    }
+});
+})

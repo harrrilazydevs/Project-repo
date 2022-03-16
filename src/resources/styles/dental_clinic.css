@@ -1,7 +1,10 @@
 .dental_clinic_nav{
     height:60px;
-    background: #32c54f !important;
+    background: #4DBDAC !important;
     color: white;
 }
-
+body{
+    background: #4DBDAC !important;
+    color: white;
+}
 

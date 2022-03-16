@@ -86,7 +86,12 @@
                 <i class="fa-solid fa-circle-xmark icon_btn pe-3 fa-xl" style="float:right; padding-top:12px;" data-bs-dismiss="modal"></i>
             </div>
 
-            TEST
+            <div class="p-3">
+                <select name="" id="sel_update_order_status" class="form-select">
+                    <option value="Completed">Completed</option>
+                    <option value="Cancelled">Cancelled</option>
+                </select>
+            </div>
 
             <div class="modal-footer">
                 <button class="btn border" onClick="update_order()" style="font-size:10pt;"><i class="fa-solid fa-receipt  text-primary pe-1"></i> Update</button>

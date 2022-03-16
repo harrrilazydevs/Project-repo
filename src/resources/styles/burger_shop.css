@@ -288,12 +288,57 @@ input[type='checkbox']:checked:after {
 .product_item:hover img {
   transform: scale(1.1);
 }
-
 .box_menu {
   width: 28rem;
   height: auto;
   background: white;
   border-radius: 5px;
   float: right;
-  margin-right: 1px;
 }
+
+/* FEEDACK FORM */
+
+  /* .wrapper_feedBack form {
+    padding: 10px 30px 50px 30px;
+  } open if need */
+  .wrapper_feedBack form .fieldContact {
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+    
+  }
+  .wrapper_feedBack form .fieldContact input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 17px;
+    padding-left: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+  }
+  .wrapper_feedBack form .fieldContact input:focus,
+  form .fieldContact input:valid {
+    border-color: #212529;
+  }
+  .wrapper_feedBack form .fieldContact label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    color: #999999;
+    font-weight: 400;
+    font-size: 17px;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+  }
+  form .fieldContact input:focus ~ label,
+  form .fieldContact input:valid ~ label {
+    top: 0%;
+    font-size: 13px;
+    color: #212529;
+    background: #fae2691d;
+    transform: translateY(-90%);
+  }
+/* FEEDACK FORM */

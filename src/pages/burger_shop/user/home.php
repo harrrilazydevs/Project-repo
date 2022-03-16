@@ -1,5 +1,5 @@
 <div class="page" id="page_home">
-  
+    
     <section style="background-color: white;">
         <div class="container h-25 mt-5 my-5">
             <div class="row min-vh-100 align-items-center">
@@ -11,8 +11,8 @@
 
                 <div class="col-lg-7 col-sm-12">
                     <div class="main-carousel" data-flickity='{ "autoPlay": true }'>
-                        <div class="cell cell-img"> <img src="src/resources/img/otakuNav.png"></div>
-                        <div class="cell cell-img"><img src="src/resources/img/carousel.png"></div>
+                        <div class="cell cell-img"> <img src="src/resources/img/remove.png"></div>
+                        <div class="cell cell-img"><img src="src/resources/img/2ndcaro.jpg"></div>
                         <div class="cell cell-img"><img src="src/resources/img/carousel.png"></div>
                     </div>
                 </div>
@@ -89,14 +89,14 @@
             <div class="col-lg-12 col-sm-12 ">
                 <h5 class="text-center align-items-center text-white mb-5" style="letter-spacing: 3px;">Otakus's Best Sellers!</h5>
                 <div class="bestSeller-carousel" style="align-items: center !important;">
-                    <div class="cell bestSeller-img"><img src="src/resources/img/carousel.png"></div>
-                    <div class="cell bestSeller-img"><img src="src/resources/img/carousel.png"></div>
-                    <div class="cell bestSeller-img"><img src="src/resources/img/carousel.png"></div>
+                    <div class="cell bestSeller-img"><img src="src/resources/img/3rdcaro.jpg"></div>
+                    <div class="cell bestSeller-img"><img src="src/resources/img/3rdcaro.jpg"></div>
+                    <div class="cell bestSeller-img"><img src="src/resources/img/3rdcaro.jpg"></div>
                 </div>
             </div>
     </section>
 
-    <!-----------------------BESTSELLER SECTION ------------------------>
+    <!-----------------------BESTSELLER SECTION CARDS------------------------>
     <section style="margin-bottom: 7%;">
         <div class="container text-white mt-5">
             <h5 class="text-center text-white" style="letter-spacing: 4px;">Otakus's Best Sellers!</h5>
@@ -104,7 +104,7 @@
             <div class="row mt-5">
                 <div class="col-lg-3 col-sm-6">
                     <div class="product_item">
-                        <img src="src/resources/img/orderDecoy.png" width="100%">
+                        <img src="src/resources/img/dish.jpg" width="100%">
                         <div class="product_overlay">
                             <div>
                                 <h6 style="letter-spacing: 2px;"><small> The Ispisyal nakatuwad</small></h6>
@@ -135,7 +135,7 @@
 
                 <div class="col-lg-3 col-sm-6">
                     <div class="product_item">
-                        <img src="src/resources/img/orderDecoy.png" width="100%">
+                        <img src="src/resources/img/drink.jpg" width="100%">
                         <div class="product_overlay">
                             <div>
                                 <h6 style="letter-spacing: 2px;"><small> The Ispisyal nakatuwad</small></h6>
@@ -196,4 +196,5 @@
             </div>
         </div>
     </section>
+
 </div>

@@ -1,6 +1,8 @@
 let page = {
     'viewMenu':'page_viewMenu',
-    'login':'page_login',
+    'btn_navbar_home':'page_home',
+    'btn_navbar_contactUs':'page_contactUs',
+    
 }
 
 $(document).ready(function(){

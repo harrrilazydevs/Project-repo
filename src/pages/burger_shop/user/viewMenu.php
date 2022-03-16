@@ -43,7 +43,7 @@
                             <p class="card-text"><small>Product description :</small></p>
                             <p class="card-text"><small>₱ 250.</small></p>
                             <a href="#">
-                                <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none;">
+                                <button id="btn_myPurchase" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none;">
                                     <i class="fa-solid fa-cart-shopping text-white"></i> Add to Cart
                                 </button>
                             </a>
@@ -62,7 +62,7 @@
                             <p class="card-text"><small>Product description :</small></p>
                             <p class="card-text"><small>₱ 250.</small></p>
                             <a href="#">
-                                <button id="btn_viewMenu" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none;">
+                                <button id="btn_transaction" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none;">
                                     <i class="fa-solid fa-cart-shopping text-white"></i> Add to Cart
                                 </button>
                             </a>

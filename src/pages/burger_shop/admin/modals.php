@@ -78,11 +78,11 @@
     </div>
 </div>
 
-<div class="modal" tabindex="-1" id="md_view_order">
+<div class="modal" tabindex="-1" id="md_update_order">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="text-center py-3 text-center" style="border-bottom:3px solid black;">
-                <span class="ms-5 h5 fw-bold"> Order Details </span>
+                <span class="ms-5 h5 fw-bold"> Update </span>
                 <i class="fa-solid fa-circle-xmark icon_btn pe-3 fa-xl" style="float:right; padding-top:12px;" data-bs-dismiss="modal"></i>
             </div>
 

@@ -36,7 +36,7 @@
                 <div class="col-lg-3">
                     <div class="card p-3" style=" background: #2D1E1E; border-radius: 2%;">
                         <div>
-                            <img src="src/resources/img/otakulogo.png" class="card-img-top" style="border-radius: 2%;">
+                            <img src="src/resources/img/remove.png" class="card-img-top" style="border-radius: 2%;">
                         </div>
                         <div class="card-body">
                             <h6 class="card-title" style="letter-spacing: 3px;">Product Name</h5>
@@ -55,7 +55,7 @@
                 <div class="col-lg-3">
                     <div class="card p-3" style=" background: #2D1E1E; border-radius: 2%;">
                         <div>
-                            <img src="src/resources/img/otakulogo.png" class="card-img-top" style="border-radius: 2%;">
+                            <img src="src/resources/img/burger.png" class="card-img-top" style="border-radius: 2%;">
                         </div>
                         <div class="card-body">
                             <h6 class="card-title" style="letter-spacing: 3px;">Product Name</h5>
@@ -74,7 +74,7 @@
                 <div class="col-lg-3">
                     <div class="card p-3" style=" background: #2D1E1E; border-radius: 2%;">
                         <div>
-                            <img src="src/resources/img/otakulogo.png" class="card-img-top" style="border-radius: 2%;">
+                            <img src="src/resources/img/remove.png" class="card-img-top" style="border-radius: 2%;">
                         </div>
                         <div class="card-body">
                             <h6 class="card-title" style="letter-spacing: 3px;">Product Name</h5>
@@ -93,7 +93,7 @@
                 <div class="col-lg-3">
                     <div class="card p-3" style=" background: #2D1E1E; border-radius: 2%;">
                         <div>
-                            <img src="src/resources/img/otakulogo.png" class="card-img-top" style="border-radius: 2%;">
+                            <img src="src/resources/img/burger.png" class="card-img-top" style="border-radius: 2%;">
                         </div>
                         <div class="card-body">
                             <h6 class="card-title" style="letter-spacing: 3px;">Product Name</h5>

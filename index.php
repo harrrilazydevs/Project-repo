@@ -19,7 +19,7 @@ $_SESSION['user_id'] = '1';
 
 
 
-    
+
 
         <?php
 
@@ -46,43 +46,43 @@ $_SESSION['user_id'] = '1';
 
     <?php
     if ($_SESSION['theme'] == 'dental_clinic') {
-        
-        echo '<link rel="stylesheet" href="src/resources/styles/dental_clinic.css">';
 
+        echo '<link rel="stylesheet" href="src/resources/styles/dental_clinic.css">';
     }
 
     if ($_SESSION['theme'] == 'burger_shop') {
         echo '<link rel="stylesheet" href="src/resources/styles/burger_shop.css">';
         echo '<link rel="stylesheet" href="src/resources/styles/burger_shop_kd.css">';
     }
-        
+
     ?>
 
 
-   
+
     <script src="src/resources/lib/bootstrap/bs.js"></script>
     <script src="src/resources/lib/jquery/jquery.js"></script>
     <script src="src/resources/lib/carousel/carousel.js"></script>
     <script src="src/resources/lib/jsPdf/html2pdf.js"></script>
-   
+
 
 </head>
 
 <body>
 
-<input type="hidden" name="" id="txt_user_id" value="<?php echo $_SESSION['user_id'];?>">
-<input type="hidden" name="" id="txt_user_access" value="<?php echo $_SESSION['access_level'];?>">
-
-
-
+    <input type="hidden" name="" id="txt_user_id" value="<?php echo $_SESSION['user_id']; ?>">
+    <input type="hidden" name="" id="txt_user_access" value="<?php echo $_SESSION['access_level']; ?>">
 
     <!-- CONTENTS -->
     <?php
 
-    if ($_SESSION['theme'] == 'dental_clinic') {
+    if ($_SESSION['theme'] == 'dental_clinic' && $_SESSION['access_level'] == 'user') {
         include_once 'src/pages/dental_clinic/user/navbar.php';
     }
-    
+
+    if ($_SESSION['theme'] == 'dental_clinic' && $_SESSION['access_level'] == 'admin') {
+        include_once 'src/pages/dental_clinic/admin/navbar.php';
+    }
+
     if ($_SESSION['theme'] == 'burger_shop' && $_SESSION['access_level'] == 'user') {
         //DATABASE FUNCTIONS
         include_once 'src/database/burger_shop/db.php';
@@ -101,15 +101,7 @@ $_SESSION['user_id'] = '1';
         echo '<script src="src/func/burger_shop/user/home.js"></script>';
         echo '<script src="src/func/burger_shop/user/userPages.js"></script>';
         echo '<script src="src/func/burger_shop/user/viewMenu.js"></script>';
-
-
-
-        
-    }
-    else if ($_SESSION['theme'] == 'burger_shop' && $_SESSION['access_level'] == 'admin') {
-
-      
-
+    } else if ($_SESSION['theme'] == 'burger_shop' && $_SESSION['access_level'] == 'admin') {
 
         // PAGE FUNCTIONS
         include_once 'src/pages/burger_shop/admin/navbar.php';
@@ -127,21 +119,9 @@ $_SESSION['user_id'] = '1';
         echo '<script src="src/func/burger_shop/admin/order.js"></script>';
         echo '<script src="src/func/burger_shop/admin/order_history.js"></script>';
         echo '<script src="src/func/burger_shop/admin/dashboard.js"></script>';
-
     }
-    
-
 
     ?>
-
-    <!-- THEMES -->
-
-    <!-- BURGER MACHINE FUNCTIONS -->
-    <!-- <script src="src/resources/lib/jquery/jquery.js"></script> -->
-
-
-    <!-- DENTAL CLINIC FUNCTIONS -->
-    <!-- <script src="src/resources/lib/jquery/.js"></script> -->
 
 </body>
 

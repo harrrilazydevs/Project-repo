@@ -41,13 +41,13 @@
                 <div class="white_box shadow p-3 pt-1 ">
                     <span class="fw-bold" style="font-size:19pt;">Yearly Sales</span>
                     <div class="text-center">
-                        <span style="margin-top:-10px;float:right;font-size:30pt; color:white; -webkit-text-stroke-width: 1px;-webkit-text-stroke-color: #6A0F03;" id="txt_total_annual_sales">&#8369; 999,999.00</span>
+                        <span style="margin-top:-10px;float:right;font-size:30pt; color:white; -webkit-text-stroke-width: 1px;-webkit-text-stroke-color: #6A0F03;" id="txt_total_annual_sales">&#8369; 0</span>
                     </div>
                 </div>
                 <div class="white_box shadow p-3 pt-1 mt-3">
                     <span class="fw-bold" style="font-size:19pt;">Monthly Sales</span>
                     <div class="text-center">
-                        <span style="margin-top:-10px;float:right;font-size:30pt; color:white; -webkit-text-stroke-width: 1px;-webkit-text-stroke-color: #6A0F03;" id="txt_total_monthly_sales">&#8369; 999,999.00</span>
+                        <span style="margin-top:-10px;float:right;font-size:30pt; color:white; -webkit-text-stroke-width: 1px;-webkit-text-stroke-color: #6A0F03;" id="txt_total_monthly_sales">&#8369; 0</span>
                     </div>
                 </div>
             </div>

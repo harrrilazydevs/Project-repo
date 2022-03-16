@@ -15,6 +15,8 @@ function write_filter_dates(data) {
 
   $("#sel_date_filter").empty();
   $("#sel_date_filter").append(output);
+
+  $("#sel_date_filter").trigger("change");
 }
 
 function load_dashboard_information(date) {

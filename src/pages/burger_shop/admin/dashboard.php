@@ -62,69 +62,11 @@
                                 <th>No of Order</th>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="text-center">1</td>
-                                    <td class="text-center">Nami's Boobiscles</td>
-                                    <td class="text-center">999</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">1</td>
-                                    <td class="text-center">Nami's Boobiscles</td>
-                                    <td class="text-center">999</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">1</td>
-                                    <td class="text-center">Nami's Boobiscles</td>
-                                    <td class="text-center">999</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">1</td>
-                                    <td class="text-center">Nami's Boobiscles</td>
-                                    <td class="text-center">999</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">1</td>
-                                    <td class="text-center">Nami's Boobiscles</td>
-                                    <td class="text-center">999</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">1</td>
-                                    <td class="text-center">Nami's Boobiscles</td>
-                                    <td class="text-center">999</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">1</td>
-                                    <td class="text-center">Nami's Boobiscles</td>
-                                    <td class="text-center">999</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">1</td>
-                                    <td class="text-center">Nami's Boobiscles</td>
-                                    <td class="text-center">999</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">1</td>
-                                    <td class="text-center">Nami's Boobiscles</td>
-                                    <td class="text-center">999</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">1</td>
-                                    <td class="text-center">Nami's Boobiscles</td>
-                                    <td class="text-center">999</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">1</td>
-                                    <td class="text-center">Nami's Boobiscles</td>
-                                    <td class="text-center">999</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">1</td>
-                                    <td class="text-center">Nami's Boobiscles</td>
-                                    <td class="text-center">999</td>
-                                </tr>
+                             
                             </tbody>
                         </table>
                     </div>
+                    <small class="text-secondary" id="sm_no_data_available">No Data Available.</small>
                 </div>
             </div>
         </div>

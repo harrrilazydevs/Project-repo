@@ -31,7 +31,6 @@ function load_dashboard_information(date) {
 
 
       $.each(JSON.parse(data), function (key, val) {
-          console.log(val)
         $("#txt_total_registered_users").text(val.total_user);
         $("#txt_total_completed").text(val.total_completed);
         $("#txt_total_orders").text(val.total_order);
@@ -60,7 +59,17 @@ function load_dashboard_information(date) {
       });
 
       $("#tbl_dashboard_top_selling_products tbody").empty();
-      $("#tbl_dashboard_top_selling_products tbody").append(tbl_output);
+
+      if(tbl_output){
+        $("#tbl_dashboard_top_selling_products tbody").append(tbl_output);
+        $('#sm_no_data_available').addClass('d-none')
+
+      }
+      else{
+        $('#sm_no_data_available').removeClass('d-none')
+
+      }
+     
     },
   });
 }

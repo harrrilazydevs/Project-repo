@@ -2,7 +2,7 @@
 
 $_SESSION['theme'] = 'burger_shop';
 $_SESSION['logo_path'] = 'src/resources/img/otakulogo.png';
-$_SESSION['access_level'] = 'admin';
+$_SESSION['access_level'] = 'user';
 $_SESSION['username'] = 'Admin';
 $_SESSION['user_id'] = '1';
 ?>

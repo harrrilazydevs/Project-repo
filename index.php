@@ -1,6 +1,6 @@
 <?php
 
-$_SESSION['theme'] = 'burger_shop';
+$_SESSION['theme'] = 'dental_clinic';
 $_SESSION['logo_path'] = 'src/resources/img/otakulogo.png';
 $_SESSION['access_level'] = 'admin';
 $_SESSION['username'] = 'Admin';
@@ -35,8 +35,6 @@ $_SESSION['user_id'] = '1';
         ?>
 
 
-
-
     </title>
     <link rel="stylesheet" href="src/resources/lib/bootstrap/bs.css">
     <link rel="stylesheet" href="src/resources/lib/fontawesome/css/all.css">
@@ -45,13 +43,28 @@ $_SESSION['user_id'] = '1';
 
 
     <!-- THEMES -->
-    <link rel="stylesheet" href="src/resources/styles/burger_shop.css">
-    <link rel="stylesheet" href="src/resources/styles/burger_shop_kd.css">
-    <link rel="stylesheet" href="src/resources/styles/dental_clinic.css">
+
+    <?php
+    if ($_SESSION['theme'] == 'dental_clinic') {
+        
+        echo '<link rel="stylesheet" href="src/resources/styles/dental_clinic.css">';
+
+    }
+
+    if ($_SESSION['theme'] == 'burger_shop') {
+        echo '<link rel="stylesheet" href="src/resources/styles/burger_shop.css">';
+        echo '<link rel="stylesheet" href="src/resources/styles/burger_shop_kd.css">';
+    }
+        
+    ?>
+
+
+   
     <script src="src/resources/lib/bootstrap/bs.js"></script>
     <script src="src/resources/lib/jquery/jquery.js"></script>
     <script src="src/resources/lib/carousel/carousel.js"></script>
     <script src="src/resources/lib/jsPdf/html2pdf.js"></script>
+   
 
 </head>
 

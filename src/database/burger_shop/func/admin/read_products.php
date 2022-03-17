@@ -5,6 +5,7 @@ include '../../db.php';
 
 $q = '
         SELECT 
+        id,
                 name,
                 category,
                 picture,

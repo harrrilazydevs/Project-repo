@@ -8,7 +8,10 @@
 
     </div>
     <div class="col-5">
-    <button class="btn navbar_btn_logout shadow">Log out</button>
+
+    <form action="src/database/burger_shop/func/logout.php">
+    <button class="btn navbar_btn_logout shadow" type="submit">Log out</button>
+    </form>
 
     </div>
 

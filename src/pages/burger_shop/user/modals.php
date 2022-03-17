@@ -11,11 +11,11 @@
 
                 <form action="#">
                     <div class="field mt-5">
-                        <input type="text" required>
+                        <input type="text" required id="txt_username">
                         <label><i class="fa-solid fa-user"></i> Username</label>
                     </div>
                     <div class="field">
-                        <input type="password" required>
+                        <input type="password" required id="txt_password">
                         <label><i class="fa-solid fa-lock"></i> Password</label>
                     </div>
                     <div class="content">
@@ -25,7 +25,7 @@
                         </div>
                     </div>
                     <div class="field text-center">
-                        <button id="btn_navbar_login" class="py-1 text-white" style="font-weight:bold; background:#F54646; border-radius:20px; width:120px; margin: 6px; border: 1px solid yellow;">Login</button>
+                        <button id="btn_login" class="py-1 text-white" style="font-weight:bold; background:#F54646; border-radius:20px; width:120px; margin: 6px; border: 1px solid yellow;">Login</button>
 
                     </div>
 

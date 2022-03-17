@@ -14,12 +14,12 @@ function write_tbl_products(data) {
     output += "<tr>";
     output += '<td class="text-center p-1">' + count + "</td>";
     output += '<td class="text-center p-1">' + val.name + "</td>";
-    output += '<td class="text-center p-1">' + val.picture + "</td>";
+    output += '<td class="text-center p-1"><img src="' + val.picture + '" style="height:250px; width:230px;"</td>';
     output += '<td class="text-center p-1">' + val.category + "</td>";
     output += '<td class="text-center p-1">' + val.price + "</td>";
     output +=
-      '<td class="text-center p-1"><i class="fa-solid fa-eye icon_btn text-primary pe-1" onClick="view_products(' +
-      val.ref_no +
+      '<td class="text-center p-1"><i class="fa-solid fa-trash-can icon_btn text-primary pe-1" onClick="delete_product(' +
+      val.id +
       ')"></i>';
     output += "</td>";
     output += "</tr>";
@@ -30,14 +30,24 @@ function write_tbl_products(data) {
   $("#tbl_products tbody").append(output);
 }
 
-// function print_products() {
-//   var element = document.getElementById("div_to_print");
-//   var clonedElement = element.cloneNode(true);
-//   $(clonedElement).css("display", "block");
+function delete_product(id) {
+  $.ajax({
+    type: "POST",
+    url: "src/database/burger_shop/func/admin/delete_product.php",
+    data: {
+      id:id
+    },
+    success: function (data) {
+        $('#msg_title').empty()
+        $('#msg_title').append("Product Deleted")
+        $('#msg_body').empty()
+        $('#msg_body').append("Product has been deleted to database successfully.")
 
-//   html2pdf(clonedElement);
-//   clonedElement.remove();
-// }
+        $('#md_msg_box').modal('show')
+      load_products()
+    },
+  });
+}
 
 // function view_products(id) {
 //   $.ajax({

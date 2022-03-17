@@ -151,13 +151,13 @@
                     <label class="mt-2">Picture</label>
                     <input type="file" class="form-control" name="picture" id="txt_picture">
                 </div>
-          
 
 
 
-            <div class="modal-footer">
-                <button class="btn border" type="submit" style="font-size:10pt;">Save</button>
-            </div>
+
+                <div class="modal-footer">
+                    <button class="btn border" type="submit" style="font-size:10pt;">Save</button>
+                </div>
             </form>
         </div>
 
@@ -174,6 +174,37 @@
 
             <div class="p-5 mx-auto">
                 <span class="" id="msg_body"> Update Order </span>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" id="md_view_item">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="text-center py-3 text-center" style="border-bottom:3px solid black;">
+                <span class="ms-5 h5 fw-bold"> View Product </span>
+                <i class="fa-solid fa-circle-xmark icon_btn pe-3 fa-xl" style="float:right; padding-top:12px;" data-bs-dismiss="modal"></i>
+            </div>
+
+            <div class="p-3">
+                <label for="">Product Name</label>
+                <input type="text" class="form-control" name="name" id="txt_view_product_name">
+
+                <label class="mt-2">Price</label>
+                <input type="text" class="form-control" name="price" id="txt_view_price">
+
+                <label class="mt-2">Category</label>
+                <select id="txt_view_category" name="category" class="form-select">
+                    <option value="burger">Burger</option>
+                    <option value="drink">Drink</option>
+                    <option value="sides">Sides</option>
+                </select>
+                <label class="mt-2">Picture</label>
+                <input type="file" class="form-control" name="picture" id="txt_view_picture">
             </div>
 
 

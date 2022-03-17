@@ -1,10 +1,19 @@
 <?php
-
-$_SESSION['theme'] = 'dental_clinic';
+session_start();
+$_SESSION['theme'] = 'burger_shop';
 $_SESSION['logo_path'] = 'src/resources/img/otakulogo.png';
-$_SESSION['access_level'] = 'user';
-$_SESSION['username'] = 'Admin';
-$_SESSION['user_id'] = '1';
+
+// $_SESSION['username'] = 'Admin';
+// $_SESSION['user_id'] = '1';
+
+
+
+if( !isset($_SESSION['access_level'])){
+    $_SESSION['access_level'] = 'user';
+}
+
+
+
 ?>
 
 
@@ -68,6 +77,7 @@ $_SESSION['user_id'] = '1';
 </head>
 
 <body>
+
 
 
 
@@ -135,7 +145,6 @@ $_SESSION['user_id'] = '1';
     ?>
 
 </div>
-
 </body>
 
 </html>

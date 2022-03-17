@@ -8,7 +8,8 @@ $q = '
         SELECT 
                 name,
                 qty,
-                price
+                price,
+                ref_no
         FROM
                 tbl_orders a
         INNER JOIN
@@ -36,15 +37,28 @@ $q = '
             ref_no ='.$id.';
 ';
 
-
 $total = $db->read($q);
 
+
+$q = '
+        SELECT 
+                payment_method,
+                payment_details,
+                payment,
+                payment_date
+
+        FROM
+                tbl_payments
+        WHERE
+                order_ref_no ='.$id.';
+';
+
+$payment = $db->read($q);
 
 
 echo json_encode([
         "data"=>$result,
-        "total"=>$total
+        "total"=>$total,
+        "payment"=>$payment,
+
 ]);
-
-
-?>

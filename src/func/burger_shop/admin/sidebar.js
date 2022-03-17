@@ -18,3 +18,8 @@ $('#btn_sidebar_dashboard').on('click', function(){
 $('#btn_sidebar_order_history').on('click', function(){
     change_page('order_history')
 })
+
+$('#btn_sidebar_products').on('click', function(){
+    change_page('product')
+    load_products();
+})

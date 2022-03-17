@@ -1,6 +1,6 @@
 <?php
 
-$_SESSION['theme'] = 'dental_clinic';
+$_SESSION['theme'] = 'burger_shop';
 $_SESSION['logo_path'] = 'src/resources/img/otakulogo.png';
 $_SESSION['access_level'] = 'admin';
 $_SESSION['username'] = 'Admin';
@@ -69,6 +69,10 @@ $_SESSION['user_id'] = '1';
 
 <body>
 
+
+
+<div class="">
+
     <input type="hidden" name="" id="txt_user_id" value="<?php echo $_SESSION['user_id']; ?>">
     <input type="hidden" name="" id="txt_user_access" value="<?php echo $_SESSION['access_level']; ?>">
 
@@ -81,6 +85,8 @@ $_SESSION['user_id'] = '1';
 
     if ($_SESSION['theme'] == 'dental_clinic' && $_SESSION['access_level'] == 'admin') {
         include_once 'src/pages/dental_clinic/admin/navbar.php';
+
+        
     }
 
     if ($_SESSION['theme'] == 'burger_shop' && $_SESSION['access_level'] == 'user') {
@@ -112,6 +118,7 @@ $_SESSION['user_id'] = '1';
         include_once 'src/pages/burger_shop/admin/inventory.php';
         include_once 'src/pages/burger_shop/admin/dashboard.php';
         include_once 'src/pages/burger_shop/admin/modals.php';
+        include_once 'src/pages/burger_shop/admin/product.php';
 
         echo '<script src="src/func/burger_shop/main.js"></script>';
         echo '<script src="src/func/burger_shop/admin/feedback.js"></script>';
@@ -119,9 +126,12 @@ $_SESSION['user_id'] = '1';
         echo '<script src="src/func/burger_shop/admin/order.js"></script>';
         echo '<script src="src/func/burger_shop/admin/order_history.js"></script>';
         echo '<script src="src/func/burger_shop/admin/dashboard.js"></script>';
+        echo '<script src="src/func/burger_shop/admin/product.js"></script>';
     }
 
     ?>
+
+</div>
 
 </body>
 

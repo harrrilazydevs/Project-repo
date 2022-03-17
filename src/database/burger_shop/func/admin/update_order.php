@@ -12,7 +12,7 @@ $q = '
         SET
             status="'.$status.'"
         WHERE
-            id= '.$id;
+            ref_no= '.$id;
 
 
 $db = new Database();

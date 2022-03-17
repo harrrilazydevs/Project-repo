@@ -39,10 +39,10 @@ function load_dashboard_information(date) {
 
         if(val.annual_sale > 0)
         {
-            $("#txt_total_annual_sales").text("₱ " + val.annual_sale);
+            $("#txt_total_annual_sales").text("₱ " + numberWithCommas(val.annual_sale));
             monthly_sale = parseInt(val.annual_sale) / 12;
             monthly_sale = Math.round(monthly_sale);
-            $("#txt_total_monthly_sales").text("₱ " + monthly_sale);
+            $("#txt_total_monthly_sales").text("₱ " + numberWithCommas(monthly_sale));
         }
 
 
@@ -69,7 +69,6 @@ function load_dashboard_information(date) {
       }
       else{
         $('#sm_no_data_available').removeClass('d-none')
-
       }
      
     },

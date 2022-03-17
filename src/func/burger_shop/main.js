@@ -5,10 +5,16 @@ let pages = {
     'inventory': 'page_inventory',
     'dashboard': 'page_dashboard',
     'feedback': 'page_feedback',
+    'product': 'page_product',
 }
 
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
 
 $(document).ready(function(){
+
+   
 
     if($('#txt_user_access').val() == 'admin')
     {
@@ -23,6 +29,8 @@ $(document).ready(function(){
         
         //dashboard.js
         load_filter_dates()
+
+       
 
 
         $('#btn_account_settings').on('click', function(){

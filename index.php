@@ -1,10 +1,19 @@
 <?php
-
+session_start();
 $_SESSION['theme'] = 'burger_shop';
 $_SESSION['logo_path'] = 'src/resources/img/otakulogo.png';
-$_SESSION['access_level'] = 'admin';
-$_SESSION['username'] = 'Admin';
-$_SESSION['user_id'] = '1';
+
+// $_SESSION['username'] = 'Admin';
+// $_SESSION['user_id'] = '1';
+
+
+
+if( !isset($_SESSION['access_level'])){
+    $_SESSION['access_level'] = 'user';
+}
+
+
+
 ?>
 
 
@@ -71,6 +80,7 @@ $_SESSION['user_id'] = '1';
 
 
 
+
 <div class="">
 
     <input type="hidden" name="" id="txt_user_id" value="<?php echo $_SESSION['user_id']; ?>">
@@ -132,7 +142,6 @@ $_SESSION['user_id'] = '1';
     ?>
 
 </div>
-
 </body>
 
 </html>

@@ -15,8 +15,8 @@
 
         </tbody>
     </table>
-    <button style="float:right;" class="btn border mt-2 text-light py-0 px-3" data-bs-toggle="modal" data-bs-target="#md_add_item"> Add </button>
     </div>
+    <button style="float:right;" class="btn border mt-2 text-light py-0 px-3" data-bs-toggle="modal" data-bs-target="#md_add_item"> Add </button>
 
    
 

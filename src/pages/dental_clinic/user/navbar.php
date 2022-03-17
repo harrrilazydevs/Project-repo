@@ -1,5 +1,5 @@
-<div class="dental_clinic_nav">
+<div class="d-none dental_clinic_nav">
 
-<i class="fa-solid fa-bars icon_btn"></i>
+    <i class="fa-solid fa-bars icon_btn"></i>
 
 </div>

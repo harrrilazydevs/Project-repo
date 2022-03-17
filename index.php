@@ -1,8 +1,8 @@
 <?php
 
-$_SESSION['theme'] = 'burger_shop';
+$_SESSION['theme'] = 'dental_clinic';
 $_SESSION['logo_path'] = 'src/resources/img/otakulogo.png';
-$_SESSION['access_level'] = 'admin';
+$_SESSION['access_level'] = 'user';
 $_SESSION['username'] = 'Admin';
 $_SESSION['user_id'] = '1';
 ?>
@@ -81,12 +81,15 @@ $_SESSION['user_id'] = '1';
 
     if ($_SESSION['theme'] == 'dental_clinic' && $_SESSION['access_level'] == 'user') {
         include_once 'src/pages/dental_clinic/user/navbar.php';
+        include_once 'src/pages/dental_clinic/user/login.php';
+
+        echo '<script src="src/func/dental_clinic/user/user.js"></script>';
+
     }
 
     if ($_SESSION['theme'] == 'dental_clinic' && $_SESSION['access_level'] == 'admin') {
         include_once 'src/pages/dental_clinic/admin/navbar.php';
 
-        
     }
 
     if ($_SESSION['theme'] == 'burger_shop' && $_SESSION['access_level'] == 'user') {

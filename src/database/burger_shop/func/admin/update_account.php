@@ -6,6 +6,7 @@ $id = $_GET['id'];
 $username = $_POST['username'];
 $password = $_POST['password'];
 $email = $_POST['email'];
+$phone = $_POST['phone'];
 $access_level = $_POST['access_level'];
 
 $q = '
@@ -16,6 +17,7 @@ $q = '
             username="'.$username.'",
             password="'.$password.'",
             email="'.$email.'",
+            phone="'.$phone.'",
             access_level="'.$access_level.'"
         WHERE
             id= '.$id;

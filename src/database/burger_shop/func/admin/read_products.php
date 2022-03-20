@@ -11,7 +11,10 @@ $q = '
                 picture,
                 price
         FROM
-                tbl_products;
+                tbl_products
+        ORDER BY
+                id
+        DESC;
 ';
 
 $db = new Database();

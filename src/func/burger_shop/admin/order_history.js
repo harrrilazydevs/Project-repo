@@ -16,9 +16,9 @@ function write_tbl_order_history(data) {
     output += '<td class="text-center p-1">' + val.phone + "</td>";
     output += '<td class="text-center p-1">' + val.status + "</td>";
     output +=
-      '<td class="text-center p-1"><i class="fa-solid fa-eye icon_btn text-primary pe-1" onClick="view_order_paid(' +
+      '<td class="text-center p-1"><i class="fa-solid fa-eye icon_btn text-primary pe-1" onClick="view_order_paid(\'' +
       val.ref_no +
-      ')"></i>';
+      '\')"></i>';
     output += "</td>";
     output += "</tr>";
   });

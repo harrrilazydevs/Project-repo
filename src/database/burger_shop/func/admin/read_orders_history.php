@@ -16,7 +16,9 @@ $q = '
         ON
             a.user_id = b.id
         WHERE
-                status = "Completed";
+                a.status = "Cancelled" OR a.status = "Completed"
+        ORDER BY
+                a.id DESC;
 ';
 
 $db = new Database();

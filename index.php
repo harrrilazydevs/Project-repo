@@ -3,15 +3,9 @@ session_start();
 $_SESSION['theme'] = 'burger_shop';
 $_SESSION['logo_path'] = 'src/resources/img/otakulogo.png';
 
-// $_SESSION['username'] = 'Admin';
-// $_SESSION['user_id'] = '1';
-
-
-
 if( !isset($_SESSION['access_level'])){
     $_SESSION['access_level'] = 'user';
 }
-
 
 
 ?>
@@ -83,6 +77,16 @@ if( !isset($_SESSION['access_level'])){
 
 <div class="">
 
+    <input type="hidden" name="" id="txt_user_name" value="<?php echo $_SESSION['username']; ?>">
+    <input type="hidden" name="" id="txt_address" value="<?php echo $_SESSION['address']; ?>">
+    <input type="hidden" name="" id="txt_card_id" value="<?php 
+    if(isset( $_SESSION['cart_id'] ))
+    {
+        echo $_SESSION['cart_id']; 
+
+    }
+    ?>">
+    <input type="hidden" name="" id="txt_cart_order_count" >
     <input type="hidden" name="" id="txt_user_id" value="<?php echo $_SESSION['user_id']; ?>">
     <input type="hidden" name="" id="txt_user_access" value="<?php echo $_SESSION['access_level']; ?>">
 
@@ -117,6 +121,7 @@ if( !isset($_SESSION['access_level'])){
         echo '<script src="src/func/burger_shop/user/home.js"></script>';
         echo '<script src="src/func/burger_shop/user/userPages.js"></script>';
         echo '<script src="src/func/burger_shop/user/viewMenu.js"></script>';
+        
     } else if ($_SESSION['theme'] == 'burger_shop' && $_SESSION['access_level'] == 'admin') {
 
         // PAGE FUNCTIONS

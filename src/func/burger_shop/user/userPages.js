@@ -1,19 +1,3 @@
-let page = {
-    'viewMenu':'page_viewMenu',
-    'btn_navbar_home':'page_home',
-    'btn_navbar_contactUs':'page_contactUs', 
-    'btn_transaction':'page_transaction',
-    'btn_myPurchase':'page_myPurchase'
-    
-}
-
-$(document).ready(function(){
-
-})
-function change_page(pagename){
-    $('.page').addClass('d-none')
-    $('#'+page[pagename]).removeClass('d-none')
-}
 
 
 // TEXT TYPING (Home page)

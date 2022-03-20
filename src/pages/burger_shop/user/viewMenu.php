@@ -30,29 +30,19 @@
         </div>
         <!----------------DROPDOWN MENU BTN ------------>
 
-        <div class="container mt-5 mb-5">
-            <div class="row text-white text-center">
-                <!----------------COL-3 PER MENU ------------>
-                <div class="col-lg-3">
-                    <div class="card p-3" style=" background: #2D1E1E; border-radius: 2%;">
-                        <div>
-                            <img src="src/resources/img/remove.png" class="card-img-top" style="border-radius: 2%;">
-                        </div>
-                        <div class="card-body">
-                            <h6 class="card-title" style="letter-spacing: 3px;">Product Name</h5>
-                            <p class="card-text"><small>Product description :</small></p>
-                            <p class="card-text"><small>₱ 250.</small></p>
-                            <a href="#">
-                                <button id="btn_myPurchase" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none;">
-                                    <i class="fa-solid fa-cart-shopping text-white"></i> Add to Cart
-                                </button>
-                            </a>
-                        </div>
-                    </div>
+        <div class="container mt-5 mb-5" >
 
-                </div>
+            <div class="row row-cols-3 mt-2 text-white text-center" id="div_products_all">
 
-                <div class="col-lg-3">
+                <div class="col mt-2"><div class="card p-3" style=" background: #2D1E1E; border-radius: 2%;">
+                <div><img src="src/resources/img/remove.png" class="card-img-top" style="border-radius: 2%;"></div>
+                <div class="card-body"><h6 class="card-title" style="letter-spacing: 3px;">Product Name</h5>
+                <p class="card-text"><small>₱ 250.</small></p><a href="#">
+                <button id="btn_myPurchase" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none;">
+                <i class="fa-solid fa-cart-shopping text-white"></i> Add to Cart
+                </button></a></div></div></div>
+
+                <div class="col mt-2">
                     <div class="card p-3" style=" background: #2D1E1E; border-radius: 2%;">
                         <div>
                             <img src="src/resources/img/burger.png" class="card-img-top" style="border-radius: 2%;">
@@ -71,7 +61,7 @@
 
                 </div>
 
-                <div class="col-lg-3">
+                <div class="col mt-2">
                     <div class="card p-3" style=" background: #2D1E1E; border-radius: 2%;">
                         <div>
                             <img src="src/resources/img/remove.png" class="card-img-top" style="border-radius: 2%;">
@@ -90,7 +80,7 @@
 
                 </div>
 
-                <div class="col-lg-3">
+                <div class="col mt-2">
                     <div class="card p-3" style=" background: #2D1E1E; border-radius: 2%;">
                         <div>
                             <img src="src/resources/img/burger.png" class="card-img-top" style="border-radius: 2%;">
@@ -108,8 +98,13 @@
                     </div>
 
                 </div>
+                
 
+                
+                
             </div>
+            
+            
         </div>
     </section>
 </div>

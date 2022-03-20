@@ -2,6 +2,7 @@
 
 class Database 
 {
+    // private $host = '192.168.100.34';
     private $host = 'localhost';
     private $db = 'projects_burger_machine';
     private $uid = 'root';
@@ -17,6 +18,8 @@ class Database
             $sth->execute();
             return $sth->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
+        var_dump($e->getMessage());
+
             return 0;
         }
     }

@@ -78,3 +78,37 @@ function load_dashboard_information(date) {
 $("#sel_date_filter").on("change", function () {
   load_dashboard_information($(this).val());
 });
+
+
+
+
+function load_notifications(){
+  $.ajax({
+    type: "GET",
+    url: "src/database/burger_shop/func/admin/read_notifications.php",
+    success: function (data) {
+      write_notification(JSON.parse(data))
+    },
+  });
+}
+
+function write_notification(data){
+
+  var output = '';
+  $.each(data, function(key, val){
+    output += '<li class="dropdown-divider"></li> <li class="dropdown-item notif_drop_down" > <i class="fa-solid fa-comment"></i> <span>Payment Received </span><br> <div class="text-end"> <small class="fw-bold">'+val.order_ref_no+'</small> </div> </li>'
+    $('#notif_count').empty()
+    $('#notif_count').append(val.notif_count)
+  })
+
+  $('#notif_bar').empty()
+  $('#notif_bar').append(output)
+
+
+  
+  
+
+  $('.notif_drop_down').on('click', function(){
+    $('#btn_sidebar_order').trigger('click')
+  })
+}

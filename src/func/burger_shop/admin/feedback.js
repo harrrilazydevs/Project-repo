@@ -29,6 +29,11 @@ function delete_feedback(id){
         url: 'src/database/burger_shop/func/admin/delete_feedback.php?id='+id,
         success: function(data){
             load_feedbacks()
+            $('#msg_title').empty()
+            $('#msg_title').append("Delete Feedback")
+            $('#msg_body').empty()
+            $('#msg_body').append("Feedback Deleted Successfully.")
+            $('#md_msg_box').modal('show')
         }
     });
 

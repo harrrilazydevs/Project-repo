@@ -16,7 +16,7 @@ $q = '
         ON
             a.user_id = b.id
         WHERE
-                status = "Pending";
+                status = "Pending" OR status = "Out for Delivery";
 ';
 
 $db = new Database();

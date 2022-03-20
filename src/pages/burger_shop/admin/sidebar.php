@@ -13,7 +13,7 @@
              <li class="list-group-item fs-6 align-center border-0 " id="btn_sidebar_feedback"><i class="fa-solid fa-fw fa-envelope pe-3"></i> <span>Feedbacks</span></a></li>
          </ul>
 
-         <button class="btn burger_machine_sidebar_btn shadow" data-bs-target="#md_account_settings" data-bs-toggle="modal" id="btn_account_settings"><i class="fa-solid fa-gears"></i> Settings</button>
+         <button class="d-none btn burger_machine_sidebar_btn shadow" data-bs-target="#md_account_settings" data-bs-toggle="modal" id="btn_account_settings"><i class="fa-solid fa-gears"></i> Settings</button>
      </div>
 
 

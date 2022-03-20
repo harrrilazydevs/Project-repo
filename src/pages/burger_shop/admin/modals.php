@@ -18,6 +18,9 @@
                 <label class="mt-2">Password</label>
                 <input type="text" id="txt_password" class="form-control form-control-sm">
 
+                <label class="mt-2">Phone</label>
+                <input type="text" id="txt_phone" class="form-control form-control-sm">
+
                 <label class="mt-2">Access</label>
                 <select class="form-select form-select-sm" name="" id="sel_access_level">
                     <option value="user">User</option>
@@ -89,6 +92,7 @@
 
                 <label>Set Status</label>
                 <select name="" id="sel_update_order_status" class="form-select">
+                    <option value="Out for Delivery">Out for Delivery</option>
                     <option value="Completed">Complete</option>
                     <option value="Cancelled">Cancel</option>
                 </select>
@@ -109,9 +113,15 @@
                 <label class="mt-2">Payment Amount</label>
                 <input class="form-control" readonly type="text" id="txt_payment_amount">
 
+                <div id="gcash" class="d-none">
                 <label class="mt-2">Number</label>
                 <input class="form-control" readonly type="text" id="txt_payment_number">
 
+                <label class="mt-2">Payment Proof</label>
+                <br>
+                <a id="img_payment_proof_a" target="blank">
+                    <img style="height:200px;" id="img_payment_proof"></a>
+                    </div>
 
             </div>
 

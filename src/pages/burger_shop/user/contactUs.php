@@ -30,27 +30,13 @@
                     <div class="wrapper_feedBack">
 
                         <form action="#">
-                            <div class="fieldContact">
-                                <input type="text" required>
-                                <label><i class="fa-solid fa-user"></i> Name</label>
-                            </div>
-                            <div class="fieldContact">
-                                <input type="text" required>
-                                <label><i class="fa-solid fa-at"></i> Email</label>
-                            </div>
-                            <div class="fieldContact">
-                                <input type="text" required>
-                                <label><i class="fa-solid fa-phone"></i> Phone No.</label>
-
-                            </div>
-
-                            <div class="container mt-2 text-black">
+                            <div class="container mt-2 px-0 text-black">
                                 <p class="m-0">Message:</p>
-                                <textarea  name="" id="" cols="55" style="border: none;"></textarea>
+                                <textarea  class="form-control" id="txt_feedback" cols="55" rows="10" style="border: none;"></textarea>
                             </div>
 
                             <div class="fieldContact text-center m-2">
-                                <button class="py-1 text-white" style="font-weight:bold; background:#F54646; border-radius:20px; width:160px; margin: 6px; border: 1px solid yellow;">SUBMIT</button>
+                                <button id="btn_submit_fb" class="py-1 text-white" style="font-weight:bold; background:#F54646; border-radius:20px; width:160px; margin: 6px; border: 1px solid yellow;">SUBMIT</button>
                             </div>
                         </form>
                     </div>

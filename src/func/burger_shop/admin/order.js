@@ -16,9 +16,7 @@ function write_tbl_order(data) {
     output += '<td class="text-center p-1">' + val.phone + "</td>";
     output += '<td class="text-center p-1">' + val.status + "</td>";
     output +=
-      '<td class="text-center p-1"><i class="fa-solid fa-eye icon_btn text-primary pe-1" onClick="view_order(' +
-      val.ref_no +
-      ')"></i>';
+      '<td class="text-center p-1"><i class="fa-solid fa-eye icon_btn text-primary pe-1" onClick="view_order(\'' +val.ref_no +'\')"></i>';
     output += "</td>";
     output += "</tr>";
   });
@@ -62,6 +60,18 @@ function view_order(id) {
         $("#txt_payment_method").val(val.payment_method);
         $("#txt_payment_amount").val("₱" + numberWithCommas(val.payment));
         $("#txt_payment_number").val( val.payment_details);
+
+        $("#img_payment_proof").attr("src",val.gcash_payment_proof);
+        $("#img_payment_proof_a").attr("href",val.gcash_payment_proof);
+
+        if(val.gcash_payment_proof == "GCASH"){
+          $('#gcash').removeClass('d-none')
+        }
+        else{
+          $('#gcash').addClass('d-none')
+
+        }
+        
       });
       
       $("#tbl_view_order tbody").empty();
@@ -120,7 +130,6 @@ $('#btn_save_update_order').on('click', function(){
         $('#msg_title').append("Order Completed")
         $('#msg_body').empty()
         $('#msg_body').append("Transaction Completed Successfully.")
-
         $('#md_msg_box').modal('show')
         
     }

@@ -6,29 +6,36 @@
                 <div class="col-lg-5 col-sm-12 pl-md-5">
                     <h5 id="text" style="letter-spacing: 3px;">Welcome to</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt u</p>
-                    <button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">ORDER NOW!</button>
+                    <a href="#order_now" style="color:black; text-decoration:none; padding:10px;font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">ORDER NOW!</a>
                 </div>
 
                 <div class="col-lg-7 col-sm-12">
                     <div class="main-carousel" data-flickity='{ "autoPlay": true }'>
-                        <div class="cell cell-img"> <img src="src/resources/img/remove.png"></div>
-                        <div class="cell cell-img"><img src="src/resources/img/2ndcaro.jpg"></div>
-                        <div class="cell cell-img"><img src="src/resources/img/carousel.png"></div>
+                        <div class="cell cell-img" ><img style="width:760px;" src="src/resources/img/h1.jpg"></div>
+                        <div class="cell cell-img" ><img style="width:760px;" src="src/resources/img/h2.jpg"></div>
+                        <div class="cell cell-img" ><img style="width:760px;" src="src/resources/img/h3.jpg"></div>
+                        <div class="cell cell-img" ><img style="width:760px;" src="src/resources/img/h4.jpg"></div>
+                        <div class="cell cell-img" ><img style="width:760px;" src="src/resources/img/h5.jpg"></div>
+                        <div class="cell cell-img" ><img style="width:760px;" src="src/resources/img/h6.jpg"></div>
                     </div>
                 </div>
             </div>
         </div>
-
+     
     </section>
     <!-----------------------AVAILABLE PRODUCTSECTION 2ND CAROUSEL ------------------------->
+ 
+    
     <section>
         <div class="container mt-5 mb-5">
+        <a id="order_now"></a>
             <h5 class="text-center text-white mb-5" style="letter-spacing: 3px;">Available Products:</h5>
             <div class="row">
-                <div class="col-lg-12 col-sm-12">
+                <div class="col-lg-12 col-sm-12"  id="div_products">
                     <div data-flickity='{ "cellAlign": "left", "contain": true,  "freeScroll": true}'>
+                        
                         <div class="userOrder-card cell-card mt-3">
-                            <img src="src/resources/img/orderDecoy.png">
+                            <img src="src/resources/img/h1.png">
                             <div class="description">
                                 <h5 id="text" style="letter-spacing: 3px;">Product Name</h5>
                                 <p>₱ 200.</p>
@@ -76,6 +83,7 @@
 
                             </div>
                         </div>
+
                     </div>
                 </div>
 
@@ -97,7 +105,7 @@
     </section>
 
     <!-----------------------BESTSELLER SECTION CARDS------------------------>
-    <section style="margin-bottom: 7%;">
+    <!-- <section style="margin-bottom: 7%;">
         <div class="container text-white mt-5">
             <h5 class="text-center text-white" style="letter-spacing: 4px;">Otakus's Best Sellers!</h5>
 
@@ -165,7 +173,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-----------------------HOW TO ORDER SECTION------------------------>
     <section style="background-color: white;">

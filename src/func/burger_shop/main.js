@@ -6,6 +6,11 @@ let pages = {
   dashboard: "page_dashboard",
   feedback: "page_feedback",
   product: "page_product",
+  viewMenu:'page_viewMenu',
+  btn_navbar_home:'page_home',
+  btn_navbar_contactUs:'page_contactUs', 
+  my_orders:'page_transaction',
+  cart:'page_myPurchase'
 };
 
 function numberWithCommas(x) {
@@ -33,44 +38,61 @@ function getCookie(cname) {
 }
 
 $(document).ready(function () {
-  $(".overlay").removeClass("opacity-1");
-  page = getCookie("page");
 
-  if( $('#txt_user_access').val() == 'admin')
-  {
-    if (page == "products") {
-      $("#btn_sidebar_products").trigger("click");
-      $(".overlay").removeClass("opacity-0");
-    }
+
   
-    if (page == "dashboard") {
-      $("#btn_sidebar_dashboard").trigger("click");
-      $(".overlay").removeClass("opacity-0");
-    }
-  
-    if (page == "feedback") {
-      $("#btn_sidebar_feedback").trigger("click");
-      $(".overlay").removeClass("opacity-0");
-    }
-  
-    if (page == "inventory") {
-      $("#btn_sidebar_inventory").trigger("click");
-      $(".overlay").removeClass("opacity-0");
-    }
-  
-    if (page == "order_history") {
-      $("#btn_sidebar_order_history").trigger("click");
-      $(".overlay").removeClass("opacity-0");
-    }
-  
-    if (page == "order") {
-      $("#btn_sidebar_order").trigger("click");
-      $(".overlay").removeClass("opacity-0");
-    }
+  page = getCookie("page");
+  cart_id = $('#txt_card_id').val()
+  console.log(cart_id)
+
+  $("#txt_order_ref_no_payment2").val('test');
+
+
+  if(cart_id){
+    load_cart_orders(cart_id)
   }
   
 
   if ($("#txt_user_access").val() == "admin") {
+
+    setInterval(() => {
+      load_notifications()
+    }, 10000);
+  
+
+
+    if (page == "products") {
+      $("#btn_sidebar_products").trigger("click");
+      $(".overlay").removeClass("opacity-0");
+    }
+
+    if (page == "dashboard") {
+      $("#btn_sidebar_dashboard").trigger("click");
+      $(".overlay").removeClass("opacity-0");
+
+     
+    }
+
+    if (page == "feedback") {
+      $("#btn_sidebar_feedback").trigger("click");
+      $(".overlay").removeClass("opacity-0");
+    }
+
+    if (page == "inventory") {
+      $("#btn_sidebar_inventory").trigger("click");
+      $(".overlay").removeClass("opacity-0");
+    }
+
+    if (page == "order_history") {
+      $("#btn_sidebar_order_history").trigger("click");
+      $(".overlay").removeClass("opacity-0");
+    }
+
+    if (page == "order") {
+      $("#btn_sidebar_order").trigger("click");
+      $(".overlay").removeClass("opacity-0");
+    }
+
     // ADMIN
     load_feedbacks();
 
@@ -95,8 +117,14 @@ $(document).ready(function () {
       update_account($("#txt_user_id").val());
     });
   } else {
+
     // USER
     load_products();
+    $('#viewMenu').on('click', function(){
+      change_page('viewMenu')
+    })
+
+
   }
 });
 
@@ -120,6 +148,7 @@ function write_account_settings(data) {
     $("#txt_username").val(val.username);
     $("#txt_email").val(val.email);
     $("#txt_password").val(val.password);
+    $("#txt_phone").val(val.phone);
     $("#sel_access_level").val(val.access_level);
   });
 }
@@ -128,7 +157,9 @@ function delete_account(id) {
     type: "POST",
     url: "src/database/burger_shop/func/admin/delete_account.php?id=" + id,
     success: function (data) {
-      alert("Account deleted successfully.");
+      $("#msg_title").text("Delete Account");
+      $("#msg_body").text("Account deleted successfully.");
+      $("#md_msg_box").modal("show");
     },
   });
 }
@@ -139,33 +170,56 @@ function update_account(id) {
       username: $("#txt_username").val(),
       email: $("#txt_email").val(),
       password: $("#txt_password").val(),
+      phone: $("#txt_phone").val(),
       access_level: $("#sel_access_level").val(),
     },
     url: "src/database/burger_shop/func/admin/update_account.php?id=" + id,
     success: function (data) {
-      alert("Account updated successfully.");
+      $("#msg_title").text("Update Account");
+      $("#msg_body").text("Account updated successfully.");
+      $("#md_msg_box").modal("show");
     },
   });
 }
 
-
-$('#btn_login').on('click', function(){
+$("#btn_login").on("click", function () {
   $.ajax({
     type: "POST",
-    url: "src/database/burger_shop/func/login.php" ,
-    data:{
-      username:$('#txt_username').val(),
-      password:$('#txt_password').val(),
-    },
-    success: function (data) {
-    },
+    url: "src/database/burger_shop/func/login.php",
+    data: {
+      username: $("#txt_username").val(),
+      password: $("#txt_password").val(),
+    }
   });
-})
+});
 
-$('#btn_logout').on('click', function(){
+
+$('#btn_signup_submit').on('click', function(e){
+  e.preventDefault();
   $.ajax({
     type: "POST",
-    url: "src/database/burger_shop/func/logout.php" ,
+    url: "src/database/burger_shop/func/user/add_account.php",
+    data: {
+      username: $("#txt_signup_username").val(),
+      password: $("#txt_signup_password").val(),
+      fullname: $("#txt_signup_fullname").val(),
+      phone: $("#txt_signup_phone").val(),
+      email: $("#txt_signup_email").val(),
+      address: $("#txt_signup_address").val()
+      
+    },
+    success:function(){
+      $('#signUpModal').modal('hide')
+      $("#msg_title").text("Sign up Account");
+      $("#msg_body").text("Registration Successful");
+      $("#md_msg_box").modal("show");
+    }
   });
+  
 })
 
+
+
+$('#btn_nav_admin_view_account').on('click', function(){
+  $('#btn_account_settings').trigger('click')
+})

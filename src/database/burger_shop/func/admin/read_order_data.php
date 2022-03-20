@@ -17,7 +17,7 @@ $q = '
         ON
             a.product_id = b.id
         WHERE
-            ref_no ='.$id.';
+            ref_no ="'.$id.'";
 ';
 
 
@@ -34,7 +34,7 @@ $q = '
         ON
             a.product_id = b.id
         WHERE
-            ref_no ='.$id.';
+            ref_no ="'.$id.'";
 ';
 
 $total = $db->read($q);
@@ -45,12 +45,13 @@ $q = '
                 payment_method,
                 payment_details,
                 payment,
-                payment_date
+                payment_date,
+                gcash_payment_proof
 
         FROM
                 tbl_payments
         WHERE
-                order_ref_no ='.$id.';
+                order_ref_no ="'.$id.'";
 ';
 
 $payment = $db->read($q);

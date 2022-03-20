@@ -1,5 +1,5 @@
-<div class="d-none page" id="page_createAcc" style="color: #747474; background: white;">
-    <div class="container">
+<div class="page" id="page_createAcc">
+    <div class="container pt-2" style="color: #A0A0A0;">
         <div class="row">
             <div class="col-lg-8">
                 <span class="h3" style="letter-spacing: 2px; font-weight: bold;">CREATE ACCOUNT</span>
@@ -13,7 +13,7 @@
 
     </div>
 
-    <section class="mt-3">
+    <section class="mt-3" style="color: #A0A0A0;">
         <div class="container mb-4">
             <div class="row">
                 <div class="col-7">

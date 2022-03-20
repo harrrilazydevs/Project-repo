@@ -77,8 +77,8 @@ if( !isset($_SESSION['access_level'])){
 
 <div class="">
 
-    <input type="hidden" name="" id="txt_user_name" value="<?php echo $_SESSION['username']; ?>">
-    <input type="hidden" name="" id="txt_address" value="<?php echo $_SESSION['address']; ?>">
+    <!-- <input type="hidden" name="" id="txt_user_name" value="<?php echo $_SESSION['username']; ?>">
+    <input type="hidden" name="" id="txt_address" value="<?php echo $_SESSION['address']; ?>"> -->
     <input type="hidden" name="" id="txt_card_id" value="<?php 
     if(isset( $_SESSION['cart_id'] ))
     {
@@ -105,10 +105,12 @@ if( !isset($_SESSION['access_level'])){
 
     if ($_SESSION['theme'] == 'dental_clinic' && $_SESSION['access_level'] == 'user') {
         include_once 'src/pages/dental_clinic/user/navbar.php';
-        include_once 'src/pages/dental_clinic/user/login.php';
-        include_once 'src/pages/dental_clinic/user/createAcc.php';
-        include_once 'src/pages/dental_clinic/user/0page.php';
         include_once 'src/pages/dental_clinic/user/modals.php';
+        include_once 'src/pages/dental_clinic/user/login.php';
+        include_once 'src/pages/dental_clinic/user/0page.php';
+        include_once 'src/pages/dental_clinic/user/createAcc.php';
+        include_once 'src/pages/dental_clinic/user/page11.php';
+
 
 
         echo '<script src="src/func/dental_clinic/user/user.js"></script>';

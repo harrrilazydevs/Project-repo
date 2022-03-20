@@ -1,4 +1,4 @@
-<div class="dental_clinic_nav" style="border-bottom: solid white; border-width: thin;">
+<div class="d-none dental_clinic_nav" style="border-bottom: solid white; border-width: thin;">
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <div class="collapse navbar-collapse">

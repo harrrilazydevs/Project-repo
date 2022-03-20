@@ -2,7 +2,7 @@
   --bgc: #4dbdac !important;
 }
 body {
-  background: var(--bgc);
+  /* background: var(--bgc); */
   color: white;
   font-family: sans-serif;
 }

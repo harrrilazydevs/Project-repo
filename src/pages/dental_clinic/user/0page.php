@@ -1,4 +1,4 @@
-<div class="page" id="page_0page.php">
+<div class="d-none page" id="page_0page.php">
 
     <section>
         <div class="container mt-5">
@@ -36,9 +36,9 @@
                             <img src="src/resources/img/bottle.png" class="card-img-top" style="border-radius: 2%;  width: 50%; height: 50%;">
                         </div>
                         <div class="card-body">
-                            <span class="card-title h4 mb-2" style="letter-spacing: 3px;">Package 1</span> 
+                            <span class="card-title h4 mb-2" style="letter-spacing: 3px;">Package 1</span>
                             <br>
-                            <button data-bs-toggle="modal" data-bs-target="#createAcc"  class="mt-2 text-white" style="font-weight:bold; background:#47B0A0; border-radius: 50px; width:120px; border: none; height: 35px;">Avail</button>
+                            <button data-bs-toggle="modal" data-bs-target="#package" class="mt-2 text-white" style="font-weight:bold; background:#47B0A0; border-radius: 50px; width:120px; border: none; height: 35px;">Avail</button>
                         </div>
                     </div>
                 </div>
@@ -70,3 +70,5 @@
         </div>
     </section>
 </div>
+
+

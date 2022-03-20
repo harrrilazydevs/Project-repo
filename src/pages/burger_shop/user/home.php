@@ -179,20 +179,27 @@
             <div class="row d-flex justify-content-center">
                 <h5 style="letter-spacing: 3px;" class="text-center mt-5 mb-5">How to order?</h5>
 
-                <div class="col-lg-2 col-sm-12 mb-5">
+                <div class="col-lg-3 col-sm-12 mb-5 text-center">
                     <img src="src/resources/img/step-1.jpg" width="100%" style="border-radius: 30px;">
+                    <h5 class="pt-2" style="font-weight: bold;">Choose your food</h5>
                 </div>
 
-                <div class="col-lg-2 col-sm-12 mb-5">
+                <div class="col-lg-3 col-sm-12 mb-5 text-center">
                     <img src="src/resources/img/step-2.jpg" width="100%" style="border-radius: 30px;">
+                    <h5 class="pt-2" style="font-weight: bold;">Add to Cart</h5>
+
                 </div>
 
-                <div class="col-lg-2 col-sm-12 mb-5">
+                <div class="col-lg-3 col-sm-12 mb-5 text-center">
                     <img src="src/resources/img/step-3.jpg" width="100%" style="border-radius: 30px;">
+                    <h5 class="pt-2" style="font-weight: bold;">Fast Delivery & Easy Payments Methods</h5>
+
                 </div>
                 
-                <div class="col-lg-2 col-sm-12 mb-5">
+                <div class="col-lg-3 col-sm-12 mb-5 text-center">
                     <img src="src/resources/img/step-4.jpg" width="100%" style="border-radius: 30px;">
+                    <h5 class="pt-2" style="font-weight: bold;">Enjoy the Food</h5>
+
                 </div>
 
             </div>

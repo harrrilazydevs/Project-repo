@@ -87,7 +87,17 @@ if( !isset($_SESSION['access_level'])){
     }
     ?>">
     <input type="hidden" name="" id="txt_cart_order_count" >
-    <input type="hidden" name="" id="txt_user_id" value="<?php echo $_SESSION['user_id']; ?>">
+    <input type="hidden" name="" id="txt_user_id" value="<?php 
+
+    if(isset( $_SESSION['user_id'] ))
+    {
+        echo $_SESSION['user_id']; 
+
+    }
+    
+    
+    
+    ?>">
     <input type="hidden" name="" id="txt_user_access" value="<?php echo $_SESSION['access_level']; ?>">
 
     <!-- CONTENTS -->

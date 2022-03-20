@@ -69,6 +69,52 @@ function write_products(data) {
   add_to_cart();
 }
 
+
+function load_filtered_products(filter) {
+    $.ajax({
+      type: "GET",
+      url: "src/database/burger_shop/func/user/read_products.php?category="+filter,
+      success: function (data) {
+        write_products_filtered(JSON.parse(data));
+      },
+    });
+  }
+
+  function write_products_filtered(data) {
+    all_output = "";
+    $.each(data, function (key, val) {
+  
+      all_output +=
+        '<div class="col mt-2" ><div class="card p-3" style=" height:65vh;background: #2D1E1E; border-radius: 2%;">';
+      all_output +=
+        '<div><img src="' +
+        val.picture +
+        '"  class="card-img-top" style="border-radius: 2%; height:40vh;"></div>';
+      all_output +=
+        '<div class="card-body"><h6 class="card-title" style="letter-spacing: 3px;">' +
+        val.name +
+        "</h5>";
+      all_output +=
+        '<p class="card-text"><small>&#8369;' +
+        val.price +
+        '</small></p><a href="#">';
+      all_output +=
+        '<button attr-id="' +
+        val.id +
+        '" class="btn_add_to_cart" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none;">';
+      all_output +=
+        '<i class="fa-solid fa-cart-shopping text-white"></i> Add to Cart';
+      all_output += "</button></a></div></div></div>";
+    });
+  
+  
+    $("#div_products_all").empty();
+    $("#div_products_all").append(all_output);
+  
+    add_to_cart();
+  }
+
+
 function add_to_cart() {
   $(".btn_add_to_cart").on("click", function () {
     if (!$("#txt_user_id").val()) {
@@ -380,7 +426,6 @@ function load_my_orders() {
   });
 }
 function write_my_orders(data) {
-  console.log(data);
   var total = "";
   var ref_no = "";
   var payment_method = "";
@@ -389,34 +434,42 @@ function write_my_orders(data) {
   var status = "";
   var temp_ref_no = "";
   var td = "";
+  var orders = "";
 
+  var rows = {};
+
+  
   $.each(data, function (key, val) {
+
     !temp_ref_no ? (temp_ref_no = val.ref_no) : "";
+    
+   
 
     if (temp_ref_no == val.ref_no) {
-      output += val.qty + "x" + " " + val.name + " <br>";
+        orders +=val.qty + "x" + " " + val.name + " <br>";
+
     } else {
-      temp_ref_no = val.ref_no;
-      output = "";
-      output += val.qty + "x" + " " + val.name + " <br>";
+
+       
+       
+      
+        temp_ref_no = val.ref_no;
+        orders = val.qty + "x" + " " + val.name + " <br>"
     }
 
-    ref_no = val.ref_no;
-    payment_method = val.payment_method;
-    status = val.status;
-    td += "<tr>";
-    td += "<td>" + ref_no + "</td>";
-    td += "<td>" + output + "</td>";
-    td += "<td>" + payment_method + "</td>";
-    td += "<td>" + status + "</td>";
-    //   td +=
-    //     '<td><i class="fa-solid fa-eye icon_btn text-light pe-1" title="View Details" attr-id="' +
-    //     ref_no +
-    //     '" ></i></td>';
-    td += "</tr>";
-    console.log(temp_ref_no);
+    rows[temp_ref_no] = [orders,val.payment_method,val.status];
+
   });
 
+  $.each(rows, function (key, val) {
+    td += "<tr>";
+    td += "<td>" + key + "</td>";
+    td += "<td>" + val[0] +"</td>"
+    td += "<td>" + val[1] + "</td>";
+    td += "<td>" + val[2] + "</td>";
+    td += "</tr>";
+  })
+  
   $("#tbl_my_orders tbody").empty();
   $("#tbl_my_orders tbody").append(td);
 }
@@ -445,3 +498,25 @@ $("#txt_signup_password2").on("keyup", function () {
   }
   
 });
+
+
+$('.menuDropdown').on('click', function(){
+    load_filtered_products($(this).attr('attr-name'))
+
+    if($(this).attr('attr-name') == 'all'){
+        $('#btn_filter_product').text('All Products')
+    }
+    
+    if($(this).attr('attr-name') == 'sides'){
+        $('#btn_filter_product').text('Side Dishes')
+    }
+
+    if($(this).attr('attr-name') == 'burger'){
+        $('#btn_filter_product').text('Burgers')
+    }
+
+    if($(this).attr('attr-name') == 'drink'){
+        $('#btn_filter_product').text('Drinks')
+    }
+    
+})

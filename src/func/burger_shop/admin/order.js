@@ -35,12 +35,19 @@ function print_order() {
 }
 
 function view_order(id) {
+
+  var total = 0;
+  var subtotal = 0;
+  var delivery_fee = 0;
+
+
   $.ajax({
     type: "GET",
     url: "src/database/burger_shop/func/admin/read_order_data.php?id=" + id,
     success: function (data) {
       output = "";
       $.each(JSON.parse(data).data, function (key, val) {
+
         output += "<tr>";
         output += '<td class="text-center p-1">' + val.name + "</td>";
         output += '<td class="text-center p-1">' + val.qty + "</td>";
@@ -53,18 +60,47 @@ function view_order(id) {
       $.each(JSON.parse(data).total, function (key, val) {
         $("#txt_total").empty();
         $("#txt_total").append("&#8369;" + val.total);
+
+        $("#txt_total_print").empty();
+        $("#txt_total_print").append("&#8369;" + val.total);
       });
+
+      $.each(JSON.parse(data).subtotal, function (key, val) {
+        $("#txt_subtotal").empty();
+        $("#txt_subtotal").append("&#8369;" + val.subtotal);
+
+        subtotal = parseInt(val.subtotal)
+
+      });
+
+      $.each(JSON.parse(data).customer, function (key, val) {
+        $('#print_name').text(val.name)
+        $('#print_phone').text(val.phone)
+
+      });
+      
       
 
       $.each(JSON.parse(data).payment, function (key, val) {
         $("#txt_payment_method").val(val.payment_method);
+
+        $('#print_payment_method').text(val.payment_method)
+        $('#print_payment').text('₱'+val.payment)
+        $('#print_delivery_address').text(val.delivery_address)
+        $('#print_note_to_rider').text(val.note_to_rider)
+
         $("#txt_payment_amount").val("₱" + numberWithCommas(val.payment));
         $("#txt_payment_number").val( val.payment_details);
 
         $("#img_payment_proof").attr("src",val.gcash_payment_proof);
         $("#img_payment_proof_a").attr("href",val.gcash_payment_proof);
 
-        if(val.gcash_payment_proof == "GCASH"){
+
+        $("#txt_delivery_fee").text("₱" +val.delivery_fee);
+
+        delivery_fee = parseInt(val.delivery_fee)
+
+        if(val.payment_method == "GCASH"){
           $('#gcash').removeClass('d-none')
         }
         else{
@@ -73,6 +109,10 @@ function view_order(id) {
         }
         
       });
+      total = parseInt( delivery_fee + subtotal )
+      $('#txt_total').text("₱" +total)
+      $('#txt_total_print').text("₱" +total)
+
       
       $("#tbl_view_order tbody").empty();
       $("#tbl_view_order tbody").append(output);
@@ -86,12 +126,21 @@ function view_order(id) {
 }
 
 function view_order_paid(id) {
+
+  
+  var total = 0;
+  var subtotal = 0;
+  var delivery_fee = 0;
+
+  $('#btn_update_order').addClass('d-none')
+
   $.ajax({
     type: "GET",
     url: "src/database/burger_shop/func/admin/read_order_data.php?id=" + id,
     success: function (data) {
       output = "";
       $.each(JSON.parse(data).data, function (key, val) {
+
         output += "<tr>";
         output += '<td class="text-center p-1">' + val.name + "</td>";
         output += '<td class="text-center p-1">' + val.qty + "</td>";
@@ -104,15 +153,67 @@ function view_order_paid(id) {
       $.each(JSON.parse(data).total, function (key, val) {
         $("#txt_total").empty();
         $("#txt_total").append("&#8369;" + val.total);
+        $("#txt_total_print").empty();
+        $("#txt_total_print").append("&#8369;" + val.total);
       });
+
+      $.each(JSON.parse(data).subtotal, function (key, val) {
+        $("#txt_subtotal").empty();
+        $("#txt_subtotal").append("&#8369;" + val.subtotal);
+
+        subtotal = parseInt(val.subtotal)
+
+      });
+
+      $.each(JSON.parse(data).customer, function (key, val) {
+        $('#print_name').text(val.name)
+        $('#print_phone').text(val.phone)
+
+      });
+      
+      
+
+      $.each(JSON.parse(data).payment, function (key, val) {
+        $("#txt_payment_method").val(val.payment_method);
+
+        $('#print_payment_method').text(val.payment_method)
+        $('#print_payment').text('₱'+val.payment)
+        $('#print_delivery_address').text(val.delivery_address)
+        $('#print_note_to_rider').text(val.note_to_rider)
+
+        $("#txt_payment_amount").val("₱" + numberWithCommas(val.payment));
+        $("#txt_payment_number").val( val.payment_details);
+
+        $("#img_payment_proof").attr("src",val.gcash_payment_proof);
+        $("#img_payment_proof_a").attr("href",val.gcash_payment_proof);
+
+
+        $("#txt_delivery_fee").text("₱" +val.delivery_fee);
+
+        delivery_fee = parseInt(val.delivery_fee)
+
+        if(val.payment_method == "GCASH"){
+          $('#gcash').removeClass('d-none')
+        }
+        else{
+          $('#gcash').addClass('d-none')
+
+        }
+        
+      });
+      total = parseInt( delivery_fee + subtotal )
+      $('#txt_total').text("₱" +total)
+      $('#txt_total_print').text("₱" +total)
+
+      
       $("#tbl_view_order tbody").empty();
       $("#tbl_view_order tbody").append(output);
       $("#tbl_view_order_print tbody").empty();
       $("#tbl_view_order_print tbody").append(output);
       $("#md_view_order").modal("show");
-      $('#btn_update_order').addClass('d-none')
     },
   });
+
 }
 
 $('#btn_save_update_order').on('click', function(){

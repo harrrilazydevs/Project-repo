@@ -26,7 +26,7 @@ $result = $db->read($q);
 
 $q = '
         SELECT 
-                (select sum(b.price)) as "total"
+                (select sum(b.price)) as "subtotal"
         FROM
                 tbl_orders a
         INNER JOIN
@@ -37,7 +37,10 @@ $q = '
             ref_no ="'.$id.'";
 ';
 
-$total = $db->read($q);
+$subtotal = $db->read($q);
+
+
+
 
 
 $q = '
@@ -46,7 +49,10 @@ $q = '
                 payment_details,
                 payment,
                 payment_date,
-                gcash_payment_proof
+                gcash_payment_proof,
+                delivery_fee,
+                delivery_address,
+                note_to_rider
 
         FROM
                 tbl_payments
@@ -57,9 +63,30 @@ $q = '
 $payment = $db->read($q);
 
 
+
+$q = '
+        SELECT 
+                name,
+                phone
+
+        FROM
+                tbl_users a
+        INNER JOIN
+                tbl_orders b
+        ON      
+                b.user_id = a.id
+        WHERE
+                ref_no ="'.$id.'";
+';
+
+$customer = $db->read($q);
+
+
+
 echo json_encode([
         "data"=>$result,
-        "total"=>$total,
+        "subtotal"=>$subtotal,
         "payment"=>$payment,
+        "customer"=>$customer
 
 ]);

@@ -93,6 +93,9 @@ if( !isset($_SESSION['access_level'])){
         include_once 'src/pages/dental_clinic/user/navbar.php';
         include_once 'src/pages/dental_clinic/user/login.php';
         include_once 'src/pages/dental_clinic/user/createAcc.php';
+        include_once 'src/pages/dental_clinic/user/0page.php';
+        include_once 'src/pages/dental_clinic/user/modals.php';
+
 
         echo '<script src="src/func/dental_clinic/user/user.js"></script>';
 

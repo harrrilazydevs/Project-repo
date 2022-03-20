@@ -16,15 +16,15 @@
         <!----------------DROPDOWN MENU BTN ------------>
         <div class="container ms-5 mt-5 ">
             <div class="dropdown ">
-                <button class="btn btn-secondary dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; border: none !important;">
+                <button id="btn_filter_product" class="btn btn-secondary dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; border: none !important;">
                     All Products
                 </button>
 
                 <ul class="dropdown-menu text-center" style="background: #E4DEBE; width: 15px;">
-                    <li><a class="dropdown-item menuDropdown" href="#">All Products</a></li>
-                    <li><a class="dropdown-item menuDropdown" href="#">Drinks</a></li>
-                    <li><a class="dropdown-item menuDropdown" href="#">Burgers</a></li>
-                    <li><a class="dropdown-item menuDropdown" href="#">Side Dishes</a></li>
+                    <li><a class="dropdown-item menuDropdown" attr-name="all">All Products</a></li>
+                    <li><a class="dropdown-item menuDropdown" attr-name="drink" >Drinks</a></li>
+                    <li><a class="dropdown-item menuDropdown" attr-name="burger" >Burgers</a></li>
+                    <li><a class="dropdown-item menuDropdown" attr-name="sides" >Side Dishes</a></li>
                 </ul>
             </div>
         </div>

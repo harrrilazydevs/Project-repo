@@ -25,7 +25,7 @@ $q = '
         ON
                 c.id = a.product_id
         WHERE
-                a.user_id ="'.$user_id.'"
+                a.user_id ="'.$user_id.'" AND a.status != "cart"
         ORDER BY
                 a.id DESC
      ;

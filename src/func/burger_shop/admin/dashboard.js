@@ -104,6 +104,11 @@ function write_notification(data){
   $('#notif_bar').empty()
   $('#notif_bar').append(output)
 
+  if(!data){
+    $('#notif_count').empty()
+    $('#notif_count').append(0)
+  }
+
 
   
   

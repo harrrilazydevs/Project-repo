@@ -18,7 +18,7 @@ function write_tbl_products(data) {
     output += '<td class="text-center p-1">' + val.category + "</td>";
     output += '<td class="text-center p-1">' + val.price + "</td>";
     output +=
-      '<td class="text-center p-1"><i class="fa-solid fa-trash-can icon_btn text-primary pe-1" onClick="delete_product(' +
+      '<td class="text-center p-1"><i class="fa-solid text-danger fa-trash-can icon_btn text-primary pe-1" onClick="delete_product(' +
       val.id +
       ')"></i>';
     output += "</td>";

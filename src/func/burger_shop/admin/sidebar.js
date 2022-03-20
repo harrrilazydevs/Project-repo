@@ -22,6 +22,7 @@ $('#btn_sidebar_dashboard').on('click', function(){
 $('#btn_sidebar_order_history').on('click', function(){
     setCookie('page=order_history');
     change_page('order_history')
+    load_order_history();
 })
 
 $('#btn_sidebar_products').on('click', function(){  

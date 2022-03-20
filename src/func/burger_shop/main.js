@@ -43,7 +43,6 @@ $(document).ready(function () {
   
   page = getCookie("page");
   cart_id = $('#txt_card_id').val()
-  console.log(cart_id)
 
   $("#txt_order_ref_no_payment2").val('test');
 
@@ -55,9 +54,9 @@ $(document).ready(function () {
 
   if ($("#txt_user_access").val() == "admin") {
 
-    setInterval(() => {
-      load_notifications()
-    }, 10000);
+    // setInterval(() => {
+    //   load_notifications()
+    // }, 15000);
   
 
 

@@ -1,10 +1,169 @@
-.dental_clinic_nav{
-    height:60px;
-    background: #4DBDAC !important;
-    color: white;
+:root {
+  --bgc: #00ffd9 !important;
 }
-body{
-    background: #4DBDAC !important;
-    color: white;
+body {
+  /* background: var(--bgc); */
+  color: white;
+  font-family: sans-serif;
+}
+.dental_clinic_nav {
+  height: 60px;
+  background: #4dbdac !important;
+  color: white;
 }
 
+.navbar-brand,
+.nav-link {
+  color: black;
+}
+a {
+  text-decoration: none;
+}
+/* <------------SIGN UP AND SIGN IN FORM ------------>*/
+.input_login {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+.btn_signUp {
+  border-radius: 20px;
+  background-color: var(--bgc);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+.btn_signUp:active {
+  transform: scale(0.95);
+}
+.btn_signUp:focus {
+  outline: none;
+}
+.formSignUp {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+.sign-up-container {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+@keyframes show {
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+  50%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+.container_signUp.right-panel-active .sign-in-container {
+  transform: translateX(100%);
+}
+.container_signUp.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: show 0.6s;
+}
+.container_signUp.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+.container_signUp.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+.container_signUp.right-panel-active .overlay-left {
+  transform: translateX(0);
+}
+.container_signUp.right-panel-active .overlay-right {
+  transform: translateX(20%);
+}
+.overlay-container {
+  position: absolute;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+.overlay {
+  background: var(--bgc);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #ffffff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+.overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+.overlay-left {
+  transform: translateX(-20%);
+}
+input[type='checkbox'] {
+  /* Double-sized Checkboxes */
+  --ms-transform: scale(2); /* IE */
+  --moz-transform: scale(2); /* FF */
+  --webkit-transform: scale(2); /* Safari and Chrome */
+  --o-transform: scale(2); /* Opera */
+  padding: 10px;
+}
+/* <------------SIGN UP AND SIGN IN FORM ------------>*/
+
+.createAcc_Input {
+  width: 70%;
+  border-radius: 5px;
+  margin-top: 13px;
+  margin-left: 30px;
+}
+.createAcc_label{
+  display: inline-block;
+  width: 140px;
+  margin-left: 15px;
+}
+.accSetting_input{
+  width: 70%  !important;
+  border-radius: 5px;
+  margin-top: 13px;
+  margin-left: 30px;
+}

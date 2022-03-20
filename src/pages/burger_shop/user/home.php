@@ -11,18 +11,16 @@
 
                 <div class="col-lg-7 col-sm-12">
                     <div class="main-carousel" data-flickity='{ "autoPlay": true }'>
-                        <div class="cell cell-img" ><img style="width:760px;" src="src/resources/img/h1.jpg"></div>
-                        <div class="cell cell-img" ><img style="width:760px;" src="src/resources/img/h2.jpg"></div>
-                        <div class="cell cell-img" ><img style="width:760px;" src="src/resources/img/h3.jpg"></div>
-                        <div class="cell cell-img" ><img style="width:760px;" src="src/resources/img/h4.jpg"></div>
-                        <div class="cell cell-img" ><img style="width:760px;" src="src/resources/img/h5.jpg"></div>
-                        <div class="cell cell-img" ><img style="width:760px;" src="src/resources/img/h6.jpg"></div>
+                        <div class="cell cell-img" ><img style="width: 50rem;" src="src/resources/img/h1.jpg"></div>
+                        <div class="cell cell-img" ><img style="width: 50rem !important;" src="src/resources/img/h0.png"></div>
+                        <div class="cell cell-img" ><img style="width: 53rem !important;" src="src/resources/img/h2.jpg"></div>
+                
                     </div>
                 </div>
             </div>
         </div>
      
-    </section>
+    </section>  
     <!-----------------------AVAILABLE PRODUCTSECTION 2ND CAROUSEL ------------------------->
  
     
@@ -96,10 +94,10 @@
         <div class="row mt-5 mb-5">
             <div class="col-lg-12 col-sm-12 ">
                 <h5 class="text-center align-items-center text-white mb-5" style="letter-spacing: 3px;">Otakus's Best Sellers!</h5>
-                <div class="bestSeller-carousel" style="align-items: center !important;">
-                    <div class="cell bestSeller-img"><img src="src/resources/img/3rdcaro.jpg"></div>
-                    <div class="cell bestSeller-img"><img src="src/resources/img/3rdcaro.jpg"></div>
-                    <div class="cell bestSeller-img"><img src="src/resources/img/3rdcaro.jpg"></div>
+                <div class="bestSeller-carousel">
+                    <div class="cell bestSeller-img"><img src="src/resources/img/h3.jpg" style="width: 800px;"></div>
+                    <div class="cell bestSeller-img"><img src="src/resources/img/h4.jpg" style="width: 780px;"></div>
+                    <div class="cell bestSeller-img"><img src="src/resources/img/h5.jpg" style="width: 780px;"></div>
                 </div>
             </div>
     </section>
@@ -182,25 +180,21 @@
                 <h5 style="letter-spacing: 3px;" class="text-center mt-5 mb-5">How to order?</h5>
 
                 <div class="col-lg-2 col-sm-12 mb-5">
-                    <img src="src/resources/img/orderDecoy.png" width="100%" style="border-radius: 300px;">
+                    <img src="src/resources/img/step-1.jpg" width="100%" style="border-radius: 30px;">
                 </div>
 
                 <div class="col-lg-2 col-sm-12 mb-5">
-                    <img src="src/resources/img/orderDecoy.png" width="100%" style="border-radius: 300px;">
+                    <img src="src/resources/img/step-2.jpg" width="100%" style="border-radius: 30px;">
                 </div>
 
                 <div class="col-lg-2 col-sm-12 mb-5">
-                    <img src="src/resources/img/orderDecoy.png" width="100%" style="border-radius: 300px;">
+                    <img src="src/resources/img/step-3.jpg" width="100%" style="border-radius: 30px;">
+                </div>
+                
+                <div class="col-lg-2 col-sm-12 mb-5">
+                    <img src="src/resources/img/step-4.jpg" width="100%" style="border-radius: 30px;">
                 </div>
 
-                <div class="col-lg-2 col-sm-12 mb-5">
-                    <img src="src/resources/img/orderDecoy.png" width="100%" style="border-radius: 300px;">
-                </div>
-
-                <div class="col-lg-2 col-sm-12 mb-5">
-                    <img src="src/resources/img/orderDecoy.png" width="100%" style="border-radius: 300px;">
-                </div>
-            
             </div>
         </div>
     </section>

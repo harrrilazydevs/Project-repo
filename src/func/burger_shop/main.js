@@ -54,9 +54,9 @@ $(document).ready(function () {
 
   if ($("#txt_user_access").val() == "admin") {
 
-    // setInterval(() => {
-    //   load_notifications()
-    // }, 15000);
+    setInterval(() => {
+      load_notifications()
+    }, 15000);
   
 
 

@@ -29,8 +29,13 @@ function print_order() {
   var element = document.getElementById("div_to_print");
   var clonedElement = element.cloneNode(true);
   $(clonedElement).css("display", "block");
+  // html2pdf(clonedElement);
 
-  html2pdf(clonedElement);
+  var opt = {
+    filename:     'Receipt.pdf',
+  };
+  
+  html2pdf().set(opt).from(clonedElement).save();
   clonedElement.remove();
 }
 
@@ -113,7 +118,8 @@ function view_order(id) {
       $('#txt_total').text("₱" +total)
       $('#txt_total_print').text("₱" +total)
 
-      
+      $('#txt_subtotal_view').text("₱" +subtotal)
+      $('#txt_delivery_fee_view').text("₱" +delivery_fee)
       $("#tbl_view_order tbody").empty();
       $("#tbl_view_order tbody").append(output);
       $("#tbl_view_order_print tbody").empty();
@@ -191,6 +197,7 @@ function view_order_paid(id) {
         $("#txt_delivery_fee").text("₱" +val.delivery_fee);
 
         delivery_fee = parseInt(val.delivery_fee)
+        
 
         if(val.payment_method == "GCASH"){
           $('#gcash').removeClass('d-none')
@@ -201,6 +208,9 @@ function view_order_paid(id) {
         }
         
       });
+
+      $('#txt_subtotal_view').text("₱" +subtotal)
+      $('#txt_delivery_fee_view').text("₱" +delivery_fee)
       total = parseInt( delivery_fee + subtotal )
       $('#txt_total').text("₱" +total)
       $('#txt_total_print').text("₱" +total)

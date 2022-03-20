@@ -67,8 +67,10 @@
                     </thead>
                     <tbody></tbody>
                 </table>
-                <div class="border pe-3" style="float:right">
-                    <span class="fw-bold">Total :</span><span class="fw-bold" id="txt_total"> &#8369;900</span>
+                <div class="border pe-3 ps-3" style="float:right">
+                    <span class="fw-bold pe-3">Sub-total :</span><span style="float:right;" class="fw-bold " id="txt_subtotal_view"> &#8369;900</span>
+                    <br><span class="fw-bold pe-3">Delivery Fee :</span><span style="float:right;" class="fw-bold " id="txt_delivery_fee_view"> &#8369;900</span>
+                    <br><span class="fw-bold pe-3">Total :</span><span style="float:right;" class="fw-bold " id="txt_total"> &#8369;900</span>
                 </div>
             </div>
             <div class="modal-footer">

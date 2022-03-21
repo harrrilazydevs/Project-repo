@@ -18,9 +18,7 @@ function write_tbl_products(data) {
     output += '<td class="text-center p-1">' + val.category + "</td>";
     output += '<td class="text-center p-1">' + val.price + "</td>";
     output +=
-      '<td class="text-center p-1"><i class="fa-solid text-danger fa-trash-can icon_btn text-primary pe-1" onClick="delete_product(' +
-      val.id +
-      ')"></i>';
+      '<td class="text-center p-1"><i class="fa-solid text-danger fa-trash-can icon_btn text-primary pe-1 delete_product" attr-id=' +val.id +'></i>';
     output += "</td>";
     output += "</tr>";
     count = count+1
@@ -28,6 +26,15 @@ function write_tbl_products(data) {
 
   $("#tbl_products tbody").empty();
   $("#tbl_products tbody").append(output);
+
+  $('.delete_product').on('click', function(){
+    var prod_id = $(this).attr('attr-id')
+    show_msg('Delete Product','Do you want to delete this product? <br><br><div class="text-center"><button class="btn border-danger mt-2 text-danger py-0 px-3" id="btn_confirm_delete">Delete Product</button></div>')
+    $('#btn_confirm_delete').on('click', function(){
+      delete_product(prod_id)
+    })
+    
+  })
 }
 
 function delete_product(id) {

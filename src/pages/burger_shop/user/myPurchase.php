@@ -1,5 +1,5 @@
 <div class="d-none page" id="page_myPurchase">
-    <div style="margin-top: 4%;">
+    <div style="margin-top: 5%;">
         <table class="table table-borderless mt-5" style="height: 30rem;">
             <thead class="text-white text-center d-flex-inline" style="background-color: #4F0A0A;">
                 <tr>
@@ -22,7 +22,7 @@
 
 
                         <div class="d-flex justify-content-center mb-3">
-                            <button id="btn_proceed_checkout" style="font-weight:bold; background:#FFD600; border-radius:20px; width:200px; margin: 6px; border: none;" data-bs-toggle="modal" data-bs-target="#cartModal">Proceed to Check-out</button>
+                            <button id="btn_proceed_checkout" style="font-weight:bold; background:#FFD600; border-radius:20px; width:200px; margin: 6px; border: none;" >Proceed to Check-out</button>
                         </div>
                     </div>
                 </div>

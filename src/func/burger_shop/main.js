@@ -56,7 +56,8 @@ $(document).ready(function () {
 
     setInterval(() => {
       load_notifications()
-    }, 15000);
+      load_orders();
+    }, 10000);
   
 
 
@@ -95,7 +96,7 @@ $(document).ready(function () {
     // ADMIN
     load_feedbacks();
 
-    //orders.js
+    load_notifications()
     load_orders();
 
     //order_history.js
@@ -113,6 +114,7 @@ $(document).ready(function () {
     });
 
     $("#btn_update_account").on("click", function () {
+      $('#md_account_settings').modal('hide')
       update_account($("#txt_user_id").val());
     });
   } else {
@@ -148,7 +150,8 @@ function write_account_settings(data) {
     $("#txt_email").val(val.email);
     $("#txt_password").val(val.password);
     $("#txt_phone").val(val.phone);
-    $("#sel_access_level").val(val.access_level);
+    $("#txt_full_name").val(val.name);
+  
   });
 }
 function delete_account(id) {
@@ -159,6 +162,7 @@ function delete_account(id) {
       $("#msg_title").text("Delete Account");
       $("#msg_body").text("Account deleted successfully.");
       $("#md_msg_box").modal("show");
+     
     },
   });
 }
@@ -170,13 +174,15 @@ function update_account(id) {
       email: $("#txt_email").val(),
       password: $("#txt_password").val(),
       phone: $("#txt_phone").val(),
-      access_level: $("#sel_access_level").val(),
+      full_name: $("#txt_full_name").val(),
     },
     url: "src/database/burger_shop/func/admin/update_account.php?id=" + id,
     success: function (data) {
       $("#msg_title").text("Update Account");
       $("#msg_body").text("Account updated successfully.");
       $("#md_msg_box").modal("show");
+      $('#admin_menu_name').empty()
+      $('#admin_menu_name').append('Welcome, <b>'+ data+'</b>')
     },
   });
 }
@@ -217,8 +223,43 @@ $('#btn_signup_submit').on('click', function(e){
   
 })
 
+function show_msg(title,msg){
+  $("#msg_title").text(title);
+  $("#msg_body").empty();
+
+  $("#msg_body").append(msg);
+  $("#md_msg_box").modal("show");
+}
 
 
 $('#btn_nav_admin_view_account').on('click', function(){
   $('#btn_account_settings').trigger('click')
+})
+
+$('#login_form').on('submit', function(e){
+  e.preventDefault();
+  $.ajax({
+    type: "POST",
+    url: "src/database/burger_shop/func/login.php",
+    data: {
+      username: $("#txt_username").val(),
+      password: $("#txt_password").val(),
+    },
+    success:function(data){
+      console.log(data)
+      if(data == 0){
+        $('#md_login').modal('hide')
+        $("#msg_title").text("Login Failed");
+        $("#msg_body").text("Invalid username/password");
+        $("#msg_box_close").attr("data-bs-toggle","modal");
+        $("#msg_box_close").removeAttr("data-bs-dismiss");
+        $("#msg_box_close").attr("data-bs-target","#md_login");
+        $("#md_msg_box").modal("show");
+      }
+      else{
+        location.reload();
+      }
+     
+    }
+  });
 })

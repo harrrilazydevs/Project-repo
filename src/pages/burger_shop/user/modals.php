@@ -9,7 +9,7 @@
 
             <div class="wrapper-login">
 
-                <form action="src/database/burger_shop/func/login.php" method="post">
+                <form id="login_form" method="post">
                     <div class="field mt-5">
                         <input type="text" required name="username" id="txt_username">
                         <label><i class="fa-solid fa-user"></i> Username</label>
@@ -25,7 +25,7 @@
                         </div>
                     </div>
                     <div class="field text-center">
-                        <button type="submit" class="py-1 text-white" style="font-weight:bold; background:#F54646; border-radius:20px; width:120px; margin: 6px; border: 1px solid yellow;">Login</button>
+                        <button id="btn_login" type="submit" class="py-1 text-white" style="font-weight:bold; background:#F54646; border-radius:20px; width:120px; margin: 6px; border: 1px solid yellow;">Login</button>
 
                     </div>
 
@@ -326,7 +326,7 @@
 
 
 
-<div class="modal" tabindex="-1" id="md_msg_box">
+<div class="modal" tabindex="-1" id="md_msg_box" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="text-center py-3 text-center" style="border-bottom:3px solid black;">

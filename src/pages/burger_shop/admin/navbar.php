@@ -24,8 +24,8 @@
                 <div class="col">
                     <div class="dropdown">
                         <i class="fa-solid fa-circle-user" type="button" data-bs-toggle="dropdown"></i>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2" style="font-size:10pt;">
-                            <li class=" ps-3">Welcome, <span class="fw-bold"> <?php echo $_SESSION['username']; ?> </span></li>
+                        <ul class="dropdown-menu px-2" aria-labelledby="dropdownMenu2" style="font-size:10pt;">
+                            <li class=" ps-3" id="admin_menu_name" >Welcome, <span class="fw-bold" > <?php echo $_SESSION['username']; ?> </span></li>
                             <li class="dropdown-divider"></li>
                             <li><button class="dropdown-item fw-lighter" type="button" id="btn_nav_admin_view_account"><i class="fa-solid fa-user-gear"></i> Account Settings</button></li>
                             <li>

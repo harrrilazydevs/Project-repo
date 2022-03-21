@@ -9,6 +9,9 @@
             <div class="p-3 md_form">
                 <h6 class="fw-bold text-muted mb-3">Account Settings</h6>
 
+                <label>Full name</label>
+                <input type="text" id="txt_full_name" class="form-control form-control-sm">
+
                 <label>Username</label>
                 <input type="text" id="txt_username" class="form-control form-control-sm">
 
@@ -21,11 +24,11 @@
                 <label class="mt-2">Phone</label>
                 <input type="text" id="txt_phone" class="form-control form-control-sm">
 
-                <label class="mt-2">Access</label>
+                <!-- <label class="mt-2">Access</label>
                 <select class="form-select form-select-sm" name="" id="sel_access_level">
                     <option value="user">User</option>
                     <option value="admin">Admin</option>
-                </select>
+                </select> -->
 
                 <div class="mt-2">
                     <a id="btn_delete_account" class="icon_btn">Delete account</a>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['theme'] = 'dental_clinic';
+$_SESSION['theme'] = 'burger_shop';
 $_SESSION['logo_path'] = 'src/resources/img/otakulogo.png';
 
 if( !isset($_SESSION['access_level'])){

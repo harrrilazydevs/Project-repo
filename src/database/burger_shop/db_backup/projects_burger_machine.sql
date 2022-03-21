@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 20, 2022 at 12:00 PM
+-- Generation Time: Mar 21, 2022 at 12:52 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.15
 
@@ -32,6 +32,18 @@ CREATE TABLE `tbl_feedbacks` (
   `feedback` text NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_feedbacks`
+--
+
+INSERT INTO `tbl_feedbacks` (`id`, `feedback`, `user_id`) VALUES
+(12, 'test', 11),
+(13, 'test', 11),
+(14, 'test', 11),
+(15, 'test', 11),
+(16, 'test', 11),
+(17, 'test', 11);
 
 -- --------------------------------------------------------
 
@@ -69,6 +81,17 @@ CREATE TABLE `tbl_orders` (
   `order_date` date DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `tbl_orders`
+--
+
+INSERT INTO `tbl_orders` (`id`, `user_id`, `product_id`, `qty`, `status`, `ref_no`, `order_date`) VALUES
+(111, 11, 47, 1, 'Pending', 'O.R.D.2625', '2022-03-21'),
+(112, 11, 47, 2, 'Pending', 'O.R.D.7903', '2022-03-21'),
+(113, 11, 50, 50, 'Pending', 'O.R.D.3395', '2022-03-21'),
+(114, 11, 48, 100, 'Pending', 'O.R.D.7394', '2022-03-21'),
+(115, 11, 53, 50, 'Pending', 'O.R.D.7394', '2022-03-21');
+
 -- --------------------------------------------------------
 
 --
@@ -87,6 +110,16 @@ CREATE TABLE `tbl_payments` (
   `delivery_fee` double NOT NULL,
   `gcash_payment_proof` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_payments`
+--
+
+INSERT INTO `tbl_payments` (`id`, `order_ref_no`, `payment_method`, `payment_details`, `payment`, `payment_date`, `note_to_rider`, `delivery_address`, `delivery_fee`, `gcash_payment_proof`) VALUES
+(47, 'O.R.D.2625', 'CASH', NULL, 100, '2022-03-21', '1', '#213 Malakasan Balagtas Manipulo ', 50, NULL),
+(48, 'O.R.D.7903', 'CASH', NULL, 200, '2022-03-21', '1', '#213 Malakasan Balagtas Manipulo ', 75, NULL),
+(49, 'O.R.D.3395', 'CASH', NULL, 5000, '2022-03-21', '', '#213 Malakasan Balagtas Manipulo ', 50, NULL),
+(50, 'O.R.D.7394', 'CASH', NULL, 17500, '2022-03-21', 'test', '#213 Malakasan Balagtas Manipulo ', 50, NULL);
 
 -- --------------------------------------------------------
 
@@ -116,8 +149,7 @@ INSERT INTO `tbl_products` (`id`, `name`, `category`, `picture`, `price`) VALUES
 (53, 'Meliodas Nachos', 'sides', 'src/uploaded/Meliodas Nachos.jpg', 150),
 (54, 'Saitama Burger', 'burger', 'src/uploaded/Saitama Burger.jpg', 150),
 (55, 'Sakuragi Burger', 'burger', 'src/uploaded/Sakuragi Burger.jpg', 100),
-(56, 'San Goku Burger', 'burger', 'src/uploaded/San Goku Burger.jpg', 100),
-(57, 'Zenitsu', 'burger', 'src/uploaded/zenitsu.jpg', 300);
+(56, 'San Goku Burger', 'burger', 'src/uploaded/San Goku Burger.jpg', 100);
 
 -- --------------------------------------------------------
 
@@ -143,7 +175,8 @@ CREATE TABLE `tbl_users` (
 
 INSERT INTO `tbl_users` (`id`, `username`, `email`, `password`, `access_level`, `phone`, `name`, `register_date`, `address`) VALUES
 (1, 'dev', 'dev@mail.com', '1', 'admin', '22222', 'Harri', '2022-03-01', '#21 Malakasan St Brgy Tibay '),
-(2, 'admin', 'admin@mail.com', '1', 'admin', '0000', 'Junior', '2022-03-01', '#21 Malakasan St Brgy Tibay ');
+(2, 'admin', 'admin@mail.com', '1', 'admin', '0000', 'Junior Nonilon', '2022-03-01', '#21 Malakasan St Brgy Tibay '),
+(11, 'user1', 'qwe@gmail.com', '123', 'user', '09231231231', 'Gloc 9', '2022-03-21', '#213 Malakasan Balagtas Manipulo ');
 
 --
 -- Indexes for dumped tables
@@ -198,7 +231,7 @@ ALTER TABLE `tbl_users`
 -- AUTO_INCREMENT for table `tbl_feedbacks`
 --
 ALTER TABLE `tbl_feedbacks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `tbl_locations`
@@ -210,25 +243,25 @@ ALTER TABLE `tbl_locations`
 -- AUTO_INCREMENT for table `tbl_orders`
 --
 ALTER TABLE `tbl_orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
 
 --
 -- AUTO_INCREMENT for table `tbl_payments`
 --
 ALTER TABLE `tbl_payments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `tbl_products`
 --
 ALTER TABLE `tbl_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables

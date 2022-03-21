@@ -1,5 +1,5 @@
 <div class="page" id="page_createAcc">
-    <div class="container pt-2" style="color: #A0A0A0;">
+    <div class="container pt-2">
         <div class="row">
             <div class="col-lg-8">
                 <span class="h3" style="letter-spacing: 2px; font-weight: bold;">CREATE ACCOUNT</span>
@@ -13,12 +13,12 @@
 
     </div>
 
-    <section class="mt-3" style="color: #A0A0A0;">
+    <section class="mt-3">
         <div class="container mb-4">
             <div class="row">
                 <div class="col-7">
                     <p class="ms-4 ps-4" style="font-weight: bold;">Personal settings</p>
-                    <div class="container" style=" border: 2px solid black; padding: 10px; border-radius: 12px;">
+                    <div class="container shadow p-3 mb-5 rounded" style=" border: 2px solid black; padding: 10px; border-radius: 12px;">
                         <form class="mb-1">
                             <label class="h5 createAcc_label" for="fname">First name:</label>
                             <input class="createAcc_Input" type="text" id="fname" name="fname">
@@ -68,8 +68,8 @@
 
                 <div class="col-5">
                     <p style="font-weight: bold;">Account settings</p>
-                    <div class="container" style=" border: 2px solid black; padding: 10px; border-radius: 12px;">
-                        <form class="mb-1">
+                    <div class="container " style=" border: 2px solid black; padding: 10px; border-radius: 12px;">
+                        <form class="">
                             <label class="h5 mt-3 ms-2" for="fname">Username:</label>
                             <input class="accSetting_input" type="text" id="Username" name="Username">
 

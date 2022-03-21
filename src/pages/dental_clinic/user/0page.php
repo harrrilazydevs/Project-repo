@@ -1,4 +1,4 @@
-<div class="d-none page" id="page_0page.php">
+<div class="d-none page" id="page_0page.php" style="background-color: #47B0A0;">
 
     <section>
         <div class="container mt-5">
@@ -22,7 +22,7 @@
             <div class="row text-center">
                 <div class="col-12">
                     <span class="h4" style="letter-spacing: 4px;">Hello There!</span><br>
-                    <button class="booknowBtn text-center mt-3" role="button">BOOK NOW!</button>
+                    <button class="booknowBtn text-center text-black mt-3" role="button">BOOK NOW!</button>
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
         <div class="container mt-5 mb-5" style="width: 70% !important;">
             <div class="row text-white text-center">
                 <!--------------------- HOME CARDS ------------------>
-                <div class="col-lg-4">
+                <div class="col-lg-4 mb-sm-5">
                     <div class="card dentalCard">
                         <div>
                             <img src="src/resources/img/bottle.png" class="card-img-top" style="border-radius: 2%;  width: 50%; height: 50%;">
@@ -43,7 +43,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4">
+                <div class="col-lg-4 mb-sm-5">
                     <div class="card dentalCard">
                         <div>
                             <img src="src/resources/img/tablet.png" class="card-img-top" style="border-radius: 2%; width: 50% !important; height: 15rem !important;">

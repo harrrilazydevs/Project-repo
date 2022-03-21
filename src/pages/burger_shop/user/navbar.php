@@ -2,7 +2,7 @@
 
   <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand text-white" href="#"><img src="src/resources/img/otakuNav.png" width="50" height="40"> Otaku Burger House</a>
+      <a class="navbar-brand text-white" href="#"><img src="src/resources/img/otakuNav.png" width="50" height="40"><small>Otaku Burger House</small></a>
 
       <button class=" navbar-toggler collapsed auto" type="button">
         <i class="fa-solid fa-bars icon_btn ps-3 pb-1 text-white" data-bs-toggle="offcanvas" href="#burger_machine_sidebar" role="button"></i>

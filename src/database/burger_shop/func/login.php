@@ -26,19 +26,17 @@ if(!empty($_POST)){
     $result = $db->read($q);
     
     if(count($result)>0){
-    $_SESSION['access_level'] = $result[0]['access_level'];
-    $_SESSION['user_id'] = $result[0]['id'];
-    $_SESSION['username'] = $result[0]['name'];
-    $_SESSION['address'] = $result[0]['address'];
-    header('location: ../../../../index.php');
-}
-else{
-    header('location: ../../../../index.php');
-    
-}
+        $_SESSION['access_level'] = $result[0]['access_level'];
+        $_SESSION['user_id'] = $result[0]['id'];
+        $_SESSION['username'] = $result[0]['name'];
+        $_SESSION['address'] = $result[0]['address'];
+        
+        echo 1;
+
+    }
+    else{
+        echo 0;
+    }
 
 
 }
-
-
-?>

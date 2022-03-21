@@ -1,13 +1,19 @@
 <?php
+session_start();
+
 //DATABASE FUNCTIONS
 include '../../db.php';
+
+
 
 $id = $_GET['id'];
 $username = $_POST['username'];
 $password = $_POST['password'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
-$access_level = $_POST['access_level'];
+$full_name = $_POST['full_name'];
+
+$_SESSION['username'] = $_POST['full_name'];
 
 $q = '
 
@@ -18,7 +24,7 @@ $q = '
             password="'.$password.'",
             email="'.$email.'",
             phone="'.$phone.'",
-            access_level="'.$access_level.'"
+            name="'.$full_name.'"
         WHERE
             id= '.$id;
 
@@ -26,7 +32,8 @@ $q = '
 $db = new Database();
 $result = $db->update($q);
 
-echo json_encode($result);
+
+echo $_POST['full_name'];
 
 
 ?>

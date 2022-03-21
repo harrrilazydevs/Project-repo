@@ -235,6 +235,7 @@ $('#btn_save_update_order').on('click', function(){
       status:$('#sel_update_order_status').val()
     },
     success: function(data){
+        load_notifications();
         load_orders()
 
         $('#msg_title').empty()

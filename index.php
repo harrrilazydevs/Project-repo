@@ -21,11 +21,7 @@ if( !isset($_SESSION['access_level'])){
     <title>
 
 
-
-
-
         <?php
-
 
         if ($_SESSION['theme'] == 'dental_clinic') {
             echo 'Dental Clinic';
@@ -127,14 +123,16 @@ if( !isset($_SESSION['access_level'])){
         include_once 'src/database/burger_shop/db.php';
 
         // PAGE FUNCTIONS
+
         include_once 'src/pages/burger_shop/user/navbar.php';
-        include_once 'src/pages/burger_shop/user/sidebar.php';
+
         include_once 'src/pages/burger_shop/user/home.php';
         include_once 'src/pages/burger_shop/user/viewMenu.php';
         include_once 'src/pages/burger_shop/user/modals.php';
         include_once 'src/pages/burger_shop/user/contactUs.php';
         include_once 'src/pages/burger_shop/user/myPurchase.php';
         include_once 'src/pages/burger_shop/user/transaction.php';
+        include_once 'src/pages/burger_shop/user/sidebar.php';
 
         echo '<script src="src/func/burger_shop/main.js"></script>';
         echo '<script src="src/func/burger_shop/user/home.js"></script>';

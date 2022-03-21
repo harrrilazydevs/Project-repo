@@ -105,6 +105,8 @@ $(document).ready(function () {
     //dashboard.js
     load_filter_dates();
 
+    
+
     $("#btn_account_settings").on("click", function () {
       load_account_settings($("#txt_user_id").val());
     });
@@ -121,9 +123,23 @@ $(document).ready(function () {
 
     // USER
     load_products();
+
+    //home.js
+    load_best_sellers()
+
+
     $('#viewMenu').on('click', function(){
       change_page('viewMenu')
     })
+
+    $('#clone_btn_navbar_contactUs').on('click', function(){
+      $('#btn_navbar_contactUs').trigger('click')
+    })
+
+    $('#clone_btn_navbar_myorders').on('click', function(){
+      $('#view_my_orders').trigger('click')
+    })
+    
 
 
   }

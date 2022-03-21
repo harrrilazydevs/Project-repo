@@ -1,4 +1,5 @@
 <?php
+session_start();
 //DATABASE FUNCTIONS
 include '../../db.php';
 
@@ -84,6 +85,9 @@ $q = '
 $db = new Database();
 $result = $db->update($q);
 
+
+unset($_SESSION['cart_id']);
 echo '1';
+
 
 // 

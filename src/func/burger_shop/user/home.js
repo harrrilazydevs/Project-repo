@@ -518,3 +518,37 @@ $(".menuDropdown").on("click", function () {
     $("#btn_filter_product").text("Drinks");
   }
 });
+
+
+
+function load_best_sellers() {
+  $.ajax({
+    type: "GET",
+    url: "src/database/burger_shop/func/user/read_best_sellers.php",
+    success: function (data) {
+      write_best_sellers(JSON.parse(data));
+    },
+  });
+}
+
+function write_best_sellers(data){
+  var output = ''
+  output +=
+  '<div class="card-carousel" data-flickity=\'{ "autoPlay": true }\' >';
+  var count = 1;
+  $.each(data, function(key,val){
+    output += '<div class="userOrder-card cell-card mt-3" aria-hidden="true" style="position: absolute; left: 0px; transform: translateX(453.33%);"><img src="'+val.picture+'"><div class="description"><h5 id="text" style="letter-spacing: 3px;">#'+count+' '+val.name+'</h5><p>₱'+val.price+'</p><a class="btn_add_to_cart" attr-id="'+val.id+'"><button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button></a></div></div>'
+    count  = count+1;
+ 
+  })
+  output += '</div>'
+  $('#carousel_best_sellers').empty();
+  $('#carousel_best_sellers').append(output);
+
+  $('.card-carousel ').flickity({
+    cellAlign: 'left',
+    wrapAround: true,
+    freeScroll: true,
+    autoPlay: true
+});
+}

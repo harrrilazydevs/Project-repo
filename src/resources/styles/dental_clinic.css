@@ -2,7 +2,7 @@
   --bgc: #4dbdac !important;
 }
 body {
-  /* background: var(--bgc); */
+  background: var(--bgc);
   color: white;
   font-family: sans-serif;
 }
@@ -17,136 +17,139 @@ body {
 a {
   text-decoration: none;
 }
+.sidebar_dental{
+  background-color: #80CEB8;
+  color: white;
+}
 /* <------------SIGN UP AND SIGN IN FORM ------------>*/
-  .input_login {
-    background-color: #eee;
-    border: none;
-    padding: 12px 15px;
-    margin: 8px 0;
-    width: 100%;
-  }
-  .btn_signUp {
-    border-radius: 20px;
-    background-color: var(--bgc);
-    color: #ffffff;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 12px 45px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: transform 80ms ease-in;
-  }
-  .btn_signUp:active {
-    transform: scale(0.95);
-  }
-  .btn_signUp:focus {
-    outline: none;
-  }
-  .formSignUp {
-    background-color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 50px;
-    height: 100%;
-    text-align: center;
-  }
-  .form-container {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    transition: all 0.6s ease-in-out;
-  }
-  .sign-up-container {
-    left: 0;
-    width: 50%;
+.input_login {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+.btn_signUp {
+  border-radius: 20px;
+  background-color: var(--bgc);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+.btn_signUp:active {
+  transform: scale(0.95);
+}
+.btn_signUp:focus {
+  outline: none;
+}
+.formSignUp {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+.sign-up-container {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+@keyframes show {
+  0%,
+  49.99% {
     opacity: 0;
     z-index: 1;
   }
-  @keyframes show {
-    0%,
-    49.99% {
-      opacity: 0;
-      z-index: 1;
-    }
-    50%,
-    100% {
-      opacity: 1;
-      z-index: 5;
-    }
-  }
-  .container_signUp.right-panel-active .sign-in-container {
-    transform: translateX(100%);
-  }
-  .container_signUp.right-panel-active .sign-up-container {
-    transform: translateX(100%);
+  50%,
+  100% {
     opacity: 1;
     z-index: 5;
-    animation: show 0.6s;
   }
-  .container_signUp.right-panel-active .overlay-container {
-    transform: translateX(-100%);
-  }
-  .container_signUp.right-panel-active .overlay {
-    transform: translateX(50%);
-  }
-  .container_signUp.right-panel-active .overlay-left {
-    transform: translateX(0);
-  }
-  .container_signUp.right-panel-active .overlay-right {
-    transform: translateX(20%);
-  }
-  .overlay-container {
-    position: absolute;
-    left: 50%;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    transition: transform 0.6s ease-in-out;
-    z-index: 100;
-  }
-  .overlay {
-    background: var(--bgc);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0 0;
-    color: #ffffff;
-    position: relative;
-    left: -100%;
-    height: 100%;
-    width: 200%;
-    transform: translateX(0);
-    transition: transform 0.6s ease-in-out;
-  }
-  .overlay-panel {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    height: 100%;
-    width: 50%;
-    transform: translateX(0);
-    transition: transform 0.6s ease-in-out;
-  }
-  .overlay-right {
-    right: 0;
-    transform: translateX(0);
-  }
-  .overlay-left {
-    transform: translateX(-20%);
-  }
-  input[type='checkbox'] {
-    --ms-transform: scale(2); /* IE */
-    --moz-transform: scale(2); /* FF */
-    --webkit-transform: scale(2); /* Safari and Chrome */
-    --o-transform: scale(2); /* Opera */
-    padding: 10px;
-  }
+}
+.container_signUp.right-panel-active .sign-in-container {
+  transform: translateX(100%);
+}
+.container_signUp.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: show 0.6s;
+}
+.container_signUp.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+.container_signUp.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+.container_signUp.right-panel-active .overlay-left {
+  transform: translateX(0);
+}
+.container_signUp.right-panel-active .overlay-right {
+  transform: translateX(20%);
+}
+.overlay-container {
+  position: absolute;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+.overlay {
+  background: var(--bgc);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #ffffff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+.overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+.overlay-left {
+  transform: translateX(-20%);
+}
+input[type='checkbox'] {
+  --ms-transform: scale(2); /* IE */
+  --moz-transform: scale(2); /* FF */
+  --webkit-transform: scale(2); /* Safari and Chrome */
+  --o-transform: scale(2); /* Opera */
+  padding: 10px;
+}
 /* <------------SIGN UP AND SIGN IN FORM ------------>*/
-
 
 /* <------------CREATE ACC PAGE INPUT AND LABELS ------------>*/
 .createAcc_Input {
@@ -168,45 +171,35 @@ a {
 }
 /* <------------CREATE ACC PAGE INPUT AND LABELS ------------>*/
 
-
 /* <------------PAGE 0 ------------>*/
 .booknowBtn {
-  font-size: 16px;
-  font-weight: 200;
-  letter-spacing: 1px;
-  padding: 13px 20px 13px;
-  outline: 0;
-  border: 1px solid rgb(120, 120, 120);
+  background-color: rgb(232, 232, 232);
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
+  color: #fff;
   cursor: pointer;
-  position: relative;
-  background-color: rgba(154, 154, 154, 0);
-  user-select: none;
-  --webkit-user-select: none;
-  touch-action: manipulation;
-  width: 20%;
 }
-.booknowBtn:after {
-  content: '';
-  background-color: #ffffff;
-  width: 100%;
-  z-index: -1;
-  position: absolute;
-  height: 100%;
-  top: 7px;
-  right: 7px;
-  transition: 0.2s;
-  overflow-x: hidden !important;
+.booknowBtn:focus {
+  text-decoration: none;
 }
-.booknowBtn:hover:after {
-  top: 0px;
-  right: 0px;
+.booknowBtn:hover {
+  text-decoration: none;
+}
+.booknowBtn:active {
+  box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
+  outline: 0;
+}
+.booknowBtn:not([disabled]):active {
+  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
 }
 @media (min-width: 768px) {
   .booknowBtn {
-    padding: 13px 50px 13px;
+    padding: 12px 50px;
   }
 }
-.dentalCard{
+.dentalCard {
   background: rgba(255, 255, 255, 0.17);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -215,4 +208,64 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.45);
   border-radius: 5%;
 }
+.setting_icon:hover {
+  transform: rotate(150deg);
+  cursor: pointer;
+}
 /* <------------PAGE 0 ------------>*/
+
+.services_btn {
+  font-weight: bold;
+  background: #80ceb8;
+  border-radius: 20px;
+  width: 200px;
+  margin: 6px;
+  border: none;
+  height: 40px;
+}
+
+/* <------------MEDIA QUERY------------>*/
+
+@media only screen and (max-width: 600px) {
+  /* USER DASHBOARD */
+  .dashboard {
+    width: 80% !important;
+    margin-left: 40px;
+    justify-content: center;
+  }
+  .service{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .services_btn {
+    font-size: 10px;
+    width: 100px !important;
+    margin: 5px;
+    height: 35px !important;
+  }
+}
+ /* USER DASHBOARD */
+ .table-fixed tbody {
+  height: 300px;
+  overflow-y: auto;
+  width: 100%;
+}
+.dashboard_tr{
+  border: none!important;
+}
+.table-fixed thead,
+.table-fixed tbody,
+.table-fixed tr,
+.table-fixed td,
+.table-fixed th {
+  display: block;
+}
+
+.table-fixed tbody td,
+.table-fixed tbody th,
+.table-fixed thead > tr > th {
+  float: left;
+  position: relative;
+
+}
+/* USER DASHBOARD */

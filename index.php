@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['theme'] = 'burger_shop';
+$_SESSION['theme'] = 'dental_clinic';
 $_SESSION['logo_path'] = 'src/resources/img/otakulogo.png';
 
 if( !isset($_SESSION['access_level'])){
@@ -102,6 +102,7 @@ if( !isset($_SESSION['access_level'])){
     if ($_SESSION['theme'] == 'dental_clinic' && $_SESSION['access_level'] == 'user') {
         include_once 'src/pages/dental_clinic/user/navbar.php';
         include_once 'src/pages/dental_clinic/user/modals.php';
+        include_once 'src/pages/dental_clinic/user/barSetting.php';
         include_once 'src/pages/dental_clinic/user/login.php';
         include_once 'src/pages/dental_clinic/user/0page.php';
         include_once 'src/pages/dental_clinic/user/createAcc.php';

@@ -105,7 +105,7 @@ $(document).ready(function () {
     //dashboard.js
     load_filter_dates();
 
-    
+  
 
     $("#btn_account_settings").on("click", function () {
       load_account_settings($("#txt_user_id").val());
@@ -120,6 +120,12 @@ $(document).ready(function () {
       update_account($("#txt_user_id").val());
     });
   } else {
+
+
+    $('.list-group-item ').on('click', function(){
+      $('#burger_machine_sidebar').offcanvas('toggle')
+    })
+
 
     // USER
     load_products();

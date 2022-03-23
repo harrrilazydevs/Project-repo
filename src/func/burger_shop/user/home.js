@@ -122,7 +122,7 @@ function add_to_cart() {
         "You must sign-up and login before you can make an order."
       );
       temp =
-        '<div class="text-end mt-3"><button data-bs-toggle="modal" data-bs-target="#md_login" class="px-2 py-1" style="font-weight:bold; background:#FFD600; border-radius:20px; width:100px; margin: 6px; border: none;"> Go to login</button></div>';
+        '<div class="text-end mt-3"><button data-bs-toggle="modal" data-bs-target="#md_login" class="px-2 py-1" style="font-weight:bold; background:#FFD600; border-radius:20px; width:150px; margin: 6px; border: none; position:absolute; bottom:10px; right:10px;"> Go to login</button></div>';
 
       $("#msg_body").append(temp);
       $("#md_msg_box").modal("show");
@@ -162,12 +162,14 @@ function confirm_add_to_cart() {
           $("#order_count").removeClass("d-none");
           $("#order_count").text(d.order_count);
 
+          $("#order_count_sm").removeClass("d-none");
+          $("#order_count_sm").text(d.order_count);
+
           $("#txt_card_id").val(d.cart_id);
         },
       });
-    }
-    else{
-      show_msg('Add to Cart Failed', 'Pls enter quantity')
+    } else {
+      show_msg("Add to Cart Failed", "Pls enter quantity");
     }
   });
 }
@@ -204,9 +206,9 @@ function write_cart_orders(data, id) {
       val.id +
       '" title="Remove order" style="color: #F34336;"></i> <img src="' +
       val.picture +
-      '" style="border-radius: 5px; width: 170px;"> <div> <p class="ps-3 m-0">' +
+      '" style="border-radius: 5px; width: 170px;"> <div class="text-start ps-3"> <p class=" m-0">' +
       val.name +
-      '</p> <small class="pe-5 me-1">₱' +
+      '</p><small class="pe-5 me-1">₱' +
       val.price +
       '</small> </div> </div> </td> <td> <p class="ps-2 mt-5 pt-2">' +
       val.qty +
@@ -234,6 +236,7 @@ function write_cart_orders(data, id) {
   $("#txt_cart_order_count").val(count);
 
   $("#order_count").text(count);
+  $("#order_count_sm").text(count);
   $("#tbl_cart_orders").empty();
   $("#tbl_cart_orders").append(output);
 
@@ -302,7 +305,6 @@ $("#btn_submit_fb").on("click", function () {
       $("#msg_title").text("Feedback Submitted");
       $("#msg_body").text("Your feedback has been saved.");
       $("#md_msg_box").modal("show");
-      
     },
   });
 });
@@ -519,8 +521,6 @@ $(".menuDropdown").on("click", function () {
   }
 });
 
-
-
 function load_best_sellers() {
   $.ajax({
     type: "GET",
@@ -531,24 +531,35 @@ function load_best_sellers() {
   });
 }
 
-function write_best_sellers(data){
-  var output = ''
+function write_best_sellers(data) {
+  var output = "";
   output +=
-  '<div class="card-carousel" data-flickity=\'{ "autoPlay": true }\' >';
+    '<div class="card-carousel" data-flickity=\'{ "autoPlay": true }\' >';
   var count = 1;
-  $.each(data, function(key,val){
-    output += '<div class="userOrder-card cell-card mt-3" aria-hidden="true" style="position: absolute; left: 0px; transform: translateX(453.33%);"><img src="'+val.picture+'"><div class="description"><h5 id="text" style="letter-spacing: 3px;">#'+count+' '+val.name+'</h5><p>₱'+val.price+'</p><a class="btn_add_to_cart" attr-id="'+val.id+'"><button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button></a></div></div>'
-    count  = count+1;
- 
-  })
-  output += '</div>'
-  $('#carousel_best_sellers').empty();
-  $('#carousel_best_sellers').append(output);
+  $.each(data, function (key, val) {
+    output +=
+      '<div class="userOrder-card cell-card mt-3" aria-hidden="true" style="position: absolute; left: 0px; transform: translateX(453.33%);"><img src="' +
+      val.picture +
+      '"><div class="description"><h5 id="text" style="letter-spacing: 3px;">#' +
+      count +
+      " " +
+      val.name +
+      "</h5><p>₱" +
+      val.price +
+      '</p><a class="btn_add_to_cart" attr-id="' +
+      val.id +
+      '"><button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button></a></div></div>';
+    count = count + 1;
+  });
+  output += "</div>";
+  $("#carousel_best_sellers").empty();
+  $("#carousel_best_sellers").append(output);
 
-  $('.card-carousel ').flickity({
-    cellAlign: 'left',
+  $(".card-carousel ").flickity({
+    cellAlign: "left",
     wrapAround: true,
     freeScroll: true,
-    autoPlay: true
-});
+    autoPlay: true,
+  });
+  add_to_cart();
 }

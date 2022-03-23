@@ -105,7 +105,7 @@ $(document).ready(function () {
     //dashboard.js
     load_filter_dates();
 
-    
+  
 
     $("#btn_account_settings").on("click", function () {
       load_account_settings($("#txt_user_id").val());
@@ -120,6 +120,12 @@ $(document).ready(function () {
       update_account($("#txt_user_id").val());
     });
   } else {
+
+
+    $('.list-group-item ').on('click', function(){
+      $('#burger_machine_sidebar').offcanvas('toggle')
+    })
+
 
     // USER
     load_products();
@@ -250,6 +256,28 @@ function show_msg(title,msg){
 
 $('#btn_nav_admin_view_account').on('click', function(){
   $('#btn_account_settings').trigger('click')
+})
+
+$('#btn_nav_admin_add_account').on('click', function(){
+  $('#md_add_account').modal('show')
+})
+$('#btn_register_account_submit').on('click', function(){
+  $.ajax({
+    type: "POST",
+    url: "src/database/burger_shop/func/admin/add_admin_account.php",
+    data: {
+      username: $("#txt_register_username").val(),
+      password: $("#txt_register_password").val(),
+      email: $("#txt_register_email").val(),
+      phone: $("#txt_register_phone").val(),
+      name: $("#txt_register_name").val()
+    },
+    success:function(data){
+      $('#md_add_account').modal('hide')
+      show_msg('Register Success','Admin account registered successfully!<br><br>Username : <b class="ps-1">'+$("#txt_register_username").val()+'</b><br>Password : <b class="ps-1">'+$("#txt_register_password").val()+'</b>')
+     
+    }
+  });
 })
 
 $('#login_form').on('submit', function(e){

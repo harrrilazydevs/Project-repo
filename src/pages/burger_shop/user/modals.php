@@ -3,7 +3,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="text-center py-3 text-center" style="border-bottom:3px solid black;">
-                <span class="ms-5 h5 fw-bold"> Login </span>
+                <span class="ms-5 h6 fw-bold"> Login </span>
                 <i class="fa-solid fa-circle-xmark icon_btn pe-3 fa-xl" style="float:right; padding-top:12px;" data-bs-dismiss="modal"></i>
             </div>
 
@@ -25,7 +25,7 @@
                         </div>
                     </div>
                     <div class="field text-center">
-                        <button id="btn_login" type="submit" class="py-1 text-white" style="font-weight:bold; background:#F54646; border-radius:20px; width:120px; margin: 6px; border: 1px solid yellow;">Login</button>
+                        <button type="submit" class="py-1 text-white" style="font-weight:bold; background:#F54646; border-radius:20px; width:120px; margin: 6px; border: 1px solid yellow;">Login</button>
 
                     </div>
 
@@ -50,7 +50,7 @@
         <div class="modal-content">
 
             <div class="text-center py-3 text-center" style="border-bottom:3px solid black;">
-                <span class="ms-5 h5 fw-bold"> Sign Up </span>
+                <span class="ms-5 h6 fw-bold"> Sign Up </span>
                 <i class="fa-solid fa-circle-xmark icon_btn pe-3 fa-xl" style="float:right; padding-top:12px;" data-bs-dismiss="modal"></i>
             </div>
             <div class="wrapper-login">
@@ -81,15 +81,15 @@
                     </div>
 
                     <div class="field ">
-                        <input type="password"  id="txt_signup_password" required>
+                        <input type="password" id="txt_signup_password" required>
                         <label>Password</label>
                     </div>
 
                     <div class="field">
-                        <input type="Repeat Password"   id="txt_signup_password2" required>
+                        <input type="Repeat Password" id="txt_signup_password2" required>
                         <label>Repeat Password</label>
                         <div class="text-end text-muted d-none" id="div_password_validation">
-                         <small>Passwords doesn't match</small>
+                            <small>Passwords doesn't match</small>
                         </div>
 
                     </div>
@@ -110,7 +110,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="text-center py-3 text-center" style="border-bottom:3px solid black;">
-                <span class="ms-5 h5 fw-bold"> Check-out </span>
+                <span class="ms-5 h6 fw-bold"> Check-out </span>
                 <i class="fa-solid fa-circle-xmark icon_btn pe-3 fa-xl" style="float:right; padding-top:12px;" data-bs-dismiss="modal"></i>
             </div>
 
@@ -125,7 +125,7 @@
 
 
                 <div class="row">
-                    <div class="col-7 mt-3">
+                    <div class="col-lg-7 mt-3">
                         <form id="form_check_out" method="post" enctype="multipart/form-data">
                             <input type="text" hidden name="order_ref_no">
 
@@ -151,16 +151,19 @@
 
                             </div>
 
-                            <label class="ms-3 mt-3">Note to Rider:</label>
-                            <textarea name="note_to_rider" id="" cols="30" rows="5" style="width:95%;" class="ms-3 form-control"></textarea>
+                            <div class="mx-0">
 
+                                <label class="mt-3 ">Note to Rider:</label>
+                                <textarea name="note_to_rider" id="" cols="30" rows="5" style="width:95%;" class="form-control"></textarea>
+                            </div>
 
 
                     </div>
 
-                    <div class="col-5 mt-3">
+                    <div class="col-lg-5 mt-3">
 
 
+                        <div class="ms-4">
                         <label>Payment Options:</label>
 
                         <div>
@@ -211,6 +214,7 @@
                             </div>
 
                         </div>
+                        </div>
 
 
 
@@ -237,7 +241,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="text-center py-3 text-center" style="border-bottom:3px solid black;">
-                <span class="ms-5 h5 fw-bold">My Account</span>
+                <span class="ms-5 h6 fw-bold">My Account</span>
                 <i class="fa-solid fa-circle-xmark icon_btn pe-3 fa-xl" style="float:right; padding-top:12px;" data-bs-dismiss="modal"></i>
             </div>
             <div class="wrapper-login mt-3">
@@ -283,7 +287,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="text-center py-3 text-center" style="border-bottom:3px solid black;">
-                <span class="ms-5 h5 fw-bold">Order Details</span>
+                <span class="ms-5 h6 fw-bold">Order Details</span>
                 <i class="fa-solid fa-circle-xmark icon_btn pe-3 fa-xl" style="float:right; padding-top:12px;" data-bs-dismiss="modal"></i>
             </div>
             <div class="wrapper-login mt-3">
@@ -326,11 +330,11 @@
 
 
 
-<div class="modal" tabindex="-1" id="md_msg_box" data-bs-backdrop="static" data-bs-keyboard="false">
+<div class="modal" tabindex="-1" id="md_msg_box">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="text-center py-3 text-center" style="border-bottom:3px solid black;">
-                <span class="ms-5 h5 fw-bold" id="msg_title"> Update Order </span>
+                <span class="ms-5 h6 fw-bold" id="msg_title"> Update Order </span>
                 <i id="msg_box_close" class="fa-solid fa-circle-xmark icon_btn pe-3 fa-xl" style="float:right; padding-top:12px;" data-bs-dismiss="modal"></i>
             </div>
             <div class="p-5 mx-auto">

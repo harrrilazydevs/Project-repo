@@ -52,6 +52,42 @@
     </div>
 </div>
 
+
+<div class="modal" tabindex="-1" id="md_add_account">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="text-center py-3 text-center" style="border-bottom:3px solid black;">
+                <span class="ms-5 h5 fw-bold"> Register Admin Account </span>
+                <i class="fa-solid fa-circle-xmark icon_btn pe-3 fa-xl" style="float:right; padding-top:12px;" data-bs-dismiss="modal"></i>
+            </div>
+
+            <div class="p-3 md_form">
+                <h6 class="fw-bold text-muted mb-3">Account Information</h6>
+
+                <label>Full name</label>
+                <input type="text" id="txt_register_full_name" class="form-control form-control-sm">
+
+                <label>Username</label>
+                <input type="text" id="txt_register_username" class="form-control form-control-sm">
+
+                <label class="mt-2">Email</label>
+                <input type="text" id="txt_register_email" class="form-control form-control-sm">
+
+                <label class="mt-2">Password</label>
+                <input type="text" id="txt_register_password" class="form-control form-control-sm">
+
+                <label class="mt-2">Phone</label>
+                <input type="text" id="txt_register_phone" class="form-control form-control-sm">
+
+
+                <div class="text-center mt-3">
+                    <button class="shadow" id="btn_register_account_submit">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="modal" tabindex="-1" id="md_view_order">
     <div class="modal-dialog">
         <div class="modal-content">

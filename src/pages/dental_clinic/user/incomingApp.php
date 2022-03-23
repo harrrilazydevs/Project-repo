@@ -1,4 +1,4 @@
-<div class="d-none page" id="incomingApp.php" style="background-color: white;">
+<div class="page" id="incomingApp.php" style="background-color: white;">
     <div class="incoming_Appointment">
         <!-------- MAIN GRID --------->
         <div class="container min-vh-100" style="color: #7B7A7A;">
@@ -18,8 +18,8 @@
                                         <th class="col-2"><span class="h5" style="font-weight: bold; color: #80CEB8; font-size: 14px;">APPOINTMENT ID</span></th>
                                         <th class="col-2"><span class="h5" style="font-weight: bold; color: #80CEB8; font-size: 14px;">DATE</span></th>
                                         <th class="col-3"><span class="h5" style="font-weight: bold; color: #80CEB8; font-size: 14px;">TIME</span></th>
-                                        <th class="col-1"><span class="h5" style="font-weight: bold; color: #80CEB8; font-size: 14px;">SERVICE</span></th>
-                                        <th class="col-4"><span class="h5" style="font-weight: bold; color: #80CEB8; font-size: 14px;">DETAILS</span></th>
+                                        <th class="col-2"><span class="h5" style="font-weight: bold; color: #80CEB8; font-size: 14px;">SERVICE</span></th>
+                                        <th class="col-3"><span class="h5" style="font-weight: bold; color: #80CEB8; font-size: 14px;">DETAILS</span></th>
                                     </tr>
                                 </thead>
 
@@ -28,11 +28,11 @@
                                         <td class="col-2 dashboard_tr">01102022</td>
                                         <td class="col-2 dashboard_tr">01-19-2022</td>
                                         <td class="col-3 dashboard_tr">7:00 - 9:00 AM</td>
-                                        <td class="col-1 dashboard_tr">Package 1</td>
+                                        <td class="col-2 dashboard_tr">Package 1</td>
 
-                                        <td class="col-4 dashboard_tr">
-                                            <button class="text-white"  data-bs-toggle="modal" data-bs-target="#incomingAppointment" style="background:#80CEB8; border-radius:5px; text-decoration: none; cursor: pointer;">View</button>
-                                            <button class="text-white ms-lg-2" style="background: red; border-radius:5px; text-decoration: none; cursor: pointer;">Cancel</button>
+                                        <td class="col-3 dashboard_tr">
+                                            <button class="text-white"  data-bs-toggle="modal" data-bs-target="#incomingAppointment" style="background:#80CEB8; border-radius:5px; text-decoration: none; cursor: pointer; font-size: 12px;">View</button>
+                                            <button class="text-white ms-lg-2" style="background: red; border-radius:5px; text-decoration: none; cursor: pointer; font-size: 12px;">Cancel</button>
 
                                         </td>
                                     </tr>

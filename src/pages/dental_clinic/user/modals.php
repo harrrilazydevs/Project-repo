@@ -65,3 +65,107 @@
         </div>
     </div>
 </div>
+
+<!----------------SERVICES MODAL PAGE11------------------->
+<div class="modal fade" id="laboratory" tabindex="-1" aria-hidden="true">
+    <div class=" modal-dialog">
+        <div class="modal-content" style="border-radius: 5%;">
+            <div class="modal-body text-black">
+                <div class="container" style="border-radius: 5%; border: solid #8D8D8D;">
+                    <div class="row">
+                        <h6 class="h6 mt-lg-3 mb-lg-3 text-center" style="letter-spacing: 2px; font-weight: bold;">Services</h6>
+                        <span class="h6 ms-2" style="letter-spacing: 2px; font-weight: bold;">LABORATORY</span>
+                        <p><small class="text-muted ms-lg-2">Kindly select the test corresponds to your physician's request.</small></p>
+
+                        <div class="col-6 ps-3">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="cbc">
+                                <label class="custom-control-label"> CBC</label>
+                            </div>
+
+                            <div class="custom-control custom-checkbox pt-lg-2">
+                                <input type="checkbox" class="custom-control-input" id="platelet">
+                                <label class="custom-control-label">PLATELET</label>
+                            </div>
+
+                            <div class="custom-control custom-checkbox pt-lg-2">
+                                <input type="checkbox" class="custom-control-input" id="urinalist">
+                                <label class="custom-control-label">URINALIST</label>
+                            </div>
+
+                            <div class="custom-control custom-checkbox pt-lg-2 pb-lg-3">
+                                <input type="checkbox" class="custom-control-input" id="fecalysis">
+                                <label class="custom-control-label"">FECALYSIS</label>
+                            </div>
+                        </div>
+
+                        <div class=" col-6">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input pt-lg-2" id="hepa">
+                                        <label class="custom-control-label">HEPA-B <small class="text-muted">(sreening)</small></label>
+                                    </div>
+
+                                    <div class="custom-control custom-checkbox pt-lg-2">
+                                        <input type="checkbox" class="custom-control-input" id="btwr">
+                                        <label class="custom-control-label"><small>BLOOD TYPING WITH RH</small></label>
+                                    </div>
+
+                                    <div class="custom-control custom-checkbox pt-lg-2">
+                                        <input type="checkbox" class="custom-control-input" id="vdrl">
+                                        <label class="custom-control-label">VDRL</label>
+                                    </div>
+                            </div>
+
+
+
+
+                        </div>
+
+                        <!----------------BUTTONS------------------->
+                        <div class="mt-lg-2 mb-lg-2 text-center">
+                            <button class="text-white" style="font-weight:bold; background:#80CEB8; border-radius: 5px; width:120px; margin: 6px; border: none; height: 35px;">DONE</button>
+                            <button class="text-white" style="font-weight:bold; background:#80CEB8; border-radius: 5px; width:120px; margin: 6px; border: none; height: 35px;">BACK</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!----------------SERVICES MODAL PAGE11------------------->
+
+
+<!----------------LAB RESULT------------------->
+<div class="modal" id="labResult" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <img src="src/resources/img/labResult.png" style="width: 400px; height: 500px;">
+
+    </div>
+</div>
+<!----------------LAB RESULT------------------->
+
+<!----------------INCOMING APPOINTMENTS------------------->
+
+<!-- Button trigger modal -->
+<div class="modal fade" id="incomingAppointment" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="border-radius: 10%;">
+            <span class="h5 mt-lg-3 text-black text-center" style="letter-spacing: 4px; font-weight: bold;">Make Appointment</span>
+
+
+
+
+            <div class="modal-body">
+                <div class="container" style="background-color: #F9F9F9;">
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!----------------INCOMING APPOINTMENTS------------------->

@@ -33,7 +33,8 @@
                 <div class="col-lg-4 mb-sm-5">
                     <div class="card dentalCard">
                         <div>
-                            <img src="src/resources/img/bottle.png" class="card-img-top" style="border-radius: 2%;  width: 50%; height: 50%;">
+                            <img src="src/resources/img/bottle.png" class="card-img-top" style="border-radius: 2%; width: 50% !important; height: 15rem !important;">
+
                         </div>
                         <div class="card-body">
                             <span class="card-title h4 mb-2" style="letter-spacing: 3px;">Package 1</span>
@@ -42,6 +43,8 @@
                         </div>
                     </div>
                 </div>
+
+
 
                 <div class="col-lg-4 mb-sm-5">
                     <div class="card dentalCard">
@@ -70,5 +73,3 @@
         </div>
     </section>
 </div>
-
-

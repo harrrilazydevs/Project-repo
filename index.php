@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['theme'] = 'burger_shop';
+$_SESSION['theme'] = 'dental_clinic';
 $_SESSION['logo_path'] = 'src/resources/img/otakulogo.png';
 
 if( !isset($_SESSION['access_level'])){
@@ -100,15 +100,23 @@ if( !isset($_SESSION['access_level'])){
     <?php
 
     if ($_SESSION['theme'] == 'dental_clinic' && $_SESSION['access_level'] == 'user') {
-        include_once 'src/pages/dental_clinic/user/navbar.php';
-        include_once 'src/pages/dental_clinic/user/modals.php';
-        include_once 'src/pages/dental_clinic/user/barSetting.php';
+
+        // LOGIN PAGE
         include_once 'src/pages/dental_clinic/user/login.php';
-        include_once 'src/pages/dental_clinic/user/0page.php';
+
+        // PAGES PHP
         include_once 'src/pages/dental_clinic/user/createAcc.php';
+        include_once 'src/pages/dental_clinic/user/myAccount.php';
         include_once 'src/pages/dental_clinic/user/page11.php';
+        include_once 'src/pages/dental_clinic/user/0page.php';
+        include_once 'src/pages/dental_clinic/user/labResult.php';
+        include_once 'src/pages/dental_clinic/user/incomingApp.php';
+        include_once 'src/pages/dental_clinic/user/appointments.php';
 
-
+        // NAVS AND SIDEBARS
+        include_once 'src/pages/dental_clinic/user/navbar.php';
+        include_once 'src/pages/dental_clinic/user/sidebarUser.php';
+        include_once 'src/pages/dental_clinic/user/modals.php';
 
         echo '<script src="src/func/dental_clinic/user/user.js"></script>';
 

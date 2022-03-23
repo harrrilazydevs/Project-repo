@@ -17,8 +17,8 @@ body {
 a {
   text-decoration: none;
 }
-.sidebar_dental{
-  background-color: #80CEB8;
+.sidebar_dental {
+  background-color: #4dbdac;
   color: white;
 }
 /* <------------SIGN UP AND SIGN IN FORM ------------>*/
@@ -153,7 +153,7 @@ input[type='checkbox'] {
 
 /* <------------CREATE ACC PAGE INPUT AND LABELS ------------>*/
 .createAcc_Input {
-  width: 70%;
+  width: 60%;
   border-radius: 5px;
   margin-top: 13px;
   margin-left: 30px;
@@ -162,12 +162,6 @@ input[type='checkbox'] {
   display: inline-block;
   width: 140px;
   margin-left: 15px;
-}
-.accSetting_input {
-  width: 70% !important;
-  border-radius: 5px;
-  margin-top: 13px;
-  margin-left: 30px;
 }
 /* <------------CREATE ACC PAGE INPUT AND LABELS ------------>*/
 
@@ -213,7 +207,6 @@ input[type='checkbox'] {
   cursor: pointer;
 }
 /* <------------PAGE 0 ------------>*/
-
 .services_btn {
   font-weight: bold;
   background: #80ceb8;
@@ -223,17 +216,39 @@ input[type='checkbox'] {
   border: none;
   height: 40px;
 }
+/* USER DASHBOARD */
+.table-fixed tbody {
+  height: 300px;
+  overflow-y: auto;
+  width: 100%;
+}
+.dashboard_tr {
+  border: none !important;
+}
+.table-fixed thead,
+.table-fixed tbody,
+.table-fixed tr,
+.table-fixed td,
+.table-fixed th {
+  display: block;
+}
+.table-fixed tbody td,
+.table-fixed tbody th,
+.table-fixed thead > tr > th {
+  float: left;
+  position: relative;
+}
+/* USER DASHBOARD */
 
 /* <------------MEDIA QUERY------------>*/
 
-@media only screen and (max-width: 600px) {
-  /* USER DASHBOARD */
+@media only screen and (max-width: 970px) {
   .dashboard {
     width: 80% !important;
     margin-left: 40px;
     justify-content: center;
   }
-  .service{
+  .service {
     display: flex;
     justify-content: space-evenly;
   }
@@ -243,29 +258,82 @@ input[type='checkbox'] {
     margin: 5px;
     height: 35px !important;
   }
-}
- /* USER DASHBOARD */
- .table-fixed tbody {
-  height: 300px;
-  overflow-y: auto;
-  width: 100%;
-}
-.dashboard_tr{
-  border: none!important;
-}
-.table-fixed thead,
-.table-fixed tbody,
-.table-fixed tr,
-.table-fixed td,
-.table-fixed th {
-  display: block;
+  .dentalCard {
+    margin-bottom: 5%;
+  }
+  .dashboard_grid {
+    display: grid;
+    grid-template-columns: 5fr 0fr !important;
+  }
+  .myAcc_grid {
+    display: grid;
+    grid-template-columns: 100% 0% !important;
+  }
+  .lab_result {
+    display: grid;
+    grid-template-columns: 100% 0% !important;
+  }
+  .incoming_Appointment {
+    display: grid;
+    grid-template-columns: 5fr 0fr !important;
+  }
 }
 
-.table-fixed tbody td,
-.table-fixed tbody th,
-.table-fixed thead > tr > th {
-  float: left;
-  position: relative;
-
+@media only screen and (max-width: 700px) {
+  .dashboard {
+    width: 80% !important;
+    margin-left: 40px;
+    justify-content: center;
+  }
+  .service {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .services_btn {
+    font-size: 10px;
+    width: 100px !important;
+    margin: 5px;
+    height: 35px !important;
+  }
+  .dentalCard {
+    margin-bottom: 5%;
+  }
 }
-/* USER DASHBOARD */
+
+@media only screen and (max-width: 550px) {
+  .title_dashboard {
+    margin: 5%;
+  }
+
+  .intruction_container,
+  .services_container {
+    margin-bottom: 5%;
+  }
+}
+.search {
+  /* display: flex; */
+  width: 300px;
+  border-radius: 50px;
+  overflow-x: hidden;
+  border: 3px solid rgba(175, 173, 173, 0.789);
+  align-items: center !important;
+}
+.search input{
+  height: 45px;
+  background: transparent;
+  padding: 1rem;
+}
+
+/* <------------PAGES GRID------------>*/
+.dashboard_grid,
+.myAcc_grid,
+.incoming_Appointment,
+.lab_result {
+  display: grid;
+  grid-template-columns: 6fr 1.5fr;
+}
+.dashboard_nested {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 170px;
+}

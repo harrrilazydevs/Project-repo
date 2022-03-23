@@ -1,4 +1,4 @@
-<div class="page" id="incomingApp.php" style="background-color: white;">
+<div class="d-none page" id="incomingApp.php" style="background-color: white;">
     <div class="incoming_Appointment">
         <!-------- MAIN GRID --------->
         <div class="container min-vh-100" style="color: #7B7A7A;">

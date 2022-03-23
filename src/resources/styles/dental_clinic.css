@@ -330,7 +330,7 @@ input[type='checkbox'] {
 .incoming_Appointment,
 .lab_result {
   display: grid;
-  grid-template-columns: 6fr 1.5fr;
+  grid-template-columns: 7fr 1.9fr;
 }
 .dashboard_nested {
   display: grid;

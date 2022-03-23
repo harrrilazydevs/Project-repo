@@ -3,7 +3,7 @@
     <div>
         <div class="container mt-lg-5 ms-lg-4">
             <strong class=" h5 text-white" style="letter-spacing: 2px; font-weight: bold;">Hello,</strong><br>
-            <strong class=" h4 text-white" style="letter-spacing: 1px; font-weight: bold;">Jin Barry!</strong>
+            <strong class=" h6 text-white" style="letter-spacing: 1px; font-weight: bold;">Jin Barry!</strong>
         </div>
     </div>
 

@@ -1,4 +1,4 @@
-<div class="d-none page" id="labResult.php" style="background-color: white;">
+<div class="page" id="labResult.php" style="background-color: white;">
 
     <div class="lab_result">
         <!-------- MAIN GRID --------->

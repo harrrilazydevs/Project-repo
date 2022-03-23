@@ -1,4 +1,4 @@
-<div class="d-none page" id="page_11 page11.php" style="background-color: white;">
+<div class="page" id="page_11 page11.php" style="background-color: white;">
     <div class="dashboard_grid">
 
         <!-- <div class="text-black left" style="background-color: red;">
@@ -13,7 +13,7 @@
                 </div>
             </div>
 
-            <div class="container intruction_container mt-lg-3 ms-lg-5 pt-2 pb-2 text-black dashboard" style="border: 3px solid  #7B7A7A; border-radius: 15px; width: 60%;">
+            <div class="container intruction_container mt-lg-3 ms-lg-5 pt-2 pb-2 text-black dashboard" style="border: 3px solid  #7B7A7A; border-radius: 15px; width: 60%; box-shadow: 5px 10px #888888;">
                 <h5 class="h5" style="letter-spacing: 2px; font-weight: bold; color: #7B7A7A;">Instruction</h5>
                 <div class="row mb-2">
                     <div class="col-12" style="color: #FFC803">
@@ -66,9 +66,9 @@
 
                 </div>
                 
-                <div class="row">
+                <div class="row mb-lg-5">
                     <div class="col-lg-12 mx-auto">
-                        <div class="table-responsive" style="border: 3px solid  #7B7A7A; border-radius: 15px;">
+                        <div class="table-responsive" style="border: 3px solid  #7B7A7A; border-radius: 15px; box-shadow: 5px 10px #888888;">
                             <table class="table table-fixed">
                                 <thead class="text-center">
                                     <tr>

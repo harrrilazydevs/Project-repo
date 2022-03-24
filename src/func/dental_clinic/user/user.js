@@ -10,6 +10,17 @@ sign_in_btn.addEventListener("click", () => {
   container.classList.remove("sign-up-mode");
 });
 
+
+
+
+
+
+
+
+
+
+
+
 // <-------TEXT TYPING HOME SECTION--------->//
 var i = 0,
   dental_text;

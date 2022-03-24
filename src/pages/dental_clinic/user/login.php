@@ -1,88 +1,96 @@
-<div class="d-none page" id="page_login">
-    <div class="container container_signUp" id="containerSignUp" style="margin-top: 6% !important; background-color: #fff; border-radius: 10px; box-shadow: 0 14px 28px rgba(0,0,0,0.25),  0 10px 10px rgba(0,0,0,0.22); position: relative; overflow: hidden; width: 768px; max-width: 100%; min-height: 480px;">
-        <div class="form-container sign-up-container">
-            <form class="formSignUp" action="#">
-                <span class="h3 mb-3" style="color: var(--bgc); font-weight: bold; letter-spacing: 2px;">Login</span>
-
-                <div class="mb-2">
-                    <input class="input_login" type="username" placeholder="Username"/>
-                    <input class="input_login" type="password" placeholder="Password"/>
-                </div>
-
-                <div class="form-check ">
-                    <input class="input_login" type="checkbox" class="form-check-input class="input_login" p-1">
-                    <small><label class="form-check-label text-black">Keep me signed in</label></small>
-                </div>
-                <button class="btn_signUp">Login</button>
-            </form>
+<div class="page" id="page_login">
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <form action="#" class="sign-in-form">
+                    <h1 class="che"> C H E R O N Z E L L E </h1>
+                    <BR>
+                    <h2 class="title">Sign in</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Username" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" />
+                    </div>
+                    <input type="submit" value="Login" class="btn solid" />
+                    <p class="social-text">Or Sign in with social platforms</p>
+                    <div class="social-media">
+                        <a href="home/indexx.html" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </form>
+                <form action="#" class="sign-up-form">
+                    <h2 class="title">Sign up</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Username" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" />
+                    </div>
+                    <input type="submit" class="btn" value="Sign up" />
+                    <p class="social-text">Or Sign up with social platforms</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </form>
+            </div>
         </div>
 
-        <div class="form-container sign-in-container" style="left: 0; width: 50%; z-index: 2;">
-            <form class="formSignUp" action="#">
-                <span class="h5 m-3" style="color: var(--bgc); font-weight: bold; letter-spacing: 2px;">Create account</span>
-                <input class="input_login" type="email" placeholder="Email" />
-                <input class="input_login" type="Username" placeholder="Username" />
-                <input class="input_login" type="password" placeholder="Password" />
-                <input class="input_login" type="password" placeholder="Repeat Password" />
-                <div class=" form-check mt-3 mb-3">
-                    <input type="checkbox" class="form-check-input p-1">
-                    <small><label class="form-check-label text-black">Agree with our <a href="">Term and Agreements</a></label></small>
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>New here ?</h3>
+                    <p>
+                        Register and be one of us!
+                    </p>
+                    <button class="btn transparent" id="sign-up-btn">
+                        Sign up
+                    </button>
                 </div>
-                <button class="btn_signUp">Sign Up</button>
-
-            </form>
-        </div>
-
-        <div class="overlay-container">
-            <div class="overlay">
-
-                <div class="overlay-panel overlay-right">
-
-                    <div class="container">
-                        <div class="row mt-4" style="height: 18rem;">
-                            <div class="col">
-                                <span class="h3 " style="font-weight: bold; letter-spacing: 3px;">CHERONZELLE</span>
-                                <p><small style="font-size: 13px;">DIAGNOSTIC LABORATORY, X-RAY AND MEDICAL CLINIC</small></p>
-                            </div>
-
-                        </div>
-
-                        <div class="row">
-                            <div class="col">
-                                <span class="h3 " style="font-weight: bold; letter-spacing: 3px;">Welcome Back!</span>
-                                <p><small style="font-size: 14px;">Please Login to continue</small></p>
-
-                            </div>
-                        </div>
-                        <button class="btn_signUp mb-3" id="signUp" style="background-color:transparent; border-color: white;">Sign In</button>
-                    </div>
-
+                <img src="src/resources/img/signup-pic.png" class="image" alt="" />
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>Welcome back!</h3>
+                    <p>
+                        Check your account for updates and more.
+                    </p>
+                    <button class="btn transparent" id="sign-in-btn">
+                        Sign in
+                    </button>
                 </div>
-
-                <div class="overlay-panel overlay-left">
-
-                    <div class="container">
-                        <div class="row" style="height: 10rem;">
-                            <div class="col">
-                                <span class="h3 " style="font-weight: bold; letter-spacing: 3px;">CHERONZELLE</span>
-                                <p><small style="font-size: 13px;">DIAGNOSTIC LABORATORY, X-RAY AND MEDICAL CLINIC</small></p>
-                            </div>
-
-                        </div>
-
-                        <div class="row mt-2">
-                            <div class="col">
-                                <span class="h3" style="font-weight: bold; letter-spacing: 3px;">Hello There!</span>
-                                <p><small style="font-size: 14px;">Start your journey with us!</small></p>
-
-                            </div>
-                        </div>
-                        <button class="btn_signUp mb-3" id="signIn" style="background-color:transparent; border-color: white;">Sign In</button>
-                    </div>
-
-                </div>
-
+                <img src="src/resources/img/signup-pic2.png" class="image" alt="" />
             </div>
         </div>
     </div>
+
 </div>

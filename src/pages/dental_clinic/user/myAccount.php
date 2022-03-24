@@ -5,7 +5,7 @@
             <div class="row title_dashboard">
                 <div class="col-lg-12 col-sm-12 mt-lg-3 mt-sm-5 mb-sm-3">
                     <span class="h4 ms-lg-5" style="letter-spacing: 2px; font-weight: bold;">MY ACCOUNT</span>
-                    <i class="fa-solid fa-gear h3 setting_icon" style="float: right;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
+                    <i class="fa-solid fa-gear h3 setting_icon  rotating d-lg-none" style="float: right;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
                 </div>
             </div>
 
@@ -50,11 +50,11 @@
 
                         </form>
                     </div>
-
-                    <h6 class="mt-lg-3" style="font-weight: bold;"><a href="#" class="text-danger mb-lg-5"> I want to delete my account</a></h6>
-                    <div class="mt-3 mb-5 text-center">
-                        <button class="ms-5" style="font-weight:bold; background:#80CEB8; border-radius: 5px; width:120px; margin: 6px; border: none; height: 35px;">Update</button>
-                        <button class="me-5" id="#" style="font-weight:bold; background:#F15050; border-radius: 5px; width:120px; margin: 6px; border: none; height: 35px;">Cancel</button>
+        
+                    <div class="mb-3">
+                        <h6 class="mt-lg-3 mb-lg-4" style="font-weight: bold;"><a href="#" class="text-danger mb-lg-5"> I want to delete my account</a></h6>
+                        <button class="ms-lg-5 text-center" style="font-weight:bold; background:#80CEB8; border-radius: 5px; width:120px; margin: 6px; border: none; height: 35px;">Update</button>
+                        <button class="ms-lg-5 text-center" id="#" style="font-weight:bold; background:#F15050; border-radius: 5px; width:120px; margin: 6px; border: none; height: 35px;">Cancel</button>
                     </div>
 
                 </div>

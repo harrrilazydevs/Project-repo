@@ -1,4 +1,4 @@
-<div class="page" id="labResult.php" style="background-color: white;">
+<div class="d-none page" id="labResult.php" style="background-color: white;">
 
     <div class="lab_result">
         <!-------- MAIN GRID --------->
@@ -6,6 +6,8 @@
             <div class="row title_dashboard">
                 <div class="col-lg-12 col-sm-12 mt-sm-5 mb-sm-3">
                     <span class="h3 ms-lg-5" style="letter-spacing: 2px; font-weight: bold;">LABORATORY RESULT</span>
+                    <i class="fa-solid fa-gear h3 setting_icon d-lg-none" style="float: right;" data-bs-toggle="offcanvas" data-bs-target="#user_Mobile_Sidebar" aria-controls="offcanvasRight"></i>
+
                 </div>
             </div>
 

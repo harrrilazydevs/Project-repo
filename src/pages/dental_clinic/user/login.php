@@ -1,12 +1,12 @@
-<div class="page" id="page_login">
+<div class="d-none page" id="page_login">
     <section>
         <div class="container login_container">
             <div class="forms-container">
                 <div class="signin-signup">
-                    <form action="#" class="sign-in-form form_login">
+                    <form action="#" class="sign-in-form" style=" display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 0rem 5rem; transition: all 0.2s 0.7s; overflow: hidden; grid-column: 1 / 2; grid-row: 1 / 2;">
                         <h1 class="che"> C H E R O N Z E L L E </h1>
                         <BR>
-                        <h2 class="title">Sign in</h2>
+                        <h2 class="title text-black">Sign in</h2>
                         <div class="input-field">
                             <i class="fas fa-user"></i>
                             <input type="text" placeholder="Username" />
@@ -31,8 +31,10 @@
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
                         </div>
+
+
                     </form>
-                    <form action="#" class="sign-up-form">
+                    <form action="#" class="sign-up-form" style=" display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 0rem 5rem; transition: all 0.2s 0.7s; overflow: hidden; grid-column: 1 / 2; grid-row: 1 / 2;">
                         <h2 class="title">Sign up</h2>
                         <div class="input-field">
                             <i class="fas fa-user"></i>
@@ -95,6 +97,4 @@
         </div>
 
     </section>
-
-
 </div>

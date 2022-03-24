@@ -1,4 +1,4 @@
-<div class=" d-none page" id="page_11 page11.php" style="background-color: white;">
+<div class="d-none page" id="page_11 page11.php" style="background-color: white;">
     <div class="dashboard_grid">
 
         <!-- <div class="text-black left" style="background-color: red;">

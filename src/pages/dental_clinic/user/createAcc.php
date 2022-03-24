@@ -1,5 +1,5 @@
-<div class="d-none page" id="page_createAcc">
-    <div class="container pt-2">
+<div class="d-none page" id="page_createAcc" >
+    <div class="container">
         <div class="row">
             <div class="col-lg-8">
                 <span class="h3" style="letter-spacing: 2px; font-weight: bold;">CREATE ACCOUNT</span>
@@ -13,7 +13,7 @@
 
     </div>
 
-    <section class="mt-3">
+    <section class="mt-3" style="background-image: url('src/resources/img/bg_caduceus.png');  background-repeat: no-repeat; background-size: 100% 100%;">
         <div class="container mb-4">
             <div class="row">
                 <div class="col-lg-6 col-sm-12">

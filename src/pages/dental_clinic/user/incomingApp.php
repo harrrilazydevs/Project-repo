@@ -1,7 +1,7 @@
 <div class="d-none page" id="incomingApp.php" style="background-color: white;">
     <div class="incoming_Appointment">
         <!-------- MAIN GRID --------->
-            <div class="container min-vh-100" style="color: #7B7A7A;">
+            <div class="container min-vh-100" style="color: #7B7A7A; ">
                 <div class="row title_dashboard">
                     <div class="col-lg-12 col-sm-12 mt-lg-5 mt-sm-5 mb-sm-3 text-center">
                         <span class="h3 ms-lg-5" style="letter-spacing: 3px; font-weight: bold;">INCOMING APPOINTMENTS</span>
@@ -12,7 +12,6 @@
 
         
                 <section class="p-5">
-
                     <div class="container">
                         <div class="table-responsive" id="no-more-tables" style="border: 3px solid  #7B7A7A; border-radius: 15px; box-shadow: 5px 10px #888888;">
                             <table class="table">

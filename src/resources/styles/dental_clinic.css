@@ -3,7 +3,7 @@
   --bgc: #4dbdac !important;
 }
 body {
-  /* background: var(--bgc); */
+  background: var(--bgc);
   color: white;
   font-family: 'Poppins', sans-serif;
 }
@@ -139,7 +139,7 @@ a {
   }
   .dashboard_grid {
     display: grid;
-    grid-template-columns: 5fr 0fr !important;
+    grid-template-columns: 100% 0% !important;
   }
   .myAcc_grid {
     display: grid;
@@ -237,7 +237,7 @@ a {
 .incoming_Appointment,
 .lab_result {
   display: grid;
-  grid-template-columns: 7fr 1.7fr;
+  grid-template-columns: 7fr 1.9fr;
 }
 .dashboard_nested {
   display: grid;
@@ -245,17 +245,47 @@ a {
   grid-auto-rows: 170px;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-.container {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.che {
+  color: #68d4c3;
+}
+.login_container{
   position: relative;
-  width: 100%;
+  width: 90%;
   background-color: #fff;
-  min-height: 100vh;
+  min-height: 90vh;
   overflow: hidden;
 }
 
@@ -279,7 +309,7 @@ a {
   z-index: 5;
 }
 
-form {
+.form_login {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -291,12 +321,12 @@ form {
   grid-row: 1 / 2;
 }
 
-form.sign-up-form {
+.form_login, .sign-up-form {
   opacity: 0;
   z-index: 1;
 }
 
-form.sign-in-form {
+.form_login, .sign-in-form {
   z-index: 2;
 }
 
@@ -374,7 +404,7 @@ form.sign-in-form {
 
 .btn {
   width: 150px;
-  background-color: #5995fd;
+  background-color: #68d4c3;
   border: none;
   outline: none;
   height: 49px;
@@ -388,7 +418,7 @@ form.sign-in-form {
 }
 
 .btn:hover {
-  background-color: #4d84e2;
+  background-color: #57c9b8;
 }
 .panels-container {
   position: absolute;
@@ -400,22 +430,22 @@ form.sign-in-form {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.container:before {
-  content: '';
+.login_container:before {
+  content:   ''!important;
   position: absolute;
-  height: 2000px;
-  width: 2000px;
-  top: -10%;
+  height: 200%;
+  width: 100%;
+  top: 20%;
   right: 48%;
   transform: translateY(-50%);
-  background-image: linear-gradient(-45deg, #4481eb 0%, #04befe 100%);
+  background-image: linear-gradient(-45deg, #68d4c3 0%, #85e0d3 100%);
   transition: 1.8s ease-in-out;
   border-radius: 50%;
   z-index: 6;
 }
 
 .image {
-  width: 100%;
+  width: 80%;
   transition: transform 1.1s ease-in-out;
   transition-delay: 0.4s;
 }
@@ -473,45 +503,45 @@ form.sign-in-form {
 
 /* ANIMATION */
 
-.container.sign-up-mode:before {
+.login_container.sign-up-mode:before {
   transform: translate(100%, -50%);
   right: 52%;
 }
 
-.container.sign-up-mode .left-panel .image,
-.container.sign-up-mode .left-panel .content {
+.login_container.sign-up-mode .left-panel .image,
+.login_container.sign-up-mode .left-panel .content {
   transform: translateX(-800px);
 }
 
-.container.sign-up-mode .signin-signup {
+.login_container.sign-up-mode .signin-signup {
   left: 25%;
 }
 
-.container.sign-up-mode form.sign-up-form {
+.login_container.sign-up-mode .form_login .sign-up-form {
   opacity: 1;
   z-index: 2;
 }
 
-.container.sign-up-mode form.sign-in-form {
+.login_container.sign-up-mode .form_login .sign-in-form {
   opacity: 0;
   z-index: 1;
 }
 
-.container.sign-up-mode .right-panel .image,
-.container.sign-up-mode .right-panel .content {
+.login_container.sign-up-mode .right-panel .image,
+.login_container.sign-up-mode .right-panel .content {
   transform: translateX(0%);
 }
 
-.container.sign-up-mode .left-panel {
+.login_container.sign-up-mode .left-panel {
   pointer-events: none;
 }
 
-.container.sign-up-mode .right-panel {
+.login_container.sign-up-mode .right-panel {
   pointer-events: all;
 }
 
 @media (max-width: 870px) {
-  .container {
+  .login_container {
     min-height: 800px;
     height: 100vh;
   }
@@ -523,7 +553,7 @@ form.sign-in-form {
   }
 
   .signin-signup,
-  .container.sign-up-mode .signin-signup {
+  .login_container.sign-up-mode .signin-signup {
     left: 50%;
   }
 
@@ -576,8 +606,8 @@ form.sign-in-form {
   }
 
   .container:before {
-    width: 1500px;
-    height: 1500px;
+    width: 100px;
+    height: 100px;
     transform: translateX(-50%);
     left: 30%;
     bottom: 68%;

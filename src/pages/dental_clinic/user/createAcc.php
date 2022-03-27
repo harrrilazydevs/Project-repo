@@ -56,10 +56,10 @@
                     
                             <!-- GENDER INPUT AND LABEL -->
                                 <label class="h5 createAcc_label">Gender: </label>
-                                <input class="mt-3" type="radio" id="male" value="male" style="margin-left: 10% !important;">
+                                <input class="mt-3" name="gender" type="radio" id="male" value="male" style="margin-left: 10% !important;">
                                 <label class="h5" for="male">Male</label>
 
-                                <input type="radio" id="female" value="female" style="margin-left: 20% !important;">
+                                <input type="radio" name="gender" id="female" value="female" style="margin-left: 20% !important;">
                                 <label class="h5" for="female">Female</label>
                             <!-- GENDER INPUT AND LABEL -->
 
@@ -76,9 +76,6 @@
 
                             <label class="h5 createAcc_label" for="mname">Password :</label>
                             <input class="createAcc_Input" type="password" id="password">
-                            
-                            <label class="h5 createAcc_label"><small style="font-size: 16px;">Confirm Passwrod</small>:</label>
-                            <input class="createAcc_Input" type="password" id="confirmpass">
 
                         </form>
                     </div>

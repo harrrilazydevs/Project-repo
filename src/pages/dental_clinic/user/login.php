@@ -9,13 +9,13 @@
                         <h2 class="title text-black">Sign in</h2>
                         <div class="input-field">
                             <i class="fas fa-user"></i>
-                            <input type="text" placeholder="Username" />
+                            <input type="text" id="txt_username" placeholder="Username" />
                         </div>
                         <div class="input-field">
                             <i class="fas fa-lock"></i>
-                            <input type="password" placeholder="Password" />
+                            <input type="password" id="txt_password" placeholder="Password" />
                         </div>
-                        <input type="submit" value="Login" class="btn solid" />
+                        <input type="button" id="btn_login" value="Login" class="btn solid" />
                         <p class="social-text">Or Sign in with social platforms</p>
                         <div class="social-media">
                             <a href="home/indexx.html" class="social-icon">

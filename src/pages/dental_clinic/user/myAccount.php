@@ -1,4 +1,4 @@
-<div class="page" id="myAcc.php" style="background-color: white;">
+<div class="page d-none" id="myAcc.php" style="background-color: white;">
     <div class="myAcc_grid" style="background-image: url('src/resources/img/bg_caduceus.png'); background-repeat: no-repeat; background-size: 80% 100%;">
         <!-------- MAIN GRID --------->
         <div class="container min-vh-100" style="color: #7B7A7A;">

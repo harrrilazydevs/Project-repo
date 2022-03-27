@@ -1,4 +1,4 @@
-<div class="d-none page" id="page_0page.php" style="background-color: #47B0A0;">
+<div class="d-none page" id="page_main" style="background-color: #47B0A0;">
     <section>
         <div class="container mt-5">
             <div class="row text-center">

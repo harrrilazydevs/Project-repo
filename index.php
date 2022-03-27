@@ -5,6 +5,10 @@ $_SESSION['logo_path'] = 'src/resources/img/otakulogo.png';
 $_SESSION['access_level'] = 'user';
 
 
+// //for burger
+// if(!isset($_SESSION['access_level'])){
+//     $_SESSION['access_level'] = 'user';
+// }
 
 ?>
 
@@ -22,7 +26,7 @@ $_SESSION['access_level'] = 'user';
         <?php
 
         if ($_SESSION['theme'] == 'dental_clinic') {
-            echo 'Dental Clinic';
+            echo 'Cheronzelle';
         }
 
         if ($_SESSION['theme'] == 'burger_shop') {
@@ -39,12 +43,16 @@ $_SESSION['access_level'] = 'user';
     <link rel="stylesheet" href="src/resources/styles/main.css">
 
 
+
+
+
     <!-- THEMES -->
 
     <?php
     if ($_SESSION['theme'] == 'dental_clinic') {
-
         echo '<link rel="stylesheet" href="src/resources/styles/dental_clinic.css">';
+        echo '<link rel="stylesheet" href="src/resources/styles/dental_clinic_kd.css">';
+        echo '<link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">';
     }
 
     if ($_SESSION['theme'] == 'burger_shop') {
@@ -102,10 +110,8 @@ $_SESSION['access_level'] = 'user';
         // LOGIN PAGE
         include_once 'src/pages/dental_clinic/user/login.php';
 
-
         // PAGES PHP
         include_once 'src/pages/dental_clinic/user/navbar.php';
-
         include_once 'src/pages/dental_clinic/user/createAcc.php';
         include_once 'src/pages/dental_clinic/user/myAccount.php';
         include_once 'src/pages/dental_clinic/user/page11.php';
@@ -114,12 +120,13 @@ $_SESSION['access_level'] = 'user';
         include_once 'src/pages/dental_clinic/user/incomingApp.php';
         include_once 'src/pages/dental_clinic/user/appointments.php';
 
-
         // NAVS AND SIDEBARS
         include_once 'src/pages/dental_clinic/user/sidebarUser.php';
         include_once 'src/pages/dental_clinic/user/modals.php';
         include_once 'src/pages/dental_clinic/user/userMobileSidebar.php';
 
+
+        echo '<script src="src/func/dental_clinic/main.js"></script>';
         echo '<script src="src/func/dental_clinic/user/user.js"></script>';
     }
 

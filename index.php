@@ -2,10 +2,8 @@
 session_start();
 $_SESSION['theme'] = 'dental_clinic';
 $_SESSION['logo_path'] = 'src/resources/img/otakulogo.png';
+$_SESSION['access_level'] = 'user';
 
-if( !isset($_SESSION['access_level'])){
-    $_SESSION['access_level'] = 'user';
-}
 
 
 ?>

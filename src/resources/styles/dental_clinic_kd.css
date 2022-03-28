@@ -23,9 +23,12 @@
 .side_bar_style_1 i {
     color:#646464;
 }
+
+
 .side_bar_style_1 i:hover{
-    transform:scale(1.5);
+    transform:scale(1.1);
     cursor:pointer;
+    color: #4bb9a9;
 }
 .side_bar_selected{
     border-right: 2px solid gray;

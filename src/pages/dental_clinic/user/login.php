@@ -1,4 +1,4 @@
-<div class="d-none page" id="page_login">
+<div class="page d-none" id="page_login">
     <section>
         <div class="container login_container">
             <div class="forms-container">

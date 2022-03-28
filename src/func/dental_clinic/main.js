@@ -11,9 +11,9 @@ let selected_services = [];
 
 
 $(document).ready(function () {
-  if (!$("#txt_user_id").val()) {
-    change_page("login");
-  }
+//   if (!$("#txt_user_id").val()) {
+//     change_page("login");
+//   }
 
   load_available_appointments()
 });

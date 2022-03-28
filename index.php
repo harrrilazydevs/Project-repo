@@ -2,7 +2,7 @@
 session_start();
 $_SESSION['theme'] = 'dental_clinic';
 $_SESSION['logo_path'] = 'src/resources/img/otakulogo.png';
-$_SESSION['access_level'] = 'admin';
+$_SESSION['access_level'] = 'user';
 
 
 // //for burger
@@ -128,11 +128,13 @@ $_SESSION['access_level'] = 'admin';
 
         echo '<script src="src/func/dental_clinic/main.js"></script>';
         echo '<script src="src/func/dental_clinic/user/user.js"></script>';
+        
     }
 
     if ($_SESSION['theme'] == 'dental_clinic' && $_SESSION['access_level'] == 'admin') {
         include_once 'src/pages/dental_clinic/admin/navbar.php';
         include_once 'src/pages/dental_clinic/admin/overview.php';
+        include_once 'src/pages/dental_clinic/admin/admin_sidebar.php';
 
         echo '<script src="src/func/dental_clinic/main.js"></script>';
 

@@ -1,10 +1,9 @@
-<div class="page" id="page_dashboard" style="background-color: white;">
+<div class="d-none page" id="page_overview" style="background-color: white;">
     <?php
-        include 'side_bar_1.php';
+    include 'admin_sidebar.php';
     ?>
-    <div class="dashboard_grid">
+    <!-- <div class="admin_overview_grid">
 
-        <!-------- MAIN GRID --------->
         <div class="container min-vh-100" style="color: #7B7A7A; overflow-x:hidden; overflow-y:auto; max-height:100vh;">
             <div class="row title_dashboard">
                 <div class="col-lg-12 col-sm-12 mt-lg-3 mt-sm-5 mb-sm-3 mt-xl-5 mt-lg-5">
@@ -44,7 +43,6 @@
                 </div>
             </div>
 
-            <!-------- SERVICES BTNS --------->
             <div class="container  services_container mt-lg-5 ms-lg-5 pt-lg-2 mt-sm-5">
                 <h5 class="h5" style="letter-spacing: 2px; font-weight: bold;  color: black;">Services</h5>
                 <div class="row service">
@@ -58,7 +56,6 @@
                     <button attr-name="others" class="services_btn text-white">OTHERS</button>
                 </div>
             </div>
-            <!-------- SERVICES BTNS --------->
 
             <section class="p-5 pb-5">
                 <div class="container">
@@ -95,12 +92,24 @@
                 </div>
             </section>
         </div>
-        <!-------- MAIN GRID --------->
 
-        <!-------- NESTED GRID --------->
-        <div>
-            <?php include 'src/pages/dental_clinic/user/sidebarUser.php'; ?>
+     
+    </div> -->
+
+    <section>
+        <div class="container min-vh-100" style="color: #7B7A7A; max-height:100vh;">
+            <div class="row">
+                <div class="col-lg-11 col-sm-11 mt-lg-3 mt-sm-5 mb-sm-3 mt-xl-5 mt-lg-5">
+                    <small class="h2 ms-lg-1 fw-bold" style="font-size: 15px; letter-spacing: 2px; font-family: 'Work Sans', sans-serif;">ADMIN</small>
+                    <span class="h2 ms-lg-5 fw-bold" style="letter-spacing: 2px; font-family: 'Work Sans', sans-serif;"><br>OVERVIEW</span>
+
+                </div>
+
+                <div class="col-lg-1 col-sm-1 mt-lg-3 mt-sm-5 mt-xl-5 mt-lg-5">
+                    <img class="admin_img" src="src/resources/img/user.png" style="width: 100px; height: 100px; border-radius: 100%;">
+
+                </div>
+            </div>
         </div>
-        <!-------- NESTED GRID --------->
-    </div>
+    </section>
 </div>

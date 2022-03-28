@@ -1,10 +1,10 @@
-<div class="d-none page" id="page_dashboard" style="background-color: white;">
+<div class="page" id="page_dashboard" style="background-color: white;">
     <?php
         include 'side_bar_1.php';
     ?>
     <div class="dashboard_grid">
 
-        <!-------- MAIN GRID --------->
+        <!-------- MAINn GRID --------->
         <div class="container min-vh-100" style="color: #7B7A7A; overflow-x:hidden; overflow-y:auto; max-height:100vh;">
             <div class="row title_dashboard">
                 <div class="col-lg-12 col-sm-12 mt-lg-3 mt-sm-5 mb-sm-3 mt-xl-5 mt-lg-5">

@@ -1,4 +1,4 @@
-<div class="dashboard_nested" style="background-color: #4DBDAC; height: 200vh; position: fixed; border-left: 5px solid #7B7A7A; ">
+<div class="dashboard_nested" style="background-color: #4DBDAC; height: 200vh; position: fixed;">
 
     <div>
         <div class="container mt-lg-5 ms-lg-2">

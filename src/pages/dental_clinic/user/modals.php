@@ -135,8 +135,8 @@
 
                     <!----------------BUTTONS------------------->
                     <div class="mt-lg-2 mb-lg-2 text-center">
-                        <button class="text-white" style="font-weight:bold; background:#80CEB8; border-radius: 5px; width:120px; margin: 6px; border: none; height: 35px;">DONE</button>
-                        <button class="text-white" style="font-weight:bold; background:#80CEB8; border-radius: 5px; width:120px; margin: 6px; border: none; height: 35px;">BACK</button>
+                        <button class="text-white" style="font-weight:bold; background:#80CEB8; border-radius: 5px; width:120px; margin: 3px; border: none; height: 35px;" data-bs-dismiss="modal" id="btn_page11_done">DONE</button>
+                        <button class="text-white" style="font-weight:bold; background:#80CEB8; border-radius: 5px; width:120px; margin: 3px; border: none; height: 35px;" data-bs-dismiss="modal" id="btn_page11_back">BACK</button>
                     </div>
 
                 </div>
@@ -163,24 +163,24 @@
 <div class="modal fade" id="md_make_appointment" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content" style="border-radius: 5%;">
-            <span class="h5 mt-lg-3 text-black text-center" style="letter-spacing: 4px; font-weight: bold;">Make Appointment</span>
+            <span class="h5 mt-3 text-black text-center" style="letter-spacing: 4px; font-weight: bold;">Make Appointment</span>
 
             <div class="modal-body">
                 <div class="container" style="background-color: #F9F9F9; border-radius: 5px;">
                     <h6 class="h6 pt-3 text-black" style="letter-spacing: 2px; font-weight: bold; font-size: 15px;">Appointment Details</h6>
-                    <div class="row">
-                        <div class="col-6">
+                    <div class="row border-top mt-2">
+                        <div class="col-6 mt-3">
                             <p class="text-black" style="font-weight: bold; font-size: 12px;">Physician's Name : </p>
                             <p class="text-black" style="font-weight: bold; font-size: 12px;">Appointment Date : </p>
                             <p class="text-black" style="font-weight: bold; font-size: 12px;">Appointment Day : </p>
                             <p class="text-black" style="font-weight: bold; font-size: 12px;">Appointment Time : </p>
                         </div>
 
-                        <div class="col-6">
-                            <p class="text-black text-muted" style="font-size: 12px;">Dra. Catherine Marcaig Jr Felisidad</p>
-                            <p class="text-black text-muted" style="font-size: 12px;">01-10-2022</p>
-                            <p class="text-black text-muted" style="font-size: 12px;">Monday</p>
-                            <p class="text-black text-muted" style="font-size: 12px;">7:00 - 9:00 AM</p>
+                        <div class="col-6 mt-3">
+                            <p class="text-black text-muted" style="font-size: 12px;" id="md_make_appointment_txt_physician"></p>
+                            <p class="text-black text-muted" style="font-size: 12px;" id="md_make_appointment_txt_date"></p>
+                            <p class="text-black text-muted" style="font-size: 12px;" id="md_make_appointment_txt_day"></p>
+                            <p class="text-black text-muted" style="font-size: 12px;" id="md_make_appointment_txt_time"></p>
                         </div>
                     </div>
 
@@ -188,22 +188,20 @@
 
                 <div class="container mt-3" style="background-color: #F9F9F9; border-radius: 5px;">
                     <h6 class="h6 pt-3 text-black" style="letter-spacing: 2px; font-weight: bold; font-size: 15px;">Services Details</h6>
-                    <div class="row">
-                        <div class="col-6">
-                            <p class="text-black" style="font-weight: bold; font-size: 12px;">Service : </p>
-                            <p class="text-black" style="font-weight: bold; font-size: 12px;">Amount : </p>
-                        </div>
-
-                        <div class="col-6">
-                            <p class="text-black text-muted" style="font-size: 12px;">Drug Test</p>
-                            <p class="text-black text-muted" style="font-size: 12px;">PHP 360.00</p>
-                        </div>
+                    
+                    <div id="div_selected_services">
+                        
                     </div>
+
+                    <div id="div_selected_services_total">
+
+                    </div>
+                    
                 </div>
 
-                <div class="mt-lg-2 mb-lg-2 text-center">
-                    <button class="text-white" data-bs-dismiss="modal" style="font-weight:bold; background: red; border-radius: 5px; width:130px; margin: 6px; border: none; height: 35px; font-size: 12px;">Cancel Appointment</button>
-                    <button class="text-white" data-bs-dismiss="modal" style="font-weight:bold; background:#80CEB8; border-radius: 5px; width:120px; margin: 6px; border: none; height: 35px; font-size: 12px;">BACK</button>
+                <div class="mt-4 mb-2 text-center">
+                    <button class="text-white" id="md_make_appointment_book" data-bs-dismiss="modal" style="font-weight:bold; background:#80CEB8; border-radius: 5px; width:120px; margin: 6px; border: none; height: 35px; font-size: 12px;">BOOK</button>
+                    <button class="text-white" id="md_make_appointment_cancel" data-bs-dismiss="modal" style="font-weight:bold; background:#F35252; border-radius: 5px; width:130px; margin: 6px; border: none; height: 35px; font-size: 12px;">CLOSE</button>
                 </div>
 
             </div>
@@ -223,18 +221,18 @@
                 <div class="container" style="background-color: #F9F9F9; border-radius: 5px;">
                     <h6 class="h6 pt-3 text-black" style="letter-spacing: 2px; font-weight: bold; font-size: 15px;">Appointment Details</h6>
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-6 mt-3">
                             <p class="text-black" style="font-weight: bold; font-size: 12px;">Physician's Name : </p>
                             <p class="text-black" style="font-weight: bold; font-size: 12px;">Appointment Date : </p>
                             <p class="text-black" style="font-weight: bold; font-size: 12px;">Appointment Day : </p>
                             <p class="text-black" style="font-weight: bold; font-size: 12px;">Appointment Time : </p>
                         </div>
 
-                        <div class="col-6">
-                            <p class="text-black text-muted" style="font-size: 12px;">Dra. Catherine Marcaig Jr Felisidad</p>
-                            <p class="text-black text-muted" style="font-size: 12px;">01-10-2022</p>
-                            <p class="text-black text-muted" style="font-size: 12px;">Monday</p>
-                            <p class="text-black text-muted" style="font-size: 12px;">7:00 - 9:00 AM</p>
+                        <div class="col-6 mt-3">
+                            <p class="text-black text-muted" style="font-size: 12px;" id="md_view_appointment_txt_physician"></p>
+                            <p class="text-black text-muted" style="font-size: 12px;" id="md_view_appointment_txt_date"></p>
+                            <p class="text-black text-muted" style="font-size: 12px;" id="md_view_appointment_txt_day"></p>
+                            <p class="text-black text-muted" style="font-size: 12px;" id="md_view_appointment_txt_time"></p>
                         </div>
                     </div>
 
@@ -242,7 +240,9 @@
 
                 <div class="container mt-3" style="background-color: #F9F9F9; border-radius: 5px;">
                     <h6 class="h6 pt-3 text-black" style="letter-spacing: 2px; font-weight: bold; font-size: 15px;">Services Details</h6>
-                    <div class="row">
+
+                    <div id="div_view_appointment_services"></div>
+                    <!-- <div class="row">
                         <div class="col-6">
                             <p class="text-black" style="font-weight: bold; font-size: 12px;">Service : </p>
                             <p class="text-black" style="font-weight: bold; font-size: 12px;">Amount : </p>
@@ -252,7 +252,7 @@
                             <p class="text-black text-muted" style="font-size: 12px;">Drug Test</p>
                             <p class="text-black text-muted" style="font-size: 12px;">PHP 360.00</p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="mt-lg-2 mb-lg-2 text-center">

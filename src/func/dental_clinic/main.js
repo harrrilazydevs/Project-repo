@@ -95,6 +95,10 @@ $('.btn_view_laboratory_result').on('click', function(){
 $('.btn_view_appointments').on('click', function(){
     change_page('appointment')
 })
+$('.btn_view_registeredPatient').on('click', function(){
+    change_page('registeredPatient')
+})
+
 
 $('.services_btn').on('click',function(){
 

@@ -28,3 +28,5 @@ function typing() {
 }
 typing();
 // <-------TEXT TYPING HOME SECTION--------->//
+
+

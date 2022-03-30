@@ -2,7 +2,7 @@
   -webkit-text-stroke-width: 1px !important;
   -webkit-text-stroke-color: #4bb9a9 !important;
   color: white !important;
-  font-size: 14pt !important;
+  font-size: 14pt;
 }
 .btn_style_1 {
   background: #80ceb8;

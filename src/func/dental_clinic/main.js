@@ -95,6 +95,7 @@ $('.btn_view_laboratory_result').on('click', function(){
 $('.btn_view_appointments').on('click', function(){
     change_page('appointment')
 })
+<<<<<<< HEAD
 $('.btn_view_registeredPatient').on('click', function(){
     change_page('registeredPatient')
 })
@@ -103,6 +104,8 @@ $(".btn_view_appointments").on("click", function () {
   change_page("appointment");
   load_appointments();
 });
+=======
+>>>>>>> parent of 06dd5a3 (admin UI's Addded)
 
 $('.services_btn').on('click',function(){
 

@@ -390,7 +390,7 @@ a {
   .panel .content {
     padding: 0.5rem 1rem;
   }
-  .login_container {
+  .login_container{
     padding: 1.5rem;
   }
 
@@ -406,18 +406,19 @@ a {
 }
 /* <------------SIGN UP AND SIGN IN FORM ------------>*/
 
+
 /* <------------CREATE ACC PAGE INPUT AND LABELS ------------>*/
-.createAcc_Input {
-  width: 60%;
-  border-radius: 5px;
-  margin-top: 13px;
-  margin-left: 30px;
-}
-.createAcc_label {
-  display: inline-block;
-  width: 140px;
-  margin-left: 15px;
-}
+  .createAcc_Input {
+    width: 60%;
+    border-radius: 5px;
+    margin-top: 13px;
+    margin-left: 30px;
+  }
+  .createAcc_label {
+    display: inline-block;
+    width: 140px;
+    margin-left: 15px;
+  }
 /* <------------CREATE ACC PAGE INPUT AND LABELS ------------>*/
 
 /* <------------PAGE 0 ------------>*/
@@ -614,57 +615,26 @@ a {
   grid-auto-rows: 170px;
 }
 
+
 /* <----------------------------------ADMIN CSS---------------------------------->*/
 
-.logout {
-  position: absolute;
-  bottom: 30px;
-  font-size: 24px;
-  list-style: none !important;
-  padding: 5px 20px;
-}
-.logout:hover {
-  transform: scale(1.1);
-  cursor: pointer;
+.admin_overview_grid{
+
 }
 
-/* <------------SELECTION PATIENTS PAGE------------>*/
+@media only screen and (max-width: 450px) {
 
-.selection{
-  appearance: none;
-  outline: 0;
-  border: 0;
-  box-shadow: none;
-  flex: 1;
-  padding: 0 1em;
-  color: black;
-  font-size: 12px;
-  background-color: #EEEDED;
-  background-image: none;
-  cursor: pointer;
+  .admin_img{
+    width: 50px !important;
+    height: 50px !important;
+    float: right !important;
+  }
 }
-select::-ms-expand {
-  display: none;
+
+@media only screen and (max-width: 700px) {
+  .admin_img{
+    width: 70px !important;
+    height: 70px !important;
+    float: right !important;
+  }
 }
-.select {
-  position: relative;
-  display: flex;
-  width: 20em;
-  height: 3em;
-  border-radius: 0.25em;
-  overflow: hidden;
-}
-.select::after {
-  content: '\25BC';
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 1em;
-  background-color: #C4C4C4;
-  transition: 0.25s all ease;
-  pointer-events: none;
-}
-.select:hover::after {
-  color: #4DBDAC;
-}
-/* <------------SELECTION PATIENTS PAGE------------>*/

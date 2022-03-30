@@ -17,26 +17,37 @@
             <section class="p-5 pt-2">
                 <div class="container">
                     <div class="table-responsive" id="no-more-tables" style="border: 3px solid  #7B7A7A; border-radius: 15px; box-shadow: 5px 10px #888888;">
-                        <table class="table" id="tbl_incoming_appointments">
+                        <table class="table">
                             <thead class="text-center">
                                 <tr class="table_title" style="font-weight: bold; color: #80CEB8; font-size: 14px;">
                                     <th>APPOINTMENT ID</th>
                                     <th>DATE</th>
                                     <th>TIME</th>
+                                    <th>SERVICE</th>
                                     <th>DETAILS</th>
                                 </tr>
                             </thead>
-                            <tbody class="text-center" >
-                                <tr style="font-size:12pt;">
-                                    <td class="data-title" data-title="APPOINTMENT ID"> <small class="text-black">01102022</small></td>
-                                    <td class="data-title" data-title="DATE"><small class="text-black">01-19-2022</small></td>
-                                    <td class="data-title" data-title="TIME"><small class="text-black"> 7:00 - 9:00 AM</small></td>
+                            <tbody class="text-center">
+                                <tr>
+                                    <td class="data-title" data-title="APPOINTMENT ID"> <small class="h6 text-black">01102022</small></td>
+                                    <td class="data-title" data-title="DATE"><small class="h6 text-black">01-19-2022</small></td>
+                                    <td class="data-title" data-title="TIME"><small class="h6 text-black"> 7:00 - 9:00 AM</small></td>
+                                    <td class="data-title" data-title="SERVICE"><small class="h6 text-black">Package 1</small></td>
                                     <td class="data-title" data-title="DETAILS">
-                                        <button class="text-white px-3" data-bs-toggle="modal" data-bs-target="#incomingAppointment" style="background:#80CEB8; border-radius:5px; border: none; cursor: pointer; font-size: 12px;">View</button>
-                                        <button class="text-white px-2 ms-lg-2" style="background: red; border-radius:5px; text-decoration: none; cursor: pointer; font-size: 12px;  border: none;">Cancel</button>
+                                        <button class="text-white" data-bs-toggle="modal" data-bs-target="#incomingAppointment" style="background:#80CEB8; border-radius:5px; border: none; cursor: pointer; font-size: 12px;">View</button>
+                                        <button class="text-white ms-lg-2" style="background: red; border-radius:5px; text-decoration: none; cursor: pointer; font-size: 12px;  border: none;">Cancel</button>
                                     </td>
                                 </tr>
-                               
+                                <tr>
+                                    <td class="data-title" data-title="APPOINTMENT ID"> <small class="h6 text-black">01102022</small></td>
+                                    <td class="data-title" data-title="DATE"><small class="h6 text-black">01-19-2022</small></td>
+                                    <td class="data-title" data-title="TIME"><small class="h6 text-black"> 7:00 - 9:00 AM</small></td>
+                                    <td class="data-title" data-title="SERVICE"><small class="h6 text-black">Package 1</small></td>
+                                    <td class="data-title" data-title="DETAILS">
+                                        <button class="text-white" data-bs-toggle="modal" data-bs-target="#incomingAppointment" style="background:#80CEB8; border-radius:5px; border: none; cursor: pointer; font-size: 12px;">View</button>
+                                        <button class="text-white ms-lg-2" style="background: red; border-radius:5px; text-decoration: none; cursor: pointer; font-size: 12px;  border: none;">Cancel</button>
+                                    </td>
+                                </tr>
 
                             </tbody>
                         </table>

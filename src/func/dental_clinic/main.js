@@ -96,6 +96,7 @@ $('.btn_view_appointments').on('click', function(){
     change_page('appointment')
 })
 <<<<<<< HEAD
+<<<<<<< HEAD
 $('.btn_view_registeredPatient').on('click', function(){
     change_page('registeredPatient')
 })
@@ -124,6 +125,26 @@ $('.services_btn').on('click',function(){
             var output = '<div class="col-xl-6 col-12  text-muted ">';
             $.each(JSON.parse(data), function(key,val){
 
+=======
+
+$('.services_btn').on('click',function(){
+
+    var title = '';
+    title = $(this).attr('attr-name')
+    title = title.toUpperCase()
+
+    $.ajax({
+        type: "GET",
+        url:"src/database/dental_clinic/func/user/read_service.php?category=" + $(this).attr('attr-name'),
+        success: function (data) {
+
+
+            var temp = Math.round(JSON.parse(data).length / 2)
+            var count = 0;
+            var output = '<div class="col-xl-6 col-12  text-muted ">';
+            $.each(JSON.parse(data), function(key,val){
+
+>>>>>>> parent of 1623a7d (user function)
                 if(count == temp){
                     output += '</div>'  
                     output += '<div class="col-xl-6 col-12  text-muted ">'
@@ -167,12 +188,21 @@ $('.services_btn').on('click',function(){
 
               
             })  
+<<<<<<< HEAD
 
         },
     });
 })
 
 
+=======
+
+        },
+    });
+})
+
+
+>>>>>>> parent of 1623a7d (user function)
 function load_available_appointments(){
     $.ajax({
         type: "GET",
@@ -196,6 +226,7 @@ function write_available_appointments(data){
                     <button class="text-white btn_style_1 btn_get_appointment" attr-id="`+val.id+`" >Get Appointment</button>
                 </td>
             </tr>
+<<<<<<< HEAD
 <<<<<<< HEAD
         `;
   });
@@ -593,3 +624,16 @@ function setCookie(cookie) {
     })
 }
 
+=======
+        `
+    })
+
+    $('#tbl_available_appointments tbody').empty()
+    $('#tbl_available_appointments tbody').append(output)
+
+    $('.btn_get_appointment').on('click', function(){
+        $('#md_make_appointment').modal('show')
+    })
+}
+
+>>>>>>> parent of 1623a7d (user function)

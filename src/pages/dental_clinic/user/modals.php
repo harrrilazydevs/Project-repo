@@ -84,7 +84,7 @@
                         <p><small class="text-muted ">Kindly select the test corresponds to your physician's request.</small></p>
 
                         <div id="div_md_services" class="pb-4 pt-0 p-4 row">
-                            
+
                             <div class="col-xl-6 col-12  text-muted ">
 
                                 <div class="custom-control custom-checkbox">
@@ -110,8 +110,8 @@
 
                             <div class=" col-xl-6 col-12 text-muted ">
                                 <div class=" custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="hepa">
-                                        <label class="custom-control-label" style="font-size:9pt;">HEPA-B <small class="text-muted">(sreening)</small></label>
+                                    <input type="checkbox" class="custom-control-input" id="hepa">
+                                    <label class="custom-control-label" style="font-size:9pt;">HEPA-B <small class="text-muted">(sreening)</small></label>
                                 </div>
 
                                 <div class="custom-control custom-checkbox">
@@ -188,15 +188,15 @@
 
                 <div class="container mt-3" style="background-color: #F9F9F9; border-radius: 5px;">
                     <h6 class="h6 pt-3 text-black" style="letter-spacing: 2px; font-weight: bold; font-size: 15px;">Services Details</h6>
-                    
+
                     <div id="div_selected_services">
-                        
+
                     </div>
 
                     <div id="div_selected_services_total">
 
                     </div>
-                    
+
                 </div>
 
                 <div class="mt-4 mb-2 text-center">
@@ -215,11 +215,15 @@
 <div class="modal fade" id="md_view_appointment" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content" style="border-radius: 5%;">
+        <span class="ms-3 mt-3 badge bg-danger d-none" style="width:80px" id="badge_view_appointment_cancelled">Cancelled</span>
+        <span class="ms-3 mt-3 badge bg-success d-none" style="width:80px" id="badge_view_appointment_completed">Completed</span>
+
             <span class="h5 mt-lg-3 text-black text-center" style="letter-spacing: 4px; font-weight: bold;">Make Appointment</span>
 
             <div class="modal-body">
                 <div class="container" style="background-color: #F9F9F9; border-radius: 5px;">
                     <h6 class="h6 pt-3 text-black" style="letter-spacing: 2px; font-weight: bold; font-size: 15px;">Appointment Details</h6>
+                   
                     <div class="row">
                         <div class="col-6 mt-3">
                             <p class="text-black" style="font-weight: bold; font-size: 12px;">Physician's Name : </p>
@@ -242,21 +246,12 @@
                     <h6 class="h6 pt-3 text-black" style="letter-spacing: 2px; font-weight: bold; font-size: 15px;">Services Details</h6>
 
                     <div id="div_view_appointment_services"></div>
-                    <!-- <div class="row">
-                        <div class="col-6">
-                            <p class="text-black" style="font-weight: bold; font-size: 12px;">Service : </p>
-                            <p class="text-black" style="font-weight: bold; font-size: 12px;">Amount : </p>
-                        </div>
+                    <div id="div_view_appointment_services_total"></div>
 
-                        <div class="col-6">
-                            <p class="text-black text-muted" style="font-size: 12px;">Drug Test</p>
-                            <p class="text-black text-muted" style="font-size: 12px;">PHP 360.00</p>
-                        </div>
-                    </div> -->
                 </div>
 
-                <div class="mt-lg-2 mb-lg-2 text-center">
-                    <button class="text-white" data-bs-dismiss="modal" style="font-weight:bold; background: red; border-radius: 5px; width:130px; margin: 6px; border: none; height: 35px; font-size: 12px;">Cancel Appointment</button>
+                <div class="mt-lg-2 mb-lg-2 text-center" id="div_view_appointment_buttons">
+                    <button class="text-white" id="btn_cancel_appointment" data-bs-dismiss="modal" style="font-weight:bold; background: red; border-radius: 5px; width:130px; margin: 6px; border: none; height: 35px; font-size: 12px;">CANCEL</button>
                     <button class="text-white" data-bs-dismiss="modal" style="font-weight:bold; background:#80CEB8; border-radius: 5px; width:120px; margin: 6px; border: none; height: 35px; font-size: 12px;">BACK</button>
                 </div>
 

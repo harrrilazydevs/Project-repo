@@ -25,10 +25,6 @@
                     <div class="col-lg-12 col-sm-12" >
                         <div class="shadow p-3 mb-5 " style="border: 2px solid black; padding: 10px; border-radius: 12px; box-shadow: 5px 7px #888888 !important;">
                             <img class="icon_btn" src="src/resources/img/labResult.png" style="width: 100px;" data-bs-toggle="modal" data-bs-target="#labResult">
-                            <img class="icon_btn" src="src/resources/img/labResult.png" style="width: 100px;">
-                            <img class="icon_btn" src="src/resources/img/labResult.png" style="width: 100px;">
-                            <img class="icon_btn" src="src/resources/img/labResult.png" style="width: 100px;">
-                            <img class="icon_btn" src="src/resources/img/labResult.png" style="width: 100px;">
                         </div>
                     </div>
                 </div>

@@ -78,6 +78,7 @@ $("#md_make_appointment_book").on("click", function () {
 
 $(".btn_view_appointments").on("click", function () {
   change_page("appointment");
+  load_appointments();
 });
 
 $(".services_btn").on("click", function () {
@@ -332,7 +333,6 @@ function write_incoming_appointments(data) {
       val.time +
       `" 
         style="background:#80CEB8; border-radius:5px; border: none; cursor: pointer; font-size: 12px;">View</button>
-                <button class="text-white px-2 ms-lg-2" style="background: red; border-radius:5px; text-decoration: none; cursor: pointer; font-size: 12px;  border: none;">Cancel</button>
             </td>
         </tr>`;
   });
@@ -341,9 +341,10 @@ function write_incoming_appointments(data) {
   $("#tbl_incoming_appointments tbody").append(tbl_output);
 
   $(".btn_view_appointment").on("click", function () {
-
     price = 0;
-    output = '';
+    output = "";
+
+    $("#btn_cancel_appointment").attr("attr-id", $(this).attr("attr-id"));
 
     $("#md_view_appointment_txt_physician").text(
       $(this).attr("attr-physician")
@@ -379,10 +380,216 @@ function write_incoming_appointments(data) {
 
         $("#div_view_appointment_services").empty();
         $("#div_view_appointment_services").append(output);
+
+        output =
+          `<div class="row border-top py-2">
+                        <div class="col-6 mb-0 pb-0">
+                            <label class="text-black" style="font-weight: bold; font-size: 12px;">Total Amount : </label>
+                        </div>
+    
+                        <div class="col-6 mb-0 pb-0">
+                            <label class="text-black text-muted" style="font-size: 12px;">₱` +
+          price +
+          `</label>
+                        </div>
+                    </div>`;
+
+        $("#div_view_appointment_services_total").empty();
+        $("#div_view_appointment_services_total").append(output);
       }
     );
 
     $("#md_view_appointment").modal("show");
+
+    $("#btn_cancel_appointment").removeClass("d-none");
+    $("#div_view_appointment_buttons").addClass("text-center");
+    $("#div_view_appointment_buttons").removeClass("text-end");
+
+    $("#btn_cancel_appointment").on("click", function () {
+      $.post(
+        "src/database/dental_clinic/func/user/update_cancel_appointment.php",
+        { id: $(this).attr("attr-id") },
+        function () {
+          load_incoming_appointments();
+        }
+      );
+    });
+  });
+}
+
+function load_appointments() {
+  $.getJSON(
+    "src/database/dental_clinic/func/user/read_appointments.php?user_id=" +
+      $("#txt_user_id").val(),
+    function (data) {
+      write_appointments(data);
+    }
+  );
+}
+
+function write_appointments(data) {
+  output = "";
+
+  $.each(data, function (key, val) {
+    output +=
+      `
+                    <tr  style="font-size:12pt;">
+                        <td class="data-title" data-title="APPOINTMENT ID"> <small class=" text-black">` +
+      val.id +
+      `</small></td>
+                        <td class="data-title" data-title="DATE"><small class=" text-black">` +
+      val.date_booked +
+      `</small></td>
+                        <td class="data-title" data-title="TIME"><small class=" text-black">` +
+      val.time +
+      `</small></td>
+                        <td class="data-title" data-title="">
+                            <button class=" px-3 text-white btn_appointments_view" attr-id="` +
+      val.id +
+      `" attr-physician="` +
+      val.physician +
+      `"
+        attr-day ="` +
+      get_day(val.date_booked) +
+      `"
+      attr-status ="` +
+      val.status +
+      `"
+      attr-date="` +
+      val.date_booked +
+      `" attr-time="` +
+      val.time +
+      `"   style="background:#80CEB8; border-radius:5px; border: none; cursor: pointer; font-size: 12px;">View</button>
+                        </td>
+                    </tr>
+                `;
+
+    
+  });
+
+  $("#tbl_appointments tbody").empty();
+  $("#tbl_appointments tbody").append(output);
+  $("#txt_search_appointments").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#tbl_appointments tbody tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+
+//   $("#txt_search_appointments").on("keyup", function() {
+//     var value = $(this).val();
+
+//         $("#tbl_appointments tbody tr").each(function(index) {
+//             if (index != 0) {
+
+//                 $row = $(this);
+
+//                 var id = $row.find("td:first").text();
+
+//                 if (id.indexOf(value) != 0) {
+//                     $(this).hide();
+//                 }
+//                 else {
+//                     $(this).show();
+//                 }
+//             }
+//         });
+//     })
+
+    $("#txt_search_appointments").on("keyup", function() {
+        var value = $(this).val();
+        
+        $("tbl_appointments tbody tr").each(function(index) {
+            if (index !== 0) {
+                $row = $(this);
+                
+                var $tdElement = $row.find("td:first");
+                var id = $tdElement.text();
+                var matchedIndex = id.indexOf(value);
+                
+                if (matchedIndex != 0) {
+                    $row.hide();
+                }
+                else {
+                    $row.show();
+                }
+            }
+        });
+    });
+
+  $(".btn_appointments_view").on("click", function () {
+    $("#md_view_appointment").modal("show");
+    $("#btn_cancel_appointment").addClass("d-none");
+    $("#div_view_appointment_buttons").removeClass("text-center");
+    $("#div_view_appointment_buttons").addClass("text-end");
+
+    $("#md_view_appointment_txt_physician").text(
+      $(this).attr("attr-physician")
+    );
+    $("#md_view_appointment_txt_date").text($(this).attr("attr-date"));
+    $("#md_view_appointment_txt_time").text($(this).attr("attr-time"));
+    $("#md_view_appointment_txt_day").text($(this).attr("attr-day"));
+
+
+    $(this).attr("attr-status") == "cancelled"
+    ? $("#badge_view_appointment_cancelled").removeClass("d-none")
+    : $("#badge_view_appointment_cancelled").addClass("d-none");
+
+    $(this).attr("attr-status") == "completed"
+    ? $("#badge_view_appointment_completed").removeClass("d-none")
+    : $("#badge_view_appointment_completed").addClass("d-none");
+    
+
+    $.getJSON(
+      "src/database/dental_clinic/func/user/read_selected_services_by_appointment_id.php?id=" +
+        $(this).attr("attr-id"),
+      function (data) {
+        output = "";
+        price = "";
+
+        $.each(data, function (key, val) {
+          output +=
+            `<div class="row border-top py-2">
+                          <div class="col-6 mb-0 pb-0">
+                              <label class="text-black" style="font-weight: bold; font-size: 12px;">Service : </label><br>
+                              <label class="text-black" style="font-weight: bold; font-size: 12px;">Amount : </label>
+                          </div>
+          
+                          <div class="col-6 mb-0 pb-0">
+                              <label class="text-black text-muted" style="font-size: 12px;">` +
+            val.service +
+            `</label><br>
+                              <label class="text-black text-muted" style="font-size: 12px;">₱` +
+            val.price +
+            `</label>
+                          </div>
+                      </div>`;
+
+          price = price + val.price;
+
+         
+        });
+
+        $("#div_view_appointment_services").empty();
+        $("#div_view_appointment_services").append(output);
+
+        output =
+          `<div class="row border-top py-2">
+                            <div class="col-6 mb-0 pb-0">
+                                <label class="text-black" style="font-weight: bold; font-size: 12px;">Total Amount : </label>
+                            </div>
+        
+                            <div class="col-6 mb-0 pb-0">
+                                <label class="text-black text-muted" style="font-size: 12px;">₱` +
+          price +
+          `</label>
+                            </div>
+                        </div>`;
+
+        $("#div_view_appointment_services_total").empty();
+        $("#div_view_appointment_services_total").append(output);
+      }
+    );
   });
 }
 

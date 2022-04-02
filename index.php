@@ -142,6 +142,8 @@ $_SESSION['access_level'] = 'admin';
         include_once 'src/pages/dental_clinic/admin/history.php';
         include_once 'src/pages/dental_clinic/admin/admin_appointment.php';
         include_once 'src/pages/dental_clinic/admin/admin_modal.php';
+        include_once 'src/pages/dental_clinic/admin/prices.php';
+        include_once 'src/pages/dental_clinic/admin/packages.php';
 
 
         echo '<script src="src/func/dental_clinic/main.js"></script>';

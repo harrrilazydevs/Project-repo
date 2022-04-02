@@ -33,3 +33,8 @@
 .side_bar_selected{
     border-right: 2px solid gray;
 }
+
+.flex-container > div {
+  width: 100px;
+  margin: 5px;
+}

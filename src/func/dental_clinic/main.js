@@ -16,102 +16,120 @@ const weekday = [
   "Friday",
   "Saturday",
 ];
+
 let selected_services = [];
 
 $(document).ready(function () {
   if (!$("#txt_user_id").val()) {
-    change_page("main_page");
+    change_page("login");
   }
-
   load_available_appointments();
 });
 
-$("#btn_login").on("click", function () {
+$('.btn_logout').on('click', function(){
+  $.post("src/database/dental_clinic/func/logout.php").done(function(){
+    location.reload();
+  });
+})
+
+function show_msg(msg, icon) {
+  if (icon == 1) {
+    $("#icon_1").removeClass("d-none");
+    $("#icon_2").addClass("d-none");
+  } else {
+    $("#icon_1").addClass("d-none");
+    $("#icon_2").removeClass("d-none");
+  }
+  $("#msg_body").text(msg);
+  $("#md_msg_box").modal("show");
+}
+
+function setCookie(cookie) {
+  document.cookie = cookie;
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(";");
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == " ") {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function change_page(pagename) {
+  $(".page").addClass("d-none");
+  $("#" + pages[pagename]).removeClass("d-none");
+}
+
+function load_available_appointments() {
   $.ajax({
-    type: "POST",
-    url: "src/database/burger_shop/func/login.php",
-    data: {
-      username: $("#txt_username").val(),
-      password: $("#txt_password").val(),
-    },
+    type: "GET",
+    url: "src/database/dental_clinic/func/user/read_available_appointments.php",
     success: function (data) {
-      if (data == 0) {
-        show_msg("Invalid Username / Password", 2);
-      } else {
-        show_msg("Login Successful", 1);
-        change_page("page_dashboard");
-      }
+      write_available_appointments(data);
     },
   });
-});
+}
 
-$(".btn_view_dashboard").on("click", function () {
-  change_page("dashboard");
-});
+function write_available_appointments(data) {
+  output = "";
+  $.each(JSON.parse(data), function (key, val) {
+    output +=
+      `
+              <tr>
+                  <td class="data-title" data-title="DATE"> <small class="h6 text-black">` +
+      val.date +
+      `</small></td>
+                  <td class="data-title" data-title="SERVICES"><small class="h6 text-black">` +
+      val.services +
+      `</small></td>
+                  <td class="data-title" data-title="TIME"><small class="h6 text-black">` +
+      val.time +
+      `</small></td>
+                  <td class="data-title" data-title="SLOT"><small class="h6 text-black">` +
+      val.slot +
+      `</small></td>
+                  <td class="data-title" data-title="ACTION">
+                      <button class="text-white btn_style_1 btn_get_appointment" 
+                      attr-id="` +
+      val.id +
+      `" 
+                      attr-date="` +
+      val.date +
+      `"
+                      attr-day="` +
+      get_day(val.date) +
+      `"
+                      attr-time="` +
+      val.time +
+      `" >Get Appointment</button>
+                  </td>
+              </tr>`;
+  });
 
-$(".btn_view_incoming_appointments").on("click", function () {
-  load_incoming_appointments();
-  change_page("incoming_appointment");
-});
+  $("#tbl_available_appointments tbody").empty();
+  $("#tbl_available_appointments tbody").append(output);
 
-$(".btn_view_laboratory_result").on("click", function () {
-  change_page("laboratory_result");
-});
-
-$("#btn_page11_back").on("click", function () {
-  selected_services = [];
-});
-
-<<<<<<< HEAD
-$('.btn_view_appointments').on('click', function(){
-    change_page('appointment')
-})
-<<<<<<< HEAD
-<<<<<<< HEAD
-$('.btn_view_registeredPatient').on('click', function(){
-    change_page('registeredPatient')
-})
-=======
-$("#md_make_appointment_book").on("click", function () {
-  data = {
-    availability_id: $(this).attr("attr-id"),
-    user_id: $("#txt_user_id").val(),
-    selected_services: selected_services,
-  };
-  $.post("src/database/dental_clinic/func/user/add_appointment.php", data).done(
-    function (cb) {
-      show_msg("Appointment Successfully Booked!", 1);
-      load_available_appointments();
-    }
-  );
-});
->>>>>>> parent of 702f0ad (test)
-
-$(".btn_view_appointments").on("click", function () {
-  change_page("appointment");
-  load_appointments();
-});
-=======
->>>>>>> parent of 06dd5a3 (admin UI's Addded)
-
-$('.services_btn').on('click',function(){
-
-    var title = '';
-    title = $(this).attr('attr-name')
-    title = title.toUpperCase()
-
-    $.ajax({
-        type: "GET",
-        url:"src/database/dental_clinic/func/user/read_service.php?category=" + $(this).attr('attr-name'),
-        success: function (data) {
-
-
-            var temp = Math.round(JSON.parse(data).length / 2)
-            var count = 0;
-            var output = '<div class="col-xl-6 col-12  text-muted ">';
-            $.each(JSON.parse(data), function(key,val){
-
-=======
+  $(".btn_get_appointment").on("click", function () {
+    compile_selected_services();
+    $("#md_make_appointment").modal("show");
+    $("#md_make_appointment_book").attr("attr-id", $(this).attr("attr-id"));
+    $("#md_make_appointment_txt_physician").text(
+      $(this).attr("attr-physician")
+    );
+    $("#md_make_appointment_txt_date").text($(this).attr("attr-date"));
+    $("#md_make_appointment_txt_day").text($(this).attr("attr-day"));
+    $("#md_make_appointment_txt_time").text($(this).attr("attr-time"));
+  });
+}
 
 $(".services_btn").on("click", function () {
   var title = "";
@@ -133,54 +151,38 @@ $(".services_btn").on("click", function () {
           output += '<div class="col-xl-6 col-12  text-muted ">';
         }
 
-<<<<<<< HEAD
-            var temp = Math.round(JSON.parse(data).length / 2)
-            var count = 0;
-            var output = '<div class="col-xl-6 col-12  text-muted ">';
-            $.each(JSON.parse(data), function(key,val){
-
->>>>>>> parent of 1623a7d (user function)
-                if(count == temp){
-                    output += '</div>'  
-                    output += '<div class="col-xl-6 col-12  text-muted ">'
-                }
-
-                if(selected_services.indexOf(val.id+'') !== -1 ){
-                    output += `
-=======
         if (selected_services.indexOf(val.id + "") !== -1) {
           output +=
             `
->>>>>>> parent of 702f0ad (test)
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input chk_service" value="` +
+                      <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input chk_service" value="` +
             val.id +
             `" checked id="srv_` +
             count +
             `">
-                        <label class="custom-control-label" for="srv_` +
+                          <label class="custom-control-label" for="srv_` +
             count +
             `" style="font-size:9pt;"> ` +
             val.service +
             `</label>
-                    </div>
-                `;
+                      </div>
+                  `;
         } else {
           output +=
             `
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input chk_service" value="` +
+                          <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input chk_service" value="` +
             val.id +
             `" id="srv_` +
             count +
             `">
-                            <label class="custom-control-label" for="srv_` +
+                              <label class="custom-control-label" for="srv_` +
             count +
             `" style="font-size:9pt;"> ` +
             val.service +
             `</label>
-                        </div>
-                    `;
+                          </div>
+                      `;
         }
 
         count = count + 1;
@@ -191,14 +193,9 @@ $(".services_btn").on("click", function () {
       $("#div_md_services").empty();
       $("#div_md_services").append(output);
 
-<<<<<<< HEAD
-              
-            })  
-<<<<<<< HEAD
-=======
-      $("#txt_md_service_title").text(title);
       $("#md_services").modal("show");
->>>>>>> parent of 702f0ad (test)
+
+      $("#txt_md_service_title").text(title);
 
       $(".chk_service").unbind("click");
       $(".chk_service").on("click", function (key, val) {
@@ -217,97 +214,23 @@ $(".services_btn").on("click", function () {
   });
 });
 
-function load_available_appointments() {
-  $.ajax({
-    type: "GET",
-    url: "src/database/dental_clinic/func/user/read_available_appointments.php",
-    success: function (data) {
-      write_available_appointments(data);
-    },
-  });
-}
-
-<<<<<<< HEAD
-=======
-
-        },
-    });
-})
-
-
->>>>>>> parent of 1623a7d (user function)
-function load_available_appointments(){
-    $.ajax({
-        type: "GET",
-        url:"src/database/dental_clinic/func/user/read_available_appointments.php",
-        success: function (data) {
-            write_available_appointments(data)
-        }
-    })
-=======
+$("#md_make_appointment_book").on("click", function () {
+  data = {
+    availability_id: $(this).attr("attr-id"),
+    user_id: $("#txt_user_id").val(),
+    selected_services: selected_services,
+  };
+  $.post("src/database/dental_clinic/func/user/add_appointment.php", data).done(
+    function (cb) {
+      show_msg("Appointment Successfully Booked!", 1);
+      load_available_appointments();
+    }
+  );
+});
 function get_day(date) {
   const d = new Date(date);
   let day = d.getDay();
   return weekday[day];
->>>>>>> parent of 702f0ad (test)
-}
-
-function write_available_appointments(data) {
-  output = "";
-  $.each(JSON.parse(data), function (key, val) {
-    output +=
-      `
-            <tr>
-                <td class="data-title" data-title="DATE"> <small class="h6 text-black">` +
-      val.date +
-      `</small></td>
-                <td class="data-title" data-title="SERVICES"><small class="h6 text-black">` +
-      val.services +
-      `</small></td>
-                <td class="data-title" data-title="TIME"><small class="h6 text-black">` +
-      val.time +
-      `</small></td>
-                <td class="data-title" data-title="SLOT"><small class="h6 text-black">` +
-      val.slot +
-      `</small></td>
-                <td class="data-title" data-title="ACTION">
-                    <button class="text-white btn_style_1 btn_get_appointment" 
-                    attr-id="` +
-      val.id +
-      `" 
-                    attr-date="` +
-      val.date +
-      `"
-                    attr-day="` +
-      get_day(val.date) +
-      `"
-                    attr-time="` +
-      val.time +
-      `" >Get Appointment</button>
-                </td>
-            </tr>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 702f0ad (test)
-        `;
-  });
-
-  $("#tbl_available_appointments tbody").empty();
-  $("#tbl_available_appointments tbody").append(output);
-
-  $(".btn_get_appointment").on("click", function () {
-    compile_selected_services();
-    $("#md_make_appointment").modal("show");
-    $("#md_make_appointment_book").attr("attr-id", $(this).attr("attr-id"));
-    $("#md_make_appointment_txt_physician").text(
-      $(this).attr("attr-physician")
-    );
-    $("#md_make_appointment_txt_date").text($(this).attr("attr-date"));
-    $("#md_make_appointment_txt_day").text($(this).attr("attr-day"));
-    $("#md_make_appointment_txt_time").text($(this).attr("attr-time"));
-  });
 }
 
 function compile_selected_services() {
@@ -322,22 +245,22 @@ function compile_selected_services() {
         $.each(data, function (key, val) {
           output +=
             `<div class="row border-top py-2">
-                    <div class="col-6 mb-0 pb-0">
-                        <label class="text-black" style="font-weight: bold; font-size: 12px;">Service : </label><br>
-                        <label class="text-black" style="font-weight: bold; font-size: 12px;">Amount : </label>
-                    </div>
-    
-                    <div class="col-6 mb-0 pb-0">
-                        <label class="text-black text-muted" style="font-size: 12px;">` +
+                        <div class="col-6 mb-0 pb-0">
+                            <label class="text-black" style="font-weight: bold; font-size: 12px;">Service : </label><br>
+                            <label class="text-black" style="font-weight: bold; font-size: 12px;">Amount : </label>
+                        </div>
+        
+                        <div class="col-6 mb-0 pb-0">
+                            <label class="text-black text-muted" style="font-size: 12px;">` +
             val.service +
             `</label><br>
-                        <label class="text-black text-muted" style="font-size: 12px;">₱` +
+                            <label class="text-black text-muted" style="font-size: 12px;">₱` +
             val.price +
             `</label>
-                    </div>
-                </div>`;
+                        </div>
+                    </div>`;
 
-          price = price + val.price;
+          price = parseInt(price) + parseInt(val.price);
         });
 
         $("#div_selected_services").empty();
@@ -345,16 +268,16 @@ function compile_selected_services() {
 
         output =
           `<div class="row border-top py-2">
-                        <div class="col-6 mb-0 pb-0">
-                            <label class="text-black" style="font-weight: bold; font-size: 12px;">Total Amount : </label>
-                        </div>
-    
-                        <div class="col-6 mb-0 pb-0">
-                            <label class="text-black text-muted" style="font-size: 12px;">₱` +
+                            <div class="col-6 mb-0 pb-0">
+                                <label class="text-black" style="font-weight: bold; font-size: 12px;">Total Amount : </label>
+                            </div>
+        
+                            <div class="col-6 mb-0 pb-0">
+                                <label class="text-black text-muted" style="font-size: 12px;">₱` +
           price +
           `</label>
-                        </div>
-                    </div>`;
+                            </div>
+                        </div>`;
 
         $("#div_selected_services_total").empty();
         $("#div_selected_services_total").append(output);
@@ -367,6 +290,54 @@ function compile_selected_services() {
     $("#div_selected_services").append(output);
   }
 }
+
+$("#btn_login").on("click", function () {
+  $.ajax({
+    type: "POST",
+    url: "src/database/burger_shop/func/login.php",
+    data: {
+      username: $("#txt_username").val(),
+      password: $("#txt_password").val(),
+    },
+    success: function (data) {
+      if (data == 0) {
+        show_msg("Invalid Username / Password", 2);
+      } else {
+        change_page("dashboard");
+        show_msg("Login Successful", 1);
+        // location.reload();
+
+      }
+    },
+  });
+});
+
+$(".btn_view_dashboard").on("click", function () {
+  change_page("dashboard");
+});
+
+$(".btn_view_incoming_appointments").on("click", function () {
+  load_incoming_appointments();
+  change_page("incoming_appointment");
+});
+
+$(".btn_view_laboratory_result").on("click", function () {
+  load_lab_results()
+  change_page("laboratory_result");
+});
+
+$("#btn_page11_back").on("click", function () {
+  selected_services = [];
+});
+
+$(".btn_view_appointments").on("click", function () {
+  load_appointments();
+  change_page("appointment");
+});
+
+$(".btn_view_registeredPatient").on("click", function () {
+  change_page("registeredPatient");
+});
 
 function load_incoming_appointments() {
   $.getJSON(
@@ -383,42 +354,44 @@ function write_incoming_appointments(data) {
   $.each(data, function (key, val) {
     tbl_output +=
       `
-                        <tr style="font-size:12pt;">
-                            <td class="data-title" data-title="APPOINTMENT ID"> <small class="text-black">` +
+                          <tr style="font-size:12pt;">
+                              <td class="data-title" data-title="APPOINTMENT ID"> <small class="text-black">` +
       val.id +
       `</small></td>
-                            <td class="data-title" data-title="DATE"><small class="text-black">` +
+                              <td class="data-title" data-title="DATE"><small class="text-black">` +
       val.date_booked +
       `</small></td>
-                            <td class="data-title" data-title="TIME"><small class="text-black">` +
+                              <td class="data-title" data-title="TIME"><small class="text-black">` +
       val.time +
       `</small></td>
-                            <td class="data-title" data-title="DETAILS">
-                                <button class="text-white px-3 btn_view_appointment" 
-        attr-id="` +
+                              <td class="data-title" data-title="DETAILS">
+                                  <button class="text-white px-3 btn_view_appointment"
+          attr-id="` +
       val.id +
-      `" 
-        attr-physician="` +
+      `"
+          attr-physician="` +
       val.physician +
-      `" 
-      attr-date="` +
+      `"
+        attr-date="` +
       val.date_booked +
-      `" 
-      attr-day="` +
+      `"
+        attr-day="` +
       get_day(val.date_booked) +
-      `" 
-      attr-time="` +
+      `"
+        attr-time="` +
       val.time +
-      `" 
-        style="background:#80CEB8; border-radius:5px; border: none; cursor: pointer; font-size: 12px;">View</button>
-            </td>
-        </tr>`;
+      `"
+          style="background:#80CEB8; border-radius:5px; border: none; cursor: pointer; font-size: 12px;">View</button>
+              </td>
+          </tr>`;
   });
 
   $("#tbl_incoming_appointments tbody").empty();
   $("#tbl_incoming_appointments tbody").append(tbl_output);
 
   $(".btn_view_appointment").on("click", function () {
+    $('#badge_view_appointment_cancelled').addClass('d-none')
+    $('#badge_view_appointment_completed').addClass('d-none')
     price = 0;
     output = "";
 
@@ -438,22 +411,22 @@ function write_incoming_appointments(data) {
         $.each(data, function (key, val) {
           output +=
             `<div class="row border-top py-2">
-                      <div class="col-6 mb-0 pb-0">
-                          <label class="text-black" style="font-weight: bold; font-size: 12px;">Service : </label><br>
-                          <label class="text-black" style="font-weight: bold; font-size: 12px;">Amount : </label>
-                      </div>
-      
-                      <div class="col-6 mb-0 pb-0">
-                          <label class="text-black text-muted" style="font-size: 12px;">` +
+                        <div class="col-6 mb-0 pb-0">
+                            <label class="text-black" style="font-weight: bold; font-size: 12px;">Service : </label><br>
+                            <label class="text-black" style="font-weight: bold; font-size: 12px;">Amount : </label>
+                        </div>
+  
+                        <div class="col-6 mb-0 pb-0">
+                            <label class="text-black text-muted" style="font-size: 12px;">` +
             val.service +
             `</label><br>
-                          <label class="text-black text-muted" style="font-size: 12px;">₱` +
+                            <label class="text-black text-muted" style="font-size: 12px;">₱` +
             val.price +
             `</label>
-                      </div>
-                  </div>`;
+                        </div>
+                    </div>`;
 
-          price = price + val.price;
+          price = parseInt(price) + parseInt(val.price);
         });
 
         $("#div_view_appointment_services").empty();
@@ -461,16 +434,16 @@ function write_incoming_appointments(data) {
 
         output =
           `<div class="row border-top py-2">
-                        <div class="col-6 mb-0 pb-0">
-                            <label class="text-black" style="font-weight: bold; font-size: 12px;">Total Amount : </label>
-                        </div>
-    
-                        <div class="col-6 mb-0 pb-0">
-                            <label class="text-black text-muted" style="font-size: 12px;">₱` +
+                          <div class="col-6 mb-0 pb-0">
+                              <label class="text-black" style="font-weight: bold; font-size: 12px;">Total Amount : </label>
+                          </div>
+  
+                          <div class="col-6 mb-0 pb-0">
+                              <label class="text-black text-muted" style="font-size: 12px;">₱` +
           price +
           `</label>
-                        </div>
-                    </div>`;
+                          </div>
+                      </div>`;
 
         $("#div_view_appointment_services_total").empty();
         $("#div_view_appointment_services_total").append(output);
@@ -495,6 +468,7 @@ function write_incoming_appointments(data) {
   });
 }
 
+
 function load_appointments() {
   $.getJSON(
     "src/database/dental_clinic/func/user/read_appointments.php?user_id=" +
@@ -506,8 +480,8 @@ function load_appointments() {
 }
 
 function write_appointments(data) {
+    
   output = "";
-
   $.each(data, function (key, val) {
     output +=
       `
@@ -541,59 +515,18 @@ function write_appointments(data) {
                         </td>
                     </tr>
                 `;
-
-    
   });
 
   $("#tbl_appointments tbody").empty();
   $("#tbl_appointments tbody").append(output);
-  $("#txt_search_appointments").on("keyup", function() {
+  $("#txt_search_appointments").on("keyup", function () {
     var value = $(this).val().toLowerCase();
-    $("#tbl_appointments tbody tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    $("#tbl_appointments tbody tr").filter(function () {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
     });
   });
 
-//   $("#txt_search_appointments").on("keyup", function() {
-//     var value = $(this).val();
-
-//         $("#tbl_appointments tbody tr").each(function(index) {
-//             if (index != 0) {
-
-//                 $row = $(this);
-
-//                 var id = $row.find("td:first").text();
-
-//                 if (id.indexOf(value) != 0) {
-//                     $(this).hide();
-//                 }
-//                 else {
-//                     $(this).show();
-//                 }
-//             }
-//         });
-//     })
-
-    $("#txt_search_appointments").on("keyup", function() {
-        var value = $(this).val();
-        
-        $("tbl_appointments tbody tr").each(function(index) {
-            if (index !== 0) {
-                $row = $(this);
-                
-                var $tdElement = $row.find("td:first");
-                var id = $tdElement.text();
-                var matchedIndex = id.indexOf(value);
-                
-                if (matchedIndex != 0) {
-                    $row.hide();
-                }
-                else {
-                    $row.show();
-                }
-            }
-        });
-    });
+  $(".btn_appointments_view").unbind('click')
 
   $(".btn_appointments_view").on("click", function () {
     $("#md_view_appointment").modal("show");
@@ -608,22 +541,20 @@ function write_appointments(data) {
     $("#md_view_appointment_txt_time").text($(this).attr("attr-time"));
     $("#md_view_appointment_txt_day").text($(this).attr("attr-day"));
 
-
     $(this).attr("attr-status") == "cancelled"
-    ? $("#badge_view_appointment_cancelled").removeClass("d-none")
-    : $("#badge_view_appointment_cancelled").addClass("d-none");
+      ? $("#badge_view_appointment_cancelled").removeClass("d-none")
+      : $("#badge_view_appointment_cancelled").addClass("d-none");
 
     $(this).attr("attr-status") == "completed"
-    ? $("#badge_view_appointment_completed").removeClass("d-none")
-    : $("#badge_view_appointment_completed").addClass("d-none");
-    
+      ? $("#badge_view_appointment_completed").removeClass("d-none")
+      : $("#badge_view_appointment_completed").addClass("d-none");
 
     $.getJSON(
       "src/database/dental_clinic/func/user/read_selected_services_by_appointment_id.php?id=" +
         $(this).attr("attr-id"),
       function (data) {
         output = "";
-        price = "";
+        price = 0;
 
         $.each(data, function (key, val) {
           output +=
@@ -632,7 +563,7 @@ function write_appointments(data) {
                               <label class="text-black" style="font-weight: bold; font-size: 12px;">Service : </label><br>
                               <label class="text-black" style="font-weight: bold; font-size: 12px;">Amount : </label>
                           </div>
-          
+
                           <div class="col-6 mb-0 pb-0">
                               <label class="text-black text-muted" style="font-size: 12px;">` +
             val.service +
@@ -643,9 +574,7 @@ function write_appointments(data) {
                           </div>
                       </div>`;
 
-          price = price + val.price;
-
-         
+          price = parseInt(price) + parseInt(val.price);
         });
 
         $("#div_view_appointment_services").empty();
@@ -656,7 +585,7 @@ function write_appointments(data) {
                             <div class="col-6 mb-0 pb-0">
                                 <label class="text-black" style="font-weight: bold; font-size: 12px;">Total Amount : </label>
                             </div>
-        
+
                             <div class="col-6 mb-0 pb-0">
                                 <label class="text-black text-muted" style="font-size: 12px;">₱` +
           price +
@@ -671,56 +600,29 @@ function write_appointments(data) {
   });
 }
 
-function setCookie(cookie) {
-  document.cookie = cookie;
-}
-
-function getCookie(cname) {
-  let name = cname + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(";");
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == " ") {
-      c = c.substring(1);
+function load_lab_results(){
+  $.getJSON(
+    "src/database/dental_clinic/func/user/read_lab_results.php?id=" +
+      $("#txt_user_id").val(),
+    function (data) {
+      write_lab_results(data);
     }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
+  );
 }
 
-function change_page(pagename) {
-  $(".page").addClass("d-none");
-  $("#" + pages[pagename]).removeClass("d-none");
+function write_lab_results(data){
+  var output = ''
+  $.each(data, function(key, val){
+    output = `
+              <div class="text-center icon_btn">
+                  <a href="download_result.php?file=`+val.dir+`" >
+                  <img class="" src="src/resources/img/labResult.png" style="width: 70px;" data-bs-toggle="modal" data-bs-target="#labResult">
+                  <br><span style="font-size:9pt;">`+val.dir.toUpperCase()+` Result</span>
+                  </a>
+              </div>
+    `;
+  })
+
+  $('#div_lab_results').empty()
+  $('#div_lab_results').append(output)
 }
-
-<<<<<<< HEAD
-=======
-        `
-    })
-
-    $('#tbl_available_appointments tbody').empty()
-    $('#tbl_available_appointments tbody').append(output)
-
-    $('.btn_get_appointment').on('click', function(){
-        $('#md_make_appointment').modal('show')
-    })
-}
-
->>>>>>> parent of 1623a7d (user function)
-=======
-function show_msg(msg, icon) {
-  if (icon == 1) {
-    $("#icon_1").removeClass("d-none");
-    $("#icon_2").addClass("d-none");
-  } else {
-    $("#icon_1").addClass("d-none");
-    $("#icon_2").removeClass("d-none");
-  }
-
-  $("#msg_body").text(msg);
-  $("#md_msg_box").modal("show");
-}
->>>>>>> parent of 702f0ad (test)

@@ -115,7 +115,7 @@ $_SESSION['access_level'] = 'user';
         // PAGES PHP
         include_once 'src/pages/dental_clinic/user/navbar.php';
         include_once 'src/pages/dental_clinic/user/createAcc.php';
-        include_once 'src/pages/dental_clinic/user/myAccount.php';
+        // include_once 'src/pages/dental_clinic/user/myAccount.php';
         include_once 'src/pages/dental_clinic/user/page11.php';
         include_once 'src/pages/dental_clinic/user/0page.php';
         include_once 'src/pages/dental_clinic/user/labResult.php';

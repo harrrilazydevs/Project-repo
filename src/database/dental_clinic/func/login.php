@@ -14,21 +14,25 @@ if(!empty($_POST)){
             SELECT 
                     *
             FROM
-                tbl_users
+                tbl_users a
+            LEFT JOIN
+                tbl_profile b
+            ON
+                a.id = b.user_id
             WHERE
-                username ="'.$username.'" 
+                uid ="'.$username.'" 
             AND
-                password = "'.$password.'";
+                pass = "'.$password.'";
     ';
     
     
     $db = new Database();
     $result = $db->read($q);
-    
+
     if(count($result)>0){
-        $_SESSION['access_level'] = $result[0]['access_level'];
+        $_SESSION['access_level'] = $result[0]['user_access'];
         $_SESSION['user_id'] = $result[0]['id'];
-        $_SESSION['username'] = $result[0]['name'];
+        $_SESSION['username'] = $result[0]['f_name'];
         
         echo 1;
 

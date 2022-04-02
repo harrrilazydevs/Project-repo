@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2022 at 12:28 PM
+-- Generation Time: Apr 02, 2022 at 07:36 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.15
 
@@ -24,6 +24,59 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_appointments`
+--
+
+CREATE TABLE `tbl_appointments` (
+  `id` int(11) NOT NULL,
+  `availability_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `date_booked` date NOT NULL DEFAULT current_timestamp(),
+  `status` varchar(100) NOT NULL DEFAULT 'pending'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_appointments`
+--
+
+INSERT INTO `tbl_appointments` (`id`, `availability_id`, `user_id`, `date_booked`, `status`) VALUES
+(16, 1, 1, '2022-03-31', 'cancelled'),
+(17, 5, 1, '2022-03-31', 'completed'),
+(18, 2, 1, '2022-03-31', 'pending'),
+(19, 3, 0, '2022-03-31', 'cancelled');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_appointment_details`
+--
+
+CREATE TABLE `tbl_appointment_details` (
+  `id` int(11) NOT NULL,
+  `service_id` int(11) NOT NULL,
+  `appointment_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_appointment_details`
+--
+
+INSERT INTO `tbl_appointment_details` (`id`, `service_id`, `appointment_id`) VALUES
+(30, 10, 16),
+(31, 11, 16),
+(32, 12, 16),
+(33, 13, 16),
+(34, 10, 17),
+(35, 11, 17),
+(36, 12, 17),
+(37, 24, 18),
+(38, 7, 18),
+(39, 14, 19),
+(40, 13, 19);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_available_appointments`
 --
 
@@ -32,20 +85,40 @@ CREATE TABLE `tbl_available_appointments` (
   `date` date NOT NULL,
   `time` varchar(50) NOT NULL,
   `services` varchar(50) NOT NULL DEFAULT 'ALL',
-  `slot` int(11) NOT NULL DEFAULT 10
+  `slot` int(11) NOT NULL DEFAULT 10,
+  `physician` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_available_appointments`
 --
 
-INSERT INTO `tbl_available_appointments` (`id`, `date`, `time`, `services`, `slot`) VALUES
-(1, '2022-03-27', '7:00 - 9:00 AM', 'ALL', 10),
-(2, '2022-03-27', '8:00 - 9:00 AM', 'ALL', 10),
-(3, '2022-03-27', '9:00 - 11:00 AM', 'ALL', 10),
-(4, '2022-03-27', '12:00 - 1:00 PM', 'ALL', 10),
-(5, '2022-03-27', '1:00 - 3:00 PM', 'ALL', 10),
-(6, '2022-03-27', '3:00 - 5:00 PM', 'ALL', 10);
+INSERT INTO `tbl_available_appointments` (`id`, `date`, `time`, `services`, `slot`, `physician`) VALUES
+(1, '2022-03-31', '7:00 - 9:00 AM', 'ALL', 9, 'Dra. Catherine Marcaig Jr Felisidad'),
+(2, '2022-03-31', '8:00 - 9:00 AM', 'ALL', 9, 'Dra. Catherine Marcaig Jr Felisidad'),
+(3, '2022-03-31', '9:00 - 11:00 AM', 'ALL', 9, 'Dra. Catherine Marcaig Jr Felisidad'),
+(4, '2022-03-31', '12:00 - 1:00 PM', 'ALL', 10, 'Dra. Catherine Marcaig Jr Felisidad'),
+(5, '2022-03-31', '1:00 - 3:00 PM', 'ALL', 9, 'Dra. Catherine Marcaig Jr Felisidad'),
+(6, '2022-03-31', '3:00 - 5:00 PM', 'ALL', 10, 'Dra. Catherine Marcaig Jr Felisidad');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_lab_results`
+--
+
+CREATE TABLE `tbl_lab_results` (
+  `id` int(11) NOT NULL,
+  `dir` varchar(100) NOT NULL,
+  `appointment_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_lab_results`
+--
+
+INSERT INTO `tbl_lab_results` (`id`, `dir`, `appointment_id`) VALUES
+(1, 'ap17', 17);
 
 -- --------------------------------------------------------
 
@@ -246,9 +319,27 @@ INSERT INTO `tbl_users` (`id`, `uid`, `pass`, `user_access`) VALUES
 --
 
 --
+-- Indexes for table `tbl_appointments`
+--
+ALTER TABLE `tbl_appointments`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_appointment_details`
+--
+ALTER TABLE `tbl_appointment_details`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_available_appointments`
 --
 ALTER TABLE `tbl_available_appointments`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_lab_results`
+--
+ALTER TABLE `tbl_lab_results`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -286,10 +377,28 @@ ALTER TABLE `tbl_users`
 --
 
 --
+-- AUTO_INCREMENT for table `tbl_appointments`
+--
+ALTER TABLE `tbl_appointments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `tbl_appointment_details`
+--
+ALTER TABLE `tbl_appointment_details`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+--
 -- AUTO_INCREMENT for table `tbl_available_appointments`
 --
 ALTER TABLE `tbl_available_appointments`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `tbl_lab_results`
+--
+ALTER TABLE `tbl_lab_results`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_packages`

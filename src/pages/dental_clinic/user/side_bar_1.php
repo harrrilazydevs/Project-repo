@@ -4,5 +4,8 @@
         <li class="list-group-item btn_view_incoming_appointments"><i title="View Incoming Appointments" class="fa-fw fa-solid fa-calendar"></i></li>
         <li class="list-group-item btn_view_laboratory_result"><i title="View Laboratory Results" class="fa-fw fa-solid fa-folder-closed"></i></li>
         <li class="list-group-item btn_view_appointments"><i title="View Appointments" class="fa-fw fa-solid fa-clock-rotate-left"></i></li>
+        <li class="list-group-item btn_logout">
+            <i title="Logout" class="fa-fw fa-solid fa-arrow-right-from-bracket icon_btn" ></i>
+        </li>
     </ul>
 </div>

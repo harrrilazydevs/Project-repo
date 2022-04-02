@@ -1,8 +1,8 @@
-<div class="d-none page" id="page_createAcc" >
+<div class="page d-none p-4" id="page_createAcc" >
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-                <span class="h3" style="letter-spacing: 2px; font-weight: bold;">CREATE ACCOUNT</span>
+                <span class="h3" style="letter-spacing: 2px; font-weight: bold;">UPDATE ACCOUNT</span>
             </div>
 
             <div class="col-lg-4">
@@ -21,46 +21,46 @@
                     <div class="container shadow p-3 mb-5 rounded" style=" border: 2px solid black; padding: 10px; border-radius: 12px;  box-shadow: 5px 8px #555 !important;">
                         <form class="mb-1">
                             <label class="h5 createAcc_label" for="fname">First name:</label>
-                            <input class="createAcc_Input" type="text" id="fname" name="fname">
+                            <input class="createAcc_Input" type="text" id="update_acc_fname" name="fname">
 
                             <label class="h5 createAcc_label" for="mname">Middle Name:</label>
-                            <input class="createAcc_Input" type="text" id="fname" name="mname">
+                            <input class="createAcc_Input" type="text" id="update_acc_mname" name="mname">
 
                             <label class="h5 createAcc_label" for="lname">Last Name:</label>
-                            <input class="createAcc_Input" type="text" id="fname" name="lname">
+                            <input class="createAcc_Input" type="text" id="update_acc_lname" name="lname">
 
                             <label class="h5 createAcc_label" for="bdate">Birth Date:</label>
-                            <input class="createAcc_Input" type="text" id="bdate">
+                            <input class="createAcc_Input" type="date" id="update_acc_bdate">
 
                             <label class="h5 createAcc_label" for="age">Age:</label>
-                            <input class="createAcc_Input" type="text" id="age">
+                            <input readonly class="createAcc_Input" type="text" id="update_acc_age">
 
                             <label class="h5 createAcc_label" for="contact">Contact No:</label>
-                            <input class="createAcc_Input" type="text" id="contact">
+                            <input class="createAcc_Input" type="text" id="update_acc_contact">
 
                             <label class="h5 createAcc_label" for="house">House No:</label>
-                            <input class="createAcc_Input" type="text" id="house">
+                            <input class="createAcc_Input" type="text" id="update_acc_house">
 
                             <label class="h5 createAcc_label" for="street">Street:</label>
-                            <input class="createAcc_Input" type="text" id="strett">
+                            <input class="createAcc_Input" type="text" id="update_acc_street">
 
                             <label class="h5 createAcc_label" for="Brgy">Brgy:</label>
-                            <input class="createAcc_Input" type="text" id="Brgy">
+                            <input class="createAcc_Input" type="text" id="update_acc_brgy">
 
                             <label class="h5 createAcc_label" for="City">City:</label>
-                            <input class="createAcc_Input" type="text" id="City">
+                            <input class="createAcc_Input" type="text" id="update_acc_city">
 
                             <label class="h5 createAcc_label" for="Province">Province:</label>
-                            <input class="createAcc_Input" type="text" id="Province">
+                            <input class="createAcc_Input" type="text" id="update_acc_province">
 
                     
                             <!-- GENDER INPUT AND LABEL -->
                                 <label class="h5 createAcc_label">Gender: </label>
-                                <input class="mt-3" name="gender" type="radio" id="male" value="male" style="margin-left: 10% !important;">
-                                <label class="h5" for="male">Male</label>
+                                <input class="mt-3" id="update_acc_gender_male" name="update_acc_gender[]" type="radio" value="male" style="margin-left: 10% !important;">
+                                <label class="h5" for="update_acc_gender_male">Male</label>
 
-                                <input type="radio" name="gender" id="female" value="female" style="margin-left: 20% !important;">
-                                <label class="h5" for="female">Female</label>
+                                <input type="radio" id="update_acc_gender_female" name="update_acc_gender[]" id="female" value="female" style="margin-left: 20% !important;">
+                                <label class="h5" for="update_acc_gender_female" >Female</label>
                             <!-- GENDER INPUT AND LABEL -->
 
                         </form>
@@ -72,17 +72,20 @@
                     <div class="container shadow p-3 mb-5 rounded" style=" border: 2px solid black; padding: 10px; border-radius: 12px;  box-shadow: 5px 8px #555 !important;">
                         <form class="mb-1">
                             <label class="h5 createAcc_label">Username :</label>
-                            <input class="createAcc_Input" type="text" id="username">
+                            <input class="createAcc_Input " type="text" id="update_acc_username">
 
                             <label class="h5 createAcc_label" for="mname">Password :</label>
-                            <input class="createAcc_Input" type="password" id="password">
+                            <input class="createAcc_Input " type="text" id="update_acc_password">
+
+                            <label class="h5 createAcc_label" for="mname">Email :</label>
+                            <input class="createAcc_Input " type="text" id="update_acc_email">
 
                         </form>
                     </div>
 
-                    <div class="mt-3 text-center">
-                        <button data-bs-toggle="modal" data-bs-target="#createAcc" class="me-5" style="font-weight:bold; background:#80CEB8; border-radius:20px; width:120px; margin: 6px; border: none; height: 35px;">Create</button>
-                        <button class="me-5" id="#" style="font-weight:bold; background:#F15050; border-radius:20px; width:120px; margin: 6px; border: none; height: 35px;">Cancel</button>
+                    <div class="mt-3 text-center text-lg-end">
+                        <button id="btn_update_account" class="me-5" style="font-weight:bold; background:#80CEB8; border-radius:20px; width:120px; margin: 6px; border: none; height: 35px;">Update</button>
+                        <button class="me-5" onClick="change_page('dashboard')" style="font-weight:bold; background:#F15050; border-radius:20px; width:120px; margin: 6px; border: none; height: 35px;">Cancel</button>
                     </div>
 
                 </div>

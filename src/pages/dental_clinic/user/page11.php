@@ -1,4 +1,4 @@
-<div class="page" id="page_dashboard" style="background-color: white;">
+<div class="d-none page" id="page_dashboard" style="background-color: white;">
     <?php
         include 'side_bar_1.php';
     ?>
@@ -98,7 +98,7 @@
         <!-------- MAIN GRID --------->
 
         <!-------- NESTED GRID --------->
-        <div>
+        <div style="float:right;background-color: #4DBDAC;">
             <?php include 'src/pages/dental_clinic/user/sidebarUser.php'; ?>
         </div>
         <!-------- NESTED GRID --------->

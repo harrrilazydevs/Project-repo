@@ -188,20 +188,12 @@
 
                 <div class="container mt-3" style="background-color: #F9F9F9; border-radius: 5px;">
                     <h6 class="h6 pt-3 text-black" style="letter-spacing: 2px; font-weight: bold; font-size: 15px;">Services Details</h6>
-<<<<<<< HEAD
 
                     <div id="div_selected_services">
 
                     </div>
 
                     <div id="div_selected_services_total">
-=======
-                    <div class="row">
-                        <div class="col-6">
-                            <p class="text-black" style="font-weight: bold; font-size: 12px;">Service : </p>
-                            <p class="text-black" style="font-weight: bold; font-size: 12px;">Amount : </p>
-                        </div>
->>>>>>> parent of 1623a7d (user function)
 
                     </div>
 
@@ -252,20 +244,13 @@
 
                 <div class="container mt-3" style="background-color: #F9F9F9; border-radius: 5px;">
                     <h6 class="h6 pt-3 text-black" style="letter-spacing: 2px; font-weight: bold; font-size: 15px;">Services Details</h6>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 702f0ad (test)
+
 
                     <div id="div_view_appointment_services"></div>
                     <div id="div_view_appointment_services_total"></div>
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of 1623a7d (user function)
-                    <div class="row">
+
+                    <!-- <div class="row">
                         <div class="col-6">
                             <p class="text-black" style="font-weight: bold; font-size: 12px;">Service : </p>
                             <p class="text-black" style="font-weight: bold; font-size: 12px;">Amount : </p>
@@ -275,13 +260,8 @@
                             <p class="text-black text-muted" style="font-size: 12px;">Drug Test</p>
                             <p class="text-black text-muted" style="font-size: 12px;">PHP 360.00</p>
                         </div>
-                    </div>
-<<<<<<< HEAD
->>>>>>> c5341e1d8c858d8c9fd791adfcc5a7b069a8af01
-=======
->>>>>>> parent of 1623a7d (user function)
-=======
->>>>>>> parent of 702f0ad (test)
+                    </div> -->
+
                 </div>
 
                 <div class="mt-lg-2 mb-lg-2 text-center" id="div_view_appointment_buttons">

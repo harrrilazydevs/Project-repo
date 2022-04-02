@@ -3,10 +3,14 @@
 
         <div class="container mt-5 ms-3">
             <h6 class="text-white" style="font-weight: bold; font-size: 20px;">Hello,</h6>
-            <h4 class="text-white" style="font-weight: bold; font-size: 30px;">Jin Barry!</h4>
+            <h5 class="text-white" style="font-weight: bold;"><?php echo $_SESSION['username'];?>!</h5>
+
         </div>
 
         <div class="container mt-3 ps-5">
+        <div class="text-end">
+                <i class="fa-solid fa-user-gear icon_btn"></i>
+            </div>
             <img src="src/resources/img/user.png" style="width: 100px; height: 100px; border-radius: 100%;">
         </div>
 
@@ -18,7 +22,7 @@
                 <div class="col-6">
                     <span class="h6 " style="font-weight: bold;">Reminders!</span>
                 </div>
-                <div class="col-6">
+                <div class="col-6 pt-0">
                     <small class="mt-2" style="font-weight: bold; font-size: 12px; margin-left: 23% !important;">
                         <a href="#" class="text-white">View All <i class="fa-solid fa-chevron-right"></i></a>
                     </small>

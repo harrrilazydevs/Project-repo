@@ -29,9 +29,11 @@ if(!empty($_POST)){
     $db = new Database();
     $result = $db->read($q);
 
+    var_dump($result);
+
     if(count($result)>0){
         $_SESSION['access_level'] = $result[0]['user_access'];
-        $_SESSION['user_id'] = $result[0]['id'];
+        $_SESSION['user_id'] = $result[0]['user_id'];
         $_SESSION['username'] = $result[0]['f_name'];
         
         echo 1;

@@ -5,7 +5,10 @@ let pages = {
   incoming_appointment: "page_incoming_appointment",
   laboratory_result: "page_laboratory_result",
   appointment: "page_appointment",
-  update_account: "page_createAcc"
+  update_account: "page_createAcc",
+  admin_overview: "page_overview",
+  admin_history: "page_history",
+  admin_registered_patient: "page_registeredPatient"
 };
 
 const weekday = [
@@ -19,12 +22,28 @@ const weekday = [
 ];
 
 let selected_services = [];
+var access_level = $('#txt_user_access').val()
 
 $(document).ready(function () {
+
+
   if (!$("#txt_user_id").val()) {
     change_page("login");
+    $('#txt_user_access').val("user")
+
+    // alert('test')
+
   }else{
-    change_page("dashboard");
+
+    if(access_level == "user"){
+      
+      change_page("dashboard");
+    }
+    else{
+    console.log("imhere")
+
+      change_page("admin_overview");
+    }
   }
   load_available_appointments();
 });
@@ -151,7 +170,13 @@ $("#btn_login").on("click", function () {
       if (data == 0) {
         show_msg("Invalid Username / Password", 2);
       } else {
-        change_page("dashboard");
+        if($('#txt_user_access').val() == "user"){
+          change_page("dashboard");
+        }
+        else{
+          change_page("admin_overview");
+        }
+        
         show_msg("Login Successful", 1);
         location.reload();
 
@@ -737,3 +762,16 @@ function load_user_account_details(){
     })
   })
 }
+
+
+$('.btn_view_history').on('click', function(){
+  change_page('admin_history')
+})
+$('.btn_view_overview').on('click', function(){
+  change_page('admin_overview')
+})
+
+$('.btn_view_registeredPatient').on('click', function(){
+  change_page('admin_registered_patient')
+})
+

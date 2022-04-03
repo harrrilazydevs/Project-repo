@@ -32,13 +32,13 @@
 
                 <div class="search mb-3 " style="box-shadow: 2px 3px #888888; float: right !important;">
                     <span style="font-size: 1rem; padding-left: 1rem; color: #888888;"><i class="fa-solid fa-magnifying-glass"></i></span>
-                    <input type="search" placeholder="Search..." style="border: none; outline: none; ">
+                    <input id="txt_search_appointment_history" type="search" placeholder="Search..." style="border: none; outline: none; ">
                 </div>
             </div>
 
             <div class="table-responsive" id="no-more-tables" style="border: 3px solid  #7B7A7A; border-radius: 15px; box-shadow: 5px 10px #888888;">
-                <table class="table">
-                    <thead class="text-center">
+                <table class="table" id="tbl_appointment_history">
+                    <thead class="text-center" >
                         <tr class="table_title">
                             <th>APPOINTMENT ID</th>
                             <th>PATIENT ID</th>

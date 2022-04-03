@@ -8,8 +8,16 @@ let pages = {
   update_account: "page_createAcc",
   admin_overview: "page_overview",
   admin_history: "page_history",
-  admin_registered_patient: "page_registeredPatient"
+  admin_registered_patient: "page_registered_patient",
+  admin_appointment: "page_admin_appointment",
+  admin_prices: "page_prices",
+  admin_packages: "page_packages",
 };
+let search_function_config = {
+  tbl_service_prices: "txt_admin_search_prices",
+  tbl_appointment_history: "txt_search_appointment_history"
+
+}
 
 const weekday = [
   "Sunday",
@@ -23,260 +31,6 @@ const weekday = [
 
 let selected_services = [];
 var access_level = $('#txt_user_access').val()
-
-$(document).ready(function () {
-
-
-  if (!$("#txt_user_id").val()) {
-    change_page("login");
-    $('#txt_user_access').val("user")
-
-    // alert('test')
-
-  }else{
-
-    if(access_level == "user"){
-      
-      change_page("dashboard");
-    }
-    else{
-    console.log("imhere")
-
-      change_page("admin_overview");
-    }
-  }
-  load_available_appointments();
-});
-
-
-$(".services_btn").on("click", function () {
-  var title = "";
-  title = $(this).attr("attr-name");
-  title = title.toUpperCase();
-
-  $.ajax({
-    type: "GET",
-    url:
-      "src/database/dental_clinic/func/user/read_service.php?category=" +
-      $(this).attr("attr-name"),
-    success: function (data) {
-      var temp = Math.round(JSON.parse(data).length / 2);
-      var count = 0;
-      var output = '<div class="col-xl-6 col-12  text-muted ">';
-      $.each(JSON.parse(data), function (key, val) {
-        if (count == temp) {
-          output += "</div>";
-          output += '<div class="col-xl-6 col-12  text-muted ">';
-        }
-
-        if (selected_services.indexOf(val.id + "") !== -1) {
-          output +=
-            `
-                      <div class="custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input chk_service" value="` +
-            val.id +
-            `" checked id="srv_` +
-            count +
-            `">
-                          <label class="custom-control-label" for="srv_` +
-            count +
-            `" style="font-size:9pt;"> ` +
-            val.service +
-            `</label>
-                      </div>
-                  `;
-        } else {
-          output +=
-            `
-                          <div class="custom-control custom-checkbox">
-                              <input type="checkbox" class="custom-control-input chk_service" value="` +
-            val.id +
-            `" id="srv_` +
-            count +
-            `">
-                              <label class="custom-control-label" for="srv_` +
-            count +
-            `" style="font-size:9pt;"> ` +
-            val.service +
-            `</label>
-                          </div>
-                      `;
-        }
-
-        count = count + 1;
-      });
-
-      output += "</div>";
-
-      $("#div_md_services").empty();
-      $("#div_md_services").append(output);
-
-      $("#md_services").modal("show");
-
-      $("#txt_md_service_title").text(title);
-
-      $(".chk_service").unbind("click");
-      $(".chk_service").on("click", function (key, val) {
-        var val = $(this).val();
-        if ($(this).prop("checked")) {
-          if (!selected_services.includes($(this).val())) {
-            selected_services.push($(this).val());
-          }
-        } else {
-          selected_services = $.grep(selected_services, function (value) {
-            return value != val;
-          });
-        }
-      });
-    },
-  });
-});
-
-$("#md_make_appointment_book").on("click", function () {
-  data = {
-    availability_id: $(this).attr("attr-id"),
-    user_id: $("#txt_user_id").val(),
-    selected_services: selected_services,
-  };
-  $.post("src/database/dental_clinic/func/user/add_appointment.php", data).done(
-    function (cb) {
-      show_msg("Appointment Successfully Booked!", 1);
-      load_available_appointments();
-    }
-  );
-});
-
-$('.btn_logout').on('click', function () {
-  $.post("src/database/dental_clinic/func/logout.php").done(function () {
-    location.reload();
-  });
-})
-
-$('.btn_view_update_account').on('click', function(){
-  load_user_account_details()
-  change_page("update_account")
-  
-})
-
-$("#btn_login").on("click", function () {
-  $.ajax({
-    type: "POST",
-    url: "src/database/dental_clinic/func/login.php",
-    data: {
-      username: $("#txt_username").val(),
-      password: $("#txt_password").val(),
-    },
-    success: function (data) {
-      if (data == 0) {
-        show_msg("Invalid Username / Password", 2);
-      } else {
-        if($('#txt_user_access').val() == "user"){
-          change_page("dashboard");
-        }
-        else{
-          change_page("admin_overview");
-        }
-        
-        show_msg("Login Successful", 1);
-        location.reload();
-
-      }
-    },
-  });
-});
-
-$('#update_acc_bdate').on('change', function () {
-  var age = calculate_age($(this).val());
-  if (age > 5 && age < 65) {
-    $('#update_acc_age').val(age)
-  }
-  else {
-    show_msg("Invalid Birthdate", 2)
-  }
-}) 
-
-
-$('#btn_update_account').on('click', function () {
-  
-  if ($('#update_acc_fname').val() && $('#txt_user_id').val() && $('#update_acc_province').val() && $('#update_acc_city').val() && $('#update_acc_age').val() && $('#update_acc_brgy').val() && $('#update_acc_street').val() && $('#update_acc_house').val()  && $('#update_acc_bdate').val() && $('#update_acc_lname').val() && $('#update_acc_bdate').val()) {
-    var data = {
-      f_name: $('#update_acc_fname').val(),
-      m_name: $('#update_acc_mname').val(),
-      l_name: $('#update_acc_lname').val(),
-      bdate: $('#update_acc_bdate').val(),
-      gender: $('input[name="update_acc_gender[]"]:checked').val(),
-      house_no: $('#update_acc_house').val(),
-      street: $('#update_acc_street').val(),
-      brgy: $('#update_acc_brgy').val(),
-      age: $('#update_acc_age').val(),
-      city: $('#update_acc_city').val(),
-      province: $('#update_acc_province').val(),
-      user_id: $('#txt_user_id').val(),
-      age: $('#update_acc_age').val(),
-      bdate: $('#update_acc_bdate').val(),
-      contact_no: $('#update_acc_contact').val(),
-      uid: $('#update_acc_username').val(),
-      pass: $('#update_acc_password').val(),
-      email: $('#update_acc_email').val(),
-    }
-
-    $.post("src/database/dental_clinic/func/user/update_user_account.php", data, function () {
-      show_msg("Account Updated Successfully.", 1)
-    })
-
-  }
-  else{
-    show_msg("Please fill-in required fields.", 2)
-  }
-
-})
-
-$('#btn_submit').on('click', function(e) {
-  e.preventDefault();
-
-  if($('#txt_sign_up_uid').val() && $('#txt_sign_up_pass').val() && $('#txt_sign_up_email').val())
-  {
-    var data = {
-      uid:$('#txt_sign_up_uid').val(),
-      pass:$('#txt_sign_up_pass').val(),
-      email:$('#txt_sign_up_email').val()
-    }
-    $.post("src/database/dental_clinic/func/user/add_user_account.php",data,function(){
-      show_msg("Sign-up Successful!", 1)
-    })
-  }else{
-    show_msg("Please fill-in required fields!", 2)
-  }
-
-
-})
-
-$(".btn_view_dashboard").on("click", function () {
-  change_page("dashboard");
-});
-
-$(".btn_view_incoming_appointments").on("click", function () {
-  load_incoming_appointments();
-  change_page("incoming_appointment");
-});
-
-$(".btn_view_laboratory_result").on("click", function () {
-  load_lab_results()
-  change_page("laboratory_result");
-});
-
-$("#btn_page11_back").on("click", function () {
-  selected_services = [];
-});
-
-$(".btn_view_appointments").on("click", function () {
-  load_appointments();
-  change_page("appointment");
-});
-
-$(".btn_view_registeredPatient").on("click", function () {
-  change_page("registeredPatient");
-});
 
 function load_incoming_appointments() {
   $.getJSON(
@@ -565,7 +319,6 @@ function write_lab_results(data) {
   $('#div_lab_results').append(output)
 }
 
-
 function show_msg(msg, icon) {
   if (icon == 1) {
     $("#icon_1").removeClass("d-none");
@@ -736,9 +489,9 @@ function calculate_age(dob) {
   return age;
 }
 
-function load_user_account_details(){
-  $.getJSON("src/database/dental_clinic/func/user/read_user_profile.php?id="+$('#txt_user_id').val(), function(data){
-    $.each(data, function(key, val){
+function load_user_account_details() {
+  $.getJSON("src/database/dental_clinic/func/user/read_user_profile.php?id=" + $('#txt_user_id').val(), function (data) {
+    $.each(data, function (key, val) {
       $('#update_acc_fname').val(val.f_name)
       $('#update_acc_mname').val(val.m_name)
       $('#update_acc_lname').val(val.l_name)
@@ -754,24 +507,575 @@ function load_user_account_details(){
       $('#update_acc_password').val(val.pass)
       $('#update_acc_email').val(val.email)
 
-      if(val.gender == "male"){
+      if (val.gender == "male") {
         $("#update_acc_gender_male").prop("checked", true)
-      }else{
+      } else {
         $("#update_acc_gender_female").prop("checked", true)
       }
     })
   })
 }
 
+function load_registered_patients() {
+  $.getJSON("src/database/dental_clinic/func/user/read_registered_patients.php", function (data) {
+    write_registered_patients(data)
+  })
+}
+function write_registered_patients(data) {
+  // 
+  var output = '';
+  $.each(data, function (key, val) {
+    output += `
+                <tr>
+                    <td class="data-title" data-title="PATIENT ID"><small class="h6 text-black">`+ val.patient_id + `</small></td>
+                    <td class="data-title" data-title="LAST NAME"><small class="h6 text-black">`+ val.l_name + `</small></td>
+                    <td class="data-title" data-title="FIRST NAME"><small class="h6 text-black">`+ val.f_name + `</small></td>
+                    <td class="data-title" data-title="MIDDLE NAME"><small class="h6 text-black">`+ val.m_name + `</small></td>
+                    <td class="data-title" data-title="DETAILS">
+                        <button 
+                          class="text-white" 
+                          data-bs-toggle="modal" 
+                          data-bs-target="#btn_view_patient" 
+                          style="background:#80CEB8; 
+                          border-radius:5px; border: none; cursor: pointer; font-size: 12px; width: 100px; height: 1.5rem;"
+                          attr-id="`+ val.patient_id + `"
+                          attr-l_name="`+ val.l_name + `"
+                          attr-f_name="`+ val.f_name + `"
+                          attr-m_name="`+ val.m_name + `"
+                          attr-gender="`+ val.gender + `"
+                          attr-house-no="`+ val.house_no + `"
+                          attr-street="`+ val.street + `"
+                          attr-brgy="`+ val.brgy + `"
+                          attr-city="`+ val.city + `"
+                          attr-province="`+ val.province + `"
+                          attr-age="`+ val.age + `"
+                          attr-bdate="`+ val.bdate + `"
+                          attr-email="`+ val.email + `"
+                          attr-contact-no="`+ val.contact_no + `"
+                        >VIEW</button>
+                    </td>
+                </tr>
+    `;
+  })
 
-$('.btn_view_history').on('click', function(){
+  $('#tbl_registered_patient tbody').empty();
+  $('#tbl_registered_patient tbody').append(output);
+
+
+}
+
+function load_appointment_history() {
+  $.getJSON("src/database/dental_clinic/func/user/read_appointments_history.php", function (data) {
+    write_appointment_history(data)
+  })
+}
+function write_appointment_history(data) {
+  // 
+  var output = '';
+  $.each(data, function (key, val) {
+    output += `
+              <tr>
+                  <td class="data-title" data-title="APPOINTMENT ID"><small class="h6 text-black">`+ val.id + `</small></td>
+                  <td class="data-title" data-title="PATIENT ID"><small class="h6 text-black">`+ val.user_id + `</small></td>
+                  <td class="data-title" data-title="NAME"><small class="h6 text-black">`+ val.name + `</small></td>
+              </tr>  
+    `;
+  })
+
+  $('#tbl_appointment_history tbody').empty();
+  $('#tbl_appointment_history tbody').append(output);
+
+
+}
+
+function search_function() {
+  $.each(search_function_config, function (key, val) {
+    $("#" + val).on("keyup", function () {
+      var value = $(this).val().toLowerCase();
+      $("#" + key + " tbody tr").filter(function () {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+      });
+    });
+  })
+}
+
+// ADMIN
+
+$('.btn_view_prices').on('click', function () {
+  load_admin_services()
+  change_page('admin_prices')
+})
+
+$('.btn_view_packages').on('click', function () {
+  change_page('admin_packages')
+})
+
+$('.btn_view_history').on('click', function () {
+  load_appointment_history()
   change_page('admin_history')
 })
-$('.btn_view_overview').on('click', function(){
+$('.btn_view_overview').on('click', function () {
   change_page('admin_overview')
+  load_admin_overview()
 })
 
-$('.btn_view_registeredPatient').on('click', function(){
+$('.btn_view_registered_patient').on('click', function () {
+  load_registered_patients()
   change_page('admin_registered_patient')
 })
 
+$('.btn_view_admin_appointment').on('click', function () {
+  load_for_uploading();
+  change_page('admin_appointment')
+})
+
+
+var d = {};
+
+function load_admin_services() {
+  $.getJSON("src/database/dental_clinic/func/admin/read_services.php", function (data) {
+    write_admin_services(data)
+  })
+}
+function write_admin_services(data) {
+  output = '';
+  $.each(data, function (key, val) {
+    output += `  <tr attr-id="` + val.id + `" 
+                    attr-service="`+ val.service + `" 
+                    attr-price="`+ val.price + `"
+                    attr-category="`+ val.category + `"
+                    attr-status="`+ val.status + `">
+                  <td class="data-title" data-title="SERVICE"><small class="h6 text-black">`+ val.service + `</small></td>
+                  <td class="data-title" data-title="PRICE"><small class="h6 text-black">₱`+ val.price + `</small></td>
+                </tr>
+            `;
+  })
+  $('#tbl_service_prices tbody').empty()
+  $('#tbl_service_prices tbody').append(output)
+
+  $('#tbl_service_prices tbody tr').on('click', function () {
+    $('#tbl_service_prices tbody tr').removeClass('bg-selected')
+    d = {
+      id: $(this).attr('attr-id'),
+      service: $(this).attr('attr-service'),
+      price: $(this).attr('attr-price'),
+      status: $(this).attr('attr-status'),
+      category: $(this).attr('attr-category')
+    }
+    $(this).addClass('bg-selected')
+  })
+}
+$('#btn_admin_edit_service').on('click', function () {
+  if ($.isEmptyObject(d)) {
+    show_msg("No service selected", 2)
+  }
+  else {
+    $('#txt_edit_service_name').val(d.service);
+    $('#txt_edit_service_price').val(d.price);
+    $('#txt_edit_service_status').val(d.status);
+    $('#txt_edit_service_category').val(d.category);
+    $('#btn_edit_service_save').attr('attr-id', d.id)
+    $('#admin_edit_service').modal('show')
+  }
+
+})
+$('#btn_edit_service_save').on('click', function () {
+  $('#admin_edit_service').modal('hide')
+  data = {
+    service: $('#txt_edit_service_name').val(),
+    price: $('#txt_edit_service_price').val(),
+    category: $('#txt_edit_service_category').val(),
+    status: $('#txt_edit_service_status').val(),
+    id: $(this).attr('attr-id')
+  }
+  $.post("src/database/dental_clinic/func/admin/update_service.php", data, function () {
+    show_msg("Service updated successfully.", 1)
+    load_admin_services();
+  })
+})
+$('#btn_admin_add_service').on('click', function () {
+  $('#admin_add_service').modal('show')
+})
+$('#btn_add_service_save').on('click', function () {
+  $('#admin_add_service').modal('hide')
+  data = {
+    service: $('#txt_add_service_name').val(),
+    price: $('#txt_add_service_price').val(),
+    category: $('#txt_add_service_category').val(),
+    status: $('#txt_add_service_status').val()
+  }
+  $.post("src/database/dental_clinic/func/admin/add_service.php", data, function () {
+    show_msg("Service added successfully.", 1)
+    load_admin_services();
+  })
+})
+
+d_string = "";
+function load_admin_overview() {
+  $.getJSON("src/database/dental_clinic/func/admin/read_overview_appointments.php", function (data) {
+    write_admin_overview(data)
+  })
+}
+function write_admin_overview(data) {
+  output = '';
+  $.each(data, function (key, val) {
+    output += `  <tr>
+                    <td class="data-title" data-title="ID"> <small class="h6 text-black">`+ val.appointment_id + `</small></td>
+                    <td class="data-title" data-title="PATIENT ID"><small class="h6 text-black">`+ val.patient_id + `</small></td>
+                    <td class="data-title" data-title="NAME"><small class="h6 text-black">`+ val.patient + `</small></td>
+                    <td class="data-title" data-title="DATE"><small class="h6 text-black">`+ val.date + `</small></td>
+                    <td class="data-title" data-title="TIME"><small class="h6 text-black">`+ val.time + `</small></td>
+                    <td class="data-title" data-title="DETAILS">
+                        <button class="btn_overview_show px-3 text-white" style="background:#80CEB8; border-radius:5px; border: none; font-size: 14px;" attr-id="`+ val.appointment_id + `">Show</button>
+                        <button class="btn_overview_no_show px-3 text-white ms-lg-2" style="background: red; border-radius:5px; font-size: 14px;  border: none;" attr-id="`+ val.appointment_id + `">No Show</button>
+                    </td>
+                </tr>
+            `;
+  })
+  $('#tbl_overview tbody').empty()
+  $('#tbl_overview tbody').append(output)
+
+  $('.btn_overview_show').on('click', function () {
+    $('#admin_set_appointment').modal('show')
+    $('#btn_confirm_appointment_show').attr('attr-id', $(this).attr('attr-id'))
+    d_string = "show";
+  })
+  $('.btn_overview_no_show').on('click', function () {
+    $('#admin_set_appointment').modal('show')
+    $('#btn_confirm_appointment_show').attr('attr-id', $(this).attr('attr-id'))
+    $('#txt_overview_line').text("Do you want to mark this appointment as \"NO-SHOW\"?");
+    d_string = "noshow";
+  })
+}
+$('#btn_confirm_appointment_show').on('click', function () {
+  data = {};
+  if(d_string == "noshow")
+  {
+    data =  {
+      id: $(this).attr('attr-id'),
+      status: "no-show"
+    }
+  }
+  else{
+    data = {
+      id: $(this).attr('attr-id'),
+      status: "for-uploading"
+    }
+  }
+  $('#admin_set_appointment').modal('hide')
+  $.post("src/database/dental_clinic/func/admin/update_overview_appointment.php",
+   data, function () {
+      show_msg("Appointment marked successfully.", 1)
+      load_admin_overview()
+    })
+ 
+})
+
+function load_for_uploading(){
+  $.getJSON("src/database/dental_clinic/func/admin/read_for_uploading.php", function (data) {
+    write_for_uploading(data)
+  })
+}
+function write_for_uploading(data){
+  output = '';
+  $.each(data, function (key, val) {
+    output += `   <tr>
+                      <td class="data-title" data-title="APPOINTMENT ID"><small class="h6 text-black">`+val.appointment_id+`</small></td>
+                      <td class="data-title" data-title="PATIENT ID"><small class="h6 text-black">`+val.patient_id+`</small></td>
+                      <td class="data-title" data-title="NAME"><small class="h6 text-black">`+val.patient+`</small></td>
+                      <td class="data-title" data-title="LAB RESULTS">
+                          <button class="text-white btn_upload_document" attr-id="`+val.appointment_id+`" style="background:#80CEB8; border-radius:5px; border: none; cursor: pointer; font-size: 12px; width: 100px; height: 1.5rem;">UPLOAD</button>
+                      </td>
+                  </tr>
+            `;
+  })
+  $('#tbl_for_uploading tbody').empty()
+  $('#tbl_for_uploading tbody').append(output)
+
+  $('.btn_upload_document').on('click', function(){
+    $('#admin_appointment_upload').modal('show')
+    $('#txt_upload_id').val($(this).attr('attr-id'))
+  })
+
+}
+
+$('#btn_upload_document').on('click', function(e){
+  e.preventDefault();
+  $('#txt_upload_file').trigger('click')
+})
+$('#txt_upload_file').on('change',function(e){
+    e.preventDefault();
+    var form = document.getElementById('upload_form');
+    var fdata = new FormData(form); 
+    $.ajax({
+        type: "POST",
+        url: 'src/database/dental_clinic/func/admin/upload_document.php',
+        data: fdata,
+        contentType: false,
+        cache: false,
+        processData:false,
+        success: function(result)
+        { 
+          $('#admin_appointment_upload').modal('hide')
+          show_msg("Document Uploaded Successfully", 1)
+        }
+    });
+})
+
+// END ADMIN
+
+
+$(document).ready(function () {
+  search_function()
+
+  if (!$("#txt_user_id").val()) {
+    change_page("login");
+    $('#txt_user_access').val("user")
+
+    // alert('test')
+
+  } else {
+
+    if (access_level == "user") {
+
+      change_page("dashboard");
+    }
+    else {
+      load_admin_overview()
+      change_page("admin_overview");
+    }
+  }
+  load_available_appointments();
+});
+
+
+$(".services_btn").on("click", function () {
+  var title = "";
+  title = $(this).attr("attr-name");
+  title = title.toUpperCase();
+
+  $.ajax({
+    type: "GET",
+    url:
+      "src/database/dental_clinic/func/user/read_service.php?category=" +
+      $(this).attr("attr-name"),
+    success: function (data) {
+      var temp = Math.round(JSON.parse(data).length / 2);
+      var count = 0;
+      var output = '<div class="col-xl-6 col-12  text-muted ">';
+      $.each(JSON.parse(data), function (key, val) {
+        if (count == temp) {
+          output += "</div>";
+          output += '<div class="col-xl-6 col-12  text-muted ">';
+        }
+
+        if (selected_services.indexOf(val.id + "") !== -1) {
+          output +=
+            `
+                      <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input chk_service" value="` +
+            val.id +
+            `" checked id="srv_` +
+            count +
+            `">
+                          <label class="custom-control-label" for="srv_` +
+            count +
+            `" style="font-size:9pt;"> ` +
+            val.service +
+            `</label>
+                      </div>
+                  `;
+        } else {
+          output +=
+            `
+                          <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input chk_service" value="` +
+            val.id +
+            `" id="srv_` +
+            count +
+            `">
+                              <label class="custom-control-label" for="srv_` +
+            count +
+            `" style="font-size:9pt;"> ` +
+            val.service +
+            `</label>
+                          </div>
+                      `;
+        }
+
+        count = count + 1;
+      });
+
+      output += "</div>";
+
+      $("#div_md_services").empty();
+      $("#div_md_services").append(output);
+
+      $("#md_services").modal("show");
+
+      $("#txt_md_service_title").text(title);
+
+      $(".chk_service").unbind("click");
+      $(".chk_service").on("click", function (key, val) {
+        var val = $(this).val();
+        if ($(this).prop("checked")) {
+          if (!selected_services.includes($(this).val())) {
+            selected_services.push($(this).val());
+          }
+        } else {
+          selected_services = $.grep(selected_services, function (value) {
+            return value != val;
+          });
+        }
+      });
+    },
+  });
+});
+
+$("#md_make_appointment_book").on("click", function () {
+  data = {
+    availability_id: $(this).attr("attr-id"),
+    user_id: $("#txt_user_id").val(),
+    selected_services: selected_services,
+  };
+  $.post("src/database/dental_clinic/func/user/add_appointment.php", data).done(
+    function (cb) {
+      show_msg("Appointment Successfully Booked!", 1);
+      load_available_appointments();
+    }
+  );
+});
+
+$('.btn_logout').on('click', function () {
+  $.post("src/database/dental_clinic/func/logout.php").done(function () {
+    location.reload();
+  });
+})
+
+$('.btn_view_update_account').on('click', function () {
+  load_user_account_details()
+  change_page("update_account")
+
+})
+
+$("#btn_login").on("click", function () {
+  $.ajax({
+    type: "POST",
+    url: "src/database/dental_clinic/func/login.php",
+    data: {
+      username: $("#txt_username").val(),
+      password: $("#txt_password").val(),
+    },
+    success: function (data) {
+      if (data == 0) {
+        show_msg("Invalid Username / Password", 2);
+      } else {
+        if ($('#txt_user_access').val() == "user") {
+          change_page("dashboard");
+        }
+        else {
+          change_page("admin_overview");
+        }
+
+        show_msg("Login Successful", 1);
+        location.reload();
+
+      }
+    },
+  });
+});
+
+$('#update_acc_bdate').on('change', function () {
+  var age = calculate_age($(this).val());
+  if (age > 5 && age < 65) {
+    $('#update_acc_age').val(age)
+  }
+  else {
+    show_msg("Invalid Birthdate", 2)
+  }
+})
+
+$('#btn_update_account').on('click', function () {
+
+  if ($('#update_acc_fname').val() && $('#txt_user_id').val() && $('#update_acc_province').val() && $('#update_acc_city').val() && $('#update_acc_age').val() && $('#update_acc_brgy').val() && $('#update_acc_street').val() && $('#update_acc_house').val() && $('#update_acc_bdate').val() && $('#update_acc_lname').val() && $('#update_acc_bdate').val()) {
+    var data = {
+      f_name: $('#update_acc_fname').val(),
+      m_name: $('#update_acc_mname').val(),
+      l_name: $('#update_acc_lname').val(),
+      bdate: $('#update_acc_bdate').val(),
+      gender: $('input[name="update_acc_gender[]"]:checked').val(),
+      house_no: $('#update_acc_house').val(),
+      street: $('#update_acc_street').val(),
+      brgy: $('#update_acc_brgy').val(),
+      age: $('#update_acc_age').val(),
+      city: $('#update_acc_city').val(),
+      province: $('#update_acc_province').val(),
+      user_id: $('#txt_user_id').val(),
+      age: $('#update_acc_age').val(),
+      bdate: $('#update_acc_bdate').val(),
+      contact_no: $('#update_acc_contact').val(),
+      uid: $('#update_acc_username').val(),
+      pass: $('#update_acc_password').val(),
+      email: $('#update_acc_email').val(),
+    }
+
+    $.post("src/database/dental_clinic/func/user/update_user_account.php", data, function () {
+      show_msg("Account Updated Successfully.", 1)
+    })
+
+  }
+  else {
+    show_msg("Please fill-in required fields.", 2)
+  }
+
+})
+
+$('#btn_submit').on('click', function (e) {
+  e.preventDefault();
+
+  if ($('#txt_sign_up_uid').val() && $('#txt_sign_up_pass').val() && $('#txt_sign_up_email').val()) {
+    var data = {
+      uid: $('#txt_sign_up_uid').val(),
+      pass: $('#txt_sign_up_pass').val(),
+      email: $('#txt_sign_up_email').val()
+    }
+    $.post("src/database/dental_clinic/func/user/add_user_account.php", data, function () {
+      show_msg("Sign-up Successful!", 1)
+    })
+  } else {
+    show_msg("Please fill-in required fields!", 2)
+  }
+
+
+})
+
+$(".btn_view_dashboard").on("click", function () {
+  change_page("dashboard");
+});
+
+$(".btn_view_incoming_appointments").on("click", function () {
+  load_incoming_appointments();
+  change_page("incoming_appointment");
+});
+
+$(".btn_view_laboratory_result").on("click", function () {
+  load_lab_results()
+  change_page("laboratory_result");
+});
+
+$("#btn_page11_back").on("click", function () {
+  selected_services = [];
+});
+
+$(".btn_view_appointments").on("click", function () {
+  load_appointments();
+  change_page("appointment");
+});
+
+$(".btn_view_admin_appointment").on("click", function () {
+  change_page("admin_appointment");
+});
+
+$(".btn_view_registeredPatient").on("click", function () {
+  change_page("registeredPatient");
+});

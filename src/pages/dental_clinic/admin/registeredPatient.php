@@ -1,4 +1,4 @@
-<div class="d-none page" id="page_registeredPatient" style="background-color: white;">
+<div class="d-none page" id="page_registered_patient" style="background-color: white;">
 
     <?php
     include 'admin_sidebar.php';
@@ -37,7 +37,7 @@
                 </div>
             </div>
 
-            <div class="table-responsive" id="no-more-tables" style="border: 3px solid  #7B7A7A; border-radius: 15px; box-shadow: 5px 10px #888888;">
+            <div class="table-responsive" id="tbl_registered_patient" style="border: 3px solid  #7B7A7A; border-radius: 15px; box-shadow: 5px 10px #888888;">
                 <table class="table">
                     <thead class="text-center">
                         <tr class="table_title">

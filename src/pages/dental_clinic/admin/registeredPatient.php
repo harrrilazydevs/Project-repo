@@ -1,4 +1,4 @@
-<div class="d-none page" id="page_registeredPatient" style="background-color: white;">
+<div class="page" id="page_registeredPatient" style="background-color: white;">
 
     <?php
     include 'admin_sidebar.php';
@@ -55,7 +55,7 @@
                             <td class="data-title" data-title="FIRST NAME"><small class="h6 text-black">01-19-2022</small></td>
                             <td class="data-title" data-title="MIDDLE NAME"><small class="h6 text-black">7:00 - 9:00 AM</small></td>
                             <td class="data-title" data-title="DETAILS">
-                                <button class="text-white" data-bs-toggle="modal" data-bs-target="#btn_view_patient" style="background:#80CEB8; border-radius:5px; border: none; cursor: pointer; font-size: 12px; width: 100px; height: 1.5rem;">VIEW</button>
+                                <button class="text-white" data-bs-toggle="modal" data-bs-target="#view_patient" style="background:#80CEB8; border-radius:5px; border: none; cursor: pointer; font-size: 12px; width: 100px; height: 1.5rem;">VIEW</button>
                             </td>
                         </tr>
                     </tbody>

@@ -20,14 +20,14 @@ const weekday = [
 
 let selected_services = [];
 
-$(document).ready(function () {
-  if (!$("#txt_user_id").val()) {
-    change_page("login");
-  }else{
-    change_page("dashboard");
-  }
-  load_available_appointments();
-});
+// $(document).ready(function () {
+//   if (!$("#txt_user_id").val()) {
+//     change_page("login");
+//   }else{
+//     change_page("dashboard");
+//   }
+//   load_available_appointments();
+// });
 
 
 $(".services_btn").on("click", function () {

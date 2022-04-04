@@ -1,4 +1,4 @@
-<div class=" page" id="page_packages" style="background-color: white;">
+<div class="page" id="page_packages" style="background-color: white;">
 
     <?php
     include 'admin_sidebar.php';

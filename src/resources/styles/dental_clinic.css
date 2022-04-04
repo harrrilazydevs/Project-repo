@@ -522,6 +522,8 @@ a {
     display: grid;
     grid-template-columns: 5fr 0fr !important;
   }
+
+
 }
 /* <------------TABLE MEDIA QUERY------------>*/
 @media only screen and (max-width: 900px) {
@@ -598,6 +600,8 @@ a {
   td small {
     font-size: 12px !important;
   }
+
+
 }
 
 /* <------------PAGES GRID------------>*/
@@ -668,3 +672,66 @@ select::-ms-expand {
   color: #4DBDAC;
 }
 /* <------------SELECTION PATIENTS PAGE------------>*/
+
+
+/* <------------ACCOUNT INFO MODAL CSS------------>*/
+.acc_info label {
+  font-family: 'Roboto', sans-serif;
+  text-transform: capitalize;
+  width: 100px;
+  height: 20px;
+  float: left;
+  color: #000;
+
+}
+.acc_info label.not {
+  width: 0;
+  height: 0;
+  float: none;
+  margin-left: 4px;
+}
+.acc_info input {
+  font-size: 15px;
+  font-family: 'Work Sans', sans-serif;
+  margin-bottom: 0.5em;
+}
+.upload_modal{
+  width: 100px;
+  position: relative;
+  margin: auto;
+}
+.upload_modal img{
+  border-radius: 50%;
+  border: 6px solid #eaeaea;
+}
+.upload_modal .round{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #80CEB8;
+  width: 32px;
+  height: 32px;
+  line-height: 33px;
+  text-align: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.upload_modal .round input[type = "file"]{
+  position: absolute;
+  transform: scale(2);
+  opacity: 0;
+}
+input[type=file]::-webkit-file-upload-button{
+  cursor: pointer;
+}
+
+
+.make_appointment{
+  display: inline-block;
+  width: 150px;
+  text-align: right;
+}
+
+/* <------------ACCOUNT INFO MODAL CSS------------>*/
+
+

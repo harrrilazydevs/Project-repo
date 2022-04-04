@@ -1,4 +1,4 @@
-<div class="d-none page" id="page_dashboard" style="background-color: white;">
+<div class="page" id="page_dashboard" style="background-color: white;">
     <?php
         include 'side_bar_1.php';
     ?>
@@ -48,7 +48,7 @@
             <div class="container  services_container mt-lg-5 ms-lg-5 pt-lg-2 mt-sm-5">
                 <h5 class="h5" style="letter-spacing: 2px; font-weight: bold;  color: black;">Services</h5>
                 <div class="row service">
-                    <button attr-name="laboratory" class="services_btn text-white">LABORATORY</button>
+                    <button attr-name="laboratory" data-bs-toggle="modal" data-bs-target="#accInfo" class="services_btn text-white">LABORATORY</button>
                     <button attr-name="x-ray" class="services_btn text-white">X-RAY</button>
                     <button attr-name="package" class="services_btn text-white">PACKAGES</button>
                 </div>

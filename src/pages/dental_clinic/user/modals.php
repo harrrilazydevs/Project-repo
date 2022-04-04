@@ -215,15 +215,15 @@
 <div class="modal fade" id="md_view_appointment" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content" style="border-radius: 5%;">
-        <span class="ms-3 mt-3 badge bg-danger d-none" style="width:80px" id="badge_view_appointment_cancelled">Cancelled</span>
-        <span class="ms-3 mt-3 badge bg-success d-none" style="width:80px" id="badge_view_appointment_completed">Completed</span>
+            <span class="ms-3 mt-3 badge bg-danger d-none" style="width:80px" id="badge_view_appointment_cancelled">Cancelled</span>
+            <span class="ms-3 mt-3 badge bg-success d-none" style="width:80px" id="badge_view_appointment_completed">Completed</span>
 
             <span class="h5 mt-lg-3 text-black text-center" style="letter-spacing: 4px; font-weight: bold;">Make Appointment</span>
 
             <div class="modal-body">
                 <div class="container" style="background-color: #F9F9F9; border-radius: 5px;">
                     <h6 class="h6 pt-3 text-black" style="letter-spacing: 2px; font-weight: bold; font-size: 15px;">Appointment Details</h6>
-                   
+
                     <div class="row">
                         <div class="col-6 mt-3">
                             <p class="text-black" style="font-weight: bold; font-size: 12px;">Physician's Name : </p>
@@ -279,9 +279,6 @@
 
 
 
-
-
-
 <!----------------CREATE ACC MODAL ------------------->
 <div class="modal fade" id="md_msg_box" aria-hidden="true">
     <div class=" modal-dialog">
@@ -313,5 +310,102 @@
 
         </div>
 
+    </div>
+</div>
+
+
+<!---------------- ACC INFORMATION MODAL ------------------->
+<div class="modal fade" id="accInfo" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content acc_info">
+            <div class="modal-body ">
+                <div class="container">
+                    <h5 class="h5 fw-bold text-black text-center" style="letter-spacing: 1px; font-family: 'Work Sans', sans-serif;">Account Information</h5>
+
+                    <div class="upload_modal mt-3">
+                        <img src="src/resources/img/user.png" width="100" height="100" alt="">
+                        <div class="round">
+                            <input type="file">
+                            <i class="fa-solid fa-circle-plus fa-fw" style="color: white;"></i>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="acc_info">
+                                <label for="lastname">Patient ID:</label>
+                                <input type="text" placeholder="22334" required>
+
+                                <label for="lastname">Last Name:</label>
+                                <input type="text" placeholder="Sebastian" required>
+
+                                <label for="firstname">First Name:</label>
+                                <input type="text" placeholder="Baldong" required>
+
+                                <label for="firstname"><small style="font-size: 13px !important;">Middle Name:</small></label>
+                                <input type="text" placeholder="Ursilang" required>
+
+
+                                <label for="firstname">Age</label>
+                                <input type="text" placeholder="24 yrs old" required>
+
+                                <label>Gender:</label>
+                                <label> <input type="radio" style="display: inline-block !important;"> Male</label>
+                                <label> <input type="radio" style="display: inline-block !important;"> Female</label>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-12">
+
+                            <div class="acc_info">
+                                <label for="Addres">Addres:</label>
+                                <input type="text" placeholder="22334" required>
+
+                                <label for="Street">Street</label>
+                                <input type="text" placeholder="Matabang" required>
+
+                                <label for="Brgy">Brgy:</label>
+                                <input type="text" placeholder="Tibo Brgy" required>
+
+                                <label for="City">City</label>
+                                <input type="text" placeholder="Taguig" required>
+
+
+                                <label for="Province">Province</label>
+                                <input type="text" placeholder="Laguna" required>
+
+                                <label for="Contact">Contact No.</label>
+                                <input type="text" placeholder="0231203012" required>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-xl-4">
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="acc_info">
+                                <label for="Username">Username</label>
+                                <input type="text" placeholder="22334" required>
+
+                                <label for="Password">Password</label>
+                                <input type="password" required>
+
+                                <label for="New_password"><small style="font-size: 14px !important;">New Password</small></label>
+                                <input type="password" required>
+
+                                <label for="Confirm_passwrod"><small style="font-size: 11px !important;">Confirm Password:</small></label>
+                                <input type="password" required>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <button class="text-white px-2 ms-lg-2" style="background: #80CEB8; border-radius:5px; text-decoration: none; cursor: pointer; font-size: 12px;  border: none; height: 30px;">DONE</button>
+                            <button class="text-white px-2 ms-lg-2" style="background: red; border-radius:5px; text-decoration: none; cursor: pointer; font-size: 12px;  border: none; height: 30px;">DELETE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

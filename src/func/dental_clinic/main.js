@@ -1193,16 +1193,90 @@ $(".services_btn").on("click", function () {
   title = $(this).attr("attr-name");
   title = title.toUpperCase();
 
-  $.ajax({
-    type: "GET",
-    url:
-      "src/database/dental_clinic/func/user/read_service.php?category=" +
-      $(this).attr("attr-name"),
-    success: function (data) {
-      var temp = Math.round(JSON.parse(data).length / 2);
+  if(title != 'PACKAGE'){
+    $.ajax({
+      type: "GET",
+      url:
+        "src/database/dental_clinic/func/user/read_service.php?category=" +
+        $(this).attr("attr-name"),
+      success: function (data) {
+        var temp = Math.round(JSON.parse(data).length / 2);
+        var count = 0;
+        var output = '<div class="col-xl-6 col-12  text-muted ">';
+        $.each(JSON.parse(data), function (key, val) {
+          if (count == temp) {
+            output += "</div>";
+            output += '<div class="col-xl-6 col-12  text-muted ">';
+          }
+  
+          if (selected_services.indexOf(val.id + "") !== -1) {
+            output +=
+              `
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input chk_service" value="` +
+              val.id +
+              `" checked id="srv_` +
+              count +
+              `">
+                            <label class="custom-control-label" for="srv_` +
+              count +
+              `" style="font-size:9pt;"> ` +
+              val.service +
+              `</label>
+                        </div>
+                    `;
+          } else {
+            output +=
+              `
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input chk_service" value="` +
+              val.id +
+              `" id="srv_` +
+              count +
+              `">
+                                <label class="custom-control-label" for="srv_` +
+              count +
+              `" style="font-size:9pt;"> ` +
+              val.service +
+              `</label>
+                            </div>
+                        `;
+          }
+  
+          count = count + 1;
+        });
+  
+        output += "</div>";
+  
+        $("#div_md_services").empty();
+        $("#div_md_services").append(output);
+  
+        $("#md_services").modal("show");
+  
+        $("#txt_md_service_title").text(title);
+  
+        $(".chk_service").unbind("click");
+        $(".chk_service").on("click", function (key, val) {
+          var val = $(this).val();
+          if ($(this).prop("checked")) {
+            if (!selected_services.includes($(this).val())) {
+              selected_services.push($(this).val());
+            }
+          } else {
+            selected_services = $.grep(selected_services, function (value) {
+              return value != val;
+            });
+          }
+        });
+      },
+    });
+  }
+  else{
+    $.getJSON("src/database/dental_clinic/func/user/read_packages.php", function(data){
+      var temp = Math.round(data.length / 2);
       var count = 0;
       var output = '<div class="col-xl-6 col-12  text-muted ">';
-      $.each(JSON.parse(data), function (key, val) {
+      $.each(data, function (key, val) {
         if (count == temp) {
           output += "</div>";
           output += '<div class="col-xl-6 col-12  text-muted ">';
@@ -1212,7 +1286,7 @@ $(".services_btn").on("click", function () {
           output +=
             `
                       <div class="custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input chk_service" value="` +
+                          <input type="checkbox" class="custom-control-input chk_service" attr-id="`+val.id+`" value="` +
             val.id +
             `" checked id="srv_` +
             count +
@@ -1220,7 +1294,7 @@ $(".services_btn").on("click", function () {
                           <label class="custom-control-label" for="srv_` +
             count +
             `" style="font-size:9pt;"> ` +
-            val.service +
+            val.name +
             `</label>
                       </div>
                   `;
@@ -1228,7 +1302,7 @@ $(".services_btn").on("click", function () {
           output +=
             `
                           <div class="custom-control custom-checkbox">
-                              <input type="checkbox" class="custom-control-input chk_service" value="` +
+                              <input type="checkbox" class="custom-control-input chk_service" attr-id="`+val.id+`" value="` +
             val.id +
             `" id="srv_` +
             count +
@@ -1236,7 +1310,7 @@ $(".services_btn").on("click", function () {
                               <label class="custom-control-label" for="srv_` +
             count +
             `" style="font-size:9pt;"> ` +
-            val.service +
+            val.name +
             `</label>
                           </div>
                       `;
@@ -1249,26 +1323,37 @@ $(".services_btn").on("click", function () {
 
       $("#div_md_services").empty();
       $("#div_md_services").append(output);
-
       $("#md_services").modal("show");
-
       $("#txt_md_service_title").text(title);
 
       $(".chk_service").unbind("click");
       $(".chk_service").on("click", function (key, val) {
+        selected_services = [];
+
         var val = $(this).val();
+        var el = $(this);
+
         if ($(this).prop("checked")) {
-          if (!selected_services.includes($(this).val())) {
-            selected_services.push($(this).val());
-          }
+          $(".chk_service").prop('checked', false)
+          $(this).prop("checked", true)
+          
+          $.getJSON("src/database/dental_clinic/func/user/read_package_services.php?id="+el.attr('attr-id'), function(data){
+            $.each(data, function(key, val){
+              selected_services.push(val.service_id);
+
+              console.log(val)
+            })
+          })
         } else {
-          selected_services = $.grep(selected_services, function (value) {
-            return value != val;
-          });
+          selected_services = [];
         }
       });
-    },
-  });
+
+
+
+    })
+  }
+  
 });
 
 $("#md_make_appointment_book").on("click", function () {
@@ -1279,8 +1364,15 @@ $("#md_make_appointment_book").on("click", function () {
   };
   $.post("src/database/dental_clinic/func/user/add_appointment.php", data).done(
     function (cb) {
-      show_msg("Appointment Successfully Booked!", 1);
-      load_available_appointments();
+      $.post("src/database/dental_clinic/func/user/send_sms.php", {
+        1:$('#txt_user_mobile').val(),
+        2:'TEST',
+        3:'ST-CHERO405529_H3XVJ',
+        4:'8k%)}en7@1',
+      }).done(function(){
+        show_msg("Appointment Successfully Booked!", 1);
+        load_available_appointments();
+      })
     }
   );
 });
@@ -1432,3 +1524,12 @@ $(".btn_view_admin_appointment").on("click", function () {
 $(".btn_view_registeredPatient").on("click", function () {
   change_page("registeredPatient");
 });
+
+
+
+$('#sel_cancelled_appointments_sort').on('change', function(){
+  var selected_data = $(this).val();
+  $.getJSON("",function(data){
+
+  })
+})

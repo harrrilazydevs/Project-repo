@@ -23,10 +23,11 @@
 
             <div class="row d-flex justify-content-around mt-5 mb-3">
                 <div class="select text-muted">
-                    <select class="selection">
-                        <option value="1">SORT BY</option>
-                        <option value="2">TEST 1</option>
-                        <option value="3">TEST 2</option>
+                    <select class="selection" id="sel_completed_appointments_sort">
+                        <option value="">SORT BY</option>
+                        <option value="appointment_id">Appointment Id</option>
+                        <option value="user_id">Patient Id</option>
+                        <option value="name">Name</option>
                     </select>
                 </div>
 
@@ -74,10 +75,11 @@
 
             <div class="row d-flex justify-content-around mt-5 mb-3">
                 <div class="select text-muted">
-                    <select class="selection">
-                        <option value="1">SORT BY</option>
-                        <option value="2">TEST 1</option>
-                        <option value="3">TEST 2</option>
+                    <select class="selection" id="sel_cancelled_appointments_sort">
+                        <option value="">SORT BY</option>
+                        <option value="appointment_id">Appointment Id</option>
+                        <option value="user_id">Patient Id</option>
+                        <option value="name">Name</option>
                     </select>
                 </div>
 

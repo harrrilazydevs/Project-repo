@@ -5,8 +5,6 @@ session_start();
 include '../db.php';
 
 if(!empty($_POST)){
-
-
     $username = $_POST['username'];
     $password = $_POST['password'];
     $q = '
@@ -35,6 +33,7 @@ if(!empty($_POST)){
         $_SESSION['access_level'] = $result[0]['user_access'];
         $_SESSION['user_id'] = $result[0]['user_id'];
         $_SESSION['username'] = $result[0]['f_name'];
+        $_SESSION['contact_no'] = $result[0]['contact_no'];
         
         echo 1;
 

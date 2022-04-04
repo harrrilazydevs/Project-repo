@@ -99,6 +99,7 @@ if(!isset($_SESSION['access_level'])){
     }
     ?>">
     <input type="hidden" value="<?php echo $_SESSION['access_level']; ?>" id="txt_user_access" >
+    <input type="hidden" value="<?php echo $_SESSION['contact_no']; ?>" id="txt_user_mobile" >
 
 
     <input type="hidden" id="txt_cart_order_count" >

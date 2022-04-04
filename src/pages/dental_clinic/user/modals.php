@@ -135,8 +135,8 @@
 
                     <!----------------BUTTONS------------------->
                     <div class="mt-lg-2 mb-lg-2 text-center">
-                        <button class="text-white" style="font-weight:bold; background:#80CEB8; border-radius: 5px; width:120px; margin: 3px; border: none; height: 35px;" data-bs-dismiss="modal" id="btn_page11_done">DONE</button>
-                        <button class="text-white" style="font-weight:bold; background:#80CEB8; border-radius: 5px; width:120px; margin: 3px; border: none; height: 35px;" data-bs-dismiss="modal" id="btn_page11_back">BACK</button>
+                        <button class="text-white" style="font-weight:bold; background:#80CEB8; border-radius: 5px; width:120px; margin: 3px; border: none; height: 35px;" data-bs-dismiss="modal" >DONE</button>
+                        <button class="text-white" style="font-weight:bold; background:#80CEB8; border-radius: 5px; width:120px; margin: 3px; border: none; height: 35px;" data-bs-dismiss="modal" >BACK</button>
                     </div>
 
                 </div>

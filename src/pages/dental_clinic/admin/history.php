@@ -32,13 +32,13 @@
 
                 <div class="search mb-3 " style="box-shadow: 2px 3px #888888; float: right !important;">
                     <span style="font-size: 1rem; padding-left: 1rem; color: #888888;"><i class="fa-solid fa-magnifying-glass"></i></span>
-                    <input type="search" placeholder="Search..." style="border: none; outline: none; ">
+                    <input id="txt_search_appointment_history" type="search" placeholder="Search..." style="border: none; outline: none; ">
                 </div>
             </div>
 
             <div class="table-responsive" id="no-more-tables" style="border: 3px solid  #7B7A7A; border-radius: 15px; box-shadow: 5px 10px #888888;">
-                <table class="table">
-                    <thead class="text-center">
+                <table class="table" id="tbl_appointment_history">
+                    <thead class="text-center" >
                         <tr class="table_title">
                             <th>APPOINTMENT ID</th>
                             <th>PATIENT ID</th>
@@ -67,7 +67,7 @@
     </section>
 
     <section class=" min-vh-100" style="background-image: url('src/resources/img/medkit.png');  background-repeat: no-repeat; background-size: 10% 20%; background-position: 100% 100%,  10% 20% ">
-        <div class="container mt-3 pt-5">
+        <div class="container  pt-5">
             <div class="text-center mb-3">
                 <span class="h3" style="letter-spacing: 2px; font-weight: bold; color: #000;">UNATTENDED</span>
             </div>
@@ -88,7 +88,7 @@
             </div>
 
             <div class="table-responsive" id="no-more-tables" style="border: 3px solid  #7B7A7A; border-radius: 15px; box-shadow: 5px 10px #888888;">
-                <table class="table">
+                <table class="table" id="tbl_appointment_history_cancelled">
                     <thead class="text-center">
                         <tr class="table_title">
                             <th>APPOINTMENT ID</th>

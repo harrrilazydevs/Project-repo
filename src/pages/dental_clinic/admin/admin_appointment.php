@@ -4,7 +4,6 @@
     include 'admin_sidebar.php';
     ?>
 
-
     <section class=" min-vh-100" style="background-image:  url('src/resources/img/inject.png');  background-repeat: no-repeat; background-size: 10% 20%; background-position: 10% 20% ">
         <div class="container" style="color: #7B7A7A; ">
             <div class="row">
@@ -35,7 +34,7 @@
             </div>
 
             <div class="table-responsive" id="no-more-tables" style="border: 3px solid  #7B7A7A; border-radius: 15px; box-shadow: 5px 10px #888888;">
-                <table class="table">
+                <table class="table" id="tbl_for_uploading">
                     <thead class="text-center">
                         <tr class="table_title">
                             <th>APPOINTMENT ID</th>

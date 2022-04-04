@@ -5,7 +5,7 @@
     ?>
 
 
-    <section class=" min-vh-100">
+    <section class=" min-vh-100" style="background-image:  url('src/resources/img/inject.png');  background-repeat: no-repeat; background-size: 10% 20%; background-position: 10% 20% ">
         <div class="container" style="color: #7B7A7A; ">
             <div class="row">
                 <div class="col mt-lg-5 mt-xl-5 mt-sm-3">
@@ -15,160 +15,32 @@
             </div>
         </div>
 
-
-        <div class="container mt-lg-5 mt-xl-5">
-            <!------------------- ROW 0-------------------->
-            <div class="row mt-sm-5">
-                <!---------- PACKAGES 1----------->
-                <div class="col-6 mb-3">
-                    <div class="container text-white h-100" style=" box-shadow: 5px 10px #888888; border-radius: 10px; border: solid #737373 2px;">
-                        <h4 class="ms-2 mt-3 mb-3 text-black " style="-webkit-text-stroke-width: 1px !important; -webkit-text-stroke-color: #4bb9a9 !important; color: white !important;font-size: 14pt !important;">PACKAGES 1</h4>
-
-                        <div class="col-12 text-muted">
-                            <div class=" custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input">
-                                <label class="custom-control-label" style="font-size:9pt;">CHEST X-RAY</label>
-                            </div>
-
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="btwr">
-                                <label class="custom-control-label" style="font-size:9pt;">URINALIST</label>
-                            </div>
-
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="vdrl">
-                                <label class="custom-control-label" style="font-size:9pt;">FECALYSIS</label>
-                            </div>
-                        </div>
-
-                        <h6 class="ms-2 mt-4 mb-3 text-black" style="float: right;">PRICE: <b>300</b></h6>
-
-                    </div>
-                </div>
-
-                <!---------- PACKAGES 2----------->
-                <div class="col-6 mb-3">
-                    <div class="container text-white h-100" style=" box-shadow: 5px 10px #888888; border-radius: 10px; border: solid #737373 2px;">
-                        <h4 class="ms-2 mt-3 mb-3 text-black " style="-webkit-text-stroke-width: 1px !important; -webkit-text-stroke-color: #4bb9a9 !important; color: white !important;font-size: 14pt !important;">PACKAGES 2</h4>
-                        <div class="row">
-                            <div class="col-6 text-muted">
-                                <div class=" custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input">
-                                    <label class="custom-control-label" style="font-size:9pt;">CHEST X-RAY</label>
-                                </div>
-
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="btwr">
-                                    <label class="custom-control-label" style="font-size:9pt;">CBC</label>
-                                </div>
-
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="vdrl">
-                                    <label class="custom-control-label" style="font-size:9pt;">URINALIST</label>
-                                </div>
-
-                                <div class=" custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="x-ray">
-                                    <label class="custom-control-label" style="font-size:9pt;">FECALYSIS</label>
-                                </div>
-                            </div>
-
-                            <div class="col-6 text-muted">
-                                <div class=" custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input">
-                                    <label class="custom-control-label" style="font-size:9pt;">PHYSICAL EXAM</label>
-                                </div>
-                            </div>
-                        </div>
-                        <h6 class="ms-2 mb-3 text-black" style="float: right;">PRICE: <b>500</b></h6>
-                    </div>
+        <div class="container mt-3 pt-5 mb-4" style="width: 60%;">
+            <div class="row d-flex justify-content-around mt-5 mb-3">
+                <div class="search mb-3 " style="box-shadow: 2px 3px #888888;">
+                    <span style="font-size: 1rem; padding-left: 1rem; color: #888888;"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <input type="search" id="txt_admin_search_package" placeholder="Search..." style="border: none; outline: none; ">
                 </div>
             </div>
 
-            <!------------------- ROW 1-------------------->
-            <div class="row mt-sm-5">
-                <!---------- PACKAGES 3----------->
-                <div class="col-6 mb-3">
-                    <div class="container text-white h-100" style=" box-shadow: 5px 10px #888888; border-radius: 10px; border: solid #737373 2px;">
-                        <h4 class="ms-2 mt-3 mb-3 text-black " style="-webkit-text-stroke-width: 1px !important; -webkit-text-stroke-color: #4bb9a9 !important; color: white !important;font-size: 14pt !important;">PACKAGES 3</h4>
-                        <div class="row">
-                            <div class="col-6 text-muted">
-                                <div class=" custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input">
-                                    <label class="custom-control-label" style="font-size:9pt;">CHEST X-RAY</label>
-                                </div>
+            <div class="table-responsive" id="no-more-tables" style="max-height:45vh;border: 3px solid  #7B7A7A; border-radius: 15px; box-shadow: 5px 10px #888888;">
+                <table class="table table-hover" id="tbl_packages">
+                    <thead class="text-center">
+                        <tr class="table_title">
+                            <th>PACKAGE NAME</th>
+                            <th>PRICE</th>
+                            <th width="20%">DETAILS</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center"></tbody>
+                </table>
+            </div>
 
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="btwr">
-                                    <label class="custom-control-label" style="font-size:9pt;">CBC</label>
-                                </div>
-
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="vdrl">
-                                    <label class="custom-control-label" style="font-size:9pt;">URINALIST</label>
-                                </div>
-
-                                <div class=" custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="x-ray">
-                                    <label class="custom-control-label" style="font-size:9pt;">FECALYSIS</label>
-                                </div>
-                            </div>
-
-                            <div class="col-6 text-muted">
-                                <div class=" custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input">
-                                    <label class="custom-control-label" style="font-size:9pt;">PHYSICAL EXAM</label>
-                                </div>
-                                <div class=" custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input">
-                                    <label class="custom-control-label" style="font-size:9pt;">HEPA B</label>
-                                </div>
-                            </div>
-                        </div>
-                        <h6 class="ms-2 mb-3 text-black" style="float: right;">PRICE: <b>750</b></h6>
-                    </div>
-                </div>
-
-                <!---------- PACKAGES 4----------->
-                <div class="col-6 mb-3">
-                    <div class="container text-white h-100" style=" box-shadow: 5px 10px #888888; border-radius: 10px; border: solid #737373 2px;">
-                        <h4 class="ms-2 mt-3 mb-3 text-black " style="-webkit-text-stroke-width: 1px !important; -webkit-text-stroke-color: #4bb9a9 !important; color: white !important;font-size: 14pt !important;">PACKAGES 4</h4>
-                        <div class="row">
-                            <div class="col-6 text-muted">
-                                <div class=" custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input">
-                                    <label class="custom-control-label" style="font-size:9pt;">CHEST X-RAY</label>
-                                </div>
-
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="btwr">
-                                    <label class="custom-control-label" style="font-size:9pt;">CBC</label>
-                                </div>
-
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="vdrl">
-                                    <label class="custom-control-label" style="font-size:9pt;">URINALIST</label>
-                                </div>
-
-                                <div class=" custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="x-ray">
-                                    <label class="custom-control-label" style="font-size:9pt;">FECALYSIS</label>
-                                </div>
-                            </div>
-
-                            <div class="col-6 text-muted">
-                                <div class=" custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input">
-                                    <label class="custom-control-label" style="font-size:9pt;">PHYSICAL EXAM</label>
-                                </div>
-
-                                <div class=" custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input">
-                                    <label class="custom-control-label" style="font-size:9pt;">DRUG TEST</label>
-                                </div>
-                            </div>
-                        </div>
-                        <h6 class="ms-2 mb-3 text-black" style="float: right;">PRICE: <b>800</b></h6>
+            <div class="container mt-xl-4 mt-lg-4">
+                <div class="row">
+                    <div class="col-12">
+                        <button class="text-white" id="btn_admin_add_package"  style="background:#80CEB8; border-radius:5px; border: none; cursor: pointer; font-size: 12px; width: 100px; height: 2rem; float: right;">ADD</button>
+                        <button id="btn_admin_edit_package" class="text-white me-lg-2 me-xl-2" style="background:#49A0B3; border-radius:5px; border: none; cursor: pointer; font-size: 12px; width: 100px; height: 2rem; float: right;">EDIT</button>
                     </div>
                 </div>
             </div>

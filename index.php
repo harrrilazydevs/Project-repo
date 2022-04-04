@@ -2,9 +2,17 @@
 session_start();
 $_SESSION['theme'] = 'dental_clinic';
 $_SESSION['logo_path'] = 'src/resources/img/otakulogo.png';
-$_SESSION['access_level'] = 'admin';
 
+// var_dump($_SESSION['access_level']);
+// $_SESSION['access_level'] = 'user';
 // $_SESSION['user_id'] ="";
+// $_SESSION['access_level'] ="";
+
+if(!isset($_SESSION['access_level'])){
+    $_SESSION['access_level'] = 'user';
+}
+
+
 
 
 // //for burger
@@ -79,19 +87,22 @@ $_SESSION['access_level'] = 'admin';
 
 
 
-<div class="">
+<div class="overlay-x">
 
-    <!-- <input type="hidden" name="" id="txt_user_name" value="<?php echo $_SESSION['username']; ?>">
-    <input type="hidden" name="" id="txt_address" value="<?php echo $_SESSION['address']; ?>"> -->
-    <input type="hidden" name="" id="txt_card_id" value="<?php 
+    <!-- <input type="hidden" id="txt_user_name" value="<?php echo $_SESSION['username']; ?>">
+    <input type="hidden" id="txt_address" value="<?php echo $_SESSION['address']; ?>"> -->
+    <input type="hidden" id="txt_card_id" value="<?php 
     if(isset( $_SESSION['cart_id'] ))
     {
         echo $_SESSION['cart_id']; 
 
     }
     ?>">
-    <input type="hidden" name="" id="txt_cart_order_count" >
-    <input type="hidden" name="" id="txt_user_id" value="<?php 
+    <input type="hidden" value="<?php echo $_SESSION['access_level']; ?>" id="txt_user_access" >
+
+
+    <input type="hidden" id="txt_cart_order_count" >
+    <input type="hidden" id="txt_user_id" value="<?php 
 
     if(isset( $_SESSION['user_id'] ))
     {
@@ -102,7 +113,7 @@ $_SESSION['access_level'] = 'admin';
     
     
     ?>">
-    <input type="hidden" name="" id="txt_user_access" value="<?php echo $_SESSION['access_level']; ?>">
+    <!-- <input type="hidden" name="" id="txt_user_access" value="<?php echo $_SESSION['access_level']; ?>"> -->
 
     <!-- CONTENTS -->
     <?php

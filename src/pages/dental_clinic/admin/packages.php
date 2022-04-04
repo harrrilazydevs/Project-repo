@@ -15,11 +15,11 @@
             </div>
         </div>
 
-        <div class="container mt-3 pt-5" style="width: 60%;">
+        <div class="container mt-3 pt-5 mb-4" style="width: 60%;">
             <div class="row d-flex justify-content-around mt-5 mb-3">
                 <div class="search mb-3 " style="box-shadow: 2px 3px #888888;">
                     <span style="font-size: 1rem; padding-left: 1rem; color: #888888;"><i class="fa-solid fa-magnifying-glass"></i></span>
-                    <input type="search" id="txt_admin_search_prices" placeholder="Search..." style="border: none; outline: none; ">
+                    <input type="search" id="txt_admin_search_package" placeholder="Search..." style="border: none; outline: none; ">
                 </div>
             </div>
 

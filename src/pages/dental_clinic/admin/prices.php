@@ -55,7 +55,7 @@
 
             </div>
 
-            <div class="container mt-xl-4 mt-lg-4">
+            <div class="container mt-xl-4 mt-lg-4  mb-4">
                 <div class="row">
                     <div class="col-12">
                         <button class="text-white" id="btn_admin_add_service"  style="background:#80CEB8; border-radius:5px; border: none; cursor: pointer; font-size: 12px; width: 100px; height: 2rem; float: right;">ADD</button>

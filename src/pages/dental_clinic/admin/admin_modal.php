@@ -180,21 +180,20 @@
     </div>
 </div>
 
-<div class="modal fade" id="admin_package_add_service" aria-hidden="true" style="backdrop-filter: blur(16px) saturate(132%); -webkit-backdrop-filter: blur(16px) saturate(132%); background-color: rgba(17, 25, 40, 0.02);">
+<div class="modal fade" id="admin_package_view_services" aria-hidden="true" style="backdrop-filter: blur(16px) saturate(132%); -webkit-backdrop-filter: blur(16px) saturate(132%); background-color: rgba(17, 25, 40, 0.02);">
     <div class=" modal-dialog modal-lg">
         <div class="modal-content" style="border-radius: 5%;">
-            <div class="modal-body text-black">
+            <div class="modal-bodytext-black">
                 <div class="container" style="border-radius: 5%; border: solid grey 5px;">
-                    <h5 class="text-center mt-3 mb-6" style="letter-spacing: 2px; font-family: 'Work Sans', sans-serif; font-weight: bold;">Add Service</h5>
+                    <h5 class="text-center text-dark mt-3 mb-6" style="letter-spacing: 2px; font-family: 'Work Sans', sans-serif; font-weight: bold;">Package Details</h5>
                     <div class="row">
-                        <div class="col-12">
-                            <div class="table-responsive" id="no-more-tables" style="max-height:45vh;border: 3px solid  #7B7A7A; border-radius: 15px; box-shadow: 5px 10px #888888;">
-                                <table class="table table-hover" id="tbl_packages">
+                        <div class="col-12  p-5 pb-2 ">
+                            <div class="table-responsive" id="no-more-tables" style="max-height:45vh;border: 3px solid  #7B7A7A; border-radius: 15px; box-shadow: 2px 3px #888888;">
+                                <table class="table table-hover" id="tbl_package_services">
                                     <thead class="text-center">
                                         <tr class="table_title">
-                                            <th>Service Name</th>
-                                            <th>PRICE</th>
-                                            <th width="20%">DETAILS</th>
+                                            <th>SERVICE</th>
+                                            <th width="20%">ACTION</th>
                                         </tr>
                                     </thead>
                                     <tbody class="text-center"></tbody>
@@ -204,8 +203,8 @@
                     </div>
                     <div class="row text-center mt-4 mb-4">
                         <div class="col-12">
-                            <button class="text-white me-4" id="btn_add_package_save"  style="background:#80CEB8; border-radius:5px; border: none; cursor: pointer; font-size: 12px; width: 100px; height: 2rem;">SAVE</button>
-                            <button class="text-white" data-bs-dismiss="modal" style="background:#80CEB8; border-radius:5px; border: none; cursor: pointer; font-size: 12px; width: 100px; height: 2rem;">CANCEL</button>
+                            <button class="text-white me-2" id="btn_add_service_to_package"  style="background:#80CEB8; border-radius:5px; border: none; cursor: pointer; font-size: 12px; width: 100px; height: 2rem;">ADD</button>
+                            <button class="text-white " data-bs-dismiss="modal" style="background:#80CEB8; border-radius:5px; border: none; cursor: pointer; font-size: 12px; width: 100px; height: 2rem;">CLOSE</button>
                         </div>
                     </div>
                 </div>
@@ -213,6 +212,51 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="admin_package_add_services" aria-hidden="true" style="backdrop-filter: blur(16px) saturate(132%); -webkit-backdrop-filter: blur(16px) saturate(132%); background-color: rgba(17, 25, 40, 0.02);">
+    <div class=" modal-dialog modal-lg">
+        <div class="modal-content" style="border-radius: 5%;">
+            <div class="modal-bodytext-black">
+                <div class="container" style="border-radius: 5%; border: solid grey 5px;">
+                    <h5 class="text-center text-dark mt-3 mb-6" style="letter-spacing: 2px; font-family: 'Work Sans', sans-serif; font-weight: bold;">Select a Service</h5>
+                    <div class="row">
+                        <div class="col-12  d-flex justify-content-around pt-3 p-5 pb-0">
+                        <div class="search text-center" style="box-shadow: 2px 3px #888888; float: right !important;">
+                                <span style="font-size: 1rem; padding-left: 1rem; color: #888888;"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                <input id="txt_search_appointment_history" type="search" placeholder="Search..." style="border: none; outline: none; ">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12  p-5 pt-3 pb-2 ">
+                            
+                            <div class="table-responsive" id="no-more-tables" style="max-height:45vh;border: 3px solid  #7B7A7A; border-radius: 15px; box-shadow: 2px 3px #888888;">
+                                <table class="table table-hover" id="tbl_package_add_services">
+                                    <thead >
+                                        <tr class="table_title text-center">
+                                            <th width="15%"></th>
+
+                                            <th>SERVICE</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row text-center mt-4 mb-4">
+                        <div class="col-12">
+                            <button class="text-white me-2" id="btn_add_service_to_package_save"  style="background:#80CEB8; border-radius:5px; border: none; cursor: pointer; font-size: 12px; width: 100px; height: 2rem;">ADD</button>
+                            <button class="text-white " data-bs-dismiss="modal" style="background:#80CEB8; border-radius:5px; border: none; cursor: pointer; font-size: 12px; width: 100px; height: 2rem;">CLOSE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 
 

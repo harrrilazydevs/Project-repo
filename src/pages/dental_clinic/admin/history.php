@@ -67,7 +67,7 @@
     </section>
 
     <section class=" min-vh-100" style="background-image: url('src/resources/img/medkit.png');  background-repeat: no-repeat; background-size: 10% 20%; background-position: 100% 100%,  10% 20% ">
-        <div class="container mt-3 pt-5">
+        <div class="container  pt-5">
             <div class="text-center mb-3">
                 <span class="h3" style="letter-spacing: 2px; font-weight: bold; color: #000;">UNATTENDED</span>
             </div>
@@ -88,7 +88,7 @@
             </div>
 
             <div class="table-responsive" id="no-more-tables" style="border: 3px solid  #7B7A7A; border-radius: 15px; box-shadow: 5px 10px #888888;">
-                <table class="table">
+                <table class="table" id="tbl_appointment_history_cancelled">
                     <thead class="text-center">
                         <tr class="table_title">
                             <th>APPOINTMENT ID</th>

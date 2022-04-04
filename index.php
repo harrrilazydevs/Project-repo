@@ -87,7 +87,7 @@ if(!isset($_SESSION['access_level'])){
 
 
 
-<div class="">
+<div class="overlay-x">
 
     <!-- <input type="hidden" id="txt_user_name" value="<?php echo $_SESSION['username']; ?>">
     <input type="hidden" id="txt_address" value="<?php echo $_SESSION['address']; ?>"> -->

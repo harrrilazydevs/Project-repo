@@ -32,6 +32,225 @@ const weekday = [
 let selected_services = [];
 var access_level = $("#txt_user_access").val();
 
+// $(document).ready(function () {
+//   if (!$("#txt_user_id").val()) {
+//     change_page("login");
+//   }else{
+//     change_page("dashboard");
+//   }
+//   load_available_appointments();
+// });
+
+
+$(".services_btn").on("click", function () {
+  var title = "";
+  title = $(this).attr("attr-name");
+  title = title.toUpperCase();
+
+  $.ajax({
+    type: "GET",
+    url:
+      "src/database/dental_clinic/func/user/read_service.php?category=" +
+      $(this).attr("attr-name"),
+    success: function (data) {
+      var temp = Math.round(JSON.parse(data).length / 2);
+      var count = 0;
+      var output = '<div class="col-xl-6 col-12  text-muted ">';
+      $.each(JSON.parse(data), function (key, val) {
+        if (count == temp) {
+          output += "</div>";
+          output += '<div class="col-xl-6 col-12  text-muted ">';
+        }
+
+        if (selected_services.indexOf(val.id + "") !== -1) {
+          output +=
+            `
+                      <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input chk_service" value="` +
+            val.id +
+            `" checked id="srv_` +
+            count +
+            `">
+                          <label class="custom-control-label" for="srv_` +
+            count +
+            `" style="font-size:9pt;"> ` +
+            val.service +
+            `</label>
+                      </div>
+                  `;
+        } else {
+          output +=
+            `
+                          <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input chk_service" value="` +
+            val.id +
+            `" id="srv_` +
+            count +
+            `">
+                              <label class="custom-control-label" for="srv_` +
+            count +
+            `" style="font-size:9pt;"> ` +
+            val.service +
+            `</label>
+                          </div>
+                      `;
+        }
+
+        count = count + 1;
+      });
+
+      output += "</div>";
+
+      $("#div_md_services").empty();
+      $("#div_md_services").append(output);
+
+      $("#md_services").modal("show");
+
+      $("#txt_md_service_title").text(title);
+
+      $(".chk_service").unbind("click");
+      $(".chk_service").on("click", function (key, val) {
+        var val = $(this).val();
+        if ($(this).prop("checked")) {
+          if (!selected_services.includes($(this).val())) {
+            selected_services.push($(this).val());
+          }
+        } else {
+          selected_services = $.grep(selected_services, function (value) {
+            return value != val;
+          });
+        }
+      });
+    },
+  });
+});
+
+$("#md_make_appointment_book").on("click", function () {
+  data = {
+    availability_id: $(this).attr("attr-id"),
+    user_id: $("#txt_user_id").val(),
+    selected_services: selected_services,
+  };
+  $.post("src/database/dental_clinic/func/user/add_appointment.php", data).done(
+    function (cb) {
+      show_msg("Appointment Successfully Booked!", 1);
+      load_available_appointments();
+    }
+  );
+});
+
+$('.btn_logout').on('click', function () {
+  $.post("src/database/dental_clinic/func/logout.php").done(function () {
+    location.reload();
+  });
+})
+
+$('.btn_view_update_account').on('click', function(){
+  load_user_account_details()
+  change_page("update_account")
+  
+})
+
+$("#btn_login").on("click", function () {
+  $.ajax({
+    type: "POST",
+    url: "src/database/dental_clinic/func/login.php",
+    data: {
+      username: $("#txt_username").val(),
+      password: $("#txt_password").val(),
+    },
+    success: function (data) {
+      if (data == 0) {
+        show_msg("Invalid Username / Password", 2);
+      } else {
+        change_page("dashboard");
+        show_msg("Login Successful", 1);
+        location.reload();
+
+      }
+    },
+  });
+});
+
+$('#update_acc_bdate').on('change', function () {
+  var age = calculate_age($(this).val());
+  if (age > 5 && age < 65) {
+    $('#update_acc_age').val(age)
+  }
+  else {
+    show_msg("Invalid Birthdate", 2)
+  }
+}) 
+
+
+$('#btn_update_account').on('click', function () {
+  
+  if ($('#update_acc_fname').val() && $('#txt_user_id').val() && $('#update_acc_province').val() && $('#update_acc_city').val() && $('#update_acc_age').val() && $('#update_acc_brgy').val() && $('#update_acc_street').val() && $('#update_acc_house').val()  && $('#update_acc_bdate').val() && $('#update_acc_lname').val() && $('#update_acc_bdate').val()) {
+    var data = {
+      f_name: $('#update_acc_fname').val(),
+      m_name: $('#update_acc_mname').val(),
+      l_name: $('#update_acc_lname').val(),
+      bdate: $('#update_acc_bdate').val(),
+      gender: $('input[name="update_acc_gender[]"]:checked').val(),
+      house_no: $('#update_acc_house').val(),
+      street: $('#update_acc_street').val(),
+      brgy: $('#update_acc_brgy').val(),
+      age: $('#update_acc_age').val(),
+      city: $('#update_acc_city').val(),
+      province: $('#update_acc_province').val(),
+      user_id: $('#txt_user_id').val(),
+      age: $('#update_acc_age').val(),
+      bdate: $('#update_acc_bdate').val(),
+      contact_no: $('#update_acc_contact').val(),
+      uid: $('#update_acc_username').val(),
+      pass: $('#update_acc_password').val(),
+      email: $('#update_acc_email').val(),
+    }
+
+    $.post("src/database/dental_clinic/func/user/update_user_account.php", data, function () {
+      show_msg("Account Updated Successfully.", 1)
+    })
+
+  }
+  else{
+    show_msg("Please fill-in required fields.", 2)
+  }
+
+})
+
+$('#btn_submit').on('click', function(e) {
+  e.preventDefault();
+
+  if($('#txt_sign_up_uid').val() && $('#txt_sign_up_pass').val() && $('#txt_sign_up_email').val())
+  {
+    var data = {
+      uid:$('#txt_sign_up_uid').val(),
+      pass:$('#txt_sign_up_pass').val(),
+      email:$('#txt_sign_up_email').val()
+    }
+    $.post("src/database/dental_clinic/func/user/add_user_account.php",data,function(){
+      show_msg("Sign-up Successful!", 1)
+    })
+  }else{
+    show_msg("Please fill-in required fields!", 2)
+  }
+
+
+})
+
+$(".btn_view_dashboard").on("click", function () {
+  change_page("dashboard");
+});
+
+$(".btn_view_incoming_appointments").on("click", function () {
+  load_incoming_appointments();
+  change_page("incoming_appointment");
+});
+
+$(".btn_view_laboratory_result").on("click", function () {
+  load_lab_results()
+  change_page("laboratory_result");
+});
 
 
 

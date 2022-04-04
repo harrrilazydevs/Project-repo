@@ -37,7 +37,7 @@
                 </div>
             </div>
 
-            <div class="table-responsive" id="no-more-tables" style="border: 3px solid  #7B7A7A; border-radius: 15px; box-shadow: 5px 10px #888888;">
+            <div class="table-responsive" id="tbl_registered_patient" style="border: 3px solid  #7B7A7A; border-radius: 15px; box-shadow: 5px 10px #888888;">
                 <table class="table">
                     <thead class="text-center">
                         <tr class="table_title">

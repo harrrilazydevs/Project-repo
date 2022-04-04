@@ -1,4 +1,4 @@
-<div class="page d-none p-4" id="page_createAcc" >
+<div class="d-none page d-none p-4" id="page_createAcc" >
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
@@ -17,7 +17,7 @@
         <div class="container mb-4">
             <div class="row">
                 <div class="col-lg-6 col-sm-12">
-                    <p class="ms-4 ps-4" style="font-weight: bold;">Personal settings</p>
+                    <p class="ms-4 ms-lg-0 ps-4 ps-lg-0" style="font-weight: bold;">Personal settings</p>
                     <div class="container shadow p-3 mb-5 rounded" style=" border: 2px solid black; padding: 10px; border-radius: 12px;  box-shadow: 5px 8px #555 !important;">
                         <form class="mb-1">
                             <label class="h5 createAcc_label" for="fname">First name:</label>

@@ -2,7 +2,7 @@
 session_start();
 $_SESSION['theme'] = 'dental_clinic';
 $_SESSION['logo_path'] = 'src/resources/img/otakulogo.png';
-$_SESSION['access_level'] = 'admin';
+$_SESSION['access_level'] = 'user';
 
 // var_dump($_SESSION['access_level']);
 // $_SESSION['access_level'] = 'user';
@@ -139,6 +139,7 @@ if(!isset($_SESSION['access_level'])){
         include_once 'src/pages/dental_clinic/user/sidebarUser.php';
         include_once 'src/pages/dental_clinic/user/modals.php';
         include_once 'src/pages/dental_clinic/user/userMobileSidebar.php';
+        include_once 'src/pages/dental_clinic/user/bottomNav.php';
 
 
         echo '<script src="src/func/dental_clinic/main.js"></script>';

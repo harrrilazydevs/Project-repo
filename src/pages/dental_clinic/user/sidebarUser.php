@@ -14,7 +14,7 @@
             <div class="text-end">
                 <i class="fa-solid fa-user-gear icon_btn btn_view_update_account"></i>
             </div>
-            <img src="src/resources/img/user.png" style="width: 100px; height: 100px; border-radius: 100%;">
+            <img src="<?php echo$_SESSION['picture'];?>" style="width: 100px; height: 100px; border-radius: 100%;">
         </div>
 
     </div>

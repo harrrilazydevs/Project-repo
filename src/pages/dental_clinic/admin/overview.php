@@ -12,7 +12,7 @@
                     <span class="h2 ms-lg-5 fw-bold" style="letter-spacing: 2px; font-family: 'Work Sans', sans-serif;"><br>OVERVIEW</span>
                 </div>
 
-                <img class="p-0 mt-lg-5 mt-xl-5 mt-sm-3 overview_admin_img" src="src/resources/img/user.png" style="width: 100px; height: 100px; border-radius: 100%; float: right;">
+                <img class="p-0 mt-lg-5 mt-xl-5 mt-sm-3 overview_admin_img" src="<?php echo$_SESSION['picture'];?>" style="width: 100px; height: 100px; border-radius: 100%; float: right;">
 
             </div>
         </div>

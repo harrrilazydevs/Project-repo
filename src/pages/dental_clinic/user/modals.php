@@ -135,8 +135,8 @@
 
                     <!----------------BUTTONS------------------->
                     <div class="mt-lg-2 mb-lg-2 text-center">
-                        <button class="text-white" style="font-weight:bold; background:#80CEB8; border-radius: 5px; width:120px; margin: 3px; border: none; height: 35px;" data-bs-dismiss="modal" >DONE</button>
-                        <button class="text-white" style="font-weight:bold; background:#80CEB8; border-radius: 5px; width:120px; margin: 3px; border: none; height: 35px;" data-bs-dismiss="modal" >BACK</button>
+                        <button class="text-white" style="font-weight:bold; background:#80CEB8; border-radius: 5px; width:120px; margin: 3px; border: none; height: 35px;" data-bs-dismiss="modal">DONE</button>
+                        <button class="text-white" style="font-weight:bold; background:#80CEB8; border-radius: 5px; width:120px; margin: 3px; border: none; height: 35px;" data-bs-dismiss="modal">BACK</button>
                     </div>
 
                 </div>
@@ -276,6 +276,116 @@
 <!----------------INCOMING APPOINTMENTS------------------->
 
 
+<!---------------- ACC INFORMATION MODAL ------------------->
+<div class="modal fade" id="md_account_information" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content acc_info">
+            <div class="modal-body ">
+                <div class="container account_information">
+                    <h5 class="h5 fw-bold text-black text-center" style="letter-spacing: 1px; font-family: 'Work Sans', sans-serif;">Account Information</h5>
+
+                    <div class="upload_modal mt-3">
+                        <img src="<?php echo$_SESSION['picture'];?>" width="100" height="100" alt="">
+                        <div class="round">
+                            <form action="" id="user_picture">
+                            <input type="file" name="file" id="update_acc_picture">
+                            <input type="text" name="id" value="<?php echo $_SESSION['user_id'];?>" hidden>
+                            <i class="fa-solid fa-circle-plus fa-fw" style="color: white;"></i>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="">
+                                <label for="lastname">Patient ID</label>
+                                <input class="form-control" type="text" id="update_acc_patient_id" required>
+
+                                <label for="lastname">Last Name</label>
+                                <input class="form-control" type="text" id="update_acc_lname" required>
+
+                                <label for="firstname">First Name</label>
+                                <input class="form-control" type="text" id="update_acc_fname" required>
+
+                                <label for="firstname">Middle Name</label>
+                                <input class="form-control" type="text" id="update_acc_mname" required>
+
+                                <label for="firstname">Age</label>
+                                <input class="form-control" type="text" id="update_acc_age" readonly>
+
+                                <label for="firstname">Birth Date</label>
+                                <input class="form-control" type="date" id="update_acc_bdate" required>
+
+                                <label>Gender</label>
+                                <br>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="update_acc_gender_male">
+                                    <label class="form-check-label" for="update_acc_gender_male">
+                                        Male
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="update_acc_gender_female" checked>
+                                    <label class="form-check-label" for="update_acc_gender_female">
+                                        Female
+                                    </label>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-12">
+
+                            <div class="acc_info">
+                                <label for="Addres">Address</label>
+                                <input class="form-control" type="text" id="update_acc_house" required>
+
+                                <label for="Street">Street</label>
+                                <input class="form-control" type="text" id="update_acc_street" required>
+
+                                <label for="Brgy">Brgy</label>
+                                <input class="form-control" type="text" id="update_acc_brgy" required>
+
+                                <label for="City">City</label>
+                                <input class="form-control" type="text" id="update_acc_city" required>
+
+                                <label for="Province">Province</label>
+                                <input class="form-control" type="text" id="update_acc_province" required>
+
+                                <label for="Contact">Contact No</label>
+                                <input class="form-control" type="text" id="update_acc_contact" required>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-xl-4">
+                        <div class=" col-12">
+                            <div class="acc_info">
+                                <label for="Username">Username</label>
+                                <input class="form-control" type="text" id="update_acc_username" required>
+
+                                <label for="Password">Password</label>
+                                <input class="form-control" type="text" id="update_acc_password" required>
+
+                                <label for="Password">Email</label>
+                                <input class="form-control" type="text" id="update_acc_email" required>
+                            </div>
+
+                            <div class="text-end">
+                                <button class="text-white px-2 ms-lg-2" id="btn_update_account" style="background: #80CEB8; border-radius:5px; text-decoration: none; cursor: pointer; font-size: 12px;  border: none; height: 30px;">DONE</button>
+                                <button class="text-white px-2 ms-lg-2" data-bs-dismiss="modal" style="background: red; border-radius:5px; text-decoration: none; cursor: pointer; font-size: 12px;  border: none; height: 30px;">CANCEL</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 
@@ -310,102 +420,5 @@
 
         </div>
 
-    </div>
-</div>
-
-
-<!---------------- ACC INFORMATION MODAL ------------------->
-<div class="modal fade" id="accInfo" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content acc_info">
-            <div class="modal-body ">
-                <div class="container">
-                    <h5 class="h5 fw-bold text-black text-center" style="letter-spacing: 1px; font-family: 'Work Sans', sans-serif;">Account Information</h5>
-
-                    <div class="upload_modal mt-3">
-                        <img src="src/resources/img/user.png" width="100" height="100" alt="">
-                        <div class="round">
-                            <input type="file">
-                            <i class="fa-solid fa-circle-plus fa-fw" style="color: white;"></i>
-                        </div>
-                    </div>
-
-                    <div class="row mt-4">
-                        <div class="col-lg-6 col-sm-12">
-                            <div class="acc_info">
-                                <label for="lastname">Patient ID:</label>
-                                <input type="text" placeholder="22334" required>
-
-                                <label for="lastname">Last Name:</label>
-                                <input type="text" placeholder="Sebastian" required>
-
-                                <label for="firstname">First Name:</label>
-                                <input type="text" placeholder="Baldong" required>
-
-                                <label for="firstname"><small style="font-size: 13px !important;">Middle Name:</small></label>
-                                <input type="text" placeholder="Ursilang" required>
-
-
-                                <label for="firstname">Age</label>
-                                <input type="text" placeholder="24 yrs old" required>
-
-                                <label>Gender:</label>
-                                <label> <input type="radio" style="display: inline-block !important;"> Male</label>
-                                <label> <input type="radio" style="display: inline-block !important;"> Female</label>
-
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-sm-12">
-
-                            <div class="acc_info">
-                                <label for="Addres">Addres:</label>
-                                <input type="text" placeholder="22334" required>
-
-                                <label for="Street">Street</label>
-                                <input type="text" placeholder="Matabang" required>
-
-                                <label for="Brgy">Brgy:</label>
-                                <input type="text" placeholder="Tibo Brgy" required>
-
-                                <label for="City">City</label>
-                                <input type="text" placeholder="Taguig" required>
-
-
-                                <label for="Province">Province</label>
-                                <input type="text" placeholder="Laguna" required>
-
-                                <label for="Contact">Contact No.</label>
-                                <input type="text" placeholder="0231203012" required>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row mt-xl-4">
-                        <div class="col-lg-6 col-sm-12">
-                            <div class="acc_info">
-                                <label for="Username">Username</label>
-                                <input type="text" placeholder="22334" required>
-
-                                <label for="Password">Password</label>
-                                <input type="password" required>
-
-                                <label for="New_password"><small style="font-size: 14px !important;">New Password</small></label>
-                                <input type="password" required>
-
-                                <label for="Confirm_passwrod"><small style="font-size: 11px !important;">Confirm Password:</small></label>
-                                <input type="password" required>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-sm-12">
-                            <button class="text-white px-2 ms-lg-2" style="background: #80CEB8; border-radius:5px; text-decoration: none; cursor: pointer; font-size: 12px;  border: none; height: 30px;">DONE</button>
-                            <button class="text-white px-2 ms-lg-2" style="background: red; border-radius:5px; text-decoration: none; cursor: pointer; font-size: 12px;  border: none; height: 30px;">DELETE</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>

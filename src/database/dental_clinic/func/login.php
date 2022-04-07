@@ -34,6 +34,7 @@ if(!empty($_POST)){
         $_SESSION['user_id'] = $result[0]['user_id'];
         $_SESSION['username'] = $result[0]['f_name'];
         $_SESSION['contact_no'] = $result[0]['contact_no'];
+        $_SESSION['picture'] = $result[0]['picture'];
         
         echo 1;
 

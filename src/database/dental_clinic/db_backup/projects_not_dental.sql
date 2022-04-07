@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2022 at 12:44 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.3.30
+-- Generation Time: Apr 07, 2022 at 01:48 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.4.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,14 +35,6 @@ CREATE TABLE `tbl_appointments` (
   `status` varchar(100) NOT NULL DEFAULT 'pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `tbl_appointments`
---
-
-INSERT INTO `tbl_appointments` (`id`, `availability_id`, `user_id`, `date_booked`, `status`) VALUES
-(20, 1, 1, '2022-04-03', 'cancelled'),
-(21, 4, 8, '2022-04-03', 'completed');
-
 -- --------------------------------------------------------
 
 --
@@ -54,22 +46,6 @@ CREATE TABLE `tbl_appointment_details` (
   `service_id` int(11) NOT NULL,
   `appointment_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tbl_appointment_details`
---
-
-INSERT INTO `tbl_appointment_details` (`id`, `service_id`, `appointment_id`) VALUES
-(41, 1, 20),
-(42, 2, 20),
-(43, 3, 20),
-(44, 4, 20),
-(45, 22, 21),
-(46, 23, 21),
-(47, 24, 21),
-(48, 25, 21),
-(49, 26, 21),
-(50, 27, 21);
 
 -- --------------------------------------------------------
 
@@ -91,12 +67,12 @@ CREATE TABLE `tbl_available_appointments` (
 --
 
 INSERT INTO `tbl_available_appointments` (`id`, `date`, `time`, `services`, `slot`, `physician`) VALUES
-(1, '2022-04-03', '7:00 - 9:00 AM', 'ALL', 9, 'Dra. Catherine Marcaig Jr Felisidad'),
-(2, '2022-04-03', '8:00 - 9:00 AM', 'ALL', 10, 'Dra. Catherine Marcaig Jr Felisidad'),
-(3, '2022-04-03', '9:00 - 11:00 AM', 'ALL', 10, 'Dra. Catherine Marcaig Jr Felisidad'),
-(4, '2022-04-03', '12:00 - 1:00 PM', 'ALL', 9, 'Dra. Catherine Marcaig Jr Felisidad'),
-(5, '2022-04-03', '1:00 - 3:00 PM', 'ALL', 10, 'Dra. Catherine Marcaig Jr Felisidad'),
-(6, '2022-04-03', '3:00 - 5:00 PM', 'ALL', 10, 'Dra. Catherine Marcaig Jr Felisidad');
+(1, '2022-04-04', '7:00 - 9:00 AM', 'ALL', 10, 'Dra. Catherine Marcaig Jr Felisidad'),
+(2, '2022-04-04', '8:00 - 9:00 AM', 'ALL', 10, 'Dra. Catherine Marcaig Jr Felisidad'),
+(3, '2022-04-04', '9:00 - 11:00 AM', 'ALL', 10, 'Dra. Catherine Marcaig Jr Felisidad'),
+(4, '2022-04-04', '12:00 - 1:00 PM', 'ALL', 10, 'Dra. Catherine Marcaig Jr Felisidad'),
+(5, '2022-04-04', '1:00 - 3:00 PM', 'ALL', 10, 'Dra. Catherine Marcaig Jr Felisidad'),
+(6, '2022-04-04', '3:00 - 5:00 PM', 'ALL', 10, 'Dra. Catherine Marcaig Jr Felisidad');
 
 -- --------------------------------------------------------
 
@@ -109,14 +85,6 @@ CREATE TABLE `tbl_lab_results` (
   `dir` varchar(100) NOT NULL,
   `appointment_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tbl_lab_results`
---
-
-INSERT INTO `tbl_lab_results` (`id`, `dir`, `appointment_id`) VALUES
-(1, 'ap17', 17),
-(2, 'APRES-21', 21);
 
 -- --------------------------------------------------------
 
@@ -164,7 +132,6 @@ CREATE TABLE `tbl_package_services` (
 --
 
 INSERT INTO `tbl_package_services` (`id`, `service_id`, `package_id`) VALUES
-(1, 1, 1),
 (2, 2, 1),
 (3, 3, 1),
 (4, 1, 2),
@@ -243,17 +210,17 @@ CREATE TABLE `tbl_profile` (
   `age` int(11) DEFAULT NULL,
   `bdate` date DEFAULT NULL,
   `contact_no` varchar(50) DEFAULT NULL,
-  `email` varchar(100) NOT NULL
+  `email` varchar(100) NOT NULL,
+  `picture` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_profile`
 --
 
-INSERT INTO `tbl_profile` (`id`, `f_name`, `m_name`, `l_name`, `gender`, `house_no`, `street`, `brgy`, `city`, `province`, `user_id`, `age`, `bdate`, `contact_no`, `email`) VALUES
-(2, 'Harri', '', 'D', 'male', '22', 'Scopito', 'Tibay', 'Tigas', 'Metro Manila', 1, 24, '1998-02-11', '09090988', 'dev@lazydevs.ph'),
-(8, 'Jasmyn icee', 'C', 'Languido', 'female', '22', 'Mimaropa', 'St', 'TAGUIG CITY', 'Metro Manila', 8, 35, '1987-04-01', '090546872', 'jsmynic@yahoo.com'),
-(9, 'Will', NULL, 'Smith', NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, '');
+INSERT INTO `tbl_profile` (`id`, `f_name`, `m_name`, `l_name`, `gender`, `house_no`, `street`, `brgy`, `city`, `province`, `user_id`, `age`, `bdate`, `contact_no`, `email`, `picture`) VALUES
+(10, 'Tiny', '', 'Big Boy', 'male', 'test', 'test', 'test', 'test', 'test', 9, 23, '1998-06-04', 'test', 'test@gmail.com', 'src/uploaded/dental_clinic/profile_pictures/277019539_1060246357895017_4262893776516055332_n.jpg'),
+(11, 'Bigboy', '', 'Tiny', 'male', 'test', 'test', 'test', 'test', 'test', 2, 23, '1998-06-04', 'test', 'test@gmail.com', 'src/uploaded/dental_clinic/profile_pictures/277019539_1060246357895017_4262893776516055332_n.jpg');
 
 -- --------------------------------------------------------
 
@@ -303,7 +270,8 @@ INSERT INTO `tbl_services` (`id`, `service`, `status`, `category`, `price`) VALU
 (27, 'HBT/PANCREAS', 'OK', 'Ultrasound', 1),
 (28, 'Sodium', 'OK', 'Others', 1),
 (29, 'Potassium', 'OK', 'Others', 1),
-(30, 'ECG', 'OK', 'Others', 1);
+(30, 'ECG', 'OK', 'Others', 1),
+(32, 'TEST', 'OK', 'X-ray', 1);
 
 -- --------------------------------------------------------
 
@@ -323,9 +291,8 @@ CREATE TABLE `tbl_users` (
 --
 
 INSERT INTO `tbl_users` (`id`, `uid`, `pass`, `user_access`) VALUES
-(1, 'dev', '1', 'user'),
-(2, 'admin', '2', 'admin'),
-(8, 'jsmynic', 'test123', 'user');
+(2, 'admin', '1', 'admin'),
+(9, 'testuser1', '1', 'user');
 
 --
 -- Indexes for dumped tables
@@ -393,13 +360,13 @@ ALTER TABLE `tbl_users`
 -- AUTO_INCREMENT for table `tbl_appointments`
 --
 ALTER TABLE `tbl_appointments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `tbl_appointment_details`
 --
 ALTER TABLE `tbl_appointment_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `tbl_available_appointments`
@@ -411,7 +378,7 @@ ALTER TABLE `tbl_available_appointments`
 -- AUTO_INCREMENT for table `tbl_lab_results`
 --
 ALTER TABLE `tbl_lab_results`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_packages`
@@ -423,25 +390,25 @@ ALTER TABLE `tbl_packages`
 -- AUTO_INCREMENT for table `tbl_package_services`
 --
 ALTER TABLE `tbl_package_services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `tbl_profile`
 --
 ALTER TABLE `tbl_profile`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tbl_services`
 --
 ALTER TABLE `tbl_services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

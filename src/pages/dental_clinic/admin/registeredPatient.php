@@ -1,4 +1,4 @@
-<div class="page" id="page_registeredPatient" style="background-color: white;">
+<div class="page" id="page_registered_patient" style="background-color: white;">
 
     <?php
     include 'admin_sidebar.php';
@@ -12,7 +12,7 @@
                     <span class="h2 ms-lg-5 fw-bold" style="letter-spacing: 2px; font-family: 'Work Sans', sans-serif;">PATIENTS</span>
                 </div>
 
-                <img class="p-0 mt-lg-5 mt-xl-4 mt-sm-3" src="src/resources/img/user.png" style="width: 100px; height: 100px; border-radius: 100%; float: right;">
+                <img class="p-0 mt-lg-5 mt-xl-4 mt-sm-3" src="<?php echo$_SESSION['picture'];?>" style="width: 100px; height: 100px; border-radius: 100%; float: right;">
 
             </div>
         </div>
@@ -33,7 +33,7 @@
 
                 <div class="search mb-3 " style="box-shadow: 2px 3px #888888; float: right !important;">
                     <span style="font-size: 1rem; padding-left: 1rem; color: #888888;"><i class="fa-solid fa-magnifying-glass"></i></span>
-                    <input type="search" placeholder="Search..." style="border: none; outline: none; ">
+                    <input type="search" id="txt_registered_patient" placeholder="Search..." style="border: none; outline: none; ">
                 </div>
             </div>
 

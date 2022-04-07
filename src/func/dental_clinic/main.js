@@ -17,6 +17,7 @@ let search_function_config = {
   tbl_service_prices: "txt_admin_search_prices",
   tbl_appointment_history: "txt_search_appointment_history",
   tbl_packages: "txt_admin_search_package",
+  tbl_registered_patient:"txt_registered_patient"
 };
 
 const weekday = [
@@ -147,7 +148,6 @@ $('.btn_logout').on('click', function () {
 
 $('.btn_view_update_account').on('click', function(){
   load_user_account_details()
-  change_page("update_account")
   
 })
 
@@ -209,6 +209,7 @@ $('#btn_update_account').on('click', function () {
 
     $.post("src/database/dental_clinic/func/user/update_user_account.php", data, function () {
       show_msg("Account Updated Successfully.", 1)
+      $('#md_account_information').modal('hide')
     })
 
   }
@@ -252,6 +253,22 @@ $(".btn_view_laboratory_result").on("click", function () {
   change_page("laboratory_result");
 });
 
+$('#update_acc_picture').on('change', function(){
+  var formData = new FormData($('#user_picture')[0]);
+	$.ajax({
+		   url: 'src/database/dental_clinic/func/user/update_user_profile_image.php',
+		   data: formData,
+		   async: false,
+		   contentType: false,
+		   processData: false,
+		   cache: false,
+		   type: 'POST',
+		   success: function(data)
+		   {
+			  show_msg("Image uploaded successfully.", 1)
+		   },
+	});    
+})
 
 
 function load_incoming_appointments() {
@@ -735,13 +752,15 @@ function load_user_account_details() {
         $("#update_acc_username").val(val.uid);
         $("#update_acc_password").val(val.pass);
         $("#update_acc_email").val(val.email);
-
+        $("#update_acc_patient_id").val($("#txt_user_id").val());
         if (val.gender == "male") {
           $("#update_acc_gender_male").prop("checked", true);
         } else {
           $("#update_acc_gender_female").prop("checked", true);
         }
       });
+
+      $('#md_account_information').modal('show')
     }
   );
 }
@@ -1224,6 +1243,7 @@ function load_packages() {
   );
 }
 function write_packages(data) {
+  output_2 = "";
   output = "";
   $.each(data, function (key, val) {
     output +=
@@ -1255,9 +1275,31 @@ function write_packages(data) {
                     </td>
                 </tr>
     `;
+
+    output_2 += `
+                    <div class="col-lg-4 mb-sm-5">
+                          <div class="card dentalCard" style="height:50vh;">
+                              <div>
+                                  <img src="src/resources/img/bottle.png" class="card-img-top" style="border-radius: 2%; width: 50% !important; height: 15rem !important;">
+
+                              </div>
+                              <div class="card-body">
+                                  <span class="card-title h4 mb-2" style="letter-spacing: 3px;">`+ val.name +`</span>
+                                  <br>
+                                  <button data-bs-toggle="modal"  attr-id="`+val.id+`" class="mt-2 text-white view_package_landing" style="font-weight:bold; background:#47B0A0; border-radius: 50px; width:120px; border: none; height: 35px;">Avail</button>
+                              </div>
+                          </div>
+                      </div>
+    
+    `
+
+
   });
+
+
   $("#tbl_packages tbody").empty();
   $("#tbl_packages tbody").append(output);
+  $('#landing_packages').empty().append(output_2)
 
   $("#tbl_packages tbody tr").on("click", function () {
     $("#tbl_packages tbody tr").removeClass("bg-selected");
@@ -1269,6 +1311,27 @@ function write_packages(data) {
     };
     $(this).addClass("bg-selected");
   });
+
+  $('.view_package_landing').on('click',function(){
+    // data-bs-target="#package"
+
+    var package_details ="<p>";
+    var package_price = "";
+    var id = $(this).attr('attr-id')
+    $.getJSON("src/database/dental_clinic/func/user/read_package_services_landing.php?id="+id, function(data){
+      $.each(data, function(key,val){
+        package_details += val.service+",";
+        package_price =val.price;
+      })
+      $('#package_details').empty().append(package_details +"</p>");
+      $('#package_price').empty().append(package_details);
+  
+      $('#package').modal("show");
+    })
+
+   
+    //
+  })
 
   $(".btn_view_package").on("click", function () {
     $("#admin_package_view_services").modal("show");
@@ -1359,7 +1422,7 @@ $("#btn_admin_add_package").on("click", function () {
   $("#admin_add_package").modal("show");
 });
 $("#btn_add_package_save").on("click", function () {
-  if ($("#txt_add_package_name").val() && $("#txt_add_package_price").val())
+  if ($("#txt_add_package_name").val() && $("#txt_add_package_p$ce").val())
     $("#admin_add_service").modal("hide");
   data = {
     name: $("#txt_add_package_name").val(),
@@ -1387,12 +1450,17 @@ $("#btn_admin_edit_package").on("click", function () {
   }
 });
 
+$('.booknowBtn').on('click', function(){
+  change_page("login");
+})
+
 // END ADMIN
 $(document).ready(function () {
   search_function();
 
   if (!$("#txt_user_id").val()) {
-    change_page("login");
+    load_packages()
+    change_page("main_page");
     $("#txt_user_access").val("user");
 
     // alert('test')
@@ -1602,10 +1670,6 @@ $(".btn_logout").on("click", function () {
   });
 });
 
-$(".btn_view_update_account").on("click", function () {
-  load_user_account_details();
-  change_page("update_account");
-});
 
 $("#btn_login").on("click", function () {
   $.ajax({

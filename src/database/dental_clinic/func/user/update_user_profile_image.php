@@ -20,6 +20,7 @@ $q = '
         WHERE   
                 user_id = "'.$_POST['id'].'"
 ';
-var_dump($q);
-var_dump($db->update($q));
+
+$db->update($q);
+
 

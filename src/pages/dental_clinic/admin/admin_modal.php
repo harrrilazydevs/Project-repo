@@ -16,7 +16,7 @@
     <input type="file" hidden name="file" id="txt_upload_file">
                     <div class="row text-center mt-4 mb-4">
                         <div class="col-12">
-                            <button class="text-white me-4" style="background:#80CEB8; border-radius:5px; border: none; cursor: pointer; font-size: 12px; width: 100px; height: 2rem;">UPLOAD</button>
+                            <button class="text-white me-4" id="btn_upload_document" style="background:#80CEB8; border-radius:5px; border: none; cursor: pointer; font-size: 12px; width: 100px; height: 2rem;">UPLOAD</button>
                             <button class="text-white" data-bs-dismiss="modal" style="background:#80CEB8; border-radius:5px; border: none; cursor: pointer; font-size: 12px; width: 100px; height: 2rem;">BACK</button>
                         </div>
                     </div>

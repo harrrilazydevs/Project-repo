@@ -1,4 +1,4 @@
-<div class="page" id="page_dashboard" style="background-color: white;">
+<div class="page d-none" id="page_dashboard" style="background-color: white;">
     <?php
         include 'side_bar_1.php';
     ?>

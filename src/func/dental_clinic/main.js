@@ -1224,6 +1224,7 @@ function load_packages() {
   );
 }
 function write_packages(data) {
+  output_2 = "";
   output = "";
   $.each(data, function (key, val) {
     output +=
@@ -1255,9 +1256,31 @@ function write_packages(data) {
                     </td>
                 </tr>
     `;
+
+    output_2 += `
+                    <div class="col-lg-4 mb-sm-5">
+                          <div class="card dentalCard" style="height:50vh;">
+                              <div>
+                                  <img src="src/resources/img/bottle.png" class="card-img-top" style="border-radius: 2%; width: 50% !important; height: 15rem !important;">
+
+                              </div>
+                              <div class="card-body">
+                                  <span class="card-title h4 mb-2" style="letter-spacing: 3px;">`+ val.name +`</span>
+                                  <br>
+                                  <button data-bs-toggle="modal"  attr-id="`+val.id+`" class="mt-2 text-white view_package_landing" style="font-weight:bold; background:#47B0A0; border-radius: 50px; width:120px; border: none; height: 35px;">Avail</button>
+                              </div>
+                          </div>
+                      </div>
+    
+    `
+
+
   });
+
+
   $("#tbl_packages tbody").empty();
   $("#tbl_packages tbody").append(output);
+  $('#landing_packages').empty().append(output_2)
 
   $("#tbl_packages tbody tr").on("click", function () {
     $("#tbl_packages tbody tr").removeClass("bg-selected");
@@ -1269,6 +1292,27 @@ function write_packages(data) {
     };
     $(this).addClass("bg-selected");
   });
+
+  $('.view_package_landing').on('click',function(){
+    // data-bs-target="#package"
+
+    var package_details ="<p>";
+    var package_price = "";
+    var id = $(this).attr('attr-id')
+    $.getJSON("src/database/dental_clinic/func/user/read_package_services_landing.php?id="+id, function(data){
+      $.each(data, function(key,val){
+        package_details += val.service+",";
+        package_price =val.price;
+      })
+      $('#package_details').empty().append(package_details +"</p>");
+      $('#package_price').empty().append(package_details);
+  
+      $('#package').modal("show");
+    })
+
+   
+    //
+  })
 
   $(".btn_view_package").on("click", function () {
     $("#admin_package_view_services").modal("show");
@@ -1387,12 +1431,17 @@ $("#btn_admin_edit_package").on("click", function () {
   }
 });
 
+$('.booknowBtn').on('click', function(){
+  change_page("login");
+})
+
 // END ADMIN
 $(document).ready(function () {
   search_function();
 
   if (!$("#txt_user_id").val()) {
-    change_page("login");
+    load_packages()
+    change_page("main_page");
     $("#txt_user_access").val("user");
 
     // alert('test')

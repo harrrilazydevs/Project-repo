@@ -1,4 +1,4 @@
-<div class="d-none page" id="page_main" style="background-color: #47B0A0;">
+<div class="page" id="page_main" style="background-color: #47B0A0;">
     <section>
         <div class="container mt-5">
             <div class="row text-center">
@@ -27,7 +27,7 @@
         </div>
 
         <div class="container mt-5 mb-5" style="width: 70% !important;">
-            <div class="row text-white text-center">
+            <div class="row text-white text-center" id="landing_packages">
                 <!--------------------- HOME CARDS ------------------>
                 <div class="col-lg-4 mb-sm-5">
                     <div class="card dentalCard">

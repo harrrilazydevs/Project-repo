@@ -110,8 +110,11 @@ if (!isset($_SESSION['access_level'])) {
 
         if ($_SESSION['theme'] == 'dental_clinic' && $_SESSION['access_level'] == 'user') {
 
-            // LOGIN PAGE
-            include_once 'src/pages/dental_clinic/user/login.php';
+        // NAVS AND SIDEBARS
+        include_once 'src/pages/dental_clinic/user/sidebarUser.php';
+        include_once 'src/pages/dental_clinic/user/modals.php';
+        include_once 'src/pages/dental_clinic/user/userMobileSidebar.php';
+        include_once 'src/pages/dental_clinic/user/bottomNav.php';
 
             // PAGES PHP
             include_once 'src/pages/dental_clinic/user/navbar.php';

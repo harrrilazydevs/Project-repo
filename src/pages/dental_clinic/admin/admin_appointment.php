@@ -8,7 +8,7 @@
         <div class="container" style="color: #7B7A7A; ">
             <div class="row">
                 <div class="col mt-sm-3">
-                    <img class="p-0 mt-lg-5 mt-xl-4 mt-sm-3" src="src/resources/img/user.png" style="width: 100px; height: 100px; border-radius: 100%; float: right;">
+                    <img class="p-0 mt-lg-5 mt-xl-4 mt-sm-3" src="<?php echo$_SESSION['picture'];?>" style="width: 100px; height: 100px; border-radius: 100%; float: right;">
                 </div>
             </div>
         </div>

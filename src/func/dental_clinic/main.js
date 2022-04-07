@@ -17,6 +17,7 @@ let search_function_config = {
   tbl_service_prices: "txt_admin_search_prices",
   tbl_appointment_history: "txt_search_appointment_history",
   tbl_packages: "txt_admin_search_package",
+  tbl_registered_patient:"txt_registered_patient"
 };
 
 const weekday = [
@@ -147,7 +148,6 @@ $('.btn_logout').on('click', function () {
 
 $('.btn_view_update_account').on('click', function(){
   load_user_account_details()
-  change_page("update_account")
   
 })
 
@@ -209,6 +209,7 @@ $('#btn_update_account').on('click', function () {
 
     $.post("src/database/dental_clinic/func/user/update_user_account.php", data, function () {
       show_msg("Account Updated Successfully.", 1)
+      $('#md_account_information').modal('hide')
     })
 
   }
@@ -252,6 +253,22 @@ $(".btn_view_laboratory_result").on("click", function () {
   change_page("laboratory_result");
 });
 
+$('#update_acc_picture').on('change', function(){
+  var formData = new FormData($('#user_picture')[0]);
+	$.ajax({
+		   url: 'src/database/dental_clinic/func/user/update_user_profile_image.php',
+		   data: formData,
+		   async: false,
+		   contentType: false,
+		   processData: false,
+		   cache: false,
+		   type: 'POST',
+		   success: function(data)
+		   {
+			  show_msg("Image uploaded successfully.", 1)
+		   },
+	});    
+})
 
 
 function load_incoming_appointments() {
@@ -735,13 +752,15 @@ function load_user_account_details() {
         $("#update_acc_username").val(val.uid);
         $("#update_acc_password").val(val.pass);
         $("#update_acc_email").val(val.email);
-
+        $("#update_acc_patient_id").val($("#txt_user_id").val());
         if (val.gender == "male") {
           $("#update_acc_gender_male").prop("checked", true);
         } else {
           $("#update_acc_gender_female").prop("checked", true);
         }
       });
+
+      $('#md_account_information').modal('show')
     }
   );
 }
@@ -1359,7 +1378,7 @@ $("#btn_admin_add_package").on("click", function () {
   $("#admin_add_package").modal("show");
 });
 $("#btn_add_package_save").on("click", function () {
-  if ($("#txt_add_package_name").val() && $("#txt_add_package_price").val())
+  if ($("#txt_add_package_name").val() && $("#txt_add_package_p$ce").val())
     $("#admin_add_service").modal("hide");
   data = {
     name: $("#txt_add_package_name").val(),
@@ -1602,10 +1621,6 @@ $(".btn_logout").on("click", function () {
   });
 });
 
-$(".btn_view_update_account").on("click", function () {
-  load_user_account_details();
-  change_page("update_account");
-});
 
 $("#btn_login").on("click", function () {
   $.ajax({

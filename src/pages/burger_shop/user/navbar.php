@@ -16,7 +16,6 @@
           if ( isset($_SESSION['user_id']) ) {
             
             echo ' <li class="nav-item"><a class="nav-link text-white" id="btn_navbar_contactUs">Contact Us</a></li>';
-          
             echo ' <li class="nav-item"> <a class="nav-link text-white view_account" data-bs-toggle="modal" data-bs-target="#myAccModal" attr-id="'.$_SESSION['user_id'].'"> My Account</a></li>';
             echo ' <li class="nav-item"> <a class="nav-link text-white view_my_orders" id="view_my_orders" attr-id="'.$_SESSION['user_id'].'"> My Orders</a></li>';
             echo ' <li class="nav-item"> <a class="nav-link text-white view_cart"  attr-id="'.$_SESSION['user_id'].'"> <i class="fa-solid fa-cart-shopping"></i><sup class="bg-danger rounded-circle " style="font-size:8pt; margin-left:-7px; padding:5px; padding-top:2px; padding-bottom:2px;" id="order_count">0</sup> Carts</a></li>';

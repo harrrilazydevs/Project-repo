@@ -6,12 +6,15 @@ $password = $_POST['password'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
 $fullname = $_POST['fullname'];
-$address = $_POST['address'];
+$address_st = $_POST['address_st'];
+$address_no = $_POST['address_no'];
+$address_city = $_POST['address_city'];
+$address_brgy = $_POST['address_brgy'];
 
 $q = '
 
         INSERT INTO
-          tbl_users(username,password,email,phone,name,address,access_level)
+          tbl_users(username,password,email,phone,name,address_st,address_no,address_city,address_brgy,access_level)
         VALUES  
           (
             "'.$username.'",
@@ -19,7 +22,10 @@ $q = '
             "'.$email.'",
             "'.$phone.'",
             "'.$fullname.'",
-            "'.$address.'",
+            "'.$address_st.'",
+            "'.$address_no.'",
+            "'.$address_city.'",
+            "'.$address_brgy.'",
             "user")    
           ';
 

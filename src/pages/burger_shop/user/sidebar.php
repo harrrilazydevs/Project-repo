@@ -12,8 +12,7 @@
 
 
         <ul class="list-group list-group-flush ps-3">
-            <li class="list-group-item fs-6 align-center border-0 " id="btn_sidebar_user_home"><i class="fa-solid fa-fw fa-house pe-3"></i> <span>Home</span></a></li>
-
+            <li class="list-group-item fs-6 align-center border-0" id="btn_navbar_home"><i class="fa-solid fa-fw fa-house pe-3"></i> Home</a></li>
             <?php
                 if ( isset($_SESSION['user_id']) ) {
                     echo ' <li class="list-group-item fs-6 align-center border-0 " id="clone_btn_navbar_contactUs"> <a style="text-decoration:none" class="text-white">Contact Us</a></li>';

@@ -458,10 +458,10 @@ function write_my_orders(data) {
     !temp_ref_no ? (temp_ref_no = val.ref_no) : "";
 
     if (temp_ref_no == val.ref_no) {
-      orders += val.qty + "x" + " " + val.name + " <br>";
+      orders += "<label>"+val.qty + "x" + " " + val.name + " </label><br>";
     } else {
       temp_ref_no = val.ref_no;
-      orders = val.qty + "x" + " " + val.name + " <br>";
+      orders = "<label>"+val.qty + "x" + " " + val.name + " </label>";
     }
 
     rows[temp_ref_no] = [orders, val.payment_method, val.status];
@@ -470,14 +470,32 @@ function write_my_orders(data) {
   $.each(rows, function (key, val) {
     td += "<tr>";
     td += "<td>" + key + "</td>";
-    td += "<td>" + val[0] + "</td>";
+    td += "<td class='text-start'>" + val[0] + "</td>";
     td += "<td>" + val[1] + "</td>";
-    td += "<td>" + val[2] + "</td>";
+    td += "<td>" + get_order_status(val[2]) + "</td>";
     td += "</tr>";
   });
 
   $("#tbl_my_orders tbody").empty();
   $("#tbl_my_orders tbody").append(td);
+}
+
+function get_order_status(value){
+
+  var output = '';
+  if(value == "Pending"){
+    output = '<span class="badge bg-warning text-dark">'+value+'</span>'
+  }
+
+  if(value == "Completed"){
+    output = '<span class="badge bg-success">'+value+'</span>'
+  }
+
+  if(value == "Cancelled"){
+    output = '<span class="badge bg-danger">'+value+'</span>'
+  }
+
+  return output;
 }
 
 $(".view_my_orders").on("click", function () {

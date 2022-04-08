@@ -58,36 +58,51 @@
                 <form>
                     <div class="field mt-5">
                         <input type="text" id="txt_signup_username" required>
-                        <label>Username</label>
+                        <label> Username <span class="text-danger h4">*</span></label>
                     </div>
                     <div class="field">
-                        <input type="Full Name" id="txt_signup_fullname" required>
-                        <label>Full Name</label>
-                    </div>
-
-                    <div class="field">
-                        <input type="Full Name" id="txt_signup_phone" required>
-                        <label>Phone</label>
+                        <input type="text" id="txt_signup_fullname" required>
+                        <label>Full Name <span class="text-danger h4">*</span></label>
                     </div>
 
                     <div class="field">
-                        <input type="Full Name" id="txt_signup_email" required>
-                        <label>Email</label>
+                        <input type="text" id="txt_signup_phone" required>
+                        <label>Phone <span class="text-danger h4">*</span></label>
                     </div>
 
                     <div class="field">
-                        <input type="Full Name" id="txt_signup_address" required>
-                        <label>Address</label>
+                        <input type="text" id="txt_signup_email" required>
+                        <label>Email <span class="text-danger h4">*</span></label>
+                    </div>
+
+                    <div class="field">
+                        <input type="text" id="txt_signup_address_no" required>
+                        <label>House No <span class="text-danger h4">*</span></label>
+                    </div>
+
+                    <div class="field">
+                        <input type="text" id="txt_signup_address_st" required>
+                        <label>Street <span class="text-danger h4">*</span></label>
+                    </div>
+
+                    <div class="field">
+                        <input type="text" id="txt_signup_address_brgy" required>
+                        <label>Brgy <span class="text-danger h4">*</span></label>
+                    </div>
+
+                    <div class="field">
+                        <input type="text" id="txt_signup_address_city" required>
+                        <label>City <span class="text-danger h4">*</span></label>
                     </div>
 
                     <div class="field ">
                         <input type="password" id="txt_signup_password" required>
-                        <label>Password</label>
+                        <label>Password <span class="text-danger h4">*</span></label>
                     </div>
 
                     <div class="field">
                         <input type="Repeat Password" id="txt_signup_password2" required>
-                        <label>Repeat Password</label>
+                        <label>Repeat Password <span class="text-danger h4">*</span></label>
                         <div class="text-end text-muted d-none" id="div_password_validation">
                             <small>Passwords doesn't match</small>
                         </div>
@@ -253,7 +268,7 @@
                         <label>Username</label>
                     </div>
                     <div class="field">
-                        <input type="Full Name" id="txt_view_name" required>
+                        <input type="text" id="txt_view_name" required>
                         <label>Full Name</label>
                     </div>
 
@@ -299,7 +314,7 @@
                         <label>Username</label>
                     </div>
                     <div class="field">
-                        <input type="Full Name" id="txt_view_name" required>
+                        <input type="text" id="txt_view_name" required>
                         <label>Full Name</label>
                     </div>
 

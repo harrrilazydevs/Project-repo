@@ -6,11 +6,11 @@ let pages = {
   dashboard: "page_dashboard",
   feedback: "page_feedback",
   product: "page_product",
-  viewMenu:'page_viewMenu',
-  btn_navbar_home:'page_home',
-  btn_navbar_contactUs:'page_contactUs', 
-  my_orders:'page_transaction',
-  cart:'page_myPurchase'
+  viewMenu: 'page_viewMenu',
+  btn_navbar_home: 'page_home',
+  btn_navbar_contactUs: 'page_contactUs',
+  my_orders: 'page_transaction',
+  cart: 'page_myPurchase'
 };
 
 function numberWithCommas(x) {
@@ -40,17 +40,17 @@ function getCookie(cname) {
 $(document).ready(function () {
 
 
-  
+
   page = getCookie("page");
   cart_id = $('#txt_card_id').val()
 
   $("#txt_order_ref_no_payment2").val('test');
 
 
-  if(cart_id){
+  if (cart_id) {
     load_cart_orders(cart_id)
   }
-  
+
 
   if ($("#txt_user_access").val() == "admin") {
 
@@ -58,7 +58,7 @@ $(document).ready(function () {
       load_notifications()
       load_orders();
     }, 10000);
-  
+
 
 
     if (page == "products") {
@@ -70,7 +70,7 @@ $(document).ready(function () {
       $("#btn_sidebar_dashboard").trigger("click");
       $(".overlay").removeClass("opacity-0");
 
-     
+
     }
 
     if (page == "feedback") {
@@ -105,7 +105,7 @@ $(document).ready(function () {
     //dashboard.js
     load_filter_dates();
 
-  
+
 
     $("#btn_account_settings").on("click", function () {
       load_account_settings($("#txt_user_id").val());
@@ -122,7 +122,7 @@ $(document).ready(function () {
   } else {
 
 
-    $('.list-group-item ').on('click', function(){
+    $('.list-group-item ').on('click', function () {
       $('#burger_machine_sidebar').offcanvas('toggle')
     })
 
@@ -134,18 +134,23 @@ $(document).ready(function () {
     load_best_sellers()
 
 
-    $('#viewMenu').on('click', function(){
+    // 
+
+    $('#btn_sidebar_user_home').on('click', function () {
+      $('#btn_navbar_home').trigger('click')
+    })
+    $('#viewMenu').on('click', function () {
       change_page('viewMenu')
     })
 
-    $('#clone_btn_navbar_contactUs').on('click', function(){
+    $('#clone_btn_navbar_contactUs').on('click', function () {
       $('#btn_navbar_contactUs').trigger('click')
     })
 
-    $('#clone_btn_navbar_myorders').on('click', function(){
+    $('#clone_btn_navbar_myorders').on('click', function () {
       $('#view_my_orders').trigger('click')
     })
-    
+
 
 
   }
@@ -173,7 +178,7 @@ function write_account_settings(data) {
     $("#txt_password").val(val.password);
     $("#txt_phone").val(val.phone);
     $("#txt_full_name").val(val.name);
-  
+
   });
 }
 function delete_account(id) {
@@ -184,7 +189,7 @@ function delete_account(id) {
       $("#msg_title").text("Delete Account");
       $("#msg_body").text("Account deleted successfully.");
       $("#md_msg_box").modal("show");
-     
+
     },
   });
 }
@@ -204,7 +209,7 @@ function update_account(id) {
       $("#msg_body").text("Account updated successfully.");
       $("#md_msg_box").modal("show");
       $('#admin_menu_name').empty()
-      $('#admin_menu_name').append('Welcome, <b>'+ data+'</b>')
+      $('#admin_menu_name').append('Welcome, <b>' + data + '</b>')
     },
   });
 }
@@ -221,31 +226,51 @@ $("#btn_login").on("click", function () {
 });
 
 
-$('#btn_signup_submit').on('click', function(e){
+$('#btn_signup_submit').on('click', function (e) {
   e.preventDefault();
-  $.ajax({
-    type: "POST",
-    url: "src/database/burger_shop/func/user/add_account.php",
-    data: {
-      username: $("#txt_signup_username").val(),
-      password: $("#txt_signup_password").val(),
-      fullname: $("#txt_signup_fullname").val(),
-      phone: $("#txt_signup_phone").val(),
-      email: $("#txt_signup_email").val(),
-      address: $("#txt_signup_address").val()
-      
-    },
-    success:function(){
-      $('#signUpModal').modal('hide')
-      $("#msg_title").text("Sign up Account");
-      $("#msg_body").text("Registration Successful");
-      $("#md_msg_box").modal("show");
-    }
-  });
-  
+
+  if (
+    $("#txt_signup_username").val() && $("#txt_signup_password").val() &&
+    $("#txt_signup_fullname").val() && $("#txt_signup_phone").val() &&
+    $("#txt_signup_email").val() && $("#txt_signup_address_no").val() &&
+    $("#txt_signup_address_st").val() && $("#txt_signup_address_brgy").val() &&
+    $("#txt_signup_address_city").val() && $("#txt_signup_password2").val() 
+  ) {
+    $.ajax({
+      type: "POST",
+      url: "src/database/burger_shop/func/user/add_account.php",
+      data: {
+        username: $("#txt_signup_username").val(),
+        password: $("#txt_signup_password").val(),
+        fullname: $("#txt_signup_fullname").val(),
+        phone: $("#txt_signup_phone").val(),
+        email: $("#txt_signup_email").val(),
+        address_no: $("#txt_signup_address_no").val(),
+        address_st: $("#txt_signup_address_st").val(),
+        address_brgy: $("#txt_signup_address_brgy").val(),
+        address_city: $("#txt_signup_address_city").val()
+
+      },
+      success: function () {
+        $('#signUpModal').modal('hide')
+        $("#msg_title").text("Sign up Account");
+        $("#msg_body").text("Registration Successful");
+        $("#md_msg_box").modal("show");
+      }
+    });
+  }
+  else {
+    show_msg("Registration Failed", "Please input required fields")
+  }
+
+
+
+
+
+
 })
 
-function show_msg(title,msg){
+function show_msg(title, msg) {
   $("#msg_title").text(title);
   $("#msg_body").empty();
 
@@ -254,14 +279,14 @@ function show_msg(title,msg){
 }
 
 
-$('#btn_nav_admin_view_account').on('click', function(){
+$('#btn_nav_admin_view_account').on('click', function () {
   $('#btn_account_settings').trigger('click')
 })
 
-$('#btn_nav_admin_add_account').on('click', function(){
+$('#btn_nav_admin_add_account').on('click', function () {
   $('#md_add_account').modal('show')
 })
-$('#btn_register_account_submit').on('click', function(){
+$('#btn_register_account_submit').on('click', function () {
   $.ajax({
     type: "POST",
     url: "src/database/burger_shop/func/admin/add_admin_account.php",
@@ -272,15 +297,15 @@ $('#btn_register_account_submit').on('click', function(){
       phone: $("#txt_register_phone").val(),
       name: $("#txt_register_name").val()
     },
-    success:function(data){
+    success: function (data) {
       $('#md_add_account').modal('hide')
-      show_msg('Register Success','Admin account registered successfully!<br><br>Username : <b class="ps-1">'+$("#txt_register_username").val()+'</b><br>Password : <b class="ps-1">'+$("#txt_register_password").val()+'</b>')
-     
+      show_msg('Register Success', 'Admin account registered successfully!<br><br>Username : <b class="ps-1">' + $("#txt_register_username").val() + '</b><br>Password : <b class="ps-1">' + $("#txt_register_password").val() + '</b>')
+
     }
   });
 })
 
-$('#login_form').on('submit', function(e){
+$('#login_form').on('submit', function (e) {
   e.preventDefault();
   $.ajax({
     type: "POST",
@@ -289,21 +314,21 @@ $('#login_form').on('submit', function(e){
       username: $("#txt_username").val(),
       password: $("#txt_password").val(),
     },
-    success:function(data){
+    success: function (data) {
       console.log(data)
-      if(data == 0){
+      if (data == 0) {
         $('#md_login').modal('hide')
         $("#msg_title").text("Login Failed");
         $("#msg_body").text("Invalid username/password");
-        $("#msg_box_close").attr("data-bs-toggle","modal");
+        $("#msg_box_close").attr("data-bs-toggle", "modal");
         $("#msg_box_close").removeAttr("data-bs-dismiss");
-        $("#msg_box_close").attr("data-bs-target","#md_login");
+        $("#msg_box_close").attr("data-bs-target", "#md_login");
         $("#md_msg_box").modal("show");
       }
-      else{
+      else {
         location.reload();
       }
-     
+
     }
   });
 })

@@ -11,17 +11,6 @@ function write_tbl_products(data) {
   output = "";
   var count = 1;
   $.each(data, function (key, val) {
-    // output += "<tr>";
-    // output += '<td class="text-center p-1">' + count + "</td>";
-    // output += '<td class="text-center p-1">' + val.name + "</td>";
-    // output += '<td class="text-center p-1"><img src="' + val.picture + '" style="height:250px; width:230px;"</td>';
-    // output += '<td class="text-center p-1">' + val.category + "</td>";
-    // output += '<td class="text-center p-1">' + val.price + "</td>";
-    // output +=
-    //   '<td class="text-center p-1"><i class="fa-solid text-danger fa-trash-can icon_btn text-primary pe-1 delete_product" attr-id=' +val.id +'></i>';
-    // output += "</td>";
-    // output += "</tr>";
-
     output +=`
               <tr>  
                 <td class="text-center p-1"> `+ count  + ` </td>
@@ -32,10 +21,14 @@ function write_tbl_products(data) {
 
                 <td class="text-center p-1">
                   <i class="fa-solid text-danger fa-trash-can icon_btn text-primary pe-1 delete_product" attr-id= `+val.id +`></i>
-                  <i class="fa-solid fa-pen-to-square icon_btn text-primary pe-1 edit_product" attr-id= `+val.id +`></i>
+                  <i class="fa-solid fa-pen-to-square icon_btn text-primary pe-1 edit_product" 
+                  attr-name="`+ val.name + `"
+                  attr-picture="`+ val.picture + `"
+                  attr-category="`+ val.category +`"
+                  attr-price="`+ val.price + `"
+                  attr-id= `+val.id +`></i>
                 </td>
               </tr>  
-
     `;
     count = count+1
   });
@@ -48,7 +41,14 @@ function write_tbl_products(data) {
     $('#btn_confirm_delete').on('click', function(){
       delete_product(prod_id)
     })
-    
+  })
+
+  $('.edit').on('click', function(){
+    var prod_id = $(this).attr('attr-id')
+    show_msg('Delete Product','Do you want to delete this product? <br><br><div class="text-center"><button class="btn border-danger mt-2 text-danger py-0 px-3" id="btn_confirm_delete">Delete Product</button></div>')
+    $('#btn_confirm_delete').on('click', function(){
+      delete_product(prod_id)
+    })
   })
 }
 
@@ -60,13 +60,10 @@ function delete_product(id) {
       id:id
     },
     success: function (data) {
-        $('#msg_title').empty()
-        $('#msg_title').append("Product Deleted")
-        $('#msg_body').empty()
-        $('#msg_body').append("Product has been deleted to database successfully.")
-
+        $('#msg_title').empty().append("Product Deleted")
+        $('#msg_body').empty().append("Product has been deleted successfully.")
         $('#md_msg_box').modal('show')
-      load_products()
+        load_products()
     },
   });
 }

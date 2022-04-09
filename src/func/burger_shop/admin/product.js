@@ -60,11 +60,8 @@ function delete_product(id) {
       id:id
     },
     success: function (data) {
-        $('#msg_title').empty()
-        $('#msg_title').append("Product Deleted")
-        $('#msg_body').empty()
-        $('#msg_body').append("Product has been deleted to database successfully.")
-
+        $('#msg_title').empty().append("Product Deleted")
+        $('#msg_body').empty().append("Product has been deleted to database successfully.")
         $('#md_msg_box').modal('show')
       load_products()
     },

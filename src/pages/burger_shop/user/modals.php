@@ -98,16 +98,12 @@
                             id="password_handler"
                             data-bs-toggle="tooltip" 
                             data-bs-html="true" 
-                            title="<div class='text-start'> 
-                            <span class='text-danger'>* has numbers.</span><br>
-<span class='text-success'>* has letters.</span><br>
-<span class='text-success'>* has 8 characters.</span><br>
-
-<span class='text-success'>* has numbers.</span><br>
-<span class='text-danger'>* has letters.</span><br>
-<span class='text-success'>* has 8 characters.</span><br>
-
-</div>
+                            title="
+                                    <div class='text-start'> 
+                                        <span class='text-light' id='v_1'>* has numbers.</span><br>
+                                        <span class='text-light' id='v_2'>* has letters.</span><br>
+                                        <span class='text-light' id='v_3'>* has 8 characters.</span><br>
+                                    </div>
                             "
                             ></i>
                         </div>
@@ -116,15 +112,13 @@
                     <div class="field">
                         <input type="text" id="txt_signup_password2" required>
                         <label>Repeat Password <span class="text-danger h4">*</span></label>
-                        <div class="text-end text-muted d-none" style="position: absolute; top:13px; right:15px;"   id="div_password_validation">
+                        <div class="text-end text-muted d-none" style="position: absolute; top:13px; right:15px;"   id="div_password_validation_2">
                             <i class="fa-solid text-danger fa-circle-exclamation" 
                             data-bs-toggle="tooltip" 
                             data-bs-html="true" 
                             title="
                             <div class='text-start' style='width:400px;'>
-                            * has letters.<br>
-                            * has numbers.<br>
-                            * has 8 characters.
+                            Passwords doesn't match
                             </div>
                             
                             "
@@ -304,6 +298,28 @@
                     <div class="field">
                         <input type="text" id="txt_view_phone" required>
                         <label>Phone</label>
+                    </div>
+
+                    
+                    <div class="field">
+                        <input type="text" id="txt_view_address_no" required>
+                        <label>House No</label>
+                    </div>
+
+                    
+                    <div class="field">
+                        <input type="text" id="txt_view_address_st" required>
+                        <label>Street</label>
+                    </div>
+
+                    
+                    <div class="field">
+                        <input type="text" id="txt_view_address_brgy" required>
+                        <label>Barangay</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" id="txt_view_address_city" required>
+                        <label>City</label>
                     </div>
 
                     <div class="field">

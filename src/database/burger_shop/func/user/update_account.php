@@ -8,6 +8,10 @@ $password = $_POST['password'];
 $phone = $_POST['phone'];
 $name = $_POST['name'];
 $email = $_POST['email'];
+$address_no = $_POST['address_no'];
+$address_city = $_POST['address_city'];
+$address_st = $_POST['address_st'];
+$address_brgy = $_POST['address_brgy'];
 
 $q = '
 
@@ -18,7 +22,11 @@ $q = '
             password="'.$password.'",
             phone="'.$phone.'",
             name="'.$name.'",
-            email="'.$email.'"
+            email="'.$email.'",
+            address_no="'.$address_no.'",
+            address_city="'.$address_city.'",
+            address_st="'.$address_st.'",
+            address_brgy="'.$address_brgy.'"
         WHERE
             id= '.$id;
 

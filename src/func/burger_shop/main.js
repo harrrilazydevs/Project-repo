@@ -41,7 +41,23 @@ function getCookie(cname) {
 
 $(document).ready(function () {
 
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
 
+  $('.show-password').on('click', function () {
+    $('#txt_view_password').attr('type', 'text')
+    $('.hide-password').removeClass('d-none')
+    $(this).addClass('d-none')
+  })
+
+  $('.hide-password').on('click', function () {
+    $('#txt_view_password').attr('type', 'password')
+    $('.show-password').removeClass('d-none')
+    $(this).addClass('d-none')
+
+  })
 
   page = getCookie("page");
   cart_id = $('#txt_card_id').val()
@@ -366,12 +382,12 @@ $('#login_form').on('submit', function (e) {
         })
 
         $('#btn_verify_email').on('click', function () {
-          $.getJSON("verify_email.php?code="+$('#txt_verification_code').val()+"&token="+token, function(data){
-           console.log(data)
-            if(data.result == 1){
+          $.getJSON("verify_email.php?code=" + $('#txt_verification_code').val() + "&token=" + token, function (data) {
+            console.log(data)
+            if (data.result == 1) {
               location.reload()
             }
-            else{
+            else {
               show_msg("Invalid Code", "You have entered an invalid code!")
             }
           })

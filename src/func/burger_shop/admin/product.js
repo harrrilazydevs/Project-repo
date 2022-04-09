@@ -21,11 +21,16 @@ function write_tbl_products(data) {
       '<td class="text-center p-1"><i class="fa-solid text-danger fa-trash-can icon_btn text-primary pe-1 delete_product" attr-id=' +val.id +'></i>';
     output += "</td>";
     output += "</tr>";
+
+    output =`
+              <tr>  
+                <td class="text-center p-1"> `+ count  + ` </td>
+                <td class="text-center p-1"> `+ val.name + ` </td>
+    `;
     count = count+1
   });
 
-  $("#tbl_products tbody").empty();
-  $("#tbl_products tbody").append(output);
+  $("#tbl_products tbody").empty().append(output);
 
   $('.delete_product').on('click', function(){
     var prod_id = $(this).attr('attr-id')

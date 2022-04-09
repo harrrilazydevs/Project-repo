@@ -56,27 +56,33 @@
                 <div class="container align-items-center">
                     <div class="row d-flex justify-content-center">
                         <h5 style="letter-spacing: 3px;" class="text-center mt-5 mb-5">How to order?</h5>
-
-                        <div class="col-lg-3 col-3 mb-5 text-center">
-                            <img src="src/resources/img/step-1.jpg" width="100%" style="border-radius: 30px;">
-                            <h6 class="pt-2" style="font-weight: bold;">Choose your food</h6>
+                      
+                        <div class="col-lg-1 mb-5 text-center">
+                            <img class="border rounded" src="src/resources/img/step-0.jpg" width="100%" style="border-radius: 30px;">
+                            <h6 class="pt-2" style="font-weight: bold;">Register</h6>
                         </div>
 
-                        <div class="col-lg-3 col-3 mb-5 text-center">
-                            <img src="src/resources/img/step-2.jpg" width="100%" style="border-radius: 30px;">
-                            <h6 class="pt-2" style="font-weight: bold;">Add to Cart</h6>
+
+                        <div class="col-lg-1 mb-5 text-center">
+                            <img class="border rounded" src="src/resources/img/step-1.jpg" width="100%" style="border-radius: 30px;">
+                            <h6 class="pt-2" style="font-weight: bold;">Choose</h6>
+                        </div>
+
+                        <div class="col-lg-1 mb-5 text-center">
+                            <img class="border rounded" src="src/resources/img/step-2.jpg" width="100%" style="border-radius: 30px;">
+                            <h6 class="pt-2" style="font-weight: bold;">Add</h6>
 
                         </div>
 
-                        <div class="col-lg-3 col-3 mb-5 text-center">
-                            <img src="src/resources/img/step-3.jpg" width="100%" style="border-radius: 30px;">
-                            <h6 class="pt-2" style="font-weight: bold;">Fast Delivery & Easy Payments Methods</h6>
+                        <div class="col-lg-1 mb-5 text-center">
+                            <img class="border rounded" src="src/resources/img/step-3.jpg" width="100%" style="border-radius: 30px;">
+                            <h6 class="pt-2" style="font-weight: bold;">Deliver</h6>
 
                         </div>
 
-                        <div class="col-lg-3 col-3 mb-5 text-center">
-                            <img src="src/resources/img/step-4.jpg" width="100%" style="border-radius: 30px;">
-                            <h6 class="pt-2" style="font-weight: bold;">Enjoy the Food</h6>
+                        <div class="col-lg-1 mb-5 text-center">
+                            <img class="border rounded" src="src/resources/img/step-4.jpg" width="100%" style="border-radius: 30px;">
+                            <h6 class="pt-2" style="font-weight: bold;">Enjoy!</h6>
 
                         </div>
 

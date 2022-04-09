@@ -32,14 +32,9 @@
                     <div class="signup-link">
                         Don't have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#signUpModal">Sign-up now</a>
                     </div>
-
                 </form>
             </div>
-
-
-
         </div>
-
     </div>
 </div>
 <!-- LOGIN MODAL -->
@@ -96,15 +91,44 @@
                     </div>
 
                     <div class="field ">
-                        <input type="password" id="txt_signup_password" required>
+                        <input type="text" id="txt_signup_password" required>
                         <label>Password <span class="text-danger h4">*</span></label>
+                        <div class="text-end text-muted d-none" style="position: absolute; top:13px; right:15px;"   id="div_password_validation">
+                            <i class="fa-solid text-danger fa-circle-exclamation" 
+                            id="password_handler"
+                            data-bs-toggle="tooltip" 
+                            data-bs-html="true" 
+                            title="<div class='text-start'> 
+                            <span class='text-danger'>* has numbers.</span><br>
+<span class='text-success'>* has letters.</span><br>
+<span class='text-success'>* has 8 characters.</span><br>
+
+<span class='text-success'>* has numbers.</span><br>
+<span class='text-danger'>* has letters.</span><br>
+<span class='text-success'>* has 8 characters.</span><br>
+
+</div>
+                            "
+                            ></i>
+                        </div>
                     </div>
 
                     <div class="field">
-                        <input type="Repeat Password" id="txt_signup_password2" required>
+                        <input type="text" id="txt_signup_password2" required>
                         <label>Repeat Password <span class="text-danger h4">*</span></label>
-                        <div class="text-end text-muted d-none" id="div_password_validation">
-                            <small>Passwords doesn't match</small>
+                        <div class="text-end text-muted d-none" style="position: absolute; top:13px; right:15px;"   id="div_password_validation">
+                            <i class="fa-solid text-danger fa-circle-exclamation" 
+                            data-bs-toggle="tooltip" 
+                            data-bs-html="true" 
+                            title="
+                            <div class='text-start' style='width:400px;'>
+                            * has letters.<br>
+                            * has numbers.<br>
+                            * has 8 characters.
+                            </div>
+                            
+                            "
+                            ></i>
                         </div>
 
                     </div>
@@ -284,7 +308,14 @@
 
                     <div class="field">
                         <input type="password" id="txt_view_password" required>
-                        <label>Password <a href="#"><i class="fa-solid fa-eye text-black"></i></a></label>
+                        <label>Password
+
+                        </label>
+
+                        <a href="#" style="top:15px; right:10px; position:absolute;">
+                            <i class="fa-solid fa-lg fa-eye text-dark show-password"></i>
+                            <i class="fa-solid fa-lg fa-eye-slash text-dark hide-password d-none"></i>
+                        </a>
 
                     </div>
 

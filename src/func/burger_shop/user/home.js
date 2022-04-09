@@ -505,21 +505,74 @@ $(".view_my_orders").on("click", function () {
   load_my_orders();
 });
 
+function check_if_password_valid(value){
+
+}
+
 $("#txt_signup_password2").on("keyup", function () {
-  if ($("#txt_signup_password").val() == $("#txt_signup_password2").val()) {
+  var pass1 = $("#txt_signup_password").val()
+  var pass2 = $("#txt_signup_password2").val()
+  if (pass1 == pass2) {
     $("#txt_signup_password").removeClass("border-danger");
     $("#txt_signup_password2").removeClass("border-danger");
     $("#div_password_validation").addClass("d-none");
-
     $("#btn_signup_submit").prop("disabled", false);
   } else {
     $("#txt_signup_password").addClass("border-danger");
     $("#txt_signup_password2").addClass("border-danger");
     $("#div_password_validation").removeClass("d-none");
-
     $("#btn_signup_submit").prop("disabled", true);
   }
 });
+
+$("#txt_signup_password").on("keyup", function () {
+  var pass1 = $("#txt_signup_password").val()
+  var Exception = "<div class='text-start'>";
+  var hasError = false;
+  if(!has_numbers(pass1)){
+    Exception += "<span class='text-danger'>* has numbers.</span><br>";
+    hasError = true;
+  }
+  else{
+    Exception += "<span class='text-success'>* has numbers.</span><br>";
+  }
+  if(!has_letters(pass1)){
+    Exception += "<span class='text-danger'>* has letters.</span><br>";
+    hasError = true;
+  }
+  else{
+    Exception += "<span class='text-sucess'>* has letters.</span><br>";
+  }
+
+  if(pass1.length<8){
+    Exception += "<span class='text-danger'>* has 8 characters.</span><br>";
+    hasError = true;
+  }
+  else{
+    Exception +="<span class='text-success'>* has 8 characters.</span><br>";
+  }
+  Exception+="</div>"
+
+  if(hasError){
+    $("#div_password_validation").addClass("d-none");
+    $("#btn_signup_submit").prop("disabled", false);
+ 
+    
+  }
+
+ 
+
+
+ 
+
+});
+
+function has_numbers(myString) {
+  return /\d/.test(myString);
+}
+function has_letters(str) {
+  return /[a-zA-Z]/.test(str);
+}
 
 $(".menuDropdown").on("click", function () {
   load_filtered_products($(this).attr("attr-name"));

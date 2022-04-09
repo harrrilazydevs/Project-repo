@@ -39,8 +39,7 @@ function write_tbl_order(data) {
     output += "</tr>";
   });
 
-  $("#tbl_orders tbody").empty();
-  $("#tbl_orders tbody").append(output);
+  $("#tbl_orders tbody").empty().append(output);
 }
 
 function print_order() {
@@ -81,16 +80,12 @@ function view_order(id) {
 
       });
       $.each(JSON.parse(data).total, function (key, val) {
-        $("#txt_total").empty();
-        $("#txt_total").append("&#8369;" + val.total);
-
-        $("#txt_total_print").empty();
-        $("#txt_total_print").append("&#8369;" + val.total);
+        $("#txt_total").empty().append("&#8369;" + val.total);
+        $("#txt_total_print").empty().append("&#8369;" + val.total);
       });
 
       $.each(JSON.parse(data).subtotal, function (key, val) {
-        $("#txt_subtotal").empty();
-        $("#txt_subtotal").append("&#8369;" + val.subtotal);
+        $("#txt_subtotal").empty().append("&#8369;" + val.subtotal);
 
         subtotal = parseInt(val.subtotal)
 
@@ -173,15 +168,12 @@ function view_order_paid(id) {
 
       });
       $.each(JSON.parse(data).total, function (key, val) {
-        $("#txt_total").empty();
-        $("#txt_total").append("&#8369;" + val.total);
-        $("#txt_total_print").empty();
-        $("#txt_total_print").append("&#8369;" + val.total);
+        $("#txt_total").empty().append("&#8369;" + val.total);
+        $("#txt_total_print").empty().append("&#8369;" + val.total);
       });
 
       $.each(JSON.parse(data).subtotal, function (key, val) {
-        $("#txt_subtotal").empty();
-        $("#txt_subtotal").append("&#8369;" + val.subtotal);
+        $("#txt_subtotal").empty().append("&#8369;" + val.subtotal);
 
         subtotal = parseInt(val.subtotal)
 
@@ -232,10 +224,8 @@ function view_order_paid(id) {
       $('#txt_total_print').text("₱" +total)
 
       
-      $("#tbl_view_order tbody").empty();
-      $("#tbl_view_order tbody").append(output);
-      $("#tbl_view_order_print tbody").empty();
-      $("#tbl_view_order_print tbody").append(output);
+      $("#tbl_view_order tbody").empty().append(output);
+      $("#tbl_view_order_print tbody").empty().append(output);
       $("#md_view_order").modal("show");
     },
   });
@@ -254,10 +244,8 @@ $('#btn_save_update_order').on('click', function(){
         load_notifications();
         load_orders()
 
-        $('#msg_title').empty()
-        $('#msg_title').append("Order Completed")
-        $('#msg_body').empty()
-        $('#msg_body').append("Transaction Completed Successfully.")
+        $('#msg_title').empty().append("Order Completed")
+        $('#msg_body').empty().append("Transaction Completed Successfully.")
         $('#md_msg_box').modal('show')
         
     }

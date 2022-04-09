@@ -102,16 +102,13 @@ function write_notification(data){
   var output = '';
   $.each(data, function(key, val){
     output += '<li class="dropdown-divider"></li> <li class="dropdown-item notif_drop_down" > <i class="fa-solid fa-comment"></i> <span>Payment Received </span><br> <div class="text-end"> <small class="fw-bold">'+val.order_ref_no+'</small> </div> </li>'
-    $('#notif_count').empty()
-    $('#notif_count').append(val.notif_count)
+    $('#notif_count').empty().append(val.notif_count)
   })
 
-  $('#notif_bar').empty()
-  $('#notif_bar').append(output)
+  $('#notif_bar').empty().append(output)
 
   if(data.length <1){
-    $('#notif_count').empty()
-    $('#notif_count').append(0)
+    $('#notif_count').empty().append(0)
   }
 
 

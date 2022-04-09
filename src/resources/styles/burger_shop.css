@@ -8,6 +8,10 @@ body {
   font-family: var(--body-font);
   line-height: 1.6 !important;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
 .menuDropdown:hover {
   background-color: #cecece !important ;
   color: black;
@@ -17,7 +21,6 @@ body {
   height: 60px;
   background: var(--main-nav-color);
   color: white;
-  cursor: pointer;
 }
 .burger_machine_sidebar {
   background: #4c0d0d !important;

@@ -76,6 +76,7 @@ $_SESSION['access_level'] = 'admin';
     <script src="src/resources/lib/jquery/jquery.js"></script>
     <script src="src/resources/lib/carousel/carousel.js"></script>
     <script src="src/resources/lib/jsPdf/html2pdf.js"></script>
+    <script src="src/resources/lib/chartJs/chart.js"></script>
 
 </head>
 
@@ -84,7 +85,6 @@ $_SESSION['access_level'] = 'admin';
 
 
 
-    <div class="overlay-x">
 
         <!-- <input type="hidden" id="txt_user_name" value="<?php echo $_SESSION['username']; ?>">
         <input type="hidden" id="txt_address" value="<?php echo $_SESSION['address']; ?>"> -->
@@ -114,11 +114,11 @@ $_SESSION['access_level'] = 'admin';
 
         if ($_SESSION['theme'] == 'dental_clinic' && $_SESSION['access_level'] == 'user') {
 
-        // NAVS AND SIDEBARS
-        include_once 'src/pages/dental_clinic/user/sidebarUser.php';
-        include_once 'src/pages/dental_clinic/user/modals.php';
-        include_once 'src/pages/dental_clinic/user/userMobileSidebar.php';
-        include_once 'src/pages/dental_clinic/user/bottomNav.php';
+            // NAVS AND SIDEBARS
+            include_once 'src/pages/dental_clinic/user/sidebarUser.php';
+            include_once 'src/pages/dental_clinic/user/modals.php';
+            include_once 'src/pages/dental_clinic/user/userMobileSidebar.php';
+            include_once 'src/pages/dental_clinic/user/bottomNav.php';
 
             // PAGES PHP
             include_once 'src/pages/dental_clinic/user/navbar.php';
@@ -202,7 +202,6 @@ $_SESSION['access_level'] = 'admin';
 
         ?>
 
-    </div>
 </body>
 
 </html>

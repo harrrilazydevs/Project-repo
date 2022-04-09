@@ -12,6 +12,7 @@ body {
   height: 60px;
   background: var(--main-nav-color);
   color: white;
+  margin:0 !important;padding:0px;
 }
 
 .burger_machine_sidebar {
@@ -81,7 +82,7 @@ body {
   background: #ffc061;
   border: 1px solid #712525;
   border-radius: 5px;
-  width: 48% !important;
+  width: 100% !important;
 }
 
 .yellow_box_total_order{

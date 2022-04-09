@@ -26,7 +26,6 @@
                     </div>
                     <div class="field text-center">
                         <button type="submit" class="py-1 text-white" style="font-weight:bold; background:#F54646; border-radius:20px; width:120px; margin: 6px; border: 1px solid yellow;">Login</button>
-
                     </div>
 
                     <div class="signup-link">

@@ -1,4 +1,4 @@
-<div class="burger_machine_nav shadow">
+<div class="burger_machine_nav shadow" style="overflow: hidden !important; overflow-x: hidden !important;">
 
     <i class="fa-solid fa-bars icon_btn ps-3 pt-3 h5" data-bs-toggle="offcanvas" href="#burger_machine_sidebar" role="button"></i>
 

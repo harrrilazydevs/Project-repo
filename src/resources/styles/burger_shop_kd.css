@@ -81,12 +81,23 @@ body {
   background: #ffc061;
   border: 1px solid #712525;
   border-radius: 5px;
+  width: 48% !important;
+}
+
+.yellow_box_total_order{
+
+  height: 130px;
+  background: #ffc061 !important; 
+  border: 1px solid #712525;
+  border-radius: 5px;
+  width: 100% !important;
+
 }
 .white_box {
   height: 90px;
   background: white;
   border: 1px solid #712525;
-  border-radius: 5px;
+  border-radius: 5px;  
 }
 .white_box_full {
   height: 48vh;

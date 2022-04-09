@@ -9,7 +9,8 @@
             </select>    
         </div>
         </div>
-        <div class="row row-cols-3">
+        
+        <div class="row">
             <div class="col">
                 <div class="yellow_box shadow p-3 pt-2 ">
                     <span class="fw-bold" style="font-size:19pt;">Total Registered Users</span>
@@ -36,6 +37,7 @@
                 </div>
             </div>
         </div>
+
         <div class="row mt-3">
             <div class="col-5">
                 <div class="white_box shadow p-3 pt-1 ">

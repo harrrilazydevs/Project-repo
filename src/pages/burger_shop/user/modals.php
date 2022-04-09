@@ -179,56 +179,56 @@
 
 
                         <div class="ms-4">
-                        <label>Payment Options:</label>
-
-                        <div>
-
-                            <div class="mb-1 form-check">
-                                <input type="checkbox" value="CASH" name="payment_method[]" class="form-check-input payment_method payment_requirement" id="cashCheckbox">
-                                <label class="form-check-label" for="cashCheckbox">Delivery via Cash on Delivery</label>
-                            </div>
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" value="GCASH" name="payment_method[]" class="form-check-input payment_method payment_requirement" id="gcashCheckbox">
-                                <label class="form-check-label" for="gcashCheckbox">Pick up & Pay via Gcash</label>
-
-                                <div class="pay_via_gcash d-none me-3">
-                                    <div class="border bg-warning p-2 rounded " style="font-size:9pt;">
-                                        <span class=""><b>Note:</b>
-                                            You need to upload a screenshot of your payment.
-                                        </span>
-                                    </div>
-                                    <b style="font-size:9pt;">Scan here:</b>
-                                    <div class="border text-center  p-2 rounded" style="font-size:9pt;">
-                                        <span class="">
-                                            <img src="src/resources/img/dummyqr.jpg" style="height:240px; width:200px;">
-                                            <br>
-                                            <small>Or you can send your payment here : <br>0909909090</small>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-
+                            <label>Payment Options:</label>
 
                             <div>
-                                <label for="txt_locations">Location:</label>
-                                <select id="txt_locations" class="form-select payment_requirement" style="width: 70% !important;">
-                                    <option value="Afghanistan">Muntinlupa</option>
-                                    <option value="Åland Islands">Åland Islands</option>
-                                </select>
-                            </div>
 
-                            <div class="mt-2">
-                                <label style="font-size:10pt !important; " for="">Sub-total: <span class="fw-bold" id="txt_sub_total_payment">0</span></label>
-                                <br>
-                                <label style="font-size:10pt !important; " for="">Delivery Fee: <span class="fw-bold" id="txt_delivery_fee_payment">₱0</span></label>
-                                <br>
-                                <label style="font-size:10pt !important; " for="">Total Amount: <span class="fw-bold" id="txt_total_payment">₱0</span></label>
-                                <input type="hidden" name="payment">
-                                <input type="hidden" name="delivery_fee">
-                            </div>
+                                <div class="mb-1 form-check">
+                                    <input type="checkbox" value="CASH" name="payment_method[]" class="form-check-input payment_method payment_requirement" id="cashCheckbox">
+                                    <label class="form-check-label" for="cashCheckbox">Delivery via Cash on Delivery</label>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" value="GCASH" name="payment_method[]" class="form-check-input payment_method payment_requirement" id="gcashCheckbox">
+                                    <label class="form-check-label" for="gcashCheckbox">Pick up & Pay via Gcash</label>
 
-                        </div>
+                                    <div class="pay_via_gcash d-none me-3">
+                                        <div class="border bg-warning p-2 rounded " style="font-size:9pt;">
+                                            <span class=""><b>Note:</b>
+                                                You need to upload a screenshot of your payment.
+                                            </span>
+                                        </div>
+                                        <b style="font-size:9pt;">Scan here:</b>
+                                        <div class="border text-center  p-2 rounded" style="font-size:9pt;">
+                                            <span class="">
+                                                <img src="src/resources/img/dummyqr.jpg" style="height:240px; width:200px;">
+                                                <br>
+                                                <small>Or you can send your payment here : <br>0909909090</small>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div>
+                                    <label for="txt_locations">Location:</label>
+                                    <select id="txt_locations" class="form-select payment_requirement" style="width: 70% !important;">
+                                        <option value="Afghanistan">Muntinlupa</option>
+                                        <option value="Åland Islands">Åland Islands</option>
+                                    </select>
+                                </div>
+
+                                <div class="mt-2">
+                                    <label style="font-size:10pt !important; " for="">Sub-total: <span class="fw-bold" id="txt_sub_total_payment">0</span></label>
+                                    <br>
+                                    <label style="font-size:10pt !important; " for="">Delivery Fee: <span class="fw-bold" id="txt_delivery_fee_payment">₱0</span></label>
+                                    <br>
+                                    <label style="font-size:10pt !important; " for="">Total Amount: <span class="fw-bold" id="txt_total_payment">₱0</span></label>
+                                    <input type="hidden" name="payment">
+                                    <input type="hidden" name="delivery_fee">
+                                </div>
+
+                            </div>
                         </div>
 
 
@@ -274,7 +274,7 @@
 
                     <div class="field">
                         <input type="email" id="txt_view_email" required>
-                        <label>Email (optional)</label>
+                        <label>Email</label>
                     </div>
 
                     <div class="field">
@@ -283,8 +283,9 @@
                     </div>
 
                     <div class="field">
-                        <input type="text" id="txt_view_password" required>
-                        <label>Password</label>
+                        <input type="password" id="txt_view_password" required>
+                        <label>Password <a href="#"><i class="fa-solid fa-eye text-black"></i></a></label>
+
                     </div>
 
                     <div class="field text-center">

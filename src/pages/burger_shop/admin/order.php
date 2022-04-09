@@ -6,6 +6,8 @@
             <th width="15%">Ref. No.</th>
             <th>Name</th>
             <th width="10%">Phone No</th>
+
+            <th width="15%">Address</th>
             <th width="10%">Status</th>
             <th width="10%"></th>
         </thead>

@@ -14,7 +14,18 @@ $address_brgy = $_POST['address_brgy'];
 $q = '
 
         INSERT INTO
-          tbl_users(username,password,email,phone,name,address_st,address_no,address_city,address_brgy,access_level)
+          tbl_users(
+            username,
+            password,
+            email,
+            phone,
+            name,
+            address_st,
+            address_no,
+            address_city,
+            address_brgy,
+            access_level
+            )
         VALUES  
           (
             "'.$username.'",

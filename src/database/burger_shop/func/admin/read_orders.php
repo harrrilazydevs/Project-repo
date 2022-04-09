@@ -8,6 +8,7 @@ $q = '
                 distinct(ref_no),
                 name,
                 phone,
+                concat(address_no," ",address_st," ",address_brgy," ",address_city) as `address`,
                 status
         FROM
                 tbl_orders a

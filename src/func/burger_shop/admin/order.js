@@ -14,7 +14,24 @@ function write_tbl_order(data) {
     output += '<td class="text-center p-1">' + val.ref_no + "</td>";
     output += '<td class="text-center p-1">' + val.name + "</td>";
     output += '<td class="text-center p-1">' + val.phone + "</td>";
-    output += '<td class="text-center p-1">' + val.status + "</td>";
+    output += '<td class="text-center p-1">' + val.address + "</td>";
+    if( val.status == "Out for Delivery")
+    {
+      output += '<td class="text-center p-1"><span class="badge bg-warning">' + val.status + "</span></td>";
+    }
+    else if( val.status == "Pending")
+    {
+      output += '<td class="text-center p-1"><span class="badge bg-warning">' + val.status + "</span></td>";
+
+    }
+    else if( val.status == "Completed")
+    {
+      output += '<td class="text-center p-1"><span class="badge bg-success">' + val.status + "</span></td>";
+    }
+    else{
+      output += '<td class="text-center p-1"><span class="badge bg-danger">' + val.status + "</span></td>";
+    }
+   
     output +=
       '<td class="text-center p-1"><i class="fa-solid fa-eye icon_btn text-primary pe-1" onClick="view_order(\'' +val.ref_no +'\')"></i>';
     output += "</td>";

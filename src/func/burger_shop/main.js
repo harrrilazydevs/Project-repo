@@ -13,6 +13,8 @@ let pages = {
   cart: 'page_myPurchase'
 };
 
+var token = '';
+
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -214,16 +216,30 @@ function update_account(id) {
   });
 }
 
-$("#btn_login").on("click", function () {
-  $.ajax({
-    type: "POST",
-    url: "src/database/burger_shop/func/login.php",
-    data: {
-      username: $("#txt_username").val(),
-      password: $("#txt_password").val(),
-    }
-  });
-});
+
+function generate_token(length) {
+  var result = '';
+  var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  var charactersLength = characters.length;
+  for (var i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() *
+      charactersLength));
+  }
+  return result;
+}
+
+// $("#btn_login").on("click", function (e) {
+//   e.preventDefault();
+//   $.ajax({
+//     type: "POST",
+//     url: "src/database/burger_shop/func/login.php",
+//     data: {
+//       username: $("#txt_username").val(),
+//       password: $("#txt_password").val(),
+//       token: generate_token(10)
+//     }
+//   });
+// });
 
 
 $('#btn_signup_submit').on('click', function (e) {
@@ -234,7 +250,7 @@ $('#btn_signup_submit').on('click', function (e) {
     $("#txt_signup_fullname").val() && $("#txt_signup_phone").val() &&
     $("#txt_signup_email").val() && $("#txt_signup_address_no").val() &&
     $("#txt_signup_address_st").val() && $("#txt_signup_address_brgy").val() &&
-    $("#txt_signup_address_city").val() && $("#txt_signup_password2").val() 
+    $("#txt_signup_address_city").val() && $("#txt_signup_password2").val()
   ) {
     $.ajax({
       type: "POST",
@@ -272,9 +288,8 @@ $('#btn_signup_submit').on('click', function (e) {
 
 function show_msg(title, msg) {
   $("#msg_title").text(title);
-  $("#msg_body").empty();
 
-  $("#msg_body").append(msg);
+  $("#msg_body").empty().append(msg);
   $("#md_msg_box").modal("show");
 }
 
@@ -307,16 +322,19 @@ $('#btn_register_account_submit').on('click', function () {
 
 $('#login_form').on('submit', function (e) {
   e.preventDefault();
+
+  token = generate_token(10)
   $.ajax({
     type: "POST",
     url: "src/database/burger_shop/func/login.php",
     data: {
       username: $("#txt_username").val(),
       password: $("#txt_password").val(),
+      token: token,
     },
     success: function (data) {
-      console.log(data)
-      if (data == 0) {
+      data = JSON.parse(data);
+      if (data.result == 0) {
         $('#md_login').modal('hide')
         $("#msg_title").text("Login Failed");
         $("#msg_body").text("Invalid username/password");
@@ -326,7 +344,40 @@ $('#login_form').on('submit', function (e) {
         $("#md_msg_box").modal("show");
       }
       else {
-        location.reload();
+        show_msg("Verify Email", `
+        <small>Please confirm that you are trying to log-in.</small> 
+        <input class='form-control' id="txt_verification_code"><br>
+        <div class='text-center'>
+        <button id="btn_verify_email" class="btn btn-secondary btn-sm">Verify</button><br>
+        </div>
+        `);
+
+        body = `
+        <p>Hi! `+ data.name + `<br>
+        Your OTP is: <b>`+ data.code + `</b><br>
+        Use this code for logging in your account.</p>`
+
+        $.post("email_sender.php", {
+          customer_email: data.email,
+          email_subject: 'Email Verification Otaku Burger Shop',
+          email_body: body
+        }).done(function () {
+          console.log("email sent")
+        })
+
+        $('#btn_verify_email').on('click', function () {
+          $.getJSON("verify_email.php?code="+$('#txt_verification_code').val()+"&token="+token, function(data){
+           console.log(data)
+            if(data.result == 1){
+              location.reload()
+            }
+            else{
+              show_msg("Invalid Code", "You have entered an invalid code!")
+            }
+          })
+        })
+
+
       }
 
     }

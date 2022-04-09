@@ -1,7 +1,5 @@
-<div id="page_dashboard" class="page p-3">
+<!-- <div id="page_dashboard" class="page p-3">
     <h3 class="text-white pt-3 pb-4" style=" font-family: Verdana, sans-serif;">Dashboard</h3>
-
-
     <div class="container">
         <div class="row mb-3">
             <div class="col-12">
@@ -13,20 +11,28 @@
 
         <div class="row mt-3">
             <div class="col-6">
-                <div class="row ms-1">
-                    <div class="yellow_box shadow p-3 pt-2 me-1">
-                        <div class="text-center">
-                            <span style="font-size:40pt; color:white; -webkit-text-stroke-width: 1px;-webkit-text-stroke-color: #6A0F03;" id="txt_total_registered_users">0</span>
+                <div class="row row-cols-2">
+
+                    <div class="col">
+                        <div class="yellow_box shadow p-3 pt-2 ">
+                            <div class="text-center">
+                                <span style="font-size:40pt; color:white; -webkit-text-stroke-width: 1px;-webkit-text-stroke-color: #6A0F03;" id="txt_total_registered_users">0</span>
+                            </div>
+                            <span class="fw-bold" style="font-size: 12pt;">Total Registered Users</span>
                         </div>
-                        <span class="fw-bold" style="font-size: 12pt;">Total Registered Users</span>
                     </div>
 
-                    <div class="yellow_box shadow p-3 pt-2">
-                        <div class="text-center">
-                            <span style="font-size:40pt; color:white; -webkit-text-stroke-width: 1px;-webkit-text-stroke-color: #6A0F03;" id="txt_total_completed">0</span>
+                    <div class="col">
+                        <div class="yellow_box shadow p-3 pt-2">
+                            <div class="text-center">
+                                <span style="font-size:40pt; color:white; -webkit-text-stroke-width: 1px;-webkit-text-stroke-color: #6A0F03;" id="txt_total_completed">0</span>
+                            </div>
+                            <span class="fw-bold" style="font-size:12pt;">Total Products</span>
                         </div>
-                        <span class="fw-bold" style="font-size:12pt;">Total Products</span>
                     </div>
+
+
+
                 </div>
             </div>
 
@@ -51,7 +57,7 @@
                 </div>
 
                 <div class="white_box_full shadow p-3 pt-1 mt-3">
-                    <span class="fw-bold" style="font-size:13pt;">Graph</span>
+                    <canvas id="chart_yearly" width="500" height="260"></canvas>
                 </div>
             </div>
 
@@ -92,4 +98,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

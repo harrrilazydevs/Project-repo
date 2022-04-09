@@ -76,6 +76,7 @@ if (!isset($_SESSION['access_level'])) {
     <script src="src/resources/lib/jquery/jquery.js"></script>
     <script src="src/resources/lib/carousel/carousel.js"></script>
     <script src="src/resources/lib/jsPdf/html2pdf.js"></script>
+    <script src="src/resources/lib/chartJs/chart.js"></script>
 
 </head>
 
@@ -114,11 +115,11 @@ if (!isset($_SESSION['access_level'])) {
 
         if ($_SESSION['theme'] == 'dental_clinic' && $_SESSION['access_level'] == 'user') {
 
-        // NAVS AND SIDEBARS
-        include_once 'src/pages/dental_clinic/user/sidebarUser.php';
-        include_once 'src/pages/dental_clinic/user/modals.php';
-        include_once 'src/pages/dental_clinic/user/userMobileSidebar.php';
-        include_once 'src/pages/dental_clinic/user/bottomNav.php';
+            // NAVS AND SIDEBARS
+            include_once 'src/pages/dental_clinic/user/sidebarUser.php';
+            include_once 'src/pages/dental_clinic/user/modals.php';
+            include_once 'src/pages/dental_clinic/user/userMobileSidebar.php';
+            include_once 'src/pages/dental_clinic/user/bottomNav.php';
 
             // PAGES PHP
             include_once 'src/pages/dental_clinic/user/navbar.php';

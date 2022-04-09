@@ -127,3 +127,7 @@ body {
 .dropdown-item:hover{
   background: #FF6D59;
 }
+
+.badge{
+  width: 110px!important;
+}

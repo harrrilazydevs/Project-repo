@@ -483,7 +483,7 @@ function write_my_orders(data) {
 function get_order_status(value){
 
   var output = '';
-  if(value == "Pending"){
+  if(value == "Pending" || value.toLowerCase() == "out for delivery" ){
     output = '<span class="badge bg-warning text-dark">'+value+'</span>'
   }
 

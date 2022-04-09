@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2022 at 12:52 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 7.4.15
+-- Generation Time: Apr 09, 2022 at 06:57 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.3.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -86,11 +86,42 @@ CREATE TABLE `tbl_orders` (
 --
 
 INSERT INTO `tbl_orders` (`id`, `user_id`, `product_id`, `qty`, `status`, `ref_no`, `order_date`) VALUES
-(111, 11, 47, 1, 'Pending', 'O.R.D.2625', '2022-03-21'),
-(112, 11, 47, 2, 'Pending', 'O.R.D.7903', '2022-03-21'),
-(113, 11, 50, 50, 'Pending', 'O.R.D.3395', '2022-03-21'),
+(111, 11, 47, 1, 'Completed', 'O.R.D.2625', '2022-03-21'),
+(112, 11, 47, 2, 'Cancelled', 'O.R.D.7903', '2022-03-21'),
+(113, 11, 50, 50, 'Out for Delivery', 'O.R.D.3395', '2022-03-21'),
 (114, 11, 48, 100, 'Pending', 'O.R.D.7394', '2022-03-21'),
 (115, 11, 53, 50, 'Pending', 'O.R.D.7394', '2022-03-21');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_otp`
+--
+
+CREATE TABLE `tbl_otp` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `otp` int(11) NOT NULL,
+  `token` text NOT NULL,
+  `date` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_otp`
+--
+
+INSERT INTO `tbl_otp` (`id`, `user_id`, `otp`, `token`, `date`) VALUES
+(32, 11, 559765, 'bFlixWCkoq', '2022-04-08'),
+(33, 2, 452397, 'UBJxrFbqvi', '2022-04-08'),
+(34, 2, 793231, 'wrvj0qKMj5', '2022-04-08'),
+(35, 11, 905577, 'NrnATSTfVk', '2022-04-08'),
+(36, 2, 627100, 'hLIziJF0jN', '2022-04-08'),
+(37, 1, 856172, 'Y51FNVPtFg', '2022-04-09'),
+(38, 11, 521533, '0pKoSeu5kj', '2022-04-09'),
+(39, 1, 522673, 'uQHYX2oP1D', '2022-04-09'),
+(40, 13, 791475, 'bXbbXn1QKM', '2022-04-09'),
+(41, 13, 602885, 'KosbfQabAW', '2022-04-09'),
+(42, 1, 968616, 'HK58tZpuZh', '2022-04-09');
 
 -- --------------------------------------------------------
 
@@ -166,17 +197,21 @@ CREATE TABLE `tbl_users` (
   `phone` text NOT NULL,
   `name` text NOT NULL,
   `register_date` date DEFAULT current_timestamp(),
-  `address` varchar(100) NOT NULL
+  `address_st` varchar(100) NOT NULL,
+  `address_no` text NOT NULL,
+  `address_city` text NOT NULL,
+  `address_brgy` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_users`
 --
 
-INSERT INTO `tbl_users` (`id`, `username`, `email`, `password`, `access_level`, `phone`, `name`, `register_date`, `address`) VALUES
-(1, 'dev', 'dev@mail.com', '1', 'admin', '22222', 'Harri', '2022-03-01', '#21 Malakasan St Brgy Tibay '),
-(2, 'admin', 'admin@mail.com', '1', 'admin', '0000', 'Junior Nonilon', '2022-03-01', '#21 Malakasan St Brgy Tibay '),
-(11, 'user1', 'qwe@gmail.com', '123', 'user', '09231231231', 'Gloc 9', '2022-03-21', '#213 Malakasan Balagtas Manipulo ');
+INSERT INTO `tbl_users` (`id`, `username`, `email`, `password`, `access_level`, `phone`, `name`, `register_date`, `address_st`, `address_no`, `address_city`, `address_brgy`) VALUES
+(1, 'dev', 'kdlanguido@gmail.com', '1', 'admin', '22222', 'Harri', '2022-03-01', '#21 Malakasan St Brgy Tibay ', '', '', ''),
+(2, 'admin', 'kdlanguido@gmail.com', '1', 'admin', '0000', 'Junior Nonilon', '2022-03-01', '#21 Malakasan St Brgy Tibay ', '', '', ''),
+(11, 'user1', 'kdlanguido@gmail.com', '123', 'user', '09231231231', 'Gloc 9', '2022-03-21', '#213 Malakasan Balagtas Manipulo ', '', '', ''),
+(13, 'jay', 'kdlanguido@gmail.com', '123456789q', 'user', 'qwe', 'jay', '2022-04-09', 'malakasan', '22', 'qwe', 'qwe');
 
 --
 -- Indexes for dumped tables
@@ -204,6 +239,12 @@ ALTER TABLE `tbl_orders`
   ADD KEY `product_id` (`product_id`);
 
 --
+-- Indexes for table `tbl_otp`
+--
+ALTER TABLE `tbl_otp`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_payments`
 --
 ALTER TABLE `tbl_payments`
@@ -221,7 +262,7 @@ ALTER TABLE `tbl_products`
 --
 ALTER TABLE `tbl_users`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `address` (`address`);
+  ADD KEY `address` (`address_st`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -243,7 +284,13 @@ ALTER TABLE `tbl_locations`
 -- AUTO_INCREMENT for table `tbl_orders`
 --
 ALTER TABLE `tbl_orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
+
+--
+-- AUTO_INCREMENT for table `tbl_otp`
+--
+ALTER TABLE `tbl_otp`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `tbl_payments`
@@ -261,7 +308,7 @@ ALTER TABLE `tbl_products`
 -- AUTO_INCREMENT for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables

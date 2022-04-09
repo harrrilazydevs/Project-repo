@@ -10,20 +10,12 @@ function load_orders() {
 function write_tbl_order(data) {
   output = "";
   $.each(data, function (key, val) {
-    // output += "<tr>";
-    // output += '<td class="text-center p-1">' + val.ref_no + "</td>";
-    // output += '<td class="text-center p-1">' + val.name + "</td>";
-    // output += '<td class="text-center p-1">' + val.phone + "</td>";
-    // output += '<td class="text-center p-1">' + val.address + "</td>";
-    output += `
-                <tr>
-                  <td class="text-center p-1"> `+ val.ref_no +` </td>
-                  <td class="text-center p-1"> `+ val.name +` </td>
-                  <td class="text-center p-1"> `+ val.phone +` </td>
-                  <td class="text-center p-1"> `+ val.address +` </td>
-                </tr>
-                
-    `
+    output += "<tr>";
+    output += '<td class="text-center p-1">' + val.ref_no + "</td>";
+    output += '<td class="text-center p-1">' + val.name + "</td>";
+    output += '<td class="text-center p-1">' + val.phone + "</td>";
+    output += '<td class="text-center p-1">' + val.address + "</td>";
+
     if( val.status == "Out for Delivery")
     {
       output += '<td class="text-center p-1"><span class="badge bg-warning">' + val.status + "</span></td>";

@@ -22,11 +22,11 @@ function write_tbl_products(data) {
     // output += "</td>";
     // output += "</tr>";
 
-    output =`
+    output +=`
               <tr>  
                 <td class="text-center p-1"> `+ count  + ` </td>
                 <td class="text-center p-1"> `+ val.name + ` </td>
-                <td class="text-center p-1"><img src=" `+ val.picture +`"style="height:250px; width:230px;"</td>
+                <td class="text-center p-1"> <a target="blank" href="`+ val.picture +`"><img src=" `+ val.picture +`"style="height:250px; width:230px;"/></a></td>
                 <td class="text-center p-1"> `+ val.category + ` </td>
                 <td class="text-center p-1"> `+ val.price + `</td>
 

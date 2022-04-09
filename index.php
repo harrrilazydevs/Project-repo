@@ -1,17 +1,21 @@
 <?php
 session_start();
-$_SESSION['theme'] = 'dental_clinic';
+$_SESSION['theme'] = 'burger_shop';
+// $_SESSION['theme'] = 'dental_clinic';
 $_SESSION['logo_path'] = 'src/resources/img/otakulogo.png';
-$_SESSION['access_level'] = 'user';
+
+if (!isset($_SESSION['access_level'])) {
+    $_SESSION['access_level'] = 'user';
+}
+
+
+
+// $_SESSION['access_level'] = 'user';
 
 // var_dump($_SESSION['access_level']);
 // $_SESSION['access_level'] = 'user';
 // $_SESSION['user_id'] ="";
 // $_SESSION['access_level'] ="";
-
-if (!isset($_SESSION['access_level'])) {
-    $_SESSION['access_level'] = 'user';
-}
 
 // //for burger
 // if(!isset($_SESSION['access_level'])){

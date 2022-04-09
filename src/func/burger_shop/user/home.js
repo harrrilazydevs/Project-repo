@@ -22,7 +22,7 @@ function write_products(data) {
     output += '<img src="' + val.picture + '">';
     output += '<div class="description">';
     output +=
-      '<h5 id="text" style="letter-spacing: 3px;">' + val.name + "</h5>";
+      '<h5 id="text" style="letter-spacing: 1.5px !important;">' + val.name + "</h5>";
     output += "<p>&#8369;" + val.price + "</p>";
     output +=
       '<a class="btn_add_to_cart" attr-id="' +
@@ -46,7 +46,7 @@ function write_products(data) {
     all_output +=
       '<button attr-id="' +
       val.id +
-      '" class="btn_add_to_cart" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none;">';
+      '" class="btn_add_to_cart" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none; @media only screen and (max-width: 400) {width:100px !important; height: 15px !important; }">';
     all_output +=
       '<i class="fa-solid fa-cart-shopping text-white"></i> Add to Cart';
     all_output += "</button></a></div></div></div>";
@@ -84,16 +84,18 @@ function load_filtered_products(filter) {
 function write_products_filtered(data) {
   all_output = "";
   $.each(data, function (key, val) {
+
+
     all_output +=
       '<div class="col mt-2" ><div class="card p-3" style=" height:65vh;background: #2D1E1E; border-radius: 2%;">';
     all_output +=
       '<div><img src="' +
       val.picture +
-      '"  class="card-img-top" style="border-radius: 2%; height:40vh;"></div>';
+      '"  class="card-img-top" style="border-radius: 2%; height:40vh; width: 10% !important;"></div>';
     all_output +=
-      '<div class="card-body"><h6 class="card-title" style="letter-spacing: 3px;">' +
+      '<div class="card-body"><h6 class="card-title" style="letter-spacing: 1.5px;>' +
       val.name +
-      "</h5>";
+      "</h6>";
     all_output +=
       '<p class="card-text"><small>&#8369;' +
       val.price +

@@ -11,21 +11,31 @@ function write_tbl_products(data) {
   output = "";
   var count = 1;
   $.each(data, function (key, val) {
-    output += "<tr>";
-    output += '<td class="text-center p-1">' + count + "</td>";
-    output += '<td class="text-center p-1">' + val.name + "</td>";
-    output += '<td class="text-center p-1"><img src="' + val.picture + '" style="height:250px; width:230px;"</td>';
-    output += '<td class="text-center p-1">' + val.category + "</td>";
-    output += '<td class="text-center p-1">' + val.price + "</td>";
-    output +=
-      '<td class="text-center p-1"><i class="fa-solid text-danger fa-trash-can icon_btn text-primary pe-1 delete_product" attr-id=' +val.id +'></i>';
-    output += "</td>";
-    output += "</tr>";
+    // output += "<tr>";
+    // output += '<td class="text-center p-1">' + count + "</td>";
+    // output += '<td class="text-center p-1">' + val.name + "</td>";
+    // output += '<td class="text-center p-1"><img src="' + val.picture + '" style="height:250px; width:230px;"</td>';
+    // output += '<td class="text-center p-1">' + val.category + "</td>";
+    // output += '<td class="text-center p-1">' + val.price + "</td>";
+    // output +=
+    //   '<td class="text-center p-1"><i class="fa-solid text-danger fa-trash-can icon_btn text-primary pe-1 delete_product" attr-id=' +val.id +'></i>';
+    // output += "</td>";
+    // output += "</tr>";
 
     output =`
               <tr>  
                 <td class="text-center p-1"> `+ count  + ` </td>
                 <td class="text-center p-1"> `+ val.name + ` </td>
+                <td class="text-center p-1"><img src=" `+ val.picture +`"style="height:250px; width:230px;"</td>
+                <td class="text-center p-1"> `+ val.category + ` </td>
+                <td class="text-center p-1"> `+ val.price + `</td>
+
+                <td class="text-center p-1">
+                  <i class="fa-solid text-danger fa-trash-can icon_btn text-primary pe-1 delete_product" attr-id= `+val.id +`></i>
+                  <i class="fa-solid fa-pen-to-square icon_btn text-primary pe-1 edit_product" attr-id= `+val.id +`></i>
+                </td>
+              </tr>  
+
     `;
     count = count+1
   });

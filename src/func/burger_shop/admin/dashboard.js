@@ -48,13 +48,21 @@ function load_dashboard_information(date) {
 
         if (val.top_sellers) {
           $.each(val.top_sellers, function (key, valx) {
-            tbl_output += "<tr>";
-            tbl_output += '<td class="text-center">' + count + "</td>";
-            tbl_output +=
-              '<td class="text-center">' + valx.top_seller + "</td>";
-            tbl_output +=
-              '<td class="text-center">' + valx.top_seller_count + "</td>";
-            tbl_output += "</tr>";
+            // tbl_output += "<tr>";
+            // tbl_output += '<td class="text-center">' + count + "</td>";
+            // tbl_output +=
+            //   '<td class="text-center">' + valx.top_seller + "</td>";
+            // tbl_output +=
+            //   '<td class="text-center">' + valx.top_seller_count + "</td>";
+            // tbl_output += "</tr>";
+
+            tbl_ouput += `
+                            <tr>
+                              <td class="text-center"> `+ count + `</td>
+                              <td class="text-center"> `+ valx.top_seller + `</td>
+                              <td class="text-center"> `+ valx.top_seller_count+ `</td>                            
+                            </tr>            
+            `
             count = count + 1;
           });
         }

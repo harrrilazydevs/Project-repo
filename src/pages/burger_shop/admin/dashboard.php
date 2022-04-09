@@ -1,4 +1,4 @@
-<!-- <div id="page_dashboard" class="page p-3">
+<div id="page_dashboard" class="page p-3 d-none" >
     <h3 class="text-white pt-3 pb-4" style=" font-family: Verdana, sans-serif;">Dashboard</h3>
     <div class="container">
         <div class="row mb-3">
@@ -98,4 +98,4 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>

@@ -8,6 +8,10 @@ body {
   font-family: var(--body-font);
   line-height: 1.6 !important;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
 .menuDropdown:hover {
   background-color: #cecece !important ;
   color: black;

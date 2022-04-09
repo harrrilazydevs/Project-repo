@@ -26,7 +26,7 @@ function write_tbl_order_history(data) {
                   <td class="text-center p-1"> `+ val.name +`</td>
                   <td class="text-center p-1"> `+ val.phone +`</td>
                   <td class="text-center p-1"> `+ val.status +`</td>
-                  <td class="text-center p-1"><i class="fa-solid fa-eye icon_btn text-primary pe-1" onClick="view_order_paid(\''` +val.ref_no +`'\')"></i><td>
+                  <td class="text-center p-1"><i class="fa-solid fa-eye icon_btn text-primary pe-1" onClick="view_order_paid(\'` +val.ref_no +`\')"></i></td>
                 </tr>
     `
   });

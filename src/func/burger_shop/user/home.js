@@ -25,7 +25,7 @@ function write_products(data) {
       '<h5 id="text" style="letter-spacing: 1.5px !important;">' + val.name + "</h5>";
     output += "<p>&#8369;" + val.price + "</p>";
     output +=
-      '<a class="btn_add_to_cart" attr-id="' +
+      '<a class="btn_add_to_cart"  attr-item-pic="'+val.picture+'" attr-item-name="'+val.name+'" attr-item-price="'+val.price+'" attr-id="' +
       val.id +
       '"><button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button></a></div></div>';
 
@@ -46,7 +46,7 @@ function write_products(data) {
     all_output +=
       '<button attr-id="' +
       val.id +
-      '" class="btn_add_to_cart" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none; @media only screen and (max-width: 400) {width:100px !important; height: 15px !important; }">';
+      '" class="btn_add_to_cart"  attr-item-pic="'+val.picture+'"  attr-item-name="'+val.name+'" attr-item-price="'+val.price+'"  style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none; @media only screen and (max-width: 400) {width:100px !important; height: 15px !important; }">';
     all_output +=
       '<i class="fa-solid fa-cart-shopping text-white"></i> Add to Cart';
     all_output += "</button></a></div></div></div>";
@@ -103,7 +103,7 @@ function write_products_filtered(data) {
     all_output +=
       '<button attr-id="' +
       val.id +
-      '" class="btn_add_to_cart" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none;">';
+      '" class="btn_add_to_cart" attr-item-pic="'+val.picture+'"  attr-item-name="'+val.name+'" attr-item-price="'+val.price+'" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none;">';
     all_output +=
       '<i class="fa-solid fa-cart-shopping text-white"></i> Add to Cart';
     all_output += "</button></a></div></div></div>";
@@ -132,7 +132,24 @@ function add_to_cart() {
       $("#msg_title").text("Add to Cart");
       $("#msg_body").empty();
       temp =
-        'Enter Qty:<div><input type="number" min="1" class="form-control" id="txt_add_to_cart_qty"></div><div class="text-center mt-3"><button id="btn_confirm_add_to_cart" class="px-2 py-1" style="font-weight:bold; background:#FFD600; border-radius:20px; width:100px; margin: 6px; border: none;"> Add</button></div>';
+        `
+        <div class="text-center mb-2">  
+          <img class="border rounded" style=" height:30vh;" src="`+$(this).attr('attr-item-pic')+`"></img>
+          <h6>`+$(this).attr('attr-item-name')+`</h6>
+          <small class="text-secondary">₱`+$(this).attr('attr-item-price')+`</small>
+        </div>
+        
+        <div class="text-center mt-3">
+        Enter Qty:
+        <br>
+        <input type="number" min="1" class="border rounded" id="txt_add_to_cart_qty" >
+        </div>
+
+        <div class="text-center mt-3">
+          <button id="btn_confirm_add_to_cart" class="px-2 py-1" style="font-weight:bold; background:#FFD600; border-radius:20px; width:100px; margin: 6px; border: none;"> Add</button>
+        </div>`
+
+        ;
 
       $("#msg_body").append(temp);
       $("#md_msg_box").modal("show");
@@ -273,6 +290,10 @@ function write_account_details(data) {
   $("#txt_view_email").val(data[0].email);
   $("#txt_view_password").val(data[0].password);
   $("#txt_view_phone").val(data[0].phone);
+  $("#txt_view_address_no").val(data[0].address_no);
+  $("#txt_view_address_st").val(data[0].address_st);
+  $("#txt_view_address_city").val(data[0].address_city);
+  $("#txt_view_address_brgy").val(data[0].address_brgy);
 }
 
 $("#btn_update_user_save").on("click", function () {
@@ -286,6 +307,10 @@ $("#btn_update_user_save").on("click", function () {
       name: $("#txt_view_name").val(),
       email: $("#txt_view_email").val(),
       phone: $("#txt_view_phone").val(),
+      address_no: $("#txt_view_address_no").val(),
+      address_st: $("#txt_view_address_st").val(),
+      address_brgy: $("#txt_view_address_brgy").val(),
+      address_city: $("#txt_view_address_city").val(),
     },
     success: function (data) {
       $("#msg_title").text("Update Account");
@@ -515,49 +540,42 @@ $("#txt_signup_password2").on("keyup", function () {
   if (pass1 == pass2) {
     $("#txt_signup_password").removeClass("border-danger");
     $("#txt_signup_password2").removeClass("border-danger");
-    $("#div_password_validation").addClass("d-none");
+    $("#div_password_validation_2").addClass("d-none");
     $("#btn_signup_submit").prop("disabled", false);
   } else {
     $("#txt_signup_password").addClass("border-danger");
     $("#txt_signup_password2").addClass("border-danger");
-    $("#div_password_validation").removeClass("d-none");
+    $("#div_password_validation_2").removeClass("d-none");
     $("#btn_signup_submit").prop("disabled", true);
   }
 });
 
 $("#txt_signup_password").on("keyup", function () {
   var pass1 = $("#txt_signup_password").val()
-  var Exception = "<div class='text-start'>";
   var hasError = false;
   if(!has_numbers(pass1)){
-    Exception += "<span class='text-danger'>* has numbers.</span><br>";
+    hasError = true;
+  }
+  else if(!has_letters(pass1)){
+    hasError = true;
+  }
+  else if(pass1.length<8){
     hasError = true;
   }
   else{
-    Exception += "<span class='text-success'>* has numbers.</span><br>";
-  }
-  if(!has_letters(pass1)){
-    Exception += "<span class='text-danger'>* has letters.</span><br>";
-    hasError = true;
-  }
-  else{
-    Exception += "<span class='text-sucess'>* has letters.</span><br>";
+    hasError = false
   }
 
-  if(pass1.length<8){
-    Exception += "<span class='text-danger'>* has 8 characters.</span><br>";
-    hasError = true;
-  }
-  else{
-    Exception +="<span class='text-success'>* has 8 characters.</span><br>";
-  }
-  Exception+="</div>"
 
   if(hasError){
+    $("#div_password_validation").removeClass("d-none");
+    $("#btn_signup_submit").prop("disabled", true);
+    $("#txt_signup_password").addClass("border-danger");
+  }
+  else{
     $("#div_password_validation").addClass("d-none");
     $("#btn_signup_submit").prop("disabled", false);
- 
-    
+    $("#txt_signup_password").removeClass("border-danger");
   }
 
  
@@ -619,7 +637,7 @@ function write_best_sellers(data) {
       val.name +
       "</h5><p>₱" +
       val.price +
-      '</p><a class="btn_add_to_cart" attr-id="' +
+      '</p><a class="btn_add_to_cart"  attr-item-name="'+val.name+'" attr-item-price="'+val.price+'"  attr-item-pic="'+val.picture+'" attr-id="' +
       val.id +
       '"><button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button></a></div></div>';
     count = count + 1;

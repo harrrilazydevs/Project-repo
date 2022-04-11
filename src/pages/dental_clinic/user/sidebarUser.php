@@ -1,10 +1,12 @@
-<div class="dashboard_nested" style="background-color: #4DBDAC;height: 200vh; position: fixed;">
+<div class="dashboard_nested d-none" id="sidebar_user" style="background-color: #4DBDAC;height: 200vh; position: fixed;">
 
     <div>
         <div class="container mt-lg-5 ms-lg-2">
-           
+
             <h6 class="text-white" style="font-weight: bold; font-size: 20px;">Hello,</h6>
-            <h5 class="text-white" style="font-weight: bold;"><?php echo $_SESSION['username'];?>!</h5>
+            <h5 class="text-white" style="font-weight: bold;"><?php if (isset($_SESSION['username'])) {
+                                                                    echo $_SESSION['username'];
+                                                                } ?>!</h5>
 
         </div>
     </div>
@@ -14,18 +16,20 @@
             <div class="text-end">
                 <i class="fa-solid fa-user-gear icon_btn btn_view_update_account"></i>
             </div>
-            <img src="<?php echo$_SESSION['picture'];?>" style="width: 100px; height: 100px; border-radius: 100%;">
+            <img src="<?php if (isset($_SESSION['picture'])) {
+                            echo $_SESSION['picture'];
+                        } ?>" style="width: 100px; height: 100px; border-radius: 100%;">
         </div>
 
     </div>
-    
+
     <div class="container ms-lg-2">
         <span class="h6" style="font-weight: bold;">Reminders!</span>
         <ul class="list-group">
             <li class="list-group-item sidebar_dental  border-0 m-0 p-2"><i class="fa-solid pe-1 fa-envelope"></i> <span>Reminders</span></a></li>
             <li class="list-group-item sidebar_dental  border-0 m-0 p-2"><i class="fa-solid pe-1 fa-envelope"></i> <span>Reminders</span></a></li>
             <li class="list-group-item sidebar_dental  border-0 m-0 p-2"><i class="fa-solid pe-1 fa-envelope"></i> <span>Reminders</span></a></li>
-         
+
         </ul>
     </div>
 

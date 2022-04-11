@@ -1,8 +1,9 @@
 <?php
 session_start();
-$_SESSION['theme'] = 'burger_shop';
-// $_SESSION['theme'] = 'dental_clinic';
+// $_SESSION['theme'] = 'burger_shop';
+$_SESSION['theme'] = 'dental_clinic';
 $_SESSION['logo_path'] = 'src/resources/img/otakulogo.png';
+// $_SESSION['access_level'] = 'user';
 
 if (!isset($_SESSION['access_level'])) {
     $_SESSION['access_level'] = 'user';
@@ -82,125 +83,123 @@ if (!isset($_SESSION['access_level'])) {
 
 <body>
 
+    <input type="hidden" id="txt_card_id" value="<?php
+                                                    if (isset($_SESSION['cart_id'])) {
+                                                        echo $_SESSION['cart_id'];
+                                                    }
+                                                    ?>">
+    <input type="hidden" value="<?php
+                                if (isset($_SESSION['access_level'])) {
+                                    echo $_SESSION['access_level'];
+                                }
+                                ?>" id="txt_user_access">
+    <input type="hidden" value="<?php
+                                if (isset($_SESSION['contact_no'])) {
+                                    echo $_SESSION['contact_no'];
+                                }
+                                ?>" id="txt_user_mobile">
 
 
+    <input type="hidden" id="txt_cart_order_count">
+    <input type="hidden" id="txt_user_id" value="<?php
+                                                    if (isset($_SESSION['user_id'])) {
+                                                        echo $_SESSION['user_id'];
+                                                    }
+                                                    ?>">
+
+    <!-- CONTENTS -->
+    <?php
+
+    if ($_SESSION['theme'] == 'dental_clinic' && $_SESSION['access_level'] == 'user') {
+
+        // NAVS AND SIDEBARS
+        include_once 'src/pages/dental_clinic/user/sidebarUser.php';
+        include_once 'src/pages/dental_clinic/user/modals.php';
+        include_once 'src/pages/dental_clinic/user/userMobileSidebar.php';
+        include_once 'src/pages/dental_clinic/user/bottomNav.php';
+
+        // PAGES PHP
+        include_once 'src/pages/dental_clinic/user/navbar.php';
+        include_once 'src/pages/dental_clinic/user/createAcc.php';
+        // include_once 'src/pages/dental_clinic/user/myAccount.php';
+        include_once 'src/pages/dental_clinic/user/page11.php';
+        include_once 'src/pages/dental_clinic/user/0page.php';
+        include_once 'src/pages/dental_clinic/user/labResult.php';
+        include_once 'src/pages/dental_clinic/user/incomingApp.php';
+        include_once 'src/pages/dental_clinic/user/appointments.php';
+        include_once 'src/pages/dental_clinic/user/login.php';
+
+        // NAVS AND SIDEBARS
+        include_once 'src/pages/dental_clinic/user/sidebarUser.php';
+        include_once 'src/pages/dental_clinic/user/modals.php';
+        include_once 'src/pages/dental_clinic/user/userMobileSidebar.php';
+
+        echo '<script src="src/func/dental_clinic/main.js"></script>';
+        echo '<script src="src/func/dental_clinic/user/user.js"></script>';
+    }
+
+    if ($_SESSION['theme'] == 'dental_clinic' && $_SESSION['access_level'] == 'admin') {
+
+        // NAVS AND SIDEBARS
+        include_once 'src/pages/dental_clinic/admin/admin_sidebar.php';
+
+        // PAGES PHP
+        include_once 'src/pages/dental_clinic/admin/overview.php';
+        include_once 'src/pages/dental_clinic/admin/registeredPatient.php';
+        include_once 'src/pages/dental_clinic/admin/history.php';
+        include_once 'src/pages/dental_clinic/admin/admin_appointment.php';
+        include_once 'src/pages/dental_clinic/admin/admin_modal.php';
+        include_once 'src/pages/dental_clinic/admin/prices.php';
+        include_once 'src/pages/dental_clinic/admin/packages.php';
 
 
-        <!-- <input type="hidden" id="txt_user_name" value="<?php echo $_SESSION['username']; ?>">
-        <input type="hidden" id="txt_address" value="<?php echo $_SESSION['address']; ?>"> -->
-        <input type="hidden" id="txt_card_id" value="<?php
-                                                        if (isset($_SESSION['cart_id'])) {
-                                                            echo $_SESSION['cart_id'];
-                                                        }
-                                                        ?>">
-        <input type="hidden" value="<?php echo $_SESSION['access_level']; ?>" id="txt_user_access">
-        <input type="hidden" value="<?php echo $_SESSION['contact_no']; ?>" id="txt_user_mobile">
+        echo '<script src="src/func/dental_clinic/main.js"></script>';
+        echo '<script src="src/func/dental_clinic/admin/admin.js"></script>';
+    }
 
+    if ($_SESSION['theme'] == 'burger_shop' && $_SESSION['access_level'] == 'user') {
+        //DATABASE FUNCTIONS
+        include_once 'src/database/burger_shop/db.php';
 
-        <input type="hidden" id="txt_cart_order_count">
-        <input type="hidden" id="txt_user_id" value="<?php
+        // PAGE FUNCTIONS
 
-                                                        if (isset($_SESSION['user_id'])) {
-                                                            echo $_SESSION['user_id'];
-                                                        }
+        include_once 'src/pages/burger_shop/user/navbar.php';
 
+        include_once 'src/pages/burger_shop/user/home.php';
+        include_once 'src/pages/burger_shop/user/viewMenu.php';
+        include_once 'src/pages/burger_shop/user/modals.php';
+        include_once 'src/pages/burger_shop/user/contactUs.php';
+        include_once 'src/pages/burger_shop/user/myPurchase.php';
+        include_once 'src/pages/burger_shop/user/transaction.php';
+        include_once 'src/pages/burger_shop/user/sidebar.php';
 
+        echo '<script src="src/func/burger_shop/main.js"></script>';
+        echo '<script src="src/func/burger_shop/user/home.js"></script>';
+        echo '<script src="src/func/burger_shop/user/userPages.js"></script>';
+        echo '<script src="src/func/burger_shop/user/viewMenu.js"></script>';
+    } else if ($_SESSION['theme'] == 'burger_shop' && $_SESSION['access_level'] == 'admin') {
 
-                                                        ?>">
-        <!-- <input type="hidden" name="" id="txt_user_access" value="<?php echo $_SESSION['access_level']; ?>"> -->
+        // PAGE FUNCTIONS
+        include_once 'src/pages/burger_shop/admin/navbar.php';
+        include_once 'src/pages/burger_shop/admin/sidebar.php';
+        include_once 'src/pages/burger_shop/admin/feedback.php';
+        include_once 'src/pages/burger_shop/admin/order.php';
+        include_once 'src/pages/burger_shop/admin/order_history.php';
+        include_once 'src/pages/burger_shop/admin/inventory.php';
+        include_once 'src/pages/burger_shop/admin/dashboard.php';
+        include_once 'src/pages/burger_shop/admin/modals.php';
+        include_once 'src/pages/burger_shop/admin/product.php';
 
-        <!-- CONTENTS -->
-        <?php
+        echo '<script src="src/func/burger_shop/main.js"></script>';
+        echo '<script src="src/func/burger_shop/admin/feedback.js"></script>';
+        echo '<script src="src/func/burger_shop/admin/sidebar.js"></script>';
+        echo '<script src="src/func/burger_shop/admin/order.js"></script>';
+        echo '<script src="src/func/burger_shop/admin/order_history.js"></script>';
+        echo '<script src="src/func/burger_shop/admin/dashboard.js"></script>';
+        echo '<script src="src/func/burger_shop/admin/product.js"></script>';
+    }
 
-        if ($_SESSION['theme'] == 'dental_clinic' && $_SESSION['access_level'] == 'user') {
-
-            // NAVS AND SIDEBARS
-            include_once 'src/pages/dental_clinic/user/sidebarUser.php';
-            include_once 'src/pages/dental_clinic/user/modals.php';
-            include_once 'src/pages/dental_clinic/user/userMobileSidebar.php';
-            include_once 'src/pages/dental_clinic/user/bottomNav.php';
-
-            // PAGES PHP
-            include_once 'src/pages/dental_clinic/user/navbar.php';
-            include_once 'src/pages/dental_clinic/user/createAcc.php';
-            // include_once 'src/pages/dental_clinic/user/myAccount.php';
-            include_once 'src/pages/dental_clinic/user/page11.php';
-            include_once 'src/pages/dental_clinic/user/0page.php';
-            include_once 'src/pages/dental_clinic/user/labResult.php';
-            include_once 'src/pages/dental_clinic/user/incomingApp.php';
-            include_once 'src/pages/dental_clinic/user/appointments.php';
-
-            // NAVS AND SIDEBARS
-            include_once 'src/pages/dental_clinic/user/sidebarUser.php';
-            include_once 'src/pages/dental_clinic/user/modals.php';
-            include_once 'src/pages/dental_clinic/user/userMobileSidebar.php';
-
-            echo '<script src="src/func/dental_clinic/main.js"></script>';
-            echo '<script src="src/func/dental_clinic/user/user.js"></script>';
-        }
-
-        if ($_SESSION['theme'] == 'dental_clinic' && $_SESSION['access_level'] == 'admin') {
-
-            // NAVS AND SIDEBARS
-            include_once 'src/pages/dental_clinic/admin/admin_sidebar.php';
-
-            // PAGES PHP
-            include_once 'src/pages/dental_clinic/admin/overview.php';
-            include_once 'src/pages/dental_clinic/admin/registeredPatient.php';
-            include_once 'src/pages/dental_clinic/admin/history.php';
-            include_once 'src/pages/dental_clinic/admin/admin_appointment.php';
-            include_once 'src/pages/dental_clinic/admin/admin_modal.php';
-            include_once 'src/pages/dental_clinic/admin/prices.php';
-            include_once 'src/pages/dental_clinic/admin/packages.php';
-
-
-            echo '<script src="src/func/dental_clinic/main.js"></script>';
-            echo '<script src="src/func/dental_clinic/admin/admin.js"></script>';
-        }
-
-        if ($_SESSION['theme'] == 'burger_shop' && $_SESSION['access_level'] == 'user') {
-            //DATABASE FUNCTIONS
-            include_once 'src/database/burger_shop/db.php';
-
-            // PAGE FUNCTIONS
-
-            include_once 'src/pages/burger_shop/user/navbar.php';
-
-            include_once 'src/pages/burger_shop/user/home.php';
-            include_once 'src/pages/burger_shop/user/viewMenu.php';
-            include_once 'src/pages/burger_shop/user/modals.php';
-            include_once 'src/pages/burger_shop/user/contactUs.php';
-            include_once 'src/pages/burger_shop/user/myPurchase.php';
-            include_once 'src/pages/burger_shop/user/transaction.php';
-            include_once 'src/pages/burger_shop/user/sidebar.php';
-
-            echo '<script src="src/func/burger_shop/main.js"></script>';
-            echo '<script src="src/func/burger_shop/user/home.js"></script>';
-            echo '<script src="src/func/burger_shop/user/userPages.js"></script>';
-            echo '<script src="src/func/burger_shop/user/viewMenu.js"></script>';
-        } else if ($_SESSION['theme'] == 'burger_shop' && $_SESSION['access_level'] == 'admin') {
-
-            // PAGE FUNCTIONS
-            include_once 'src/pages/burger_shop/admin/navbar.php';
-            include_once 'src/pages/burger_shop/admin/sidebar.php';
-            include_once 'src/pages/burger_shop/admin/feedback.php';
-            include_once 'src/pages/burger_shop/admin/order.php';
-            include_once 'src/pages/burger_shop/admin/order_history.php';
-            include_once 'src/pages/burger_shop/admin/inventory.php';
-            include_once 'src/pages/burger_shop/admin/dashboard.php';
-            include_once 'src/pages/burger_shop/admin/modals.php';
-            include_once 'src/pages/burger_shop/admin/product.php';
-
-            echo '<script src="src/func/burger_shop/main.js"></script>';
-            echo '<script src="src/func/burger_shop/admin/feedback.js"></script>';
-            echo '<script src="src/func/burger_shop/admin/sidebar.js"></script>';
-            echo '<script src="src/func/burger_shop/admin/order.js"></script>';
-            echo '<script src="src/func/burger_shop/admin/order_history.js"></script>';
-            echo '<script src="src/func/burger_shop/admin/dashboard.js"></script>';
-            echo '<script src="src/func/burger_shop/admin/product.js"></script>';
-        }
-
-        ?>
+    ?>
 
 </body>
 

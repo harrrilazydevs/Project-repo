@@ -19,8 +19,8 @@
                     All Products
                 </button>
 
-                <ul class="dropdown-menu text-center" style="background: #E4DEBE; width: 15px;">
-                    <li><a class="dropdown-item menuDropdown" attr-name="all">All Products</a></li>
+                <ul class="dropdown-menu text-center" id="item_categories" style="background: #E4DEBE; width: 15px;">
+                    
                     <li><a class="dropdown-item menuDropdown" attr-name="drink">Drinks</a></li>
                     <li><a class="dropdown-item menuDropdown" attr-name="burger">Burgers</a></li>
                     <li><a class="dropdown-item menuDropdown" attr-name="sides">Side Dishes</a></li>

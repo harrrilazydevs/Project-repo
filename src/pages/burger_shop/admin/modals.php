@@ -64,19 +64,19 @@
             <div class="p-3 md_form">
                 <h6 class="fw-bold text-muted mb-3">Account Information</h6>
 
-                <label>Full name</label>
+                <label>Full name <span class="text-danger">*</span></label>
                 <input type="text" id="txt_register_full_name" class="form-control form-control-sm">
 
-                <label>Username</label>
+                <label>Username <span class="text-danger">*</span></label>
                 <input type="text" id="txt_register_username" class="form-control form-control-sm">
 
-                <label class="mt-2">Email</label>
+                <label class="mt-2">Email <span class="text-danger">*</span></label>
                 <input type="text" id="txt_register_email" class="form-control form-control-sm">
 
-                <label class="mt-2">Password</label>
+                <label class="mt-2">Password <span class="text-danger">*</span></label>
                 <input type="text" id="txt_register_password" class="form-control form-control-sm">
 
-                <label class="mt-2">Phone</label>
+                <label class="mt-2">Phone <span class="text-danger">*</span></label>
                 <input type="text" id="txt_register_phone" class="form-control form-control-sm">
 
 
@@ -155,14 +155,14 @@
                 <input class="form-control" readonly type="text" id="txt_payment_amount">
 
                 <div id="gcash" class="d-none">
-                <label class="mt-2">Number</label>
-                <input class="form-control" readonly type="text" id="txt_payment_number">
+                    <label class="mt-2">Number</label>
+                    <input class="form-control" readonly type="text" id="txt_payment_number">
 
-                <label class="mt-2">Payment Proof</label>
-                <br>
-                <a id="img_payment_proof_a" target="blank">
-                    <img style="height:200px;" id="img_payment_proof"></a>
-                    </div>
+                    <label class="mt-2">Payment Proof</label>
+                    <br>
+                    <a id="img_payment_proof_a" target="blank">
+                        <img style="height:200px;" id="img_payment_proof"></a>
+                </div>
 
             </div>
 
@@ -205,6 +205,49 @@
 
 
 
+
+                <div class="modal-footer">
+                    <button class="btn border" type="submit" style="font-size:10pt;">Save</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" id="md_edit_item">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="text-center py-3 text-center" style="border-bottom:3px solid black;">
+                <span class="ms-5 h5 fw-bold"> Edit Product </span>
+                <i class="fa-solid fa-circle-xmark icon_btn pe-3 fa-xl" style="float:right; padding-top:12px;" data-bs-dismiss="modal"></i>
+            </div>
+
+            <form action="src/database/burger_shop/func/admin/update_product.php" method="post" enctype="multipart/form-data">
+                <div class="p-3">
+                    <div class="text-center">
+                        <a href="" style="font-size:9pt;" class="text-dark" target="blank" id="btn_preview_image"><img id="img_product" style="height:130px;"></a><br><a href="#" id="btn_edit_product_change_picture"  style="font-size:9pt;" class="text-dark" >Change Picture</a> 
+                    </div>
+                    <br>
+
+                    <label for="">Product Name</label>
+                    <input type="text" class="form-control" name="name" id="txt_edit_product_name">
+
+                    <label class="mt-2">Price</label>
+                    <input type="text" class="form-control" name="price" id="txt_edit_product_price">
+
+                    <label class="mt-2">Category</label>
+                    <select id="txt_edit_product_category" name="category" class="form-select txt_product_category">
+                        <!-- <option value="burger">Burger</option>
+                        <option value="drink">Drink</option>
+                        <option value="sides">Sides</option>
+                        <option value="other">Other</option> -->
+                    </select>
+
+                    <input type="text" class="form-control mt-2 d-none"  name="other_category" placeholder="Please specify.." id="txt_other_category">
+                    <input type="text" class="form-control" name="id" hidden id="txt_edit_product_id">
+                    <input type="file" class="form-control" name="picture" hidden id="txt_edit_product_picture">
+                </div>
 
                 <div class="modal-footer">
                     <button class="btn border" type="submit" style="font-size:10pt;">Save</button>

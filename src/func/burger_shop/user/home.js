@@ -25,12 +25,12 @@ function write_products(data) {
       '<h5 id="text" style="letter-spacing: 1.5px !important;">' + val.name + "</h5>";
     output += "<p>&#8369;" + val.price + "</p>";
     output +=
-      '<a class="btn_add_to_cart"  attr-item-pic="'+val.picture+'" attr-item-name="'+val.name+'" attr-item-price="'+val.price+'" attr-id="' +
+      '<a class="btn_add_to_cart"  attr-item-pic="' + val.picture + '" attr-item-name="' + val.name + '" attr-item-price="' + val.price + '" attr-id="' +
       val.id +
       '"><button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button></a></div></div>';
 
     all_output +=
-      '<div class="col mt-2" ><div class="card p-3" style=" height:65vh;background: #2D1E1E; border-radius: 2%;">';
+      '<div class="col-lg-4 col-12 mt-2" ><div class="card p-3" style=" height:65vh;background: #2D1E1E; border-radius: 2%;">';
     all_output +=
       '<div><img src="' +
       val.picture +
@@ -46,7 +46,7 @@ function write_products(data) {
     all_output +=
       '<button attr-id="' +
       val.id +
-      '" class="btn_add_to_cart"  attr-item-pic="'+val.picture+'"  attr-item-name="'+val.name+'" attr-item-price="'+val.price+'"  style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none; @media only screen and (max-width: 400) {width:100px !important; height: 15px !important; }">';
+      '" class="btn_add_to_cart"  attr-item-pic="' + val.picture + '"  attr-item-name="' + val.name + '" attr-item-price="' + val.price + '"  style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none; @media only screen and (max-width: 400) {width:100px !important; height: 15px !important; }">';
     all_output +=
       '<i class="fa-solid fa-cart-shopping text-white"></i> Add to Cart';
     all_output += "</button></a></div></div></div>";
@@ -84,16 +84,14 @@ function load_filtered_products(filter) {
 function write_products_filtered(data) {
   all_output = "";
   $.each(data, function (key, val) {
-
-
     all_output +=
-      '<div class="col mt-2" ><div class="card p-3" style=" height:65vh;background: #2D1E1E; border-radius: 2%;">';
+      '<div class="col-lg-4 col-12 mt-2" ><div class="card p-3" style=" height:65vh;background: #2D1E1E; border-radius: 2%;">';
     all_output +=
       '<div><img src="' +
       val.picture +
-      '"  class="card-img-top" style="border-radius: 2%; height:40vh; width: 10% !important;"></div>';
+      '"  class="card-img-top" style="border-radius: 2%; height:40vh; !important;"></div>';
     all_output +=
-      '<div class="card-body"><h6 class="card-title" style="letter-spacing: 1.5px;>' +
+      '<div class="card-body"><h6 class="card-title" style="letter-spacing: 1.5px;">' +
       val.name +
       "</h6>";
     all_output +=
@@ -103,7 +101,7 @@ function write_products_filtered(data) {
     all_output +=
       '<button attr-id="' +
       val.id +
-      '" class="btn_add_to_cart" attr-item-pic="'+val.picture+'"  attr-item-name="'+val.name+'" attr-item-price="'+val.price+'" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none;">';
+      '" class="btn_add_to_cart" attr-item-pic="' + val.picture + '"  attr-item-name="' + val.name + '" attr-item-price="' + val.price + '" style="font-weight:bold; background:#FFD600; border-radius:25px; border-style: solid; width:150px; height: 35px; border: none;">';
     all_output +=
       '<i class="fa-solid fa-cart-shopping text-white"></i> Add to Cart';
     all_output += "</button></a></div></div></div>";
@@ -134,9 +132,9 @@ function add_to_cart() {
       temp =
         `
         <div class="text-center mb-2">  
-          <img class="border rounded" style=" height:30vh;" src="`+$(this).attr('attr-item-pic')+`"></img>
-          <h6>`+$(this).attr('attr-item-name')+`</h6>
-          <small class="text-secondary">₱`+$(this).attr('attr-item-price')+`</small>
+          <img class="border rounded" style=" height:30vh;" src="`+ $(this).attr('attr-item-pic') + `"></img>
+          <h6>`+ $(this).attr('attr-item-name') + `</h6>
+          <small class="text-secondary">₱`+ $(this).attr('attr-item-price') + `</small>
         </div>
         
         <div class="text-center mt-3">
@@ -162,7 +160,7 @@ function add_to_cart() {
 
 function confirm_add_to_cart() {
   $("#btn_confirm_add_to_cart").on("click", function () {
-    if ($("#txt_add_to_cart_qty").val()) {
+    if ($("#txt_add_to_cart_qty").val() && $("#txt_add_to_cart_qty").val() > 0) {
       $.ajax({
         type: "POST",
         url: "src/database/burger_shop/func/user/add_to_cart.php",
@@ -188,7 +186,7 @@ function confirm_add_to_cart() {
         },
       });
     } else {
-      show_msg("Add to Cart Failed", "Pls enter quantity");
+      show_msg("Add to Cart Failed", "Please enter a valid quantity");
     }
   });
 }
@@ -219,19 +217,24 @@ function write_cart_orders(data, id) {
   var subtotal = 0;
   var delivery_fee = 0;
   var total = 0;
+
   $.each(data, function (key, val) {
     output +=
-      '<tr> <td> <div class="mt-3 d-flex align-items-center ps-5 ms-5"> <i class="fa-solid fa-circle-minus h4 pe-3 icon_btn remove_from_cart" attr-id="' +
+      '<tr> <td> <div class="mt-3 d-flex align-items-center ps-lg-5 ms-lg-5"> <i class="delete_from_cart fa-solid fa-circle-minus h4 pe-3 icon_btn " attr-id="' +
       val.id +
-      '" title="Remove order" style="color: #F34336;"></i> <img src="' +
+      '" title="Remove order" style="color: #F34336;"></i> <div> <img src="' +
       val.picture +
-      '" style="border-radius: 5px; width: 170px;"> <div class="text-start ps-3"> <p class=" m-0">' +
+      '" style="border-radius: 5px; width: 120px;"></div><div class="text-start ps-3"> <p class=" m-0">' +
       val.name +
-      '</p><small class="pe-5 me-1">₱' +
+      '</p><small class="pe-5 fw-bold me-1">₱' +
       val.price +
-      '</small> </div> </div> </td> <td> <p class="ps-2 mt-5 pt-2">' +
+      '</small> </div> </div> </td> <td class="text-center mx-1"> <p class=" mt-5 "> <i class="icon_btn fa-solid fa-minus pe-lg-2 pe-1 remove_from_cart"  attr-id="' +
+      val.id +
+      '" title="Decrease order quantity"></i> <span class="p-lg-2 px-lg-3 px-1 rounded text-white" style="font-size:9pt;background:#712525"> ' +
       val.qty +
-      '</p> </td> <td style="background-color: white; border-radius: 2px;"> <p class="ps-2 m-0 mt-5 text-black">₱' +
+      '</span><i class="icon_btn fa-solid fa-plus ps-lg-2 ps-1 increase_order_to_cart" attr-id="' +
+      val.id +
+      '" title="Increase order quantity"></i></p> </td> <td class="text-center"> <p class=" m-0 mt-5 text-black">₱' +
       val.subtotal +
       "</p> </td> </tr>";
     count = val.order_count;
@@ -239,6 +242,17 @@ function write_cart_orders(data, id) {
     delivery_fee = val.delivery_fee;
     total = val.total;
   });
+
+
+  output += `
+  <tr>
+  <td></td>
+  <td style="border-top:4px solid #c3c3c3" class="text-end">Subtotal</td>
+  <td style="border-top:4px solid #c3c3c3" class="text-center"> <span class=" fw-bold">₱`+ subtotal + `</span></td>
+
+  </tr>
+  `
+
 
   $("#txt_subtotal").empty();
   $("#txt_subtotal").append("₱" + subtotal);
@@ -270,6 +284,24 @@ function write_cart_orders(data, id) {
       },
     });
   });
+
+  $(".increase_order_to_cart").on("click", function () {
+    id = $(this).attr("attr-id");
+    $.post("src/database/burger_shop/func/user/increase_order_to_cart.php", { id: id }).done(function () {
+      load_cart_orders($("#txt_card_id").val());
+    })
+  });
+
+  $(".delete_from_cart").on("click", function () {
+    id = $(this).attr("attr-id");
+    $.post("src/database/burger_shop/func/user/delete_from_cart.php", { id: id }).done(function () {
+      load_cart_orders($("#txt_card_id").val());
+    })
+  });
+
+
+
+
 }
 
 $(".view_account").on("click", function () {
@@ -297,43 +329,65 @@ function write_account_details(data) {
 }
 
 $("#btn_update_user_save").on("click", function () {
-  $.ajax({
-    type: "POST",
-    url: "src/database/burger_shop/func/user/update_account.php",
-    data: {
-      id: $("#txt_user_id").val(),
-      username: $("#txt_view_username").val(),
-      password: $("#txt_view_password").val(),
-      name: $("#txt_view_name").val(),
-      email: $("#txt_view_email").val(),
-      phone: $("#txt_view_phone").val(),
-      address_no: $("#txt_view_address_no").val(),
-      address_st: $("#txt_view_address_st").val(),
-      address_brgy: $("#txt_view_address_brgy").val(),
-      address_city: $("#txt_view_address_city").val(),
-    },
-    success: function (data) {
-      $("#msg_title").text("Update Account");
-      $("#msg_body").text("Account updated successfully.");
-      $("#md_msg_box").modal("show");
-    },
-  });
+  if ($("#txt_view_username").val()
+    && $("#txt_view_password").val()
+    && $("#txt_view_name").val()
+    && $("#txt_view_email").val()
+    && $("#txt_view_phone").val()
+    && $("#txt_view_address_no").val()
+    && $("#txt_view_address_st").val()
+    && $("#txt_view_address_brgy").val()
+    && $("#txt_view_address_city").val()) {
+    $.ajax({
+      type: "POST",
+      url: "src/database/burger_shop/func/user/update_account.php",
+      data: {
+        id: $("#txt_user_id").val(),
+        username: $("#txt_view_username").val(),
+        password: $("#txt_view_password").val(),
+        name: $("#txt_view_name").val(),
+        email: $("#txt_view_email").val(),
+        phone: $("#txt_view_phone").val(),
+        address_no: $("#txt_view_address_no").val(),
+        address_st: $("#txt_view_address_st").val(),
+        address_brgy: $("#txt_view_address_brgy").val(),
+        address_city: $("#txt_view_address_city").val(),
+      },
+      success: function (data) {
+        $("#msg_title").text("Update Account");
+        $("#msg_body").text("Account updated successfully.");
+        $("#md_msg_box").modal("show");
+      },
+    });
+  } else {
+    $("#msg_title").text("Update Fail");
+    $("#msg_body").text("Please enter required fields");
+    $("#md_msg_box").modal("show");
+  }
+
 });
 
 $("#btn_submit_fb").on("click", function () {
-  $.ajax({
-    type: "POST",
-    url: "src/database/burger_shop/func/user/add_feedback.php",
-    data: {
-      id: $("#txt_user_id").val(),
-      feedback: $("#txt_feedback").val(),
-    },
-    success: function (data) {
-      $("#msg_title").text("Feedback Submitted");
-      $("#msg_body").text("Your feedback has been saved.");
-      $("#md_msg_box").modal("show");
-    },
-  });
+
+  if ($("#txt_feedback").val()) {
+    $.ajax({
+      type: "POST",
+      url: "src/database/burger_shop/func/user/add_feedback.php",
+      data: {
+        id: $("#txt_user_id").val(),
+        feedback: $("#txt_feedback").val(),
+      },
+      success: function (data) {
+        $("#msg_title").text("Feedback Submitted");
+        $("#msg_body").text("Your feedback has been saved.");
+        $("#md_msg_box").modal("show");
+      },
+    });
+  }
+  else {
+    show_msg("Send Feedback Fail", "Feedback cannot be empty.")
+  }
+
 });
 
 $("#btn_proceed_checkout").on("click", function () {
@@ -407,7 +461,7 @@ $(".payment_requirement").on("click", function () {
   }
 });
 
-$("#btn_place_order").on("click", function () {});
+$("#btn_place_order").on("click", function () { });
 
 $("form#form_check_out").submit(function (e) {
   e.preventDefault();
@@ -485,10 +539,10 @@ function write_my_orders(data) {
     !temp_ref_no ? (temp_ref_no = val.ref_no) : "";
 
     if (temp_ref_no == val.ref_no) {
-      orders += "<label>"+val.qty + "x" + " " + val.name + " </label><br>";
+      orders += "<label>" + val.qty + "x" + " " + val.name + " </label><br>";
     } else {
       temp_ref_no = val.ref_no;
-      orders = "<label>"+val.qty + "x" + " " + val.name + " </label>";
+      orders = "<label>" + val.qty + "x" + " " + val.name + " </label>";
     }
 
     rows[temp_ref_no] = [orders, val.payment_method, val.status];
@@ -507,19 +561,19 @@ function write_my_orders(data) {
   $("#tbl_my_orders tbody").append(td);
 }
 
-function get_order_status(value){
+function get_order_status(value) {
 
   var output = '';
-  if(value == "Pending" || value.toLowerCase() == "out for delivery" ){
-    output = '<span class="badge bg-warning text-dark">'+value+'</span>'
+  if (value == "Pending" || value.toLowerCase() == "out for delivery") {
+    output = '<span class="badge bg-warning text-dark">' + value + '</span>'
   }
 
-  if(value == "Completed"){
-    output = '<span class="badge bg-success">'+value+'</span>'
+  if (value == "Completed") {
+    output = '<span class="badge bg-success">' + value + '</span>'
   }
 
-  if(value == "Cancelled"){
-    output = '<span class="badge bg-danger">'+value+'</span>'
+  if (value == "Cancelled") {
+    output = '<span class="badge bg-danger">' + value + '</span>'
   }
 
   return output;
@@ -530,7 +584,7 @@ $(".view_my_orders").on("click", function () {
   load_my_orders();
 });
 
-function check_if_password_valid(value){
+function check_if_password_valid(value) {
 
 }
 
@@ -553,35 +607,35 @@ $("#txt_signup_password2").on("keyup", function () {
 $("#txt_signup_password").on("keyup", function () {
   var pass1 = $("#txt_signup_password").val()
   var hasError = false;
-  if(!has_numbers(pass1)){
+  if (!has_numbers(pass1)) {
     hasError = true;
   }
-  else if(!has_letters(pass1)){
+  else if (!has_letters(pass1)) {
     hasError = true;
   }
-  else if(pass1.length<8){
+  else if (pass1.length < 8) {
     hasError = true;
   }
-  else{
+  else {
     hasError = false
   }
 
 
-  if(hasError){
+  if (hasError) {
     $("#div_password_validation").removeClass("d-none");
     $("#btn_signup_submit").prop("disabled", true);
     $("#txt_signup_password").addClass("border-danger");
   }
-  else{
+  else {
     $("#div_password_validation").addClass("d-none");
     $("#btn_signup_submit").prop("disabled", false);
     $("#txt_signup_password").removeClass("border-danger");
   }
 
- 
 
 
- 
+
+
 
 });
 
@@ -592,25 +646,7 @@ function has_letters(str) {
   return /[a-zA-Z]/.test(str);
 }
 
-$(".menuDropdown").on("click", function () {
-  load_filtered_products($(this).attr("attr-name"));
 
-  if ($(this).attr("attr-name") == "all") {
-    $("#btn_filter_product").text("All Products");
-  }
-
-  if ($(this).attr("attr-name") == "sides") {
-    $("#btn_filter_product").text("Side Dishes");
-  }
-
-  if ($(this).attr("attr-name") == "burger") {
-    $("#btn_filter_product").text("Burgers");
-  }
-
-  if ($(this).attr("attr-name") == "drink") {
-    $("#btn_filter_product").text("Drinks");
-  }
-});
 
 function load_best_sellers() {
   $.ajax({
@@ -637,7 +673,7 @@ function write_best_sellers(data) {
       val.name +
       "</h5><p>₱" +
       val.price +
-      '</p><a class="btn_add_to_cart"  attr-item-name="'+val.name+'" attr-item-price="'+val.price+'"  attr-item-pic="'+val.picture+'" attr-id="' +
+      '</p><a class="btn_add_to_cart"  attr-item-name="' + val.name + '" attr-item-price="' + val.price + '"  attr-item-pic="' + val.picture + '" attr-id="' +
       val.id +
       '"><button style="font-weight:bold; background:#FFD600; border-radius:25px; width:150px; height: 40px; border: none;">Buy</button></a></div></div>';
     count = count + 1;

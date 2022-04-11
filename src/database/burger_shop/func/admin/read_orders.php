@@ -17,7 +17,9 @@ $q = '
         ON
             a.user_id = b.id
         WHERE
-                status = "Pending" OR status = "Out for Delivery";
+                status = "Pending" OR status = "Out for Delivery"
+        ORDER BY
+                a.id DESC;
 ';
 
 $db = new Database();

@@ -20,13 +20,15 @@ function write_tbl_products(data) {
                 <td class="text-center p-1"> `+ val.price + `</td>
 
                 <td class="text-center p-1">
-                  <i class="fa-solid text-danger fa-trash-can icon_btn text-primary pe-1 delete_product" attr-id= `+val.id +`></i>
+                 
                   <i class="fa-solid fa-pen-to-square icon_btn text-primary pe-1 edit_product" 
                   attr-name="`+ val.name + `"
                   attr-picture="`+ val.picture + `"
                   attr-category="`+ val.category +`"
                   attr-price="`+ val.price + `"
                   attr-id= `+val.id +`></i>
+
+                  <i class="fa-solid text-danger fa-trash-can icon_btn text-primary pe-1 delete_product" attr-id= `+val.id +`></i>
                 </td>
               </tr>  
     `;
@@ -43,13 +45,48 @@ function write_tbl_products(data) {
     })
   })
 
-  $('.edit').on('click', function(){
-    var prod_id = $(this).attr('attr-id')
-    show_msg('Delete Product','Do you want to delete this product? <br><br><div class="text-center"><button class="btn border-danger mt-2 text-danger py-0 px-3" id="btn_confirm_delete">Delete Product</button></div>')
-    $('#btn_confirm_delete').on('click', function(){
-      delete_product(prod_id)
-    })
+  $('.edit_product').on('click', function(){
+    load_category('txt_edit_product_category', $(this).attr('attr-category').toLowerCase())
+    $('#md_edit_item').modal('show')
+    $('#btn_preview_image').attr('href', $(this).attr('attr-picture'))
+    $('#img_product').attr('src', $(this).attr('attr-picture'))
+    $('#txt_edit_product_name').attr('value',$(this).attr('attr-name'))
+    $('#txt_edit_product_price').attr('value',$(this).attr('attr-price'))
+    $('#txt_edit_product_category').val($(this).attr('attr-category'))
+    $('#txt_edit_product_picture').attr('value',$(this).attr('attr-picture'))
+    $('#txt_edit_product_id').attr('value',$(this).attr('attr-id'))
   })
+}
+
+function load_category(id,val){
+  var output = "";
+  $.getJSON("src/database/burger_shop/func/admin/read_product_categories.php",function(data){
+    $.each(data, function(key,val){
+      output += `<option value="`+val.category.toLowerCase()+`">`+val.category.toUpperCase()+`</option>`
+    })
+    output += `<option value="other">OTHER</option>`
+    $('#'+id).empty().append(output)
+    $('#'+id).val(val)
+
+  })
+}
+
+$('#btn_edit_product_change_picture').on('click', function(){
+  $('#txt_edit_product_picture').trigger('click')
+})
+
+$('#txt_edit_product_picture').on('change', function(){
+  readURL(this)
+})
+
+function readURL(input) {
+  if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+          $('#img_product').attr('src', e.target.result);
+      }
+      reader.readAsDataURL(input.files[0]);
+  }
 }
 
 function delete_product(id) {
@@ -67,6 +104,17 @@ function delete_product(id) {
     },
   });
 }
+
+$('.txt_product_category').on("change",function(){
+  if($(this).val() == 'other'){
+    $('#txt_other_category').removeClass('d-none')
+  }
+  else{
+    $('#txt_other_category').addClass('d-none')
+  }
+})
+
+
 
 // function view_products(id) {
 //   $.ajax({

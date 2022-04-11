@@ -38,10 +38,11 @@ function getCookie(cname) {
   }
   return "";
 }
-
+function camelize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}
 $(document).ready(function () {
 
-  write_chart()
 
   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
@@ -141,7 +142,7 @@ $(document).ready(function () {
     });
   } else {
 
-
+    load_filter_category()
     $('.list-group-item ').on('click', function () {
       $('#burger_machine_sidebar').offcanvas('toggle')
     })
@@ -320,22 +321,31 @@ $('#btn_nav_admin_add_account').on('click', function () {
   $('#md_add_account').modal('show')
 })
 $('#btn_register_account_submit').on('click', function () {
-  $.ajax({
-    type: "POST",
-    url: "src/database/burger_shop/func/admin/add_admin_account.php",
-    data: {
-      username: $("#txt_register_username").val(),
-      password: $("#txt_register_password").val(),
-      email: $("#txt_register_email").val(),
-      phone: $("#txt_register_phone").val(),
-      name: $("#txt_register_name").val()
-    },
-    success: function (data) {
-      $('#md_add_account').modal('hide')
-      show_msg('Register Success', 'Admin account registered successfully!<br><br>Username : <b class="ps-1">' + $("#txt_register_username").val() + '</b><br>Password : <b class="ps-1">' + $("#txt_register_password").val() + '</b>')
+  
+  if($("#txt_register_username").val() && $("#txt_register_password").val() && $("#txt_register_email").val() && $("#txt_register_phone").val() && $("#txt_register_name").val())
+  {
+    $.ajax({
+      type: "POST",
+      url: "src/database/burger_shop/func/admin/add_admin_account.php",
+      data: {
+        username: $("#txt_register_username").val(),
+        password: $("#txt_register_password").val(),
+        email: $("#txt_register_email").val(),
+        phone: $("#txt_register_phone").val(),
+        name: $("#txt_register_name").val()
+      },
+      success: function (data) {
+        $('#md_add_account').modal('hide')
+        show_msg('Register Success', 'Admin account registered successfully!<br><br>Username : <b class="ps-1">' + $("#txt_register_username").val() + '</b><br>Password : <b class="ps-1">' + $("#txt_register_password").val() + '</b>')
+  
+      }
+    });
+  }
+  else{
+    show_msg('Register Fail', 'Please enter required fields')
 
-    }
-  });
+  }
+  
 })
 
 $('#login_form').on('submit', function (e) {

@@ -31,7 +31,7 @@ if(!empty($_GET)){
         $_SESSION['access_level'] = $result[0]['access_level'];
         $_SESSION['user_id'] = $result[0]['user_id'];
         $_SESSION['username'] = $result[0]['name'];
-        $_SESSION['address_st'] = $result[0]['address_st'];
+        $_SESSION['address'] = $result[0]['address_no'].' '.$result[0]['address_st'].' '.$result[0]['address_brgy'].' '.$result[0]['address_city'];
         echo json_encode([
             'result'=>1
         ]);

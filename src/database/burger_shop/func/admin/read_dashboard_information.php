@@ -5,7 +5,7 @@ include '../../db.php';
 $date = $_GET['date'];
 $db = new Database();
 $data = [];
-$year = explode( '-', $date);
+$year = explode('-', $date);
 $q = '
 
         SELECT 
@@ -13,7 +13,7 @@ $q = '
         FROM
                 tbl_users
         WHERE 
-                register_date ="'.$date.'";
+                register_date ="' . $date . '";
 ';
 
 $total_users = $db->read($q);
@@ -25,7 +25,7 @@ $q = '
         FROM
                 tbl_orders
         WHERE 
-                order_date ="'.$date.'"
+                order_date ="' . $date . '"
         AND
                 status = "Completed";
 ';
@@ -39,7 +39,7 @@ $q = '
         FROM
                 tbl_orders
         WHERE 
-                order_date ="'.$date.'"
+                order_date ="' . $date . '"
         ;
 ';
 
@@ -58,7 +58,7 @@ $q = '
         WHERE 
                 b.status = "Completed"
         AND
-                year(order_date) = '.$year[0].'
+                year(order_date) = ' . $year[0] . '
         ;
 ';
 
@@ -77,15 +77,39 @@ $q = '
         WHERE 
                 b.status = "Completed"
         AND
-                order_date = "'.$date.'"
+                order_date = "' . $date . '"
 
-        GROUP BY a.name
+        GROUP BY 
+                a.name
+        ORDER BY 
+                top_seller_count 
+        DESC
+        LIMIT 5
         ;
 ';
 
 $top_selling["top_sellers"] = $db->read($q);
 
 
-array_push($data, $total_order[0], $total_completed[0], $total_users[0], $annual_sale[0], $top_selling);
+$q = '
+        SELECT 
+                name, 
+                (select sum(qty)) as qty 
+        FROM
+                tbl_orders a 
+        LEFT JOIN 
+                tbl_products b 
+        ON 
+                a.product_id = b.id
+        WHERE
+                a.status = "Completed"
+        GROUP BY 
+                a.product_id
+;
+';
+$chart_data['chart_data'] = $db->read($q);
+
+
+array_push($data, $total_order[0], $total_completed[0], $total_users[0], $annual_sale[0], $top_selling, $chart_data);
 
 echo json_encode($data);

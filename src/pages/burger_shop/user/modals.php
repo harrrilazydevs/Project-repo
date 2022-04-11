@@ -282,48 +282,48 @@
 
                     <div class="field">
                         <input type="text" id="txt_view_username" required>
-                        <label>Username</label>
+                        <label>Username <span class="text-danger">*</span></label>
                     </div>
                     <div class="field">
                         <input type="text" id="txt_view_name" required>
-                        <label>Full Name</label>
+                        <label>Full Name <span class="text-danger">*</span></label>
                     </div>
 
                     <div class="field">
                         <input type="email" id="txt_view_email" required>
-                        <label>Email</label>
+                        <label>Email <span class="text-danger">*</span></label>
                     </div>
 
                     <div class="field">
                         <input type="text" id="txt_view_phone" required>
-                        <label>Phone</label>
+                        <label>Phone <span class="text-danger">*</span></label>
                     </div>
 
                     
                     <div class="field">
                         <input type="text" id="txt_view_address_no" required>
-                        <label>House No</label>
+                        <label>House No <span class="text-danger">*</span></label>
                     </div>
 
                     
                     <div class="field">
                         <input type="text" id="txt_view_address_st" required>
-                        <label>Street</label>
+                        <label>Street <span class="text-danger">*</span></label>
                     </div>
 
                     
                     <div class="field">
                         <input type="text" id="txt_view_address_brgy" required>
-                        <label>Barangay</label>
+                        <label>Barangay <span class="text-danger">*</span></label>
                     </div>
                     <div class="field">
                         <input type="text" id="txt_view_address_city" required>
-                        <label>City</label>
+                        <label>City <span class="text-danger">*</span></label>
                     </div>
 
                     <div class="field">
                         <input type="password" id="txt_view_password" required>
-                        <label>Password
+                        <label>Password <span class="text-danger">*</span>
 
                         </label>
 

@@ -26,7 +26,7 @@ $result = $db->read($q);
 
 $q = '
         SELECT 
-                (select sum(b.price)) as "subtotal"
+                (select sum(b.price) * qty) as "subtotal"
         FROM
                 tbl_orders a
         INNER JOIN

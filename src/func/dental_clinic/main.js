@@ -140,12 +140,23 @@ $("#btn_login").on("click", function () {
         password: $("#txt_password").val(),
       },
       success: function (data) {
+
         if (data == 0) {
           show_msg("Invalid Username / Password", 2);
           $('#test_sidebar_user').addClass('d-none')
 
         } else {
-          change_page("dashboard");
+          var data = JSON.parse(data)
+
+          console.log( data[0].user_access)
+          if(data[0].user_access == "admin"){
+            location.reload()
+          }
+          else{
+            change_page("dashboard");
+            
+          }
+          console.log()
           show_msg("Login Successful", 1);
           // location.reload();
 
@@ -1447,17 +1458,20 @@ $(document).ready(function () {
 
   search_function();
 
-  if (!$("#txt_user_id").val()) {
-   
+  if(!$("#txt_user_access").val()){
+    $("#txt_user_access").attr('value','user')
+    load_packages()
+    change_page("main_page");
+  }
 
+  if (!$("#txt_user_id").val()) {
     change_page("main_page");
     $("#txt_user_access").val("user");
 
-    // alert('test')
   } else {
     if (access_level == "user") {
-      load_packages()
       load_available_appointments();
+      
       change_page("dashboard");
       
     } else {

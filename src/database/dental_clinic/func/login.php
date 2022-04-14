@@ -27,8 +27,6 @@ if(!empty($_POST)){
     $db = new Database();
     $result = $db->read($q);
 
-    var_dump($result);
-
     if(count($result)>0){
         $_SESSION['access_level'] = $result[0]['user_access'];
         $_SESSION['user_id'] = $result[0]['user_id'];
@@ -36,7 +34,7 @@ if(!empty($_POST)){
         $_SESSION['contact_no'] = $result[0]['contact_no'];
         $_SESSION['picture'] = $result[0]['picture'];
         
-        echo 1;
+        echo json_encode($result);
 
     }
     else{

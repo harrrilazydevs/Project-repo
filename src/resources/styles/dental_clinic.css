@@ -1,23 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap');
+
 :root {
   --bgc: #4dbdac !important;
 }
+
 body {
   background: var(--bgc);
   color: white;
   font-family: 'Poppins', sans-serif;
 }
+
 .dental_clinic_nav {
   height: 60px;
   background: #4dbdac !important;
   color: white;
 }
+
 .nav-link:hover {
   cursor: pointer;
 }
+
 a {
   text-decoration: none;
 }
+
 .sidebar_dental {
   background-color: #4dbdac;
   color: white;
@@ -27,13 +33,16 @@ a {
   font-size: 15px !important;
   cursor: pointer;
 }
+
 .sidebar_dental:hover {
   background-color: #8d8d8d;
 }
+
 /* <------------SIGN UP AND SIGN IN FORM ------------>*/
 .che {
   color: #68d4c3;
 }
+
 .login_container {
   position: relative;
   min-height: 100vh;
@@ -42,6 +51,7 @@ a {
   min-height: 100vh;
   overflow: hidden;
 }
+
 .forms-container {
   position: absolute;
   width: 100%;
@@ -161,6 +171,7 @@ a {
 .btn:hover {
   background-color: #57c9b8;
 }
+
 .panels-container {
   position: absolute;
   height: 100%;
@@ -267,21 +278,26 @@ a {
   opacity: 0;
   z-index: 1;
 }
+
 .login_container.sign-up-mode .right-panel .image,
 .login_container.sign-up-mode .right-panel .content {
   transform: translateX(0%);
 }
+
 .login_container.sign-up-mode .left-panel {
   pointer-events: none;
 }
+
 .login_container.sign-up-mode .right-panel {
   pointer-events: all;
 }
+
 @media (max-width: 870px) {
   .login_container {
     min-height: 800px;
     height: 100vh;
   }
+
   .signin-signup {
     width: 100%;
     top: 95%;
@@ -379,6 +395,7 @@ a {
     transform: translate(-50%, 0);
   }
 }
+
 @media (max-width: 570px) {
   form {
     padding: 0 1.5rem;
@@ -387,9 +404,11 @@ a {
   .image {
     display: none;
   }
+
   .panel .content {
     padding: 0.5rem 1rem;
   }
+
   .login_container {
     padding: 1.5rem;
   }
@@ -404,6 +423,7 @@ a {
     left: 50%;
   }
 }
+
 /* <------------SIGN UP AND SIGN IN FORM ------------>*/
 
 /* <------------CREATE ACC PAGE INPUT AND LABELS ------------>*/
@@ -413,11 +433,13 @@ a {
   margin-top: 13px;
   margin-left: 30px;
 }
+
 .createAcc_label {
   display: inline-block;
   width: 140px;
   margin-left: 15px;
 }
+
 /* <------------CREATE ACC PAGE INPUT AND LABELS ------------>*/
 
 /* <------------PAGE 0 ------------>*/
@@ -429,25 +451,31 @@ a {
   color: #fff;
   cursor: pointer;
 }
+
 .booknowBtn:focus {
   text-decoration: none;
 }
+
 .booknowBtn:hover {
   text-decoration: none;
 }
+
 .booknowBtn:active {
   box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
   outline: 0;
 }
+
 .booknowBtn:not([disabled]):active {
   box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
   transform: translate(2px, 2px);
 }
+
 @media (min-width: 768px) {
   .booknowBtn {
     padding: 12px 50px;
   }
 }
+
 .dentalCard {
   background: rgba(255, 255, 255, 0.17);
   border-radius: 16px;
@@ -457,10 +485,16 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.45);
   border-radius: 5%;
 }
+
+.dentalCard {
+  width: 250px !important;
+}
+
 .setting_icon:hover {
   transform: rotate(150deg);
   cursor: pointer;
 }
+
 /* <------------PAGE 0 ------------>*/
 .services_btn {
   font-weight: bold;
@@ -479,6 +513,7 @@ a {
   border: 3px solid rgba(175, 173, 173, 0.789);
   align-items: center !important;
 }
+
 .search input {
   height: 45px;
   background: transparent;
@@ -493,31 +528,38 @@ a {
     margin-left: 40px;
     justify-content: center;
   }
+
   .service {
     display: flex;
     justify-content: space-evenly;
   }
+
   .services_btn {
     font-size: 10px;
     width: 100px !important;
     margin: 5px;
     height: 35px !important;
   }
+
   .dentalCard {
     margin-bottom: 5%;
   }
+
   .dashboard_grid {
     display: grid;
     grid-template-columns: 100% 0% !important;
   }
+
   .myAcc_grid {
     display: grid;
     grid-template-columns: 100% 0% !important;
   }
+
   .lab_result {
     display: grid;
     grid-template-columns: 100% 0% !important;
   }
+
   .incoming_Appointment {
     display: grid;
     grid-template-columns: 5fr 0fr !important;
@@ -525,37 +567,48 @@ a {
 
 
 }
+
 /* <------------TABLE MEDIA QUERY------------>*/
 @media only screen and (max-width: 900px) {
   .data-title {
     color: #80ceb8 !important;
   }
+
+  .dentalCard {
+    margin-top: 5% !important;
+  }
+
   #no-more-tables tbody,
   #no-more-tables tr,
   #no-more-tables td {
     display: block;
   }
+
   #no-more-tables thead tr {
     position: absolute;
     top: -9999px;
     left: -9999px;
   }
+
   #no-more-tables td {
     position: relative;
     padding-left: 50%;
     border: none;
     border-bottom: 1px solid #eee;
   }
+
   #no-more-tables td:before {
     content: attr(data-title);
     position: absolute;
     left: 6px;
     font-weight: bold;
   }
+
   #no-more-tables tr {
     border-bottom: 1px solid #ccc;
   }
 }
+
 /* <------------TABLE MEDIA QUERY------------>*/
 
 @media only screen and (max-width: 700px) {
@@ -564,16 +617,19 @@ a {
     margin-left: 40px;
     justify-content: center;
   }
+
   .service {
     display: flex;
     justify-content: space-evenly;
   }
+
   .services_btn {
     font-size: 10px;
     width: 100px !important;
     margin: 5px;
     height: 35px !important;
   }
+
   .dentalCard {
     margin-bottom: 5%;
   }
@@ -587,6 +643,7 @@ a {
   .title_dashboard {
     margin: 5%;
   }
+
   .intruction_container,
   .services_container {
     margin-bottom: 5%;
@@ -597,6 +654,7 @@ a {
   .data-title {
     font-size: 12px !important;
   }
+
   td small {
     font-size: 12px !important;
   }
@@ -612,6 +670,7 @@ a {
   display: grid;
   grid-template-columns: 7fr 1.9fr;
 }
+
 .dashboard_nested {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -627,6 +686,7 @@ a {
   list-style: none !important;
   padding: 5px 20px;
 }
+
 .logout:hover {
   transform: scale(1.1);
   cursor: pointer;
@@ -634,7 +694,7 @@ a {
 
 /* <------------SELECTION PATIENTS PAGE------------>*/
 
-.selection{
+.selection {
   appearance: none;
   outline: 0;
   border: 0;
@@ -647,9 +707,11 @@ a {
   background-image: none;
   cursor: pointer;
 }
+
 select::-ms-expand {
   display: none;
 }
+
 .select {
   position: relative;
   display: flex;
@@ -658,6 +720,7 @@ select::-ms-expand {
   border-radius: 0.25em;
   overflow: hidden;
 }
+
 .select::after {
   content: '\25BC';
   position: absolute;
@@ -668,9 +731,11 @@ select::-ms-expand {
   transition: 0.25s all ease;
   pointer-events: none;
 }
+
 .select:hover::after {
   color: #4DBDAC;
 }
+
 /* <------------SELECTION PATIENTS PAGE------------>*/
 
 
@@ -684,27 +749,32 @@ select::-ms-expand {
   color: #000;
 
 }
+
 .acc_info label.not {
   width: 0;
   height: 0;
   float: none;
   margin-left: 4px;
 }
+
 .acc_info input {
   font-size: 15px;
   font-family: 'Work Sans', sans-serif;
   margin-bottom: 0.5em;
 }
-.upload_modal{
+
+.upload_modal {
   width: 100px;
   position: relative;
   margin: auto;
 }
-.upload_modal img{
+
+.upload_modal img {
   border-radius: 50%;
   border: 6px solid #eaeaea;
 }
-.upload_modal .round{
+
+.upload_modal .round {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -716,29 +786,33 @@ select::-ms-expand {
   border-radius: 50%;
   overflow: hidden;
 }
-.upload_modal .round input[type = "file"]{
+
+.upload_modal .round input[type="file"] {
   position: absolute;
   transform: scale(2);
   opacity: 0;
 }
-input[type=file]::-webkit-file-upload-button{
+
+input[type=file]::-webkit-file-upload-button {
   cursor: pointer;
 }
-.make_appointment{
+
+.make_appointment {
   display: inline-block;
   width: 150px;
   text-align: right;
 }
+
 /* <------------ACCOUNT INFO MODAL CSS------------>*/
 @media screen and (max-width: 600px) {
-  .bottom_nav_menu{
+  .bottom_nav_menu {
     padding-right: 2rem !important;
     margin-right: 2rem !important;
   }
 }
 
 @media screen and (max-width: 900px) {
-  .bottom_nav_menu{
+  .bottom_nav_menu {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -748,19 +822,19 @@ input[type=file]::-webkit-file-upload-button{
     display: grid;
     align-content: center;
     background-color: var(--bgc);
-    
+
   }
 }
 
-.bottom_nav_list, 
-.bottom_nav_link{
+.bottom_nav_list,
+.bottom_nav_link {
   display: flex;
   list-style-type: none;
   margin-top: 0.5rem;
 
 }
 
-.bottom_nav_link{
+.bottom_nav_link {
   flex-direction: column;
   align-items: center;
   row-gap: 4px !important;
@@ -768,18 +842,64 @@ input[type=file]::-webkit-file-upload-button{
   font-weight: 600;
 }
 
-.bottom_nav_list{
+.bottom_nav_list {
   justify-content: space-between;
 }
 
 
 
 @media screen and (min-width: 576px) {
-  .bottom_nav_list{
+  .bottom_nav_list {
     justify-content: center;
     column-gap: 3rem;
     padding: 0.2 4rem !important;
 
   }
+
+
+
 }
 
+@media screen and (max-width: 375px) {
+
+  .dentalCard {
+    width: 50% !important;
+    margin-top: 5% !important;
+  }
+
+  .dentalCard img {
+    width: 30px !important;
+    height: 70px !important;
+  }
+
+  .dentalCard span {
+    font-size: 12px;
+    margin: 0;
+    letter-spacing: 0px !important;
+  }
+
+  .dentalCard button{
+    width: 50px !important;
+    font-size: 12px !important;
+    letter-spacing: 0 !important;
+    height: 20px !important;
+  }
+}
+
+.dentalCard button {
+  font-weight: bold;
+  background: #47B0A0;
+  border-radius: 50px;
+  width: 120px;
+  border: none;
+  height: 35px;
+}
+
+.dentalCard span {
+  font-size: 15px;
+  letter-spacing: 1px !important;
+}
+
+.carousel-inner .dentalCard {
+  margin: auto;
+}

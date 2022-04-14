@@ -16,17 +16,15 @@
 
 
 // // <-------TEXT TYPING HOME SECTION--------->//
-// var i = 0,
-//   dental_text;
-// dental_text = 'DIAGNOSTIC LABORATORY, X-RAY AND MEDICAL CLINIC';
-// function typing() {
-//   if (i < dental_text.length) {
-//     document.getElementById('dental_text').innerHTML += dental_text.charAt(i);
-//     i++;
-//     setTimeout(typing, 70);
-//   }
-// }
-// typing();
+var i = 0,
+  dental_text;
+dental_text = 'DIAGNOSTIC LABORATORY, X-RAY AND MEDICAL CLINIC';
+function typing() {
+  if (i < dental_text.length) {
+    document.getElementById('dental_text').innerHTML += dental_text.charAt(i);
+    i++;
+    setTimeout(typing, 70);
+  }
+}
+typing();
 // // <-------TEXT TYPING HOME SECTION--------->//
-
-

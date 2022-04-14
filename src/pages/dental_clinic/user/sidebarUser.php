@@ -1,4 +1,4 @@
-<div class="dashboard_nested d-none d-lg-block" id="test_sidebar_user" style="background-color: #4DBDAC;height: 200vh; position: fixed; right:0">
+<!-- <div class="dashboard_nested d-none d-lg-block" id="test_sidebar_user" style="background-color: #4DBDAC;height: 200vh; position: fixed; right:0">
 
     <div>
         <div class="container mt-lg-5 ms-lg-2">
@@ -38,4 +38,4 @@
             <a href="#" class="text-white">View All <i class="fa-solid fa-chevron-right"></i></a>
         </small>
     </div>
-</div>
+</div> -->

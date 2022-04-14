@@ -8,6 +8,7 @@
              <li class="list-group-item fs-6 align-center border-0 " id="btn_sidebar_products"><i class="fa-solid fa-fw fa-burger pe-3"></i> <span>Products</span></a></li>
              <li class="list-group-item fs-6 align-center border-0 " id="btn_sidebar_order"><i class="fa-solid fa-fw  fa-file-invoice-dollar pe-3"></i> <span>Orders</span> </a></li>
              <li class="list-group-item fs-6 align-center border-0 " id="btn_sidebar_order_history"><i class="fa-solid fa-clipboard-list fa-fw pe-3"></i> <span>Order History</span> </a></li>
+             <li class="list-group-item fs-6 align-center border-0 " id="btn_sidebar_sms"><i class="fa-solid fa-clipboard-list fa-fw pe-3"></i> <span>Order History</span> </a></li>
              <li class="list-group-item fs-6 align-center border-0 " id="btn_sidebar_feedback"><i class="fa-solid fa-fw fa-envelope pe-3"></i> <span>Feedbacks</span></a></li>
 
 

@@ -1448,21 +1448,24 @@ $(document).ready(function () {
   search_function();
 
   if (!$("#txt_user_id").val()) {
-    load_packages()
+   
+
     change_page("main_page");
     $("#txt_user_access").val("user");
 
     // alert('test')
   } else {
     if (access_level == "user") {
+      load_packages()
+      load_available_appointments();
       change_page("dashboard");
+      
     } else {
       load_admin_overview();
       change_page("admin_overview");
     }
   }
 
-  load_available_appointments();
 
 });
 
@@ -1560,7 +1563,6 @@ $(".services_btn").on("click", function () {
           output += '<div class="col-xl-6 col-12  text-muted ">';
         }
 
-        console.log(selected_package)
         if (selected_package == val.id) {
           output +=
             `

@@ -26,49 +26,7 @@
         </div>
 
         <div class="container-lg my-3 mt-5 mb-5" style="width: 70% !important;">
-            <!-- <div class="row text-white text-center" id="landing_packages">
-                <div class="col-lg-4 mb-sm-5">
-                    <div class="card dentalCard">
-                        <div>
-                            <img src="src/resources/img/bottle.png" class="card-img-top" style="border-radius: 2%; width: 50% !important; height: 15rem !important;">
-
-                        </div>
-                        <div class="card-body">
-                            <span class="card-title h4 mb-2">Package 1</span>
-                            <br>
-                            <button data-bs-toggle="modal" data-bs-target="#package" class="mt-2 text-white" style="font-weight:bold; background:#47B0A0; border-radius: 50px; width:120px; border: none; height: 35px;">Avail</button>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="col-lg-4 mb-sm-5">
-                    <div class="card dentalCard">
-                        <div>
-                            <img src="src/resources/img/tablet.png" class="card-img-top" style="border-radius: 2%; width: 50% !important; height: 15rem !important;">
-                        </div>
-                        <div class="card-body">
-                            <span class="card-title h4 mb-2">Package 2</span> <br>
-                            <button class="mt-2 text-white" id="#" style="font-weight:bold; background:#47B0A0; border-radius: 50px; width:120px; border: none; height: 35px;">Avail</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="card dentalCard">
-                        <div>
-                            <img src="src/resources/img/inject.png" class="card-img-top" style="border-radius: 2%; width: 60% !important; height: 15rem !important;">
-                        </div>
-                        <div class="card-body">
-                            <span class="card-title h4 mb-2">Package 3</span> <br>
-                            <button class="mt-2 text-white" id="#" style="font-weight:bold; background:#47B0A0; border-radius: 50px; width:120px; border: none; height: 35px;">Avail</button>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
-
+        
             <div class="dental_carousel">
                 <div class="dental_inner_carousel">
                     <div class="card dentalCard text-center">

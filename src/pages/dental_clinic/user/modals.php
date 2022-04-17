@@ -414,3 +414,66 @@
 
     </div>
 </div>
+
+
+<!----------------PRIVACY AND POLICY ------------------->
+<div class="modal fade" id="privacy_policy" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div>
+                            <div style="float: left">
+                                <img src="src/resources/img/bg_caduceus.png " style="width: 80px;">
+                            </div>
+                            <div class="mt-4">
+                                <h5 style="-webkit-text-stroke-width: 1.4px !important; -webkit-text-stroke-color: #4bb9a9 !important; color: white !important; font-size: 14pt !important; letter-spacing: 2px;">CHERONZELLE</h5>
+                            </div>
+                        </div>
+
+
+                        <div class="container" style="width: 90%;">
+                            <div class="row">
+                                <div class="col-12 ms-lg-3 mt-4">
+                                    <strong style="color: red;">REMINDERS:</strong>
+                                    <p class="text-black">To avoid technological incompatibilities, patients are advised to use
+                                        only Google or Yahoo email accounts while requesting an
+                                        appointment.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-12 ms-lg-3 text-black">
+                                    <h6 class="text-center" style="font-weight: bold;">TERMS AND CONDITIONS:</h6>
+                                    <p style="font-size: 14px; font-weight: bold;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore delectus maxime, iure ratione provident architecto itaque dolore necessitatibus eius. Facilis laboriosam ipsam corporis!
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="row mt-2">
+                                <div class="col-12 ms-lg-3 ">
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="" id="defaultCheck1">
+                                        <p class="form-check-label" for="defaultCheck1" style="color: red; font-weight: bold; font-size: 14px;">
+                                            By proceeding with this application, I understand that I am
+                                            significally lorem ipsumlorem ipsumlorem ipsumlorem ipsum
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3 mb-3">
+                                <div class="col text-center">
+                                    <button class="text-white" style="background:#80CEB8; border-radius:5px; border: none; cursor: pointer; font-size: 12px; width: 100px; height: 1.9rem;">START</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

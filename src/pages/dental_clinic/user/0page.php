@@ -7,10 +7,9 @@
                 </div>
             </div>
 
-            <div class="row text-center mt-2">
+            <div class="row text-center mt-sm-2">
                 <div class="col-12">
                     <span id="dental_text" class="h6"></span>
-
                 </div>
             </div>
         </div>
@@ -27,160 +26,63 @@
         </div>
 
         <div class="container-lg my-3 mt-5 mb-5" style="width: 70% !important;">
-            <!-- <div class="row text-white text-center" id="landing_packages">
-                <div class="col-lg-4 mb-sm-5">
-                    <div class="card dentalCard">
+        
+            <div class="dental_carousel">
+                <div class="dental_inner_carousel">
+                    <div class="card dentalCard text-center">
                         <div>
-                            <img src="src/resources/img/bottle.png" class="card-img-top" style="border-radius: 2%; width: 50% !important; height: 15rem !important;">
-
+                            <img src="src/resources/img/bottle.png" class="card-img-top" style="border-radius: 2%; width: 50% !important; height: 15rem ;">
                         </div>
                         <div class="card-body">
-                            <span class="card-title h4 mb-2">Package 1</span>
+                            <span class="card-title h6 mb-2">Complete Medical Exam</span>
                             <br>
-                            <button data-bs-toggle="modal" data-bs-target="#package" class="mt-2 text-white" style="font-weight:bold; background:#47B0A0; border-radius: 50px; width:120px; border: none; height: 35px;">Avail</button>
+                            <button data-bs-toggle="modal" data-bs-target="#package" class="mt-2 text-white">Avail</button>
                         </div>
                     </div>
+
                 </div>
 
-
-
-                <div class="col-lg-4 mb-sm-5">
-                    <div class="card dentalCard">
+                <div class="dental_inner_carousel">
+                    <div class="card dentalCard text-center">
                         <div>
-                            <img src="src/resources/img/tablet.png" class="card-img-top" style="border-radius: 2%; width: 50% !important; height: 15rem !important;">
+                            <img src="src/resources/img/bottle.png" class="card-img-top" style="border-radius: 2%; width: 50% !important; height: 15rem ;">
                         </div>
                         <div class="card-body">
-                            <span class="card-title h4 mb-2">Package 2</span> <br>
-                            <button class="mt-2 text-white" id="#" style="font-weight:bold; background:#47B0A0; border-radius: 50px; width:120px; border: none; height: 35px;">Avail</button>
+                            <span class="card-title h6 mb-2">Complete Medical Exam</span>
+                            <br>
+                            <button data-bs-toggle="modal" data-bs-target="#package" class="mt-2 text-white">Avail</button>
                         </div>
                     </div>
+
                 </div>
 
-                <div class="col-lg-4">
-                    <div class="card dentalCard">
+                <div class="dental_inner_carousel">
+                    <div class="card dentalCard text-center">
                         <div>
-                            <img src="src/resources/img/inject.png" class="card-img-top" style="border-radius: 2%; width: 60% !important; height: 15rem !important;">
+                            <img src="src/resources/img/bottle.png" class="card-img-top" style="border-radius: 2%; width: 50% !important; height: 15rem ;">
                         </div>
                         <div class="card-body">
-                            <span class="card-title h4 mb-2">Package 3</span> <br>
-                            <button class="mt-2 text-white" id="#" style="font-weight:bold; background:#47B0A0; border-radius: 50px; width:120px; border: none; height: 35px;">Avail</button>
+                            <span class="card-title h6 mb-2">Complete Medical Exam</span>
+                            <br>
+                            <button data-bs-toggle="modal" data-bs-target="#package" class="mt-2 text-white">Avail</button>
                         </div>
                     </div>
+
                 </div>
-            </div> -->
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-
-                        <div class="container">
-                            <div class="row">
-
-                                <!-- CAROUSEL CARDS -->
-                                <div class="col-lg-4 col-sm-12">
-                                    <div class="card dentalCard text-center">
-                                        <div>
-                                            <img src="src/resources/img/bottle.png" class="card-img-top" style="border-radius: 2%; width: 50% !important; height: 15rem ;">
-                                        </div>
-                                        <div class="card-body">
-                                            <span class="card-title h6 mb-2">Complete Medical Exam</span>
-                                            <br>
-                                            <button data-bs-toggle="modal" data-bs-target="#package" class="mt-2 text-white">Avail</button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-12">
-                                    <div class="card dentalCard text-center">
-                                        <div>
-                                            <img src="src/resources/img/bottle.png" class="card-img-top" style="border-radius: 2%; width: 50% !important; height: 15rem ;">
-                                        </div>
-                                        <div class="card-body">
-                                            <span class="card-title h6 mb-2">Package 1</span>
-                                            <br>
-                                            <button data-bs-toggle="modal" data-bs-target="#package" class="mt-2 text-white">Avail</button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-12">
-                                    <div class="card dentalCard text-center">
-                                        <div>
-                                            <img src="src/resources/img/bottle.png" class="card-img-top" style="border-radius: 2%; width: 50% !important; height: 15rem ;">
-                                        </div>
-                                        <div class="card-body">
-                                            <span class="card-title h6 mb-2">Package 1</span>
-                                            <br>
-                                            <button data-bs-toggle="modal" data-bs-target="#package" class="mt-2 text-white">Avail</button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="carousel-item">
-                        <div class="container">
-                            <div class="row">
-                                <!-- CAROUSEL CARDS -->
-                                <div class="col-lg-4 col-sm-12">
-                                    <div class="card dentalCard text-center">
-                                        <div>
-                                            <img src="src/resources/img/bottle.png" class="card-img-top" style="border-radius: 2%; width: 50% !important; height: 15rem ;">
-                                        </div>
-                                        <div class="card-body">
-                                            <span class="card-title h6 mb-2">Package 1</span>
-                                            <br>
-                                            <button data-bs-toggle="modal" data-bs-target="#package" class="mt-2 text-white">Avail</button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-12">
-                                    <div class="card dentalCard text-center">
-                                        <div>
-                                            <img src="src/resources/img/bottle.png" class="card-img-top" style="border-radius: 2%; width: 50% !important; height: 15rem ;">
-                                        </div>
-                                        <div class="card-body">
-                                            <span class="card-title h6 mb-2">Package 1</span>
-                                            <br>
-                                            <button data-bs-toggle="modal" data-bs-target="#package" class="mt-2 text-white">Avail</button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-12">
-                                    <div class="card dentalCard text-center">
-                                        <div>
-                                            <img src="src/resources/img/bottle.png" class="card-img-top" style="border-radius: 2%; width: 50% !important; height: 15rem ;">
-                                        </div>
-                                        <div class="card-body">
-                                            <span class="card-title h6 mb-2">Package 1</span>
-                                            <br>
-                                            <button data-bs-toggle="modal" data-bs-target="#package" class="mt-2 text-white">Avail</button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- CAROUSEL BUTTONS -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-
             </div>
+
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <span><a href="#" class="text-white privacy_policy">CHERONZELLE 2022</a></span>
+
+                </div>
+
+                <div class="col-lg-6 col-sm-12">
+                    <p class="text-lg-end"><a href="#" class="text-white privacy_policy" data-bs-toggle="modal" data-bs-target="#privacy_policy"><u>Privacy Policy</u></a></p>
+                </div>
+            </div>
+
         </div>
+
     </section>
 </div>

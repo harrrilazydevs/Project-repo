@@ -6,6 +6,8 @@
         <li class="list-group-item btn_view_prices" title="Edit Pricelist"> <i class="fa-fw fa-solid fa-file"></i></li>
         <li class="list-group-item btn_view_packages" title="Edit Packages"><i class="fa-fw fa-solid fa-file-pen"></i></li>
         <li class="list-group-item btn_view_history"><i title="History" class="fa-fw fa-solid fa-clock-rotate-left"></i></li>
+        <li class="list-group-item btn_view_sms"><i title="Sms Settings" class="fa-fw fa-solid fa-message"></i></li>
+   
     </ul>
 
     <ul class="logout">

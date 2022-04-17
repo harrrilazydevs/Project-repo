@@ -12,6 +12,7 @@ let pages = {
   admin_appointment: "page_admin_appointment",
   admin_prices: "page_prices",
   admin_packages: "page_packages",
+  admin_sms: "page_sms"
 };
 let search_function_config = {
   tbl_service_prices: "txt_admin_search_prices",
@@ -148,17 +149,14 @@ $("#btn_login").on("click", function () {
         } else {
           var data = JSON.parse(data)
 
-          console.log( data[0].user_access)
-          if(data[0].user_access == "admin"){
+          if (data[0].user_access == "admin") {
             location.reload()
           }
-          else{
+          else {
+            location.reload()
             change_page("dashboard");
-            
           }
-          console.log()
           show_msg("Login Successful", 1);
-          // location.reload();
 
           if ($('#txt_user_access').val() == "user") {
             $('#test_sidebar_user').removeClass('d-none')
@@ -793,9 +791,7 @@ function write_registered_patients(data) {
       `</small></td>
                     <td class="data-title" data-title="DETAILS">
                         <button 
-                          class="text-white" 
-                          data-bs-toggle="modal" 
-                          data-bs-target="#btn_view_patient" 
+                          class="text-white admin_view_patient" 
                           style="background:#80CEB8; 
                           border-radius:5px; border: none; cursor: pointer; font-size: 12px; width: 100px; height: 1.5rem;"
                           attr-id="` +
@@ -813,7 +809,7 @@ function write_registered_patients(data) {
                           attr-gender="` +
       val.gender +
       `"
-                          attr-house-no="` +
+                          attr-house_no="` +
       val.house_no +
       `"
                           attr-street="` +
@@ -837,7 +833,7 @@ function write_registered_patients(data) {
                           attr-email="` +
       val.email +
       `"
-                          attr-contact-no="` +
+                          attr-contact_no="` +
       val.contact_no +
       `"
                         >VIEW</button>
@@ -846,8 +842,24 @@ function write_registered_patients(data) {
     `;
   });
 
-  $("#tbl_registered_patient tbody").empty();
-  $("#tbl_registered_patient tbody").append(output);
+  $("#tbl_registered_patient tbody").empty().append(output);
+
+  $('.admin_view_patient').on('click', function () {
+    $('#md_admin_view_patient').modal('show')
+    $('#md_admin_view_patient_id').text($(this).attr('attr-id'))
+    $('#md_admin_view_l_name').text($(this).attr('attr-l_name'))
+    $('#md_admin_view_f_name').text($(this).attr('attr-f_name'))
+    $('#md_admin_view_m_name').text($(this).attr('attr-m_name'))
+    $('#md_admin_view_age').text($(this).attr('attr-age'))
+    $('#md_admin_view_house_no').text($(this).attr('attr-house_no'))
+    $('#md_admin_view_street').text($(this).attr('attr-street'))
+    $('#md_admin_view_brgy').text($(this).attr('attr-brgy'))
+    $('#md_admin_view_city').text($(this).attr('attr-city'))
+    $('#md_admin_view_province').text($(this).attr('attr-province'))
+    $('#md_admin_view_contact_no').text($(this).attr('attr-contact_no'))
+    $('#md_admin_view_gender').text($(this).attr('attr-gender'))
+  })
+
 }
 
 function load_appointment_history() {
@@ -930,6 +942,10 @@ $(".btn_view_history").on("click", function () {
   load_appointment_history();
   change_page("admin_history");
 });
+$(".btn_view_sms").on("click", function () {
+  load_sms_template();
+  change_page("admin_sms");
+});
 $(".btn_view_overview").on("click", function () {
   change_page("admin_overview");
   load_admin_overview();
@@ -944,6 +960,7 @@ $(".btn_view_admin_appointment").on("click", function () {
   load_for_uploading();
   change_page("admin_appointment");
 });
+
 
 
 
@@ -1041,6 +1058,36 @@ function write_admin_services(data) {
     $(this).addClass("bg-selected");
   });
 }
+
+function load_sms_template() {
+  $.getJSON("src/database/dental_clinic/func/admin/read_sms_templates.php", function (data) {
+    write_sms_template(data)
+  })
+}
+function write_sms_template(data) {
+  var output = '';
+  var count = 1;
+  $.each(data, function (key, val) {
+    output += `
+          <tr class="">
+            <td class="data-title" data-title="No" ><div class="px-2 fw-bold">`+count+`</div></td>
+            <td class="data-title" data-title="PATIENT ID"><div class="px-2 text-start">`+val.sms+`</div></td>
+            <td class="data-title" data-title="APPOINTMENT ID">
+              <small class="h6 text-black">
+                <i class="icon_btn fa-solid fa-pen-to-square"></i>
+              </small>
+            </td>
+         
+          </tr>
+
+    `;
+    count = count+1;
+  })
+
+  $('#tbl_sms tbody').empty().append(output)
+}
+
+
 $("#btn_admin_edit_service").on("click", function () {
   if ($.isEmptyObject(d)) {
     show_msg("No service selected", 2);
@@ -1458,8 +1505,8 @@ $(document).ready(function () {
 
   search_function();
 
-  if(!$("#txt_user_access").val()){
-    $("#txt_user_access").attr('value','user')
+  if (!$("#txt_user_access").val()) {
+    $("#txt_user_access").attr('value', 'user')
     load_packages()
     change_page("main_page");
   }
@@ -1471,9 +1518,9 @@ $(document).ready(function () {
   } else {
     if (access_level == "user") {
       load_available_appointments();
-      
+
       change_page("dashboard");
-      
+
     } else {
       load_admin_overview();
       change_page("admin_overview");

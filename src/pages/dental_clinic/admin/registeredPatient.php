@@ -24,10 +24,11 @@
 
             <div class="row d-flex justify-content-around mt-5 mb-3">
                 <div class="select text-muted">
-                    <select class="selection">
+                    <select class="selection" id="sort_registered_patients">
                         <option value="1">SORT BY</option>
-                        <option value="2">TEST 1</option>
-                        <option value="3">TEST 2</option>
+                        <option value="2">Patient Id</option>
+                        <option value="3">Last Name</option>
+                        <option value="4">First Name</option>
                     </select>
                 </div>
 

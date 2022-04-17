@@ -320,7 +320,7 @@
 
 
 
-<div class="modal fade" id="view_patient" tabindex="-1" aria-hidden="true">
+<!-- <div class="modal fade" id="md_admin_view_patient" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content acc_info">
             <div class="modal-body ">
@@ -390,77 +390,60 @@
 </div>
 
 
+ -->
 
 
 
 
 
 
+<div class="modal fade" id="md_admin_view_patient" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="border-radius: 5%;">
+            <span class="h4 mt-4 text-black text-center" style="letter-spacing: 4px; font-weight: bold;">Patient Information</span>
 
-<div class="modal fade" id="view_patient" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content acc_info">
-            <div class="modal-body ">
-                <h5 class="h4 fw-bold text-black text-center" style="letter-spacing: 1px; font-family: 'Work Sans', sans-serif;">Patient Information</h5>
-
-                <div class="container" style="background-color: #F9F9F9; border-radius: 20px;">
-                    <div class="row mt-3">
-                        <div class="col-lg-6 mt-4  col-sm-12">
-                            <div class="acc_info">
-                                <label for="lastname">Patient ID:</label>
-                                <input type="text" placeholder="22334" required>
-
-                                <label for="lastname">Last Name:</label>
-                                <input type="text" placeholder="Sebastian" required>
-
-                                <label for="firstname">First Name:</label>
-                                <input type="text" placeholder="Baldong" required>
-
-                                <label for="firstname"><small style="font-size: 13px !important;">Middle Name:</small></label>
-                                <input type="text" placeholder="Ursilang" required>
-
-                                <label>Sex:</label>
-                                <label> <input type="radio" style="display: inline-block !important;"> Male</label>
-                                <label> <input type="radio" style="display: inline-block !important;"> Female</label>
-
-                            </div>
+            <div class="modal-body">
+                <div class="container" style="background-color: #F9F9F9; border-radius: 5px;">
+                    <div class="row border-top mt-2">
+                        <div class="col-3 mt-3">
+                            <p class="text-black" style="font-weight: bold; font-size: 13px;">Patient ID : </p>
+                            <p class="text-black" style="font-weight: bold; font-size: 13px;">Last Name : </p>
+                            <p class="text-black" style="font-weight: bold; font-size: 13px;">First Name : </p>
+                            <p class="text-black" style="font-weight: bold; font-size: 13px;">Middle Name : </p>
+                            <p class="text-black" style="font-weight: bold; font-size: 13px;">Age : </p>
+                            <p class="text-black" style="font-weight: bold; font-size: 13px;">House No : </p>
+                            <p class="text-black" style="font-weight: bold; font-size: 13px;">Street : </p>
+                            <p class="text-black" style="font-weight: bold; font-size: 13px;">Brgy : </p>
+                            <p class="text-black" style="font-weight: bold; font-size: 13px;">City : </p>
+                            <p class="text-black" style="font-weight: bold; font-size: 13px;">Province : </p>
+                            <p class="text-black" style="font-weight: bold; font-size: 13px;">Contact No : </p>
+                            <p class="text-black" style="font-weight: bold; font-size: 13px;">Sex : </p>
                         </div>
 
-                        <div class="col-lg-6 mt-4 col-sm-12">
-
-                            <div class="acc_info">
-                                <label for="Addres">Addres:</label>
-                                <input type="text" placeholder="22334" required>
-
-                                <label for="Street">Street</label>
-                                <input type="text" placeholder="Matabang" required>
-
-                                <label for="Brgy">Brgy:</label>
-                                <input type="text" placeholder="Tibo Brgy" required>
-
-                                <label for="City">City</label>
-                                <input type="text" placeholder="Taguig" required>
-
-
-                                <label for="Province">Province</label>
-                                <input type="text" placeholder="Laguna" required>
-
-                                <label for="Contact">Contact No.</label>
-                                <input type="text" placeholder="0231203012" required>
-
-                            </div>
-                        </div>
-
-
-                        <div class="row text-center mt-4 mb-4">
-                            <div class="col-12">
-                                <button class="text-white me-4" style="background:#80CEB8; border-radius:5px; border: none; cursor: pointer; font-size: 12px; width: 100px; height: 2rem;">DONE</button>
-                                <button class="text-white" data-bs-dismiss="modal" style="background:red; border-radius:5px; border: none; cursor: pointer; font-size: 12px; width: 100px; height: 2rem;">DELETE</button>
-                            </div>
+                        <div class="col-9 mt-3 text-start">
+                            <p class="text-black text-muted" style="font-size: 13px;" id="md_admin_view_patient_id">TEst</p>
+                            <p class="text-black text-muted" style="font-size: 13px;" id="md_admin_view_l_name">TEst</p>
+                            <p class="text-black text-muted" style="font-size: 13px;" id="md_admin_view_f_name"></p>
+                            <p class="text-black text-muted" style="font-size: 13px;" id="md_admin_view_m_name">N/A</p>
+                            <p class="text-black text-muted" style="font-size: 13px;" id="md_admin_view_age"> </p>
+                            <p class="text-black text-muted" style="font-size: 13px;" id="md_admin_view_house_no"></p>
+                            <p class="text-black text-muted" style="font-size: 13px;" id="md_admin_view_street"></p>
+                            <p class="text-black text-muted" style="font-size: 13px;" id="md_admin_view_brgy"></p>
+                            <p class="text-black text-muted" style="font-size: 13px;" id="md_admin_view_city"></p>
+                            <p class="text-black text-muted" style="font-size: 13px;" id="md_admin_view_province"></p>
+                            <p class="text-black text-muted" style="font-size: 13px;" id="md_admin_view_contact_no"></p>
+                            <p class="text-black text-muted" style="font-size: 13px;" id="md_admin_view_gender"></p>
                         </div>
                     </div>
 
                 </div>
+
+
+                <div class="mt-4 mb-2 text-center">
+                    <!-- <button class="text-white" id="md_make_appointment_book" data-bs-dismiss="modal" style="font-weight:bold; background:#80CEB8; border-radius: 5px; width:120px; margin: 6px; border: none; height: 35px; font-size: 12px;">BOOK</button> -->
+                    <button class="text-white bg-secondary" data-bs-dismiss="modal" style="font-weight:bold; background:#F35252; border-radius: 5px; width:130px; margin: 6px; border: none; height: 35px; font-size: 12px;">CLOSE</button>
+                </div>
+
             </div>
         </div>
     </div>

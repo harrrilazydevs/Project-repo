@@ -32,7 +32,6 @@
 </div>
 <!----------------CREATE ACC MODAL ------------------->
 
-
 <!----------------PACKAGE MODAL------------------->
 <div class="modal ms-5" id="package" aria-hidden="true" style="backdrop-filter: blur(11px);">
     <div class=" modal-dialog">
@@ -148,7 +147,6 @@
 
 <!----------------SERVICES MODAL PAGE11------------------->
 
-
 <!----------------LAB RESULT------------------->
 <div class="modal" id="labResult" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
@@ -157,7 +155,6 @@
     </div>
 </div>
 <!----------------LAB RESULT------------------->
-
 
 <!----------------INCOMING APPOINTMENTS------------------->
 <div class="modal fade" id="md_make_appointment" aria-hidden="true">
@@ -209,7 +206,6 @@
     </div>
 </div>
 <!----------------INCOMING APPOINTMENTS------------------->
-
 
 <!----------------INCOMING APPOINTMENTS------------------->
 <div class="modal fade" id="md_view_appointment" aria-hidden="true">
@@ -275,7 +271,6 @@
 </div>
 <!----------------INCOMING APPOINTMENTS------------------->
 
-
 <!---------------- ACC INFORMATION MODAL ------------------->
 <div class="modal fade" id="md_account_information" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -285,12 +280,12 @@
                     <h5 class="h5 fw-bold text-black text-center" style="letter-spacing: 1px; font-family: 'Work Sans', sans-serif;">Account Information</h5>
 
                     <div class="upload_modal mt-3">
-                        <img src="<?php echo$_SESSION['picture'];?>" width="100" height="100" alt="">
+                        <img src="<?php echo $_SESSION['picture']; ?>" width="100" height="100" alt="">
                         <div class="round">
                             <form action="" id="user_picture">
-                            <input type="file" name="file" id="update_acc_picture">
-                            <input type="text" name="id" value="<?php echo $_SESSION['user_id'];?>" hidden>
-                            <i class="fa-solid fa-circle-plus fa-fw" style="color: white;"></i>
+                                <input type="file" name="file" id="update_acc_picture">
+                                <input type="text" name="id" value="<?php echo $_SESSION['user_id']; ?>" hidden>
+                                <i class="fa-solid fa-circle-plus fa-fw" style="color: white;"></i>
                             </form>
                         </div>
                     </div>
@@ -385,9 +380,6 @@
         </div>
     </div>
 </div>
-
-
-
 
 <!----------------CREATE ACC MODAL ------------------->
 <div class="modal fade" id="md_msg_box" aria-hidden="true">
